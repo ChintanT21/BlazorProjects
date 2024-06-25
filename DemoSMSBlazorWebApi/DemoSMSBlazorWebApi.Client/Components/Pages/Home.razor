@@ -1,0 +1,170 @@
+﻿@page "/"
+@using DemoSMSBlazorWebApi.Entity.Models
+@rendermode InteractiveServer
+
+<Button Class="btn btn-info text-white" @onclick="NavigateToAddUser">Add User</Button>
+
+<Grid TItem="Student"
+      Class="table table-hover table-bordered table-striped m-2"
+      DataProvider="EmployeesDataProvider"
+      AllowFiltering="true"
+      AllowPaging="true"
+      PageSize="5"
+      AllowSorting="true"
+      AllowSelection="true"
+      SelectionMode="GridSelectionMode.Multiple"
+      SelectedItemsChanged="OnSelectedItemsChanged"
+      Responsive="true">
+
+    <GridColumn TItem="Student" HeaderText="Id" PropertyName="Id" SortKeySelector="item => item.StudentId">
+        @context.StudentId
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="FirstName" PropertyName="FirstName" SortKeySelector="item => item.FirstName">
+        @context.FirstName
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="LastName" PropertyName="LastName" SortKeySelector="item => item.LastName">
+        @context.LastName
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Gender" PropertyName="Gender" SortKeySelector="item => item.Gender">
+        @context.Gender
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Email" PropertyName="Email" SortKeySelector="item => item.Email">
+        @context.Email
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Action" >
+        <Button Class="btn btn-info text-white" @onclick="@( () => NavigateToEditUser(context.StudentId) )">Edit</Button>
+        <Button Class="btn btn-danger" @onclick="@( () => OnShowModalClick(context.StudentId) )">Delete</Button>
+    </GridColumn>
+
+</Grid>
+
+
+<Modal @ref="deleteModal" title="Modal title">
+    <BodyTemplate>
+        Id=<span class="fw-bold">@willDelete.StudentId</span>
+        FirstName=<span class="fw-bold">@willDelete.FirstName</span>
+        LastName=<span class="fw-bold">@willDelete.LastName</span>
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="ButtonColor.Danger" @onclick="@( () => NavigateToDeleteUser(willDelete.StudentId) )">Delete</Button>
+    </FooterTemplate>
+</Modal>
+
+@code {
+    private Modal deleteModal = default!;
+
+    private async Task OnShowModalClick(int studentId)
+    {
+        willDelete = stuList.FirstOrDefault(x=>x.StudentId==studentId);
+        await deleteModal.ShowAsync();
+    }
+
+    private async Task OnHideModalClick()
+    {
+        await deleteModal.HideAsync();
+        await AddModal.HideAsync();
+    }
+}
+
+<Modal @ref="AddModal" title="Modal title">
+    <BodyTemplate>
+        Id=<span class="fw-bold">@willDelete.StudentId</span>
+        FirstName=<span class="fw-bold">@willDelete.FirstName</span>
+        LastName=<span class="fw-bold">@willDelete.LastName</span>
+    </BodyTemplate>
+    <FooterTemplate>
+        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+        <Button Color="ButtonColor.Danger" @onclick="@( () => NavigateToDeleteUser(willDelete.StudentId) )">Delete</Button>
+    </FooterTemplate>
+</Modal>
+
+@code {
+    private Modal AddModal = default!;
+}
+
+
+@* <div class="mt-3">
+    Selected Items Count: @selectedStudents.Count
+</div>
+
+<div class="mt-2">
+    Selected Employees:
+    <ul>
+        @foreach (var stu in selectedStudents)
+        {
+            <li>@stu.FirstName</li>
+        }
+    </ul>
+</div> *@
+
+@code {
+    [Inject]
+    HttpClient Client { get; set; }
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    public IEnumerable<Student> stuList = default!;
+
+    public Student willDelete;
+
+    protected override async Task OnInitializedAsync()
+    {
+        await getStudents();
+    }
+
+    protected async Task getStudents()
+    {
+        stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
+
+    }
+
+    // private IEnumerable<Employee1> employees = default!;
+
+    private HashSet<Student> selectedStudents = new();
+
+    private async Task<GridDataProviderResult<Student>> EmployeesDataProvider(GridDataProviderRequest<Student> request)
+    {
+        if (stuList is null)
+            stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
+
+        return await Task.FromResult(request.ApplyTo(stuList));
+    }
+
+    private Task OnSelectedItemsChanged(HashSet<Student> stuList)
+    {
+        selectedStudents = stuList is not null && stuList.Any() ? stuList : new();
+        return Task.CompletedTask;
+    }
+
+    protected async void NavigateToAddUser()
+    {
+        NavigationManager.NavigateTo("/adduser");
+        // await AddModal.ShowAsync();
+    }
+    protected async void NavigateToEditUser(int studentId)
+    {
+        NavigationManager.NavigateTo("/edituser/"+studentId);
+         // await AddModal.ShowAsync();
+    }
+
+    protected async Task NavigateToDeleteUser(int studentId)
+    {
+        string apiUrl = $"api/student/{studentId}";
+
+        HttpResponseMessage response = await Client.DeleteAsync(apiUrl);
+
+        if (response.IsSuccessStatusCode)
+        {
+            Console.WriteLine($"Student with ID {studentId} deleted successfully.");
+        }
+        else
+        {
+            Console.WriteLine($"Failed to delete student with ID {studentId}. Status code: {response.StatusCode}");
+        }
+
+
+        await deleteModal.HideAsync();
+    }
+}

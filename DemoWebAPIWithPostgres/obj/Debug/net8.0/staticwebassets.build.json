@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "A5NfTno73ZLAFLXalXdYMy/6lKiGkG/ZZK08ioEvN00=",
+  "Source": "DemoWebAPIWithPostgres",
+  "BasePath": "_content/DemoWebAPIWithPostgres",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

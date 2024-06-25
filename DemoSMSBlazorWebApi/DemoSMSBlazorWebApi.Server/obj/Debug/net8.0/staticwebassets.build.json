@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "C1TgM+3ryMdZNnUkpRBNX6F6X2o4zMjlNlZcZf3lt64=",
+  "Source": "DemoSMSBlazorWebApi.Server",
+  "BasePath": "_content/DemoSMSBlazorWebApi.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

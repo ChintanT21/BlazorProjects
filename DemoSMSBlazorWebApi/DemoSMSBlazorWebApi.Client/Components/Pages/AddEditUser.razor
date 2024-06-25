@@ -1,0 +1,56 @@
+﻿@page "/adduser"
+@page "/edituser/{id:int}"
+@rendermode InteractiveServer
+@inherits AddEditUserBase
+
+<div class="segment w-100 text-center">
+    <h1>@Title</h1>
+</div>
+
+<EditForm FormName="student" Model="@studentDto" OnValidSubmit="AddStudent" class="" Enhance>
+    <DataAnnotationsValidator />
+    <div class="d-flex justify-content-center h-100 w-100">
+        <div class="col-12 col-sm-6">
+        <div class="row">
+            <div class=" mb-3 form-group">
+                <label for="FirstName">First Name:</label>
+                <InputText type="text" class="form-control" placeholder="FirstName" @bind-Value="studentDto.FirstName" />
+                <ValidationMessage For="@(()=>studentDto.FirstName)" />
+            </div>
+            <div class=" mb-3">
+                <label for="FirstName">Last Name:</label>
+                <InputText placeholder="LastName" class="form-control" @bind-Value="studentDto.LastName" />
+                <ValidationMessage For="@(()=>studentDto.LastName)" />
+            </div>
+            <div class=" mb-3">
+                <label for="FirstName">Email:</label>
+                <InputText placeholder="Email" class="form-control" @bind-Value="studentDto.Email" />
+                <ValidationMessage For="@(()=>studentDto.Email)" />
+            </div>
+            @*         <div class="col-md-12 col-sm-12 col mb-3">
+            <label for="FirstName">First Name:</label>
+            <DateInput Class="form-control" TValue="DateOnly" @bind-Value="@today" Placeholder="Enter Date" />
+            </div> *@
+            <div class=" mb-3">
+                <label for="FirstName">Gender:</label>
+                <InputSelect class="form-control" @bind-Value="studentDto.Gender">
+                    <option hidden value="">Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </InputSelect>
+                <ValidationMessage For="@(()=>studentDto.Gender)" />
+            </div>
+            @*         <div class="col-md-12 col-sm-12 col mb-3">
+            <InputSelect class="form-control " @bind-Value="studentDto.Cource">
+            <option hidden>Select Cource</option>
+            </InputSelect>
+            </div> *@
+            <div class="text-end mb-3">
+                <button type="button" @onclick="@Cancel" class="btn btn-danger"> Cancel</button>
+                <button type="submit" class="btn btn-success"> Submit</button>
+            </div>
+        </div>
+        </div>
+    </div>
+</EditForm>
+

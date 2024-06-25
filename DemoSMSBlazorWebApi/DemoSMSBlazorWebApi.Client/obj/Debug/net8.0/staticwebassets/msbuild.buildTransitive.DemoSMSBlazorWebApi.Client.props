@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\DemoSMSBlazorWebApi.Client.props" />
+</Project>
