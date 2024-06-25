@@ -27,3 +27,4 @@ D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.E
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Entity\obj\Debug\net8.0\DemoSMSBlazorWebApi.Entity.pdb
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Entity\obj\Debug\net8.0\DemoSMSBlazorWebApi.Entity.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Entity\obj\Debug\net8.0\ref\DemoSMSBlazorWebApi.Entity.dll
+D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Entity\obj\Debug\net8.0\DemoSMSBlazorWebApi.Entity.sourcelink.json

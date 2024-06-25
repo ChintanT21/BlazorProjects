@@ -113,7 +113,6 @@ D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\DemoSMSBlazorWebApi.Server.deps.json
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\DemoSMSBlazorWebApi.Server.runtimeconfig.json
-D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\DemoSMSBlazorWebApi.Server.staticwebassets.runtime.json
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\DemoSMSBlazorWebApi.Server.exe
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\Microsoft.OpenApi.dll
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
@@ -253,3 +252,4 @@ D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.C
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\obj\Debug\net8.0\DemoSMSBlazorWebApi.Client.pdb
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\obj\Debug\net8.0\DemoSMSBlazorWebApi.Client.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\obj\Debug\net8.0\ref\DemoSMSBlazorWebApi.Client.dll
+D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Client\obj\Debug\net8.0\DemoSMSBlazorWebApi.Client.sourcelink.json

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoSMSBlazorWebApi.Client"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoSMSBlazorWebApi.Server", "DemoSMSBlazorWebApi.Server\DemoSMSBlazorWebApi.Server.csproj", "{1224D8D6-12B4-420B-B0BA-6BA301A9C7DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DemoSMSBlazorWebApi.Entity", "DemoSMSBlazorWebApi.Entity\DemoSMSBlazorWebApi.Entity.csproj", "{5B3B9DE8-7402-4EC4-83D6-39C515C39DE8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DemoSMSBlazorWebApi.Entity", "DemoSMSBlazorWebApi.Entity\DemoSMSBlazorWebApi.Entity.csproj", "{5B3B9DE8-7402-4EC4-83D6-39C515C39DE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,4 +1,5 @@
 ﻿@page "/"
+@using DemoSMSBlazorWebApi.Entity.Dtos
 @using DemoSMSBlazorWebApi.Entity.Models
 @rendermode InteractiveServer
 
@@ -31,7 +32,7 @@
     <GridColumn TItem="Student" HeaderText="Email" PropertyName="Email" SortKeySelector="item => item.Email">
         @context.Email
     </GridColumn>
-    <GridColumn TItem="Student" HeaderText="Action" >
+    <GridColumn TItem="Student" HeaderText="Action">
         <Button Class="btn btn-info text-white" @onclick="@( () => NavigateToEditUser(context.StudentId) )">Edit</Button>
         <Button Class="btn btn-danger" @onclick="@( () => OnShowModalClick(context.StudentId) )">Delete</Button>
     </GridColumn>
@@ -39,7 +40,7 @@
 </Grid>
 
 
-<Modal @ref="deleteModal" title="Modal title">
+<Modal @ref="deleteModal" title="Delete Student">
     <BodyTemplate>
         Id=<span class="fw-bold">@willDelete.StudentId</span>
         FirstName=<span class="fw-bold">@willDelete.FirstName</span>
@@ -56,7 +57,7 @@
 
     private async Task OnShowModalClick(int studentId)
     {
-        willDelete = stuList.FirstOrDefault(x=>x.StudentId==studentId);
+        willDelete = stuList.FirstOrDefault(x => x.StudentId == studentId);
         await deleteModal.ShowAsync();
     }
 
@@ -67,43 +68,120 @@
     }
 }
 
-<Modal @ref="AddModal" title="Modal title">
+<Modal @ref="AddModal" title="@Title">
     <BodyTemplate>
-        Id=<span class="fw-bold">@willDelete.StudentId</span>
-        FirstName=<span class="fw-bold">@willDelete.FirstName</span>
-        LastName=<span class="fw-bold">@willDelete.LastName</span>
+        @*         <div class="segment w-100 text-center">
+        <h1>@Title</h1>
+        </div> *@
+
+        <EditForm FormName="student" Model="@studentDto" OnValidSubmit="AddStudent" class="" Enhance>
+            <DataAnnotationsValidator />
+            <div class="d-flex justify-content-center h-100 w-100">
+                <div class="col-12 col-sm-6">
+                    <div class="row">
+                        <div class=" mb-3 form-group">
+                            <label for="FirstName">First Name:</label>
+                            <InputText type="text" class="form-control" placeholder="FirstName" @bind-Value="studentDto.FirstName" />
+                            <ValidationMessage For="@(()=>studentDto.FirstName)" />
+                        </div>
+                        <div class=" mb-3">
+                            <label for="FirstName">Last Name:</label>
+                            <InputText placeholder="LastName" class="form-control" @bind-Value="studentDto.LastName" />
+                            <ValidationMessage For="@(()=>studentDto.LastName)" />
+                        </div>
+                        <div class=" mb-3">
+                            <label for="FirstName">Email:</label>
+                            <InputText placeholder="Email" class="form-control" @bind-Value="studentDto.Email" />
+                            <ValidationMessage For="@(()=>studentDto.Email)" />
+                        </div>
+                        @*         <div class="col-md-12 col-sm-12 col mb-3">
+                        <label for="FirstName">First Name:</label>
+                        <DateInput Class="form-control" TValue="DateOnly" @bind-Value="@today" Placeholder="Enter Date" />
+                        </div> *@
+                        <div class=" mb-3">
+                            <label for="FirstName">Gender:</label>
+                            <InputSelect class="form-control" @bind-Value="studentDto.Gender">
+                                <option hidden value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(()=>studentDto.Gender)" />
+                        </div>
+                        @*         <div class="col-md-12 col-sm-12 col mb-3">
+                        <InputSelect class="form-control " @bind-Value="studentDto.Cource">
+                        <option hidden>Select Cource</option>
+                        </InputSelect>
+                        </div> *@
+                        <div class="text-end mb-3">
+                            <button type="button" @onclick="OnHideModalClick" class="btn btn-danger"> Cancel</button>
+                            <button type="submit" class="btn btn-success"> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
     </BodyTemplate>
-    <FooterTemplate>
-        <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
-        <Button Color="ButtonColor.Danger" @onclick="@( () => NavigateToDeleteUser(willDelete.StudentId) )">Delete</Button>
-    </FooterTemplate>
 </Modal>
 
 @code {
     private Modal AddModal = default!;
-}
+    [Parameter]
+    public int? id { get; set; }
 
-
-@* <div class="mt-3">
-    Selected Items Count: @selectedStudents.Count
-</div>
-
-<div class="mt-2">
-    Selected Employees:
-    <ul>
-        @foreach (var stu in selectedStudents)
-        {
-            <li>@stu.FirstName</li>
-        }
-    </ul>
-</div> *@
-
-@code {
     [Inject]
-    HttpClient Client { get; set; }
+    HttpClient? Client { get; set; }
 
     [Inject]
     public NavigationManager NavigationManager { get; set; }
+
+    public Student student = new();
+    public StudentDto studentDto = new();
+
+    public string Title = "Add Student";
+
+    public DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (id != 0 && id != null)
+        {
+            Title = "Edit Student";
+            string apiUrl = $"api/student/{id}";
+            student = await Client.GetFromJsonAsync<Student>(apiUrl);
+            studentDto.StudentId = student.StudentId;
+            studentDto.FirstName = student.FirstName;
+            studentDto.LastName = student.LastName;
+            studentDto.Email = student.Email;
+            studentDto.Gender = student.Gender;
+
+        }
+    }
+
+
+
+    public async Task AddStudent()
+    {
+        if (studentDto.StudentId != 0)
+        {
+            await Client.PutAsJsonAsync("api/student", studentDto);
+        }
+        else
+        {
+            await Client.PostAsJsonAsync("api/student", studentDto);
+        }
+        await AddModal.HideAsync();
+    }
+
+    public void Cancel()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+}
+
+
+@code {
+
 
     public IEnumerable<Student> stuList = default!;
 
@@ -140,13 +218,26 @@
 
     protected async void NavigateToAddUser()
     {
-        NavigationManager.NavigateTo("/adduser");
-        // await AddModal.ShowAsync();
+        // NavigationManager.NavigateTo("/adduser");
+        await AddModal.ShowAsync();
     }
     protected async void NavigateToEditUser(int studentId)
     {
-        NavigationManager.NavigateTo("/edituser/"+studentId);
-         // await AddModal.ShowAsync();
+        id = studentId;
+        if (id != 0 && id != null)
+        {
+            Title = "Edit Student";
+            string apiUrl = $"api/student/{id}";
+            student = await Client.GetFromJsonAsync<Student>(apiUrl);
+            studentDto.StudentId = student.StudentId;
+            studentDto.FirstName = student.FirstName;
+            studentDto.LastName = student.LastName;
+            studentDto.Email = student.Email;
+            studentDto.Gender = student.Gender;
+
+        }
+        // NavigationManager.NavigateTo("/edituser/"+studentId);
+        await AddModal.ShowAsync();
     }
 
     protected async Task NavigateToDeleteUser(int studentId)
@@ -157,14 +248,27 @@
 
         if (response.IsSuccessStatusCode)
         {
-            Console.WriteLine($"Student with ID {studentId} deleted successfully.");
+            await ShowToast(ToastType.Danger, "Student Deleted successfully");
         }
         else
         {
-            Console.WriteLine($"Failed to delete student with ID {studentId}. Status code: {response.StatusCode}");
+            await ShowToast(ToastType.Info, "Record not deleted! Error occurred!");
         }
-
-
         await deleteModal.HideAsync();
+    }
+
+    protected async Task ShowToast(ToastType toastType, string message)
+    {
+        List<ToastMessage> messages = new List<ToastMessage>();
+        void ShowMessage()
+        {
+            messages.Add(CreateToastMessage(toastType));
+        }
+         ToastMessage CreateToastMessage(ToastType toastType)
+         => new ToastMessage
+             {
+                 Type = toastType,
+                 Title = message
+             };
     }
 }

@@ -102,7 +102,6 @@ D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
-D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\DemoSMSBlazorWebApi.Server.staticwebassets.runtime.json
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\DemoSMSBlazorWebApi.Entity.dll
 D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\DemoSMSBlazorWebApi.Entity.pdb
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\bin\Debug\net8.0\appsettings.Development.json
@@ -213,3 +212,4 @@ D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.S
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\obj\Debug\net8.0\DemoSMSBlazorWebApi.Server.pdb
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\obj\Debug\net8.0\DemoSMSBlazorWebApi.Server.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlazorProjects\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\obj\Debug\net8.0\ref\DemoSMSBlazorWebApi.Server.dll
+D:\Projects\demo\Blazor\DemoSMSBlazorWebApi\DemoSMSBlazorWebApi.Server\obj\Debug\net8.0\DemoSMSBlazorWebApi.Server.sourcelink.json
