@@ -1,8 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace DemoSMSBlazorWebApi.Entity.Models;
 
@@ -26,7 +23,7 @@ public partial class Student
 
     [Column(TypeName = "character varying")]
     [Required(ErrorMessage = "Email is required.")]
-    public string? Email { get; set; }= string.Empty;
+    public string? Email { get; set; } = string.Empty;
 
     [Column(TypeName = "character varying")]
     [Required(ErrorMessage = "Email is required.")]

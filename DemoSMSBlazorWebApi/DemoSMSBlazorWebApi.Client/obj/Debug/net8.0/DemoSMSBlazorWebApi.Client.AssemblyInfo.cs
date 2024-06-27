@@ -11,10 +11,11 @@
 using System;
 using System.Reflection;
 
+[assembly: Microsoft.AspNetCore.Identity.UI.UIFrameworkAttribute("Bootstrap5")]
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoSMSBlazorWebApi.Client")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1b18b094b6b175aa0bb41da175ecd0c1a4b1638")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5f607807c30450a62200ecb0c7e594626f8ea20b")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoSMSBlazorWebApi.Client")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoSMSBlazorWebApi.Client")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

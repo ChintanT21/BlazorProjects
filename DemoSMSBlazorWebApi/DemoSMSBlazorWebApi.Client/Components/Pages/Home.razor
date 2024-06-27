@@ -54,6 +54,7 @@
 
 @code {
     private Modal deleteModal = default!;
+    private Modal AddModal = default!;
 
     private async Task OnShowModalClick(int studentId)
     {
@@ -122,10 +123,11 @@
         </EditForm>
     </BodyTemplate>
 </Modal>
-
+<Preload LoadingText="Loading..." />
+<Toasts class="p-3" AutoHide="true" Delay="2000" Placement="ToastsPlacement.TopRight" />
 @code {
-    private Modal AddModal = default!;
-    [Inject] 
+
+    [Inject]
     protected ToastService ToastService { get; set; } = default!;
 
     [Parameter]
@@ -161,8 +163,6 @@
 
     }
 
-
-
     public async Task AddStudent()
     {
         if (studentDto.StudentId != 0)
@@ -170,12 +170,12 @@
             HttpResponseMessage response = await Client.PutAsJsonAsync("api/student", studentDto);
             if (response.IsSuccessStatusCode)
             {
-                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+                ToastService.Notify(new(ToastType.Success, $"Student Addded successfully."));
                 NavigationManager.NavigateTo(NavigationManager.Uri, true);
             }
             else
             {
-                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+                ToastService.Notify(new(ToastType.Danger, $"An Error occured."));
             }
         }
         else
@@ -188,7 +188,7 @@
             }
             else
             {
-                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+                ToastService.Notify(new(ToastType.Danger, $"An Error occured."));
             }
         }
         await AddModal.HideAsync();
@@ -205,7 +205,7 @@
 
 
     public List<Student> stuList = default!;
-    // public List<Student> stuList = new List<Student>();
+
     [Inject] protected PreloadService PreloadService { get; set; } = default!;
 
     public Student willDelete;
@@ -229,7 +229,6 @@
         {
             PreloadService.Show();
             stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
-            // PreloadService.Hide();
         }
         if (stuList is not null)
         {
@@ -263,7 +262,7 @@
             studentDto.FirstName = student.FirstName;
             studentDto.LastName = student.LastName;
             studentDto.Email = student.Email;
-            studentDto.Gender = student.Gender; 
+            studentDto.Gender = student.Gender;
         }
         // NavigationManager.NavigateTo("/edituser/"+studentId);
         await AddModal.ShowAsync();
@@ -278,38 +277,17 @@
 
         if (response.IsSuccessStatusCode)
         {
-            ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            ToastService.Notify(new(ToastType.Success, $"Student Deleted successfully."));
             NavigationManager.NavigateTo(NavigationManager.Uri, true);
             // Student deletedStu = stuList.FirstOrDefault(s => s.StudentId == studentId);
-            await ShowToast(ToastType.Danger, "Student Deleted successfully");
-            GridDataProviderRequest<Student> request = new GridDataProviderRequest<Student>();
-
-            // Call the EmployeesDataProvider method asynchronously
-            GridDataProviderResult<Student> result = await EmployeesDataProvider(request);
-
-
         }
         else
         {
-            ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            ToastService.Notify(new(ToastType.Danger, $"An Error occured."));
         }
         await deleteModal.HideAsync();
     }
 
-
-    protected async Task ShowToast(ToastType toastType, string message)
-    {
-        List<ToastMessage> messages = new List<ToastMessage>();
-
-        messages.Add(CreateToastMessage(toastType));
-        ToastMessage CreateToastMessage(ToastType toastType)
-        => new ToastMessage
-            {
-                Type = toastType,
-                Title = message
-            };
-    }
 }
-<Preload LoadingText="Loading..." />
-<Toasts class="p-3" AutoHide="true" Delay="2000" Placement="ToastsPlacement.TopRight" />
+
 

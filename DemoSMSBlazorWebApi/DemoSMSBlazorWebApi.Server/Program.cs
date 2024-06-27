@@ -10,7 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddDbContext<ApplicationDbContext>();
-builder.Services.AddTransient<IStudent, StudentImplementation>();
+builder.Services.AddTransient<IStudents, DemoSMSBlazorWebApi.Server.StudentService.Students>();
 
 var app = builder.Build();
 

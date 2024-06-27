@@ -9,9 +9,9 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
     [Route("api/student")]
     public class StudentController : ControllerBase
     {
-        private readonly IStudent studentService;
+        private readonly IStudents studentService;
 
-        public StudentController(IStudent studentService)
+        public StudentController(IStudents studentService)
         {
            this.studentService = studentService;
         }
@@ -26,6 +26,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         [HttpPut]
         public  IActionResult Put(StudentDto studentDto)
         {
+            if (!ModelState.IsValid) { return BadRequest(); }
             studentService.updateStudent(studentDto);
             return Ok(studentDto);
         }
@@ -34,7 +35,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         [HttpPost]
         public IActionResult Post(StudentDto studentDto)
         {
-            
+            if(!ModelState.IsValid) { return BadRequest(); }
             studentService.addStudent(studentDto);
             return Ok();
         }
@@ -42,6 +43,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
+            if (id == 0) {  return BadRequest(); }
             studentService.deleteStudent(id);
             return Ok();
         }
