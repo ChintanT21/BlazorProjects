@@ -1,3 +1,4 @@
+
 using DemoSMSBlazorWebApi.Client.Components;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,8 +12,9 @@ builder.Services.AddScoped(sp => new HttpClient
 });
 
 builder.Services.AddHttpClient();
-
 builder.Services.AddBlazorBootstrap();
+
+
 
 var app = builder.Build();
 

@@ -32,7 +32,7 @@
     <GridColumn TItem="Student" HeaderText="Email" PropertyName="Email" SortKeySelector="item => item.Email">
         @context.Email
     </GridColumn>
-    <GridColumn TItem="Student" HeaderText="Action">
+    <GridColumn TItem="Student" HeaderText="Action" Filterable="false" Sortable="false">
         <Button Class="btn btn-info text-white" @onclick="@( () => NavigateToEditUser(context.StudentId) )">Edit</Button>
         <Button Class="btn btn-danger" @onclick="@( () => OnShowModalClick(context.StudentId) )">Delete</Button>
     </GridColumn>
@@ -125,6 +125,9 @@
 
 @code {
     private Modal AddModal = default!;
+    [Inject] 
+    protected ToastService ToastService { get; set; } = default!;
+
     [Parameter]
     public int? id { get; set; }
 
@@ -154,8 +157,8 @@
             studentDto.LastName = student.LastName;
             studentDto.Email = student.Email;
             studentDto.Gender = student.Gender;
-
         }
+
     }
 
 
@@ -164,11 +167,29 @@
     {
         if (studentDto.StudentId != 0)
         {
-            await Client.PutAsJsonAsync("api/student", studentDto);
+            HttpResponseMessage response = await Client.PutAsJsonAsync("api/student", studentDto);
+            if (response.IsSuccessStatusCode)
+            {
+                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+                NavigationManager.NavigateTo(NavigationManager.Uri, true);
+            }
+            else
+            {
+                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            }
         }
         else
         {
-            await Client.PostAsJsonAsync("api/student", studentDto);
+            HttpResponseMessage response = await Client.PostAsJsonAsync("api/student", studentDto);
+            if (response.IsSuccessStatusCode)
+            {
+                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+                NavigationManager.NavigateTo(NavigationManager.Uri, true);
+            }
+            else
+            {
+                ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            }
         }
         await AddModal.HideAsync();
     }
@@ -183,7 +204,9 @@
 @code {
 
 
-    public IEnumerable<Student> stuList = default!;
+    public List<Student> stuList = default!;
+    // public List<Student> stuList = new List<Student>();
+    [Inject] protected PreloadService PreloadService { get; set; } = default!;
 
     public Student willDelete;
 
@@ -198,15 +221,20 @@
 
     }
 
-    // private IEnumerable<Employee1> employees = default!;
-
     private HashSet<Student> selectedStudents = new();
 
     private async Task<GridDataProviderResult<Student>> EmployeesDataProvider(GridDataProviderRequest<Student> request)
     {
         if (stuList is null)
+        {
+            PreloadService.Show();
             stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
-
+            // PreloadService.Hide();
+        }
+        if (stuList is not null)
+        {
+            PreloadService.Hide();
+        }
         return await Task.FromResult(request.ApplyTo(stuList));
     }
 
@@ -219,6 +247,8 @@
     protected async void NavigateToAddUser()
     {
         // NavigationManager.NavigateTo("/adduser");
+        Title = "Add Student";
+        studentDto = new();
         await AddModal.ShowAsync();
     }
     protected async void NavigateToEditUser(int studentId)
@@ -233,12 +263,12 @@
             studentDto.FirstName = student.FirstName;
             studentDto.LastName = student.LastName;
             studentDto.Email = student.Email;
-            studentDto.Gender = student.Gender;
-
+            studentDto.Gender = student.Gender; 
         }
         // NavigationManager.NavigateTo("/edituser/"+studentId);
         await AddModal.ShowAsync();
     }
+
 
     protected async Task NavigateToDeleteUser(int studentId)
     {
@@ -248,27 +278,38 @@
 
         if (response.IsSuccessStatusCode)
         {
+            ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
+            NavigationManager.NavigateTo(NavigationManager.Uri, true);
+            // Student deletedStu = stuList.FirstOrDefault(s => s.StudentId == studentId);
             await ShowToast(ToastType.Danger, "Student Deleted successfully");
+            GridDataProviderRequest<Student> request = new GridDataProviderRequest<Student>();
+
+            // Call the EmployeesDataProvider method asynchronously
+            GridDataProviderResult<Student> result = await EmployeesDataProvider(request);
+
+
         }
         else
         {
-            await ShowToast(ToastType.Info, "Record not deleted! Error occurred!");
+            ToastService.Notify(new(ToastType.Success, $"Employee details saved successfully."));
         }
         await deleteModal.HideAsync();
     }
 
+
     protected async Task ShowToast(ToastType toastType, string message)
     {
         List<ToastMessage> messages = new List<ToastMessage>();
-        void ShowMessage()
-        {
-            messages.Add(CreateToastMessage(toastType));
-        }
-         ToastMessage CreateToastMessage(ToastType toastType)
-         => new ToastMessage
-             {
-                 Type = toastType,
-                 Title = message
-             };
+
+        messages.Add(CreateToastMessage(toastType));
+        ToastMessage CreateToastMessage(ToastType toastType)
+        => new ToastMessage
+            {
+                Type = toastType,
+                Title = message
+            };
     }
 }
+<Preload LoadingText="Loading..." />
+<Toasts class="p-3" AutoHide="true" Delay="2000" Placement="ToastsPlacement.TopRight" />
+
