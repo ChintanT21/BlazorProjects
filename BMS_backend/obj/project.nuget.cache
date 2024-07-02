@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "MF3CHVEjec7G2VE9TcInlp2QU7ttBxuJiS68ZszzqYMY7P9WoBHPQ23VGjZG+Gk7VixBhWD6k6cwUL5STUwhoQ==",
+  "dgSpecHash": "h4mg2BwQmXbAmSBGTlm+DnHrniq0UeTZ/oSs1h9ikSt+m6KKuUPuhAHQW/sd/d3IVgLDMPgSYyfNP4+2gD7UEQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\demo\\Blazor\\BMS_backend\\BMS_backend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pca66\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\pca66\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\5.1.0\\microsoft.aspnetcore.mvc.versioning.5.1.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.codeanalysis.analyzers\\3.3.3\\microsoft.codeanalysis.analyzers.3.3.3.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.codeanalysis.common\\4.5.0\\microsoft.codeanalysis.common.4.5.0.nupkg.sha512",

@@ -1,5 +1,6 @@
 using BMS_backend.Models;
 using BMS_backend.Repository;
+using Microsoft.AspNetCore.Mvc;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,6 +13,14 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IRepo, Repo>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddControllers();
+builder.Services.AddApiVersioning(x =>
+{
+    x.DefaultApiVersion = new ApiVersion(1, 0);
+    x.AssumeDefaultVersionWhenUnspecified = true;
+    x.ReportApiVersions = true;
+});
+
 
 var app = builder.Build();
 
@@ -28,4 +37,7 @@ app.UseAuthorization();
 
 app.MapControllers();
 
+
 app.Run();
+
+

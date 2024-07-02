@@ -9,7 +9,8 @@ using System.Net;
 namespace BMS_backend.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [ApiVersion("1.0")]
+    [Route("api/{v:apiversion}/[controller]")]
     public class StudentController : Controller
     {
         private readonly Repository.IRepository<Student> _genericRepository;
@@ -23,7 +24,8 @@ namespace BMS_backend.Controllers
 
 
         [HttpGet]
-        [Route("/getAllStudentsList")]
+        [MapToApiVersion("1.0")]
+        [Route("getAllStudentsList")]
         public async Task<ActionResult<ApiResponse>> Get()
         {
             ApiResponse apiResponse = new();
@@ -36,7 +38,7 @@ namespace BMS_backend.Controllers
             catch (Exception ex) { return BadRequest(); }
         }
 
-        [HttpGet("/GetStudentById/{id:int}")]
+        [HttpGet("GetStudentById/{id:int}")]
         public async Task<ActionResult<ApiResponse>> GetStudentById(int id)
         {
             try
@@ -52,7 +54,7 @@ namespace BMS_backend.Controllers
             catch (Exception ex) { return StatusCode(500, $"Internal server error: {ex.Message}"); }
         }
 
-        [HttpDelete("/DeleteStudentById/{id:int}")]
+        [HttpDelete("DeleteStudentById/{id:int}")]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
             try
