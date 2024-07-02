@@ -100,5 +100,10 @@ namespace DemoSMSBlazorWebApi.Server.StudentService
             }
             catch (Exception ex) { throw; }
         }
+
+        List<Cource> IStudents.getAllCources()
+        {
+            return dbContext.Cources.ToList();
+        }
     }
 }

@@ -10,5 +10,6 @@ namespace DemoSMSBlazorWebApi.Server.StudentService
          void deleteStudent(int id);
          void updateStudent(StudentDto studentDto);
          void addStudent(StudentDto studentDto);
+        List<Cource> getAllCources();
     }
 }

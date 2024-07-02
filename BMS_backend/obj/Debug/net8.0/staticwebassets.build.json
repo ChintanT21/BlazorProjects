@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0qQo7dWHmDLmwqwyZJJL3dZAULnRC5PBzYDAYc6Xbrc=",
+  "Source": "BMS_backend",
+  "BasePath": "_content/BMS_backend",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

@@ -1,0 +1,118 @@
+﻿
+@using DemoSMSBlazorWebApi.Entity.Dtos
+@using DemoSMSBlazorWebApi.Entity.Models
+@inherits Home
+
+<Grid TItem="Student"
+      Class="table table-hover table-bordered table-striped m-2"
+      DataProvider="EmployeesDataProvider"
+      AllowFiltering="true"
+      AllowPaging="true"
+      PageSize="5"
+      AllowSorting="true"
+      AllowSelection="true"
+      SelectionMode="GridSelectionMode.Multiple"
+      SelectedItemsChanged="OnSelectedItemsChanged"
+      Responsive="true">
+
+    <GridColumn TItem="Student" HeaderText="FirstName" PropertyName="FirstName" SortKeySelector="item => item.FirstName">
+        @context.FirstName
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="LastName" PropertyName="LastName" SortKeySelector="item => item.LastName">
+        @context.LastName
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Gender" PropertyName="Gender" SortKeySelector="item => item.Gender">
+        @context.Gender
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Cource" PropertyName="Cource" SortKeySelector="item => item.StudentId">
+        @context.Cource
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Age" PropertyName="Age" SortKeySelector="item => item.Age">
+        @context.Age
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Email" PropertyName="Email" SortKeySelector="item => item.Email">
+        @context.Email
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Grade" PropertyName="Grade" SortKeySelector="item => item.Grade">
+        @context.Grade
+    </GridColumn>
+    <GridColumn TItem="Student" HeaderText="Action" Filterable="false" Sortable="false">
+        <Button Class="btn btn-info text-white" @onclick="@(() => NavigateToEditUser(context.StudentId) )">Edit</Button>
+        <Button Class="btn btn-danger" @onclick="@( () => OnShowModalClick(context.StudentId) )">Delete</Button>
+    </GridColumn>
+
+
+
+    <Modal @ref="deleteModal" title="Delete Student">
+        <BodyTemplate>
+            Id=<span class="fw-bold">@willDelete.StudentId</span>
+            FirstName=<span class="fw-bold">@willDelete.FirstName</span>
+            LastName=<span class="fw-bold">@willDelete.LastName</span>
+        </BodyTemplate>
+        <FooterTemplate>
+            <Button Color="ButtonColor.Secondary" @onclick="OnHideModalClick">Close</Button>
+            <Button Color="ButtonColor.Danger" @onclick="@( () => NavigateToDeleteUser(willDelete.StudentId) )">Delete</Button>
+        </FooterTemplate>
+    </Modal>
+</Grid>
+
+<AddEditModal />
+
+
+@code {
+    [Inject]
+    HttpClient? Client { get; set; }
+
+    [Inject] protected PreloadService PreloadService { get; set; } = default!;
+
+    protected Modal deleteModal = default!;
+    protected Modal AddModal = default!;
+    public Student willDelete;
+    protected override async Task OnInitializedAsync()
+    {
+        await getStudents();
+        string getCourcesUrl = $"api/student/getCources";
+
+        // Courses = await Client.GetFromJsonAsync<List<Cource>>(getCourcesUrl);
+    }
+
+    protected async Task getStudents()
+    {
+        stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
+
+    }
+
+    private HashSet<Student> selectedStudents = new();
+
+    private async Task<GridDataProviderResult<Student>> EmployeesDataProvider(GridDataProviderRequest<Student> request)
+    {
+        if (stuList is null)
+        {
+            PreloadService.Show();
+            stuList = await Client.GetFromJsonAsync<List<Student>>("api/student");
+        }
+        if (stuList is not null)
+        {
+            PreloadService.Hide();
+        }
+        return await Task.FromResult(request.ApplyTo(stuList));
+    }
+
+    private Task OnSelectedItemsChanged(HashSet<Student> stuList)
+    {
+        selectedStudents = stuList is not null && stuList.Any() ? stuList : new();
+        return Task.CompletedTask;
+    }
+
+    protected async Task OnShowModalClick(int studentId)
+    {
+        willDelete = stuList.FirstOrDefault(x => x.StudentId == studentId);
+        await deleteModal.ShowAsync();
+    }
+
+    protected async Task OnHideModalClick()
+    {
+        await deleteModal.HideAsync();
+        await AddModal.HideAsync();
+    }
+}

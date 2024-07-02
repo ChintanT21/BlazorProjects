@@ -16,11 +16,18 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
            this.studentService = studentService;
         }
 
-        [HttpGet]
+        [HttpGet,Route("")]
         public async Task<List<Student>> Get()
         {
             var list= await Task.FromResult(studentService.getAllStudents());
             return list;
+        }
+
+        [HttpGet,Route("getCources")]
+        public async Task<List<Cource>> GetCources()
+        {
+            var coursesList = await Task.FromResult(studentService.getAllCources());
+            return coursesList;
         }
 
         [HttpPut]

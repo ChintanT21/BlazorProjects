@@ -1,0 +1,161 @@
+﻿@using DemoSMSBlazorWebApi.Entity.Dtos
+@using DemoSMSBlazorWebApi.Entity.Models
+@inherits Table
+
+<Modal @ref="AddModal" title="@Title">
+    <BodyTemplate>
+        @*         <div class="segment w-100 text-center">
+        <h1>@Title</h1>
+        </div> *@
+        <EditForm FormName="student" Model="@studentDto" OnValidSubmit="AddStudent" class="" Enhance>
+            <DataAnnotationsValidator />
+            <div class="d-flex justify-content-center h-100 w-100">
+                <div class="col-12 col-sm-6">
+                    <div class="row">
+                        <div class=" mb-3 form-group">
+                            <label for="FirstName">First Name:</label>
+                            <InputText type="text" class="form-control" placeholder="FirstName" @bind-Value="studentDto.FirstName" />
+                            <ValidationMessage For="@(()=>studentDto.FirstName)" />
+                        </div>
+                        <div class=" mb-3">
+                            <label for="FirstName">Last Name:</label>
+                            <InputText placeholder="LastName" class="form-control" @bind-Value="studentDto.LastName" />
+                            <ValidationMessage For="@(()=>studentDto.LastName)" />
+                        </div>
+                        <div class=" mb-3">
+                            <label for="FirstName">Email:</label>
+                            <InputText placeholder="Email" class="form-control" @bind-Value="studentDto.Email" />
+                            <ValidationMessage For="@(()=>studentDto.Email)" />
+                        </div>
+                        @*         <div class="col-md-12 col-sm-12 col mb-3">
+                        <label for="FirstName">First Name:</label>
+                        <DateInput Class="form-control" TValue="DateOnly" @bind-Value="@today" Placeholder="Enter Date" />
+                        </div> *@
+                        <div class=" mb-3">
+                            <label for="FirstName">Gender:</label>
+                            <InputSelect class="form-control" @bind-Value="studentDto.Gender">
+                                <option hidden value="">Select Gender</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </InputSelect>
+                            <ValidationMessage For="@(()=>studentDto.Gender)" />
+                            <div class=" mb-3">
+                                <label for="FirstName">Grade:</label>
+                                <InputSelect class="form-control" @bind-Value="studentDto.Grade">
+                                    <option hidden value="">Select Grade</option>
+
+                                </InputSelect>
+                                <ValidationMessage For="@(()=>studentDto.Grade)" />
+                            </div>
+                        </div>
+                        <div class=" mb-3">
+                            <label for="FirstName">Cource:</label>
+                            <datalist class="form-control" @bind-Value="studentDto.Cource" @bind-Value:event="onchange">
+                                <option hidden value="">Select Cource</option>
+                                @foreach (var cource in Courses)
+                                {
+                                    <option value="@cource.CourceId">@cource.CourceName</option>
+                                }
+                            </datalist>
+                            <ValidationMessage For="@(()=>studentDto.Cource)" />
+                        </div>
+                        <div class="text-end mb-3">
+                            <button type="button" @onclick="OnHideModalClick" class="btn btn-danger"> Cancel</button>
+                            <button type="submit" class="btn btn-success"> Submit</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </EditForm>
+    </BodyTemplate>
+</Modal>
+
+@code{
+
+    [Inject]
+    protected ToastService ToastService { get; set; } = default!;
+
+    [Inject]
+    HttpClient? Client { get; set; }
+
+    [Inject]
+    public NavigationManager NavigationManager { get; set; }
+
+    public List<Cource> Courses { get; set; } = default!;
+
+    public Student student = new();
+    public StudentDto studentDto = new();
+    public int age;
+
+    public string Title = "Add Student";
+
+    public DateOnly today = DateOnly.FromDateTime(DateTime.Now);
+    protected override async Task OnInitializedAsync()
+    {
+        await getStudents();
+        string getCourcesUrl = $"api/student/getCources";
+
+        Courses = await Client.GetFromJsonAsync<List<Cource>>(getCourcesUrl);
+    }
+
+    protected override async Task OnParametersSetAsync()
+    {
+        if (id != 0 && id != null)
+        {
+            Title = "Edit Student";
+            string apiUrl = $"api/student/{id}";
+            student = await Client.GetFromJsonAsync<Student>(apiUrl);
+            studentDto.StudentId = student.StudentId;
+            studentDto.FirstName = student.FirstName;
+            studentDto.LastName = student.LastName;
+            studentDto.Email = student.Email;
+            studentDto.Gender = student.Gender;
+        }
+    }
+    protected async void NavigateToAddUser()
+    {
+        // NavigationManager.NavigateTo("/adduser");
+        Title = "Add Student";
+        studentDto = new();
+        await AddModal.ShowAsync();
+    }
+
+    protected async Task NavigateToDeleteUser(int studentId)
+    {
+        string apiUrl = $"api/student/{studentId}";
+
+        HttpResponseMessage response = await Client.DeleteAsync(apiUrl);
+
+        if (response.IsSuccessStatusCode)
+        {
+            ToastService.Notify(new(ToastType.Success, $"Student Deleted successfully."));
+            NavigationManager.NavigateTo(NavigationManager.Uri, true);
+            // Student deletedStu = stuList.FirstOrDefault(s => s.StudentId == studentId);
+        }
+        else
+        {
+            ToastService.Notify(new(ToastType.Danger, $"An Error occured."));
+        }
+        await deleteModal.HideAsync();
+    }
+
+    public async void NavigateToEditUser(int studentId)
+    {
+        id = studentId;
+        if (id != 0 && id != null)
+        {
+            Title = "Edit Student";
+            string apiUrl = $"api/student/{id}";
+            student = await Client.GetFromJsonAsync<Student>(apiUrl);
+            studentDto.StudentId = student.StudentId;
+            studentDto.FirstName = student.FirstName;
+            studentDto.LastName = student.LastName;
+            studentDto.Email = student.Email;
+            studentDto.Gender = student.Gender;
+        }
+        // NavigationManager.NavigateTo("/edituser/"+studentId);
+        await AddModal.ShowAsync();
+    }
+
+
+}
