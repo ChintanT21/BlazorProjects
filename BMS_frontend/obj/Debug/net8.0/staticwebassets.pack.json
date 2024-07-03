@@ -1,0 +1,41 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BMS_frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BMS_frontend.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BMS_frontend.bundle.scp.css"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BMS_frontend\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BMS_frontend\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BMS_frontend\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BMS_frontend\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BMS_frontend.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BMS_frontend.props",
+      "PackagePath": "build\\BMS_frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BMS_frontend.props",
+      "PackagePath": "buildMultiTargeting\\BMS_frontend.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BMS_frontend.props",
+      "PackagePath": "buildTransitive\\BMS_frontend.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

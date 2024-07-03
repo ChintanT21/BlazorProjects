@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("DemoSMSBlazorWebApi.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d37fcb4fefbee216f327db2b1723c3bcde8bd2d9")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+59927c058b2ea7470c174fc79e5ae40da647fa9c")]
 [assembly: System.Reflection.AssemblyProductAttribute("DemoSMSBlazorWebApi.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("DemoSMSBlazorWebApi.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

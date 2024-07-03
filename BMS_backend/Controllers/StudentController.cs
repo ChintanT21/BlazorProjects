@@ -1,6 +1,7 @@
 ﻿using BMS_backend.Models;
 using BMS_backend.Repository;
 using BMS_backend.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.HttpResults;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.VisualBasic;
@@ -26,6 +27,7 @@ namespace BMS_backend.Controllers
         [HttpGet]
         [MapToApiVersion("1.0")]
         [Route("getAllStudentsList")]
+        [Authorize]
         public async Task<ActionResult<ApiResponse>> Get()
         {
             ApiResponse apiResponse = new();
@@ -55,6 +57,7 @@ namespace BMS_backend.Controllers
         }
 
         [HttpDelete("DeleteStudentById/{id:int}")]
+        [Authorize]
         public async Task<ActionResult<ApiResponse>> Delete(int id)
         {
             try
