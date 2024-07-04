@@ -1,0 +1,28 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@inject Blazored.LocalStorage.ILocalStorageService localStorage
+
+
+<div class="d-flex justify-content-center align-items-center vh-100 w-100">
+    <div class="">
+        <EditForm FormName="LoginForm" Model="@loginDto" class="form-floating" OnValidSubmit="AuthenticateUser">
+            <DataAnnotationsValidator />
+            <div class="mt-2">
+                <label for="email">Email:</label>
+                <InputText id="email" @bind-Value="loginDto.Email" class="form-control" />
+                <ValidationMessage For="@(()=>loginDto.Email)" />
+                
+            </div>
+            <div class="mt-2">
+                <label for="password">Password:</label>
+                <InputText id="password" @bind-Value="loginDto.Password" class="form-control" />
+                <ValidationMessage For="@(()=>loginDto.Password)" />
+            </div>
+            <div class="mt-2 d-flex justify-content-end" >
+                <button class="btn btn-success" type="submit">Submit</button>
+            </div>
+            <span class="text-danger">@unauthorizedMessage</span>
+        </EditForm>
+
+    </div>
+</div>
