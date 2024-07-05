@@ -1,4 +1,6 @@
+
 using BMS.Server.Auth;
+using BMS.Server.AuthRepository;
 using BMS.Server.Models;
 using BMS.Server.Repository;
 using idenitywebapiauthenitcation.Services;
@@ -6,6 +8,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
@@ -17,17 +20,19 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IRepo, Repo>();
-builder.Services.AddScoped<IRoleService, RoleService>();
-
+//builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddDbContext<ApplicationDbContext>();
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ??
+        throw new InvalidOperationException("Connection String is not found")));
 
-builder.Services.AddIdentityApiEndpoints<IdentityUser>()
-    .AddRoles<IdentityRole>()
-    .AddEntityFrameworkStores<AuthDbContext>();
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<AuthDbContext>()
+     .AddSignInManager()
+    .AddRoles<IdentityRole>();
 
 builder.Services.AddAuthorization();
 
@@ -70,17 +75,18 @@ builder.Services.AddSwaggerGen();
 //    });
 //});
 
-//builder.Services.AddSwaggerGen(option =>
-//{
-//    option.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-//    {
-//        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-//        Name = "Authorization",
-//        Type = SecuritySchemeType.ApiKey
-//    });
-//    option.OperationFilter<SecurityRequirementsOperationFilter>();
-//});
+builder.Services.AddSwaggerGen(option =>
+{
+    option.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Name = "Authorization",
+        Type = SecuritySchemeType.ApiKey
+    });
+    option.OperationFilter<SecurityRequirementsOperationFilter>();
+});
 
+var jwtSettings = builder.Configuration.GetSection("JwtSettings");
 
 builder.Services.AddAuthentication(options =>
 {
@@ -91,11 +97,13 @@ builder.Services.AddAuthentication(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = false,
-            ValidateAudience = false,
+            ValidateIssuer = true,
+            ValidateAudience = true,
             ValidateLifetime = true,
             ValidateIssuerSigningKey = true,
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("your-secret-key-here"))
+            ValidIssuer = jwtSettings["Issuer"],
+            ValidAudience = jwtSettings["Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings["Key"]))
         };
     });
 
@@ -110,8 +118,6 @@ builder.Services.AddAuthorization();
 
 
 var app = builder.Build();
-
-app.MapIdentityApi<IdentityUser>();
 
 if (app.Environment.IsDevelopment())
 {

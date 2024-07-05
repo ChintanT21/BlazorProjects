@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj": {}
+    "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj": {}
   },
   "projects": {
-    "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj": {
+    "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
+        "projectUniqueName": "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
         "projectName": "DemoWebAPIWithPostgres",
-        "projectPath": "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
+        "projectPath": "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
         "packagesPath": "C:\\Users\\pca66\\.nuget\\packages\\",
-        "outputPath": "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\obj\\",
+        "outputPath": "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\pca66\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -4,11 +4,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BMS.Server.Auth
 {
-    public class AuthDbContext : IdentityDbContext<IdentityUser>
+    public class AuthDbContext(DbContextOptions options) : IdentityDbContext<ApplicationUser>(options)
     {
-        public AuthDbContext(DbContextOptions options) : base(options)
-        {
-        }
     }
 }
  

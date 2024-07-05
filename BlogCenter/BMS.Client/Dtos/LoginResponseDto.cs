@@ -5,7 +5,7 @@ namespace BMS.Client.Dtos
     public class LoginResponseDto
     {
 
-        public string accessToken { get; set; }
+        public string token { get; set; }
 
     }
 }

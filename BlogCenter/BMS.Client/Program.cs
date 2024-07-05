@@ -1,5 +1,6 @@
 using Blazored.LocalStorage;
 using BMS.Client.Components;
+using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.DataProtection.KeyManagement;
 using Microsoft.IdentityModel.Tokens;
@@ -19,6 +20,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+    options.DefaultScheme= JwtBearerDefaults.AuthenticationScheme;
 })
     .AddJwtBearer(options =>
     {
@@ -28,9 +30,9 @@ builder.Services.AddAuthentication(options =>
             ValidateAudience = true, // Validate the recipient of the token is authorized to receive it
             ValidateLifetime = true, // Check that the token is not expired
             ValidateIssuerSigningKey = true, // Validate the security key used to sign the token
-            //ValidIssuer = Configuration["JwtSettings:Issuer"], // Set the server's token issuer
-            //ValidAudience = Configuration["JwtSettings:Audience"], // Set the audience intended to receive the token
-            //IssuerSigningKey = new SymmetricSecurityKey(key) // Set the key used to sign the token
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"], // Set the server's token issuer
+            ValidAudience = builder.Configuration["JwtSettings:Audience"], // Set the audience intended to receive the token
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!)) // Set the key used to sign the token
         };
     });
 

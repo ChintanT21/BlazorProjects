@@ -135,3 +135,4 @@ D:\Projects\demo\Blazor\BlogCenter\BMS.Server\bin\Debug\net8.0\BMS.Server.static
 D:\Projects\demo\Blazor\BlogCenter\BMS.Server\bin\Debug\net8.0\BMS.Client.dll
 D:\Projects\demo\Blazor\BlogCenter\BMS.Server\bin\Debug\net8.0\BMS.Client.pdb
 D:\Projects\demo\Blazor\BlogCenter\BMS.Server\bin\Debug\net8.0\Blazored.LocalStorage.dll
+D:\Projects\demo\Blazor\BlogCenter\BMS.Server\obj\Debug\net8.0\BMS.Server.MvcApplicationPartsAssemblyInfo.cs

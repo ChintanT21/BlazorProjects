@@ -26,8 +26,6 @@ namespace BMS.Server.Controllers
 
         [HttpGet]
         [MapToApiVersion("1.0")]
-        [Route("getAllStudentsList")]
-        [Authorize]
         public async Task<ActionResult<ApiResponse>> Get()
         {
             ApiResponse apiResponse = new();

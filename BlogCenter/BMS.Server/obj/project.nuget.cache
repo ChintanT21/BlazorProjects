@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "a3j+dMGjqK2UQdKfs38Ez/fqyMA/t8sWfD3+r4mVNjVhn1wvZANV8j/1ylNqhQyOqcF0SaUBQg2mZD5PLM4Vzw==",
+  "dgSpecHash": "OY58hfYAO6/5n1AUcdAIkoKIJKQ20kqPxa5T4qgZ0Hk1AAK2d4j1AsRixqbSHmkmjPVlaU9WIM2Actk9HYQBMQ==",
   "success": true,
   "projectFilePath": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Server\\BMS.Server.csproj",
   "expectedPackageFiles": [
@@ -32,6 +32,7 @@
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.apidescription.server\\6.0.5\\microsoft.extensions.apidescription.server.6.0.5.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.caching.memory\\8.0.0\\microsoft.extensions.caching.memory.8.0.0.nupkg.sha512",
+    "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "VIU/vrcMdafmfBYZViO2t67BITU1mMQ+s/64Mv15LnkgtYTA3Oh2XEOp6ecIqqAEo1It/XRlfZXh3DzI0saPBg==",
+  "dgSpecHash": "Mv7J1xWQyuKIMG3OBzVlh0qdXslod1yFnr9og5j29mS7Il6btNm6y/cYoWo41ED376LW1YNlgA8OfBKLfWulkw==",
   "success": true,
-  "projectFilePath": "D:\\Projects\\demo\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
+  "projectFilePath": "D:\\Projects\\demo\\Blazor\\DemoWebAPIWithPostgres\\DemoWebAPIWithPostgres.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\pca66\\.nuget\\packages\\automapper\\12.0.0\\automapper.12.0.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
