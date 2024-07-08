@@ -1,11 +1,8 @@
 ﻿using BMS.Client.Dtos;
 using Microsoft.AspNetCore.Components;
-using Microsoft.AspNetCore.Identity.Data;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
-using System.Net.Http;
 using System.Security.Claims;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace BMS.Client.Components.Pages.Login
 {
     public partial class Login
@@ -16,10 +13,14 @@ namespace BMS.Client.Components.Pages.Login
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
-        private readonly IConfiguration _configuration;
+        private IConfiguration? _configuration;
 
+        protected override void OnInitialized()
+        {
+            _configuration = Configuration;
+        }
 
-        protected LoginDto loginDto = new();  
+        protected LoginDto loginDto = new();
         string responseBody = string.Empty;
         string unauthorizedMessage = string.Empty;
 
@@ -29,19 +30,20 @@ namespace BMS.Client.Components.Pages.Login
             {
                 throw new ArgumentNullException(nameof(loginDto));
             }
+
             var response = await Client.PostAsJsonAsync("https://localhost:7185/api/Auth/login", loginDto);
-     
-                NavigationManager.NavigateTo("/dashboard");
-                var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
-                var token = loginResponse.token;
-                await TokenService(token);
-                await SecurelyStoreToken(token);
-                responseBody = await response.Content.ReadAsStringAsync();
 
 
-                //var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
-         
-            
+            var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
+            var token = loginResponse.token;
+            await TokenService(token);
+            await SecurelyStoreToken(token);
+            responseBody = await response.Content.ReadAsStringAsync();
+
+
+            //var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
+
+
         }
         protected async Task SecurelyStoreToken(string token)
         {
@@ -50,11 +52,12 @@ namespace BMS.Client.Components.Pages.Login
 
         public async Task TokenService(string token)
         {
+            if (_configuration == null)
+            {
+                throw new InvalidOperationException("Configuration has not been initialized.");
+            }
             var tokenHandler = new JwtSecurityTokenHandler();
             var key2 = _configuration["JwtSettings:SecretKey"];
-            var key = System.Text.Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
-
-            var key1 = System.Text.Encoding.ASCII.GetBytes(_configuration["JwtSettings:SecretKey"]);
             var validationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
@@ -72,13 +75,19 @@ namespace BMS.Client.Components.Pages.Login
                 // Access claims from the JWT token
                 foreach (var claim in claimsPrincipal.Claims)
                 {
+                    if (claim.Type == ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name") && claim.Value == ("Admin"))
+                    {
+                        NavigationManager.NavigateTo("/dashboard");
+                    }
+                    else
+                    {
+                        unauthorizedMessage = "NO valid Parameters";
+                    }
                     Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
-                    // You can process or store claims as needed
                 }
             }
             catch (Exception ex)
             {
-                // Handle token validation errors
                 Console.WriteLine($"Token validation error: {ex.Message}");
             }
         }

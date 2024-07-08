@@ -1,4 +1,5 @@
 
+using BMS.Client.Components.Pages.Login;
 using BMS.Server.Auth;
 using BMS.Server.AuthRepository;
 using BMS.Server.Models;
@@ -8,6 +9,7 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -24,6 +26,8 @@ builder.Services.AddScoped<IRepo, Repo>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddDbContext<ApplicationDbContext>();
+builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddTransient<Login>();
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ??
