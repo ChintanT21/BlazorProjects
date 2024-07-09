@@ -3180,6 +3180,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4"
         },
         "compile": {
@@ -3194,6 +3196,8 @@
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "DemoSMSBlazorWebApi.Entity": "1.0.0",
+          "Microsoft.EntityFrameworkCore.Design": "8.0.6",
+          "Microsoft.EntityFrameworkCore.Tools": "8.0.6",
           "Npgsql.EntityFrameworkCore.PostgreSQL": "8.0.4",
           "Swashbuckle.AspNetCore": "6.4.0"
         },
@@ -9187,7 +9191,6 @@
           },
           "Microsoft.EntityFrameworkCore.Design": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.6, )"
           },
@@ -9197,7 +9200,6 @@
           },
           "Microsoft.EntityFrameworkCore.Tools": {
             "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
-            "suppressParent": "All",
             "target": "Package",
             "version": "[8.0.6, )"
           },

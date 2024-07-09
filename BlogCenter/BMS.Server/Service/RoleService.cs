@@ -1,19 +1,15 @@
-﻿using idenitywebapiauthenitcation.Model;
+﻿using BMS.Server.Auth;
+using idenitywebapiauthenitcation.Model;
 using Microsoft.AspNetCore.Identity;
 
 namespace idenitywebapiauthenitcation.Services
 {
-    public class RoleService : IRoleService
+    public class RoleService(RoleManager<IdentityRole> roleManager,
+        UserManager<ApplicationUser> userManager) : IRoleService
     {
-        private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly UserManager<IdentityUser> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager = roleManager;
+        private readonly UserManager<ApplicationUser> _userManager = userManager;
 
-        public RoleService(RoleManager<IdentityRole> roleManager,
-            UserManager<IdentityUser> userManager)
-        {
-            _roleManager = roleManager;
-            _userManager = userManager;
-        }
         public async Task<List<RoleModel>> GetRolesAsync()
         {
             var roleList = _roleManager.Roles.Select(x =>

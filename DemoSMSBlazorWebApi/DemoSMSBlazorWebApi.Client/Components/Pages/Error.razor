@@ -29,10 +29,10 @@
 
 @code{
     [CascadingParameter]
-    private HttpContext? HttpContext { get; set; }
+    protected HttpContext? HttpContext { get; set; }
 
-    private string? RequestId { get; set; }
-    private bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
+    protected string? RequestId { get; set; }
+    protected bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
 
     protected override void OnInitialized() =>
         RequestId = Activity.Current?.Id ?? HttpContext?.TraceIdentifier;
@@ -51,9 +51,9 @@
 @code {
     List<ToastMessage> messages = new List<ToastMessage>();
 
-    private void ShowMessage(ToastType toastType) => messages.Add(CreateToastMessage(toastType));
+    protected void ShowMessage(ToastType toastType) => messages.Add(CreateToastMessage(toastType));
 
-    private ToastMessage CreateToastMessage(ToastType toastType)
+    protected ToastMessage CreateToastMessage(ToastType toastType)
     => new ToastMessage
         {
             Type = toastType,
@@ -70,7 +70,7 @@
 
     [Inject] protected ToastService ToastService { get; set; } = default!;
 
-    private void SaveEmployee()
+    protected void SaveEmployee()
     {
         try
         {

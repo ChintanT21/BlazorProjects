@@ -1,29 +1,42 @@
-﻿using BMS.Client.Dtos;
+﻿using BMS.Client.Authentication;
+using BMS.Client.Dtos;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using Microsoft.JSInterop;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
+using System.Text;
 namespace BMS.Client.Components.Pages.Login
 {
     public partial class Login
     {
         [Inject]
-        HttpClient? Client { get; set; }
+        private HttpClient _httpClient { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
         private IConfiguration? _configuration;
+        protected LoginDto loginDto = new();
+        string unauthorizedMessage = string.Empty;
+        JwtSecurityTokenHandler tokenHandler;
+        TokenValidationParameters validationParameters;
+        string token;
 
-        protected override void OnInitialized()
+        protected override async Task OnInitializedAsync()
         {
             _configuration = Configuration;
         }
-
-        protected LoginDto loginDto = new();
-        string responseBody = string.Empty;
-        string unauthorizedMessage = string.Empty;
-
+        protected override async Task OnAfterRenderAsync(bool firstRender)
+        {
+            if (firstRender)
+            {
+                token = await FetchTokenFromLocalStorage();
+            }
+        }
         public async Task AuthenticateUser()
         {
             if (loginDto is null)
@@ -31,23 +44,30 @@ namespace BMS.Client.Components.Pages.Login
                 throw new ArgumentNullException(nameof(loginDto));
             }
 
-            var response = await Client.PostAsJsonAsync("https://localhost:7185/api/Auth/login", loginDto);
-
-
+            var response = await _httpClient.PostAsJsonAsync("https://localhost:7185/api/Auth/login", loginDto);
             var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
             var token = loginResponse.token;
-            await TokenService(token);
-            await SecurelyStoreToken(token);
-            responseBody = await response.Content.ReadAsStringAsync();
-
-
-            //var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
-
-
+            if (token != null)
+            {
+                await TokenService(token);
+                await StoreTokenToLocalStorage(token);
+                SetCookie(token);
+                return;
+            }
+            unauthorizedMessage = "No valid parameters.";
         }
-        protected async Task SecurelyStoreToken(string token)
+        private async void SetCookie(string token)
         {
-            await localStorage.SetItemAsync("authToken", token);
+            await JSRuntime.InvokeVoidAsync("setCookie", "authToken1", token);
+        }
+        protected async Task StoreTokenToLocalStorage(string token)
+        {
+            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
+        }
+        protected async Task<string> FetchTokenFromLocalStorage()
+        {
+            var storedToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
+            return storedToken;
         }
 
         public async Task TokenService(string token)
@@ -56,35 +76,50 @@ namespace BMS.Client.Components.Pages.Login
             {
                 throw new InvalidOperationException("Configuration has not been initialized.");
             }
-            var tokenHandler = new JwtSecurityTokenHandler();
-            var key2 = _configuration["JwtSettings:SecretKey"];
+            tokenHandler = new JwtSecurityTokenHandler();
+            var key = _configuration["JwtSettings:SecretKey"];
+            var keyBytes = System.Text.Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
             var validationParameters = new TokenValidationParameters
             {
                 ValidateIssuerSigningKey = true,
-                IssuerSigningKey = new SymmetricSecurityKey(key),
-                ValidateIssuer = false,  // Replace with your issuer validation logic
-                ValidateAudience = false,  // Replace with your audience validation logic
+                IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+                ValidateIssuer = false,
+                ValidateAudience = false,
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
+            await TokenClaimRedirection(token, tokenHandler, validationParameters);
+        }
+
+        public async Task TokenClaimRedirection(string token, JwtSecurityTokenHandler tokenHandler, TokenValidationParameters validationParameters)
+        {
+
             try
             {
-                ClaimsPrincipal claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out SecurityToken validatedToken);
-                JwtSecurityToken jwtToken = (JwtSecurityToken)validatedToken;
-
-                // Access claims from the JWT token
-                foreach (var claim in claimsPrincipal.Claims)
+                tokenHandler = new JwtSecurityTokenHandler();
+                validationParameters = new TokenValidationParameters
                 {
-                    if (claim.Type == ("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name") && claim.Value == ("Admin"))
-                    {
-                        NavigationManager.NavigateTo("/dashboard");
-                    }
-                    else
-                    {
-                        unauthorizedMessage = "NO valid Parameters";
-                    }
-                    Console.WriteLine($"Claim Type: {claim.Type}, Claim Value: {claim.Value}");
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidateLifetime = true,
+                    ValidateIssuerSigningKey = true,
+                    ValidIssuer = "https://id.nickchapsas.com",
+                    ValidAudience = "https://movies.nickchapsas.com",
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqustuvwxyz")),
+                };
+                var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
+                var user = new ClaimsPrincipal(identity);
+                if (AuthStateProvider is CustomAuthenticationStateProvider customAuthStateProvider)
+                {
+                    customAuthStateProvider.NotifyUserAuthentication(user);
                 }
+                NavigationManager.NavigateTo("/adminDashboard");
+                var authProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+                authProvider.NotifyUserAuthentication(user);
+
+
+
             }
             catch (Exception ex)
             {

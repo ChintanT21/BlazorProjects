@@ -7,7 +7,7 @@
         @*         <div class="segment w-100 text-center">
         <h1>@Title</h1>
         </div> *@
-        <EditForm FormName="student" Model="@studentDto" OnValidSubmit="AddStudent" class="" Enhance>
+        <EditForm FormName="student" Model="@studentDto" OnValidSubmit="AddStudent" class="">
             <DataAnnotationsValidator />
             <div class="d-flex justify-content-center h-100 w-100">
                 <div class="col-12 col-sm-6">
@@ -43,7 +43,6 @@
                                 <label for="FirstName">Grade:</label>
                                 <InputSelect class="form-control" @bind-Value="studentDto.Grade">
                                     <option hidden value="">Select Grade</option>
-
                                 </InputSelect>
                                 <ValidationMessage For="@(()=>studentDto.Grade)" />
                             </div>
@@ -104,12 +103,7 @@
         {
             Title = "Edit Student";
             string apiUrl = $"api/student/{id}";
-            student = await Client.GetFromJsonAsync<Student>(apiUrl);
-            studentDto.StudentId = student.StudentId;
-            studentDto.FirstName = student.FirstName;
-            studentDto.LastName = student.LastName;
-            studentDto.Email = student.Email;
-            studentDto.Gender = student.Gender;
+            studentDto = await Client.GetFromJsonAsync<StudentDto>(apiUrl);
         }
     }
     protected async void NavigateToAddUser()
@@ -146,12 +140,7 @@
         {
             Title = "Edit Student";
             string apiUrl = $"api/student/{id}";
-            student = await Client.GetFromJsonAsync<Student>(apiUrl);
-            studentDto.StudentId = student.StudentId;
-            studentDto.FirstName = student.FirstName;
-            studentDto.LastName = student.LastName;
-            studentDto.Email = student.Email;
-            studentDto.Gender = student.Gender;
+            studentDto = await Client.GetFromJsonAsync<StudentDto>(apiUrl);
         }
         // NavigationManager.NavigateTo("/edituser/"+studentId);
         await AddModal.ShowAsync();

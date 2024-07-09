@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\BMS.Client.bundle.scp.css"
     },
     {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\Js\\App.js",
+      "PackagePath": "staticwebassets\\Js\\App.js"
+    },
+    {
       "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\app.css",
       "PackagePath": "staticwebassets\\app.css"
     },

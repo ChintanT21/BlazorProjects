@@ -7,23 +7,18 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
 {
     [ApiController]
     [Route("api/student")]
-    public class StudentController : ControllerBase
+    public class StudentController(IStudents studentService) : ControllerBase
     {
-        private readonly IStudents studentService;
+        protected readonly IStudents studentService = studentService;
 
-        public StudentController(IStudents studentService)
-        {
-           this.studentService = studentService;
-        }
-
-        [HttpGet,Route("")]
+        [HttpGet, Route("")]
         public async Task<List<Student>> Get()
         {
-            var list= await Task.FromResult(studentService.getAllStudents());
+            var list = await Task.FromResult(studentService.getAllStudents());
             return list;
         }
 
-        [HttpGet,Route("getCources")]
+        [HttpGet, Route("getCources")]
         public async Task<List<Cource>> GetCources()
         {
             var coursesList = await Task.FromResult(studentService.getAllCources());
@@ -31,7 +26,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         }
 
         [HttpPut]
-        public  IActionResult Put(StudentDto studentDto)
+        public IActionResult Put(StudentDto studentDto)
         {
             if (!ModelState.IsValid) { return BadRequest(); }
             studentService.updateStudent(studentDto);
@@ -42,7 +37,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         [HttpPost]
         public IActionResult Post(StudentDto studentDto)
         {
-            if(!ModelState.IsValid) { return BadRequest(); }
+            if (!ModelState.IsValid) { return BadRequest(); }
             studentService.addStudent(studentDto);
             return Ok();
         }
@@ -50,7 +45,7 @@ namespace DemoSMSBlazorWebApi.Server.Controllers
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
-            if (id == 0) {  return BadRequest(); }
+            if (id == 0) { return BadRequest(); }
             studentService.deleteStudent(id);
             return Ok();
         }

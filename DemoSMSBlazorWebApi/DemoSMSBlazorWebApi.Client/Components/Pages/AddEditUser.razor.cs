@@ -1,17 +1,16 @@
 ﻿using DemoSMSBlazorWebApi.Entity.Dtos;
 using DemoSMSBlazorWebApi.Entity.Models;
 using Microsoft.AspNetCore.Components;
-using static System.Net.WebRequestMethods;
 
 namespace DemoSMSBlazorWebApi.Client.Components.Pages
 {
     public class AddEditUserBase : ComponentBase
     {
         [Parameter]
-        public int? id { get; set; }
+        public int? Id { get; set; }
 
         [Inject]
-        HttpClient? Client { get; set; }
+        HttpClient httpClient { get; set; }
 
         [Inject]
         public NavigationManager NavigationManager { get; set; }
@@ -26,16 +25,11 @@ namespace DemoSMSBlazorWebApi.Client.Components.Pages
 
         protected override async Task OnParametersSetAsync()
         {
-            if (id != 0 && id!=null)
+            if (Id != 0 && Id != null)
             {
                 Title = "Edit Student";
-                string apiUrl = $"api/student/{id}";
-                student = await Client.GetFromJsonAsync<Student>(apiUrl);
-                studentDto.StudentId = student.StudentId; 
-                studentDto.FirstName = student.FirstName;
-                studentDto.LastName=student.LastName;
-                studentDto.Email = student.Email;
-                studentDto.Gender = student.Gender;
+                string apiUrl = $"api/student/{Id}";
+                studentDto = await httpClient.GetFromJsonAsync<StudentDto>(apiUrl);
 
             }
         }
@@ -44,15 +38,14 @@ namespace DemoSMSBlazorWebApi.Client.Components.Pages
 
         public async Task AddStudent()
         {
-            if(studentDto.StudentId != 0)
+            if (studentDto.StudentId != 0)
             {
-                await Client.PutAsJsonAsync("api/student", studentDto);
+                await httpClient.PutAsJsonAsync("api/student", studentDto);
             }
             else
             {
-                await Client.PostAsJsonAsync("api/student", studentDto);
+                await httpClient.PostAsJsonAsync("api/student", studentDto);
             }
-            Cancel();
         }
 
         public void Cancel()

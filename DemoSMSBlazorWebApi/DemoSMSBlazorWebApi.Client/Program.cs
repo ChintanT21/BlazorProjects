@@ -1,5 +1,6 @@
 
 using DemoSMSBlazorWebApi.Client.Components;
+using DemoSMSBlazorWebApi.Client.StudentService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +12,7 @@ builder.Services.AddScoped(sp => new HttpClient
     BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:7019")
 });
 
+builder.Services.AddScoped<IStudentService,StudentService>();
 builder.Services.AddHttpClient();
 builder.Services.AddBlazorBootstrap();
 

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "logBQ3j+bmKQiYBAWUO96B6mRMmTK28RMjRfbrUTTh4=",
+  "Hash": "DYEkO4JLEGs+nJ6oFcLae7D+lBMuiptNqgfL0SJMqAs=",
   "Source": "BMS.Client",
   "BasePath": "_content/BMS.Client",
   "Mode": "Default",
@@ -129,6 +129,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\Js\\App.js",
+      "SourceId": "BMS.Client",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\",
+      "BasePath": "_content/BMS.Client",
+      "RelativePath": "Js/App.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Js\\App.js"
     }
   ]
 }

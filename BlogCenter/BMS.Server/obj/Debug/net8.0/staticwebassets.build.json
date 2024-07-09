@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "K/+fgmESo4J7LnqQwi8hmPkTnBPGHS53O69jGbYWttw=",
+  "Hash": "R0CxIWFnMb6t5NcZFZkqgGxY4H9RxfPqf4IQzUTFrOU=",
   "Source": "BMS.Server",
   "BasePath": "_content/BMS.Server",
   "Mode": "Default",
@@ -122,6 +122,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\favicon.png"
+    },
+    {
+      "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\Js\\App.js",
+      "SourceId": "BMS.Client",
+      "SourceType": "Project",
+      "ContentRoot": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Client\\wwwroot\\",
+      "BasePath": "_content/BMS.Client",
+      "RelativePath": "Js/App.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\Js\\App.js"
     },
     {
       "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter\\BMS.Server\\obj\\Debug\\net8.0\\scopedcss\\bundle\\BMS.Server.styles.css",

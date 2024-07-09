@@ -11,7 +11,7 @@ namespace BMS.Server.Controllers
 {
     [ApiController]
     [ApiVersion("1.0")]
-    [Route("api/{v:apiversion}/[controller]")]
+    [Route("api/v{version:apiVersion}/[controller]")]
     public class StudentController : Controller
     {
         private readonly Repository.IRepository<Student> _genericRepository;
@@ -25,7 +25,6 @@ namespace BMS.Server.Controllers
 
 
         [HttpGet]
-        [MapToApiVersion("1.0")]
         public async Task<ActionResult<ApiResponse>> Get()
         {
             ApiResponse apiResponse = new();

@@ -71,7 +71,6 @@ namespace BMS.Server.AuthRepository
             var getUserRole = await userManager.GetRolesAsync(getUser);
             var userSession = new UserSession(getUser.Id, getUser.Name, getUser.Email, getUserRole.First());
             string token = GenerateToken(userSession);
-            await SecurelyStoreToken(token);
             return new LoginResponse(true, token!, "Login completed");
         }
         private string GenerateToken(UserSession user)
@@ -82,21 +81,17 @@ namespace BMS.Server.AuthRepository
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Email, user.Email),
+                new Claim(ClaimTypes.Email, user.Email),  
                 new Claim(ClaimTypes.Role, user.Role)
             };
             var token = new JwtSecurityToken(
-                issuer: config["Jwt:Issuer"],
-                audience: config["Jwt:Audience"],
+                issuer: config["JwtSettings:Issuer"],
+                audience: config["JwtSettings:Audience"],
                 claims: userClaims,
                 expires: DateTime.Now.AddDays(1),
                 signingCredentials: credentials
                 );
             return new JwtSecurityTokenHandler().WriteToken(token);
-        }
-        protected async Task SecurelyStoreToken(string token)
-        {
-            
         }
     }
 }

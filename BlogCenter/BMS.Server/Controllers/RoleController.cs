@@ -22,7 +22,8 @@ namespace idenitywebapiauthenitcation.Controllers
         [HttpGet("GetRoles")]
         public async Task<IActionResult> GetRoles()
         {
-
+            var userClaims = User.Claims;
+            bool isAdmin = userClaims.Any(c => c.Type == "role" && c.Value == "Admin");
             var list = await _roleService.GetRolesAsync();
             return Ok(list);
         }
@@ -33,7 +34,6 @@ namespace idenitywebapiauthenitcation.Controllers
         {
             var userClaims = await _roleService.GetUserRolesAsync(userEmail);
             return Ok(userClaims);
-
         }
 
         [Authorize(Roles = "Admin")]
@@ -53,12 +53,10 @@ namespace idenitywebapiauthenitcation.Controllers
         public async Task<ActionResult> AddUserRole([FromBody] AddUserModel addUser)
         {
             var result = await _roleService.AddUserRoleAsync(addUser.UserEmail, addUser.Roles);
-
             if (!result)
             {
                 return BadRequest();
             }
-
             return StatusCode((int)HttpStatusCode.Created, result);
         }
 

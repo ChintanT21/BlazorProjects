@@ -1,4 +1,3 @@
-
 using BMS.Client.Components.Pages.Login;
 using BMS.Server.Auth;
 using BMS.Server.AuthRepository;
@@ -9,8 +8,6 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
@@ -22,7 +19,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 builder.Services.AddScoped<IRepo, Repo>();
-//builder.Services.AddScoped<IRoleService, RoleService>();
+builder.Services.AddScoped<IRoleService, RoleService>();
 builder.Services.AddScoped<IAuthRepository, AuthRepository>();
 builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 builder.Services.AddDbContext<ApplicationDbContext>();
@@ -44,40 +41,7 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen();
-//builder.Services.AddSwaggerGen(option =>
-//{
-//    option.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo()
-//    {
-//        Title = "Auth Demo",
-//        Version = "v1"
-//    });
 
-//    option.AddSecurityDefinition("bearer", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
-//    {
-//        In = Microsoft.OpenApi.Models.ParameterLocation.Header,
-//        Description = "Please Enter a token",
-//        Name = "Authorization",
-//        Type = Microsoft.OpenApi.Models.SecuritySchemeType.Http,
-//        BearerFormat = "JWT",
-//        Scheme = "bearer"
-
-//    });
-
-//    option.AddSecurityRequirement(new Microsoft.OpenApi.Models.OpenApiSecurityRequirement()
-//    {
-//        {
-//        new OpenApiSecurityScheme
-//        {
-//            Reference =new OpenApiReference
-//            {
-//                Type=ReferenceType.SecurityScheme,
-//                Id="Bearer"
-//            }
-//        },
-//        []
-//        }
-//    });
-//});
 
 builder.Services.AddSwaggerGen(option =>
 {

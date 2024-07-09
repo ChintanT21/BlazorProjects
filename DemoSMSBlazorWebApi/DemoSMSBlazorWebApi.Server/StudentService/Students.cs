@@ -5,7 +5,7 @@ namespace DemoSMSBlazorWebApi.Server.StudentService
 {
     public class Students : IStudents
     {
-        private readonly ApplicationDbContext dbContext;
+        protected readonly ApplicationDbContext dbContext;
 
         public Students(ApplicationDbContext dbContext)
         {
