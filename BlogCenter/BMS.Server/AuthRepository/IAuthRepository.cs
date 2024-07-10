@@ -7,5 +7,7 @@ namespace BMS.Server.AuthRepository
     {
         Task<GeneralResponse> CreateAccount(UserDto UserDto);
         Task<LoginResponse> LoginAccount(LoginDto loginDTO);
+        Task<bool> isTokenValidate(string token);
+        Task<ApiResponse> TokenValidator(string token);
     }
 }

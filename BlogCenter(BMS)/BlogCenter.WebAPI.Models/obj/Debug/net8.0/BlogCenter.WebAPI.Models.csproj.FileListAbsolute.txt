@@ -1,0 +1,15 @@
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\bin\Debug\net8.0\BlogCenter.WebAPI.Models.deps.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\bin\Debug\net8.0\BlogCenter.WebAPI.Models.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\bin\Debug\net8.0\BlogCenter.WebAPI.Models.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.csproj.AssemblyReference.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.AssemblyInfoInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.AssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.csproj.CoreCompileInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.sourcelink.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\refint\BlogCenter.WebAPI.Models.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\ref\BlogCenter.WebAPI.Models.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\bin\Debug\net8.0\BlogCenter.WebAPI.Models.runtimeconfig.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Models\obj\Debug\net8.0\BlogCenter.WebAPI.Models.genruntimeconfig.cache

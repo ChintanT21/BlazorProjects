@@ -1,14 +1,10 @@
-﻿using Blazored.LocalStorage;
-using BMS.Server.Auth;
-using BMS.Server.AuthRepository;
+﻿using BMS.Server.Auth;
 using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Microsoft.JSInterop;
-using System.Threading.Tasks;
 using static BMS.Server.ViewModels.ServiceResponses;
 
 
@@ -55,6 +51,30 @@ namespace BMS.Server.AuthRepository
             }
         }
 
+        public async Task<bool> isTokenValidate(string token)
+        {
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            var key = config["JwtSettings:SecretKey"];
+            var keyBytes = System.Text.Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"]);
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = config["JwtSettings:Issuer"],
+                ValidAudience = config["JwtSettings:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"])),
+            };
+            var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+            if (claimsPrincipal is null)
+            {
+
+                return false;
+            }
+            return true;
+        }
+
         public async Task<LoginResponse> LoginAccount(LoginDto loginDTO)
         {
             if (loginDTO == null)
@@ -73,15 +93,43 @@ namespace BMS.Server.AuthRepository
             string token = GenerateToken(userSession);
             return new LoginResponse(true, token!, "Login completed");
         }
+
+        public async Task<ApiResponse> TokenValidator(string token)
+        {
+            ApiResponse apiResponse = new ApiResponse();
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            var key = config["JwtSettings:SecretKey"];
+            var keyBytes = System.Text.Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"]);
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = config["JwtSettings:Issuer"],
+                ValidAudience = config["JwtSettings:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"])),
+            };
+            var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+            var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
+            var user = new ClaimsPrincipal(identity);
+            return apiResponse = new()
+            {
+                IsSuccess = true,
+                StatusCode = System.Net.HttpStatusCode.Accepted,
+                Result = claimsPrincipal
+            };
+        }
+
         private string GenerateToken(UserSession user)
         {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:Key"]!));
+            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["JwtSettings:SecretKey"]!));
             var credentials = new SigningCredentials(securityKey, SecurityAlgorithms.HmacSha256);
             var userClaims = new[]
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Name, user.Name),
-                new Claim(ClaimTypes.Email, user.Email),  
+                new Claim(ClaimTypes.Email, user.Email),
                 new Claim(ClaimTypes.Role, user.Role)
             };
             var token = new JwtSecurityToken(

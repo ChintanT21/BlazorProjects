@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor.Client\\obj\\Debug\\net8.0\\compressed\\bk6083nnwz.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlogCenter.Blazor.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BlogCenter.Blazor.Client.props",
+      "PackagePath": "build\\BlogCenter.Blazor.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BlogCenter.Blazor.Client.props",
+      "PackagePath": "buildMultiTargeting\\BlogCenter.Blazor.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BlogCenter.Blazor.Client.props",
+      "PackagePath": "buildTransitive\\BlogCenter.Blazor.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

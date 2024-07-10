@@ -6,16 +6,10 @@ using System.Net;
 
 namespace BMS.Server.Repository
 {
-    public class Repository<T> : IRepository<T> where T : class
+    public class Repository<T>(ApplicationDbContext dbContext) : IRepository<T> where T : class
     {
-        protected DbSet<T> _dbset;
-        protected readonly ApplicationDbContext dbContext;
-
-        public Repository(ApplicationDbContext dbContext)
-        {
-            _dbset = dbContext.Set<T>();
-            this.dbContext = dbContext;
-        }
+        protected DbSet<T> _dbset = dbContext.Set<T>();
+        protected readonly ApplicationDbContext dbContext = dbContext;
 
         public async Task<ApiResponse> AddAsync(T entity)
         {

@@ -1,22 +1,18 @@
 ﻿using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.IdentityModel.Tokens;
-using Microsoft.JSInterop;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using Blazored.LocalStorage;
 
 namespace BMS.Client.Authentication
 {
     public class CustomAuthenticationStateProvider : AuthenticationStateProvider
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        private readonly Blazored.LocalStorage.ILocalStorageService _localstorage;
 
-        public CustomAuthenticationStateProvider(IHttpContextAccessor httpContextAccessor, Blazored.LocalStorage.ILocalStorageService localStorage)
+        public CustomAuthenticationStateProvider(IHttpContextAccessor httpContextAccessor)
         {
             _httpContextAccessor = httpContextAccessor;
-            _localstorage = localStorage;
 
         }
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
@@ -28,7 +24,7 @@ namespace BMS.Client.Authentication
                 return new AuthenticationState(httpContext.User);
             }
 
-            var token =GetCookieValue();
+            var token = GetCookieValue();
             if (string.IsNullOrEmpty(token))
             {
                 return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
@@ -41,8 +37,8 @@ namespace BMS.Client.Authentication
                 ValidateAudience = true,
                 ValidateLifetime = true,
                 ValidateIssuerSigningKey = true,
-                ValidIssuer = "https://id.nickchapsas.com",
-                ValidAudience = "https://movies.nickchapsas.com",
+                ValidIssuer = "Chintan",
+                ValidAudience = "People",
                 IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqustuvwxyz")),
             };
 
@@ -51,7 +47,6 @@ namespace BMS.Client.Authentication
                 var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
                 var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
                 var user = new ClaimsPrincipal(identity);
-
                 return new AuthenticationState(user);
             }
             catch

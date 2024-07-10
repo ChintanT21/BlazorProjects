@@ -30,46 +30,27 @@ namespace BMS.Client.Components.Pages.Login
         {
             _configuration = Configuration;
         }
-        protected override async Task OnAfterRenderAsync(bool firstRender)
-        {
-            if (firstRender)
-            {
-                token = await FetchTokenFromLocalStorage();
-            }
-        }
         public async Task AuthenticateUser()
         {
             if (loginDto is null)
             {
                 throw new ArgumentNullException(nameof(loginDto));
             }
-
             var response = await _httpClient.PostAsJsonAsync("https://localhost:7185/api/Auth/login", loginDto);
             var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
             var token = loginResponse.token;
             if (token != null)
             {
+                await SetCookie(token);
                 await TokenService(token);
-                await StoreTokenToLocalStorage(token);
-                SetCookie(token);
                 return;
             }
             unauthorizedMessage = "No valid parameters.";
         }
-        private async void SetCookie(string token)
+        private async Task SetCookie(string token)
         {
             await JSRuntime.InvokeVoidAsync("setCookie", "authToken1", token);
         }
-        protected async Task StoreTokenToLocalStorage(string token)
-        {
-            await JSRuntime.InvokeVoidAsync("localStorage.setItem", "authToken", token);
-        }
-        protected async Task<string> FetchTokenFromLocalStorage()
-        {
-            var storedToken = await JSRuntime.InvokeAsync<string>("localStorage.getItem", "authToken");
-            return storedToken;
-        }
-
         public async Task TokenService(string token)
         {
             if (_configuration == null)
@@ -88,6 +69,7 @@ namespace BMS.Client.Components.Pages.Login
                 ValidateLifetime = true,
                 ClockSkew = TimeSpan.Zero
             };
+            var isTokenValid = await _httpClient.PostAsJsonAsync("https://localhost:7185/api/Auth/tokenvalidator", "qwqwqqwqwqwe");
             await TokenClaimRedirection(token, tokenHandler, validationParameters);
         }
 
@@ -96,29 +78,19 @@ namespace BMS.Client.Components.Pages.Login
 
             try
             {
-                tokenHandler = new JwtSecurityTokenHandler();
-                validationParameters = new TokenValidationParameters
-                {
-                    ValidateIssuer = true,
-                    ValidateAudience = true,
-                    ValidateLifetime = true,
-                    ValidateIssuerSigningKey = true,
-                    ValidIssuer = "https://id.nickchapsas.com",
-                    ValidAudience = "https://movies.nickchapsas.com",
-                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqustuvwxyz")),
-                };
                 var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
                 var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
                 var user = new ClaimsPrincipal(identity);
-                if (AuthStateProvider is CustomAuthenticationStateProvider customAuthStateProvider)
-                {
-                    customAuthStateProvider.NotifyUserAuthentication(user);
-                }
-                NavigationManager.NavigateTo("/adminDashboard");
                 var authProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
                 authProvider.NotifyUserAuthentication(user);
-
-
+                if (user.IsInRole("Admin"))
+                {
+                    NavigationManager.NavigateTo("/adminDashboard");
+                }
+                else if (user.IsInRole("User"))
+                {
+                    NavigationManager.NavigateTo("/userDashboard");
+                }
 
             }
             catch (Exception ex)

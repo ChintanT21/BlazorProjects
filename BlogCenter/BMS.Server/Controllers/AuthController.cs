@@ -21,5 +21,14 @@ namespace BMS.Server.Controllers
             var response = await authRepository.LoginAccount(loginDto);
             return Ok(response);
         }
+        [HttpPost("tokenvalidator")]
+        public async Task<IActionResult> ValidateToken(string token)
+        {
+            var isTokenValidate = await authRepository.isTokenValidate(token);
+            ApiResponse claimsprincipal = await authRepository.TokenValidator(token);
+            return Ok(isTokenValidate);
+
+
+        }
     }
 }

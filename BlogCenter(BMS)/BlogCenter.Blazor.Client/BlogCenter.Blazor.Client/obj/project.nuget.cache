@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "vEc5iicQ+nojMnSgGKnu2Z5s+mcbmSpEi/jADYkck9a+kEoFDXK4VZvr5g84ZOAaNQPGbsgwfPqen7dNeE7dTA==",
+  "success": true,
+  "projectFilePath": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor.Client\\BlogCenter.Blazor.Client\\BlogCenter.Blazor.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\pca66\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly.server\\8.0.1\\microsoft.aspnetcore.components.webassembly.server.8.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

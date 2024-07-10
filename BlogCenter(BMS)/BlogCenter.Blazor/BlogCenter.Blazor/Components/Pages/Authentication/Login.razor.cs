@@ -1,0 +1,99 @@
+﻿using BMS.Server.ViewModels;
+using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Configuration;
+using Microsoft.IdentityModel.Tokens;
+using Microsoft.JSInterop;
+using System.IdentityModel.Tokens.Jwt;
+using System.Security.Claims;
+namespace BMS.Client.Components.Pages.Login
+{
+    public partial class Login
+    {
+        [Inject]
+        private HttpClient _httpClient { get; set; }
+
+        [Inject]
+        public NavigationManager NavigationManager { get; set; }
+
+        private IConfiguration? _configuration;
+        protected LoginDto loginDto = new();
+        string unauthorizedMessage = string.Empty;
+        JwtSecurityTokenHandler tokenHandler;
+        TokenValidationParameters validationParameters;
+        string token;
+
+        protected override async Task OnInitializedAsync()
+        {
+            _configuration = Configuration;
+        }
+        public async Task AuthenticateUser()
+        {
+            if (loginDto is null)
+            {
+                throw new ArgumentNullException(nameof(loginDto));
+            }
+            var response = await _httpClient.PostAsJsonAsync("https://localhost:7185/api/Auth/login", loginDto);
+            var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
+            var token = loginResponse.token;
+            if (token != null)
+            {
+                await SetCookie(token);
+                await TokenService(token);
+                return;
+            }
+            unauthorizedMessage = "No valid parameters.";
+        }
+        private async Task SetCookie(string token)
+        {
+            await JSRuntime.InvokeVoidAsync("setCookie", "authToken1", token);
+        }
+        public async Task TokenService(string token)
+        {
+            if (_configuration == null)
+            {
+                throw new InvalidOperationException("Configuration has not been initialized.");
+            }
+            tokenHandler = new JwtSecurityTokenHandler();
+            var key = _configuration["JwtSettings:SecretKey"];
+            var keyBytes = System.Text.Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuerSigningKey = true,
+                IssuerSigningKey = new SymmetricSecurityKey(keyBytes),
+                ValidateIssuer = false,
+                ValidateAudience = false,
+                ValidateLifetime = true,
+                ClockSkew = TimeSpan.Zero
+            };
+            var isTokenValid = await _httpClient.PostAsJsonAsync("https://localhost:7185/api/Auth/tokenvalidator", "qwqwqqwqwqwe");
+            await TokenClaimRedirection(token, tokenHandler, validationParameters);
+        }
+
+        public async Task TokenClaimRedirection(string token, JwtSecurityTokenHandler tokenHandler, TokenValidationParameters validationParameters)
+        {
+
+            try
+            {
+                var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
+                var user = new ClaimsPrincipal(identity);
+                var authProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
+                authProvider.NotifyUserAuthentication(user);
+                if (user.IsInRole("Admin"))
+                {
+                    NavigationManager.NavigateTo("/adminDashboard");
+                }
+                else if (user.IsInRole("User"))
+                {
+                    NavigationManager.NavigateTo("/userDashboard");
+                }
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Token validation error: {ex.Message}");
+            }
+        }
+
+    }
+}
