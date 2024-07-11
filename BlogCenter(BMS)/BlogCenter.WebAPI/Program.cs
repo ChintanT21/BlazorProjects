@@ -26,9 +26,11 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
      .AddSignInManager()
     .AddRoles<IdentityRole>();
 
+builder.Services.AddSwaggerGen();
+
 builder.Services.AddSwaggerGen(option =>
 {
-    option.AddSecurityDefinition("Enter Token", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
+    option.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
     {
         In = ParameterLocation.Header,
         Name = "Authorization",
@@ -62,11 +64,9 @@ builder.Services.AddRepository();
 builder.Services.AddService();
 builder.Services.AddAuthorization();
 
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();

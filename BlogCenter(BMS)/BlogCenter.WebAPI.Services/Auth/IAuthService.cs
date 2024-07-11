@@ -1,9 +1,5 @@
-﻿using BMS.Server.ViewModels;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using BMS.Client.Dtos;
+using BMS.Server.ViewModels;
 using static BMS.Server.ViewModels.ServiceResponses;
 
 namespace BlogCenter.WebAPI.Services.Auth

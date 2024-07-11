@@ -40,13 +40,21 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+            "Microsoft.AspNetCore.Components": {
               "target": "Package",
               "version": "[8.0.7, )"
             },
             "Microsoft.AspNetCore.Components.WebAssembly": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "Microsoft.NET.ILLink.Tasks": {
               "suppressParent": "All",
@@ -59,10 +67,6 @@
               "target": "Package",
               "version": "[8.0.1, )",
               "autoReferenced": true
-            },
-            "System.IdentityModel.Tokens.Jwt": {
-              "target": "Package",
-              "version": "[7.6.3, )"
             }
           },
           "imports": [
@@ -143,9 +147,25 @@
               "target": "Package",
               "version": "[8.0.7, )"
             },
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.AspNetCore.Components.WebAssembly.Server": {
               "target": "Package",
               "version": "[8.0.1, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
@@ -211,7 +231,15 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.AspNetCore.Components": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[8.0.7, )"
             },
@@ -227,9 +255,17 @@
               "target": "Package",
               "version": "[8.0.7, )"
             },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
             "Microsoft.Extensions.DependencyInjection": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "Microsoft.JSInterop": {
+              "target": "Package",
+              "version": "[8.0.7, )"
             },
             "System.Diagnostics.Tools": {
               "target": "Package",

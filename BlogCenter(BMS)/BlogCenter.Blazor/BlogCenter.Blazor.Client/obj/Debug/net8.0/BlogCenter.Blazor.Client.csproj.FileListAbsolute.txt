@@ -32,10 +32,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Logging.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Options.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.Extensions.Primitives.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Abstractions.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.JsonWebTokens.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Logging.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Tokens.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.WebAssembly.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.VisualBasic.Core.wasm
@@ -81,7 +77,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Calendars.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.Extensions.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.Brotli.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.FileSystem.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Compression.wasm
@@ -250,7 +245,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Collections.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IO.Pipes.AccessControl.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\netstandard.wasm.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Logging.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.Algorithms.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_no_CJK.dat.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Private.DataContractSerialization.wasm.gz
@@ -276,7 +270,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\icudt_CJK.dat.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Intrinsics.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Diagnostics.TraceSource.wasm.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.JsonWebTokens.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Data.Common.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.AccessControl.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.Csp.wasm.gz
@@ -303,9 +296,7 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Net.Sockets.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XDocument.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Dynamic.Runtime.wasm.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Tokens.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Runtime.Serialization.Formatters.wasm.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.IdentityModel.Abstractions.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Windows.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\Microsoft.JSInterop.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Principal.wasm.gz
@@ -319,7 +310,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.XPath.XDocument.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Globalization.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Threading.ThreadPool.wasm.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.IdentityModel.Tokens.Jwt.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Xml.ReaderWriter.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.SecureString.wasm.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\wwwroot\_framework\System.Security.Cryptography.wasm.gz
@@ -439,13 +429,8 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.IdentityModel.JsonWebTokens.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Logging.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.IdentityModel.Tokens.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\System.IdentityModel.Tokens.Jwt.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\System.IO.Pipelines.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.CSharp.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\bin\Debug\net8.0\Microsoft.VisualBasic.Core.dll
@@ -651,13 +636,8 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Logging.Abstractions.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Options.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.Extensions.Primitives.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.IdentityModel.Abstractions.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.IdentityModel.JsonWebTokens.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.IdentityModel.Logging.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.IdentityModel.Tokens.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.JSInterop.WebAssembly.wasm
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\System.IdentityModel.Tokens.Jwt.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\System.IO.Pipelines.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.CSharp.wasm
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\webcil\Microsoft.VisualBasic.Core.wasm
@@ -859,13 +839,8 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Clie
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\buovzfx8tj.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\yc7nupuou2.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\q7y1it77sj.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\hfbompl22u.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\cgvlfsowrp.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\886dfjogwg.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\h2movaf9e9.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\hon5p4u581.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\yb8tj6n9uo.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\kmvqdffmsk.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\no9xj5xiq0.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\8uvpx84j2c.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor.Client\obj\Debug\net8.0\compressed\05j4kg4823.gz

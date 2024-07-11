@@ -62,3 +62,16 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\obj\
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\obj\Debug\net8.0\BlogCenter.Blazor.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\obj\Debug\net8.0\BlogCenter.Blazor.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\obj\Debug\net8.0\ref\BlogCenter.Blazor.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.EntityFrameworkCore.Relational.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Blazor\BlogCenter.Blazor\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll

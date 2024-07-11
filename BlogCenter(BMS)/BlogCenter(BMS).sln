@@ -3,19 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.Blazor", "BlogCenter.Blazor\BlogCenter.Blazor\BlogCenter.Blazor.csproj", "{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.Blazor", "BlogCenter.Blazor\BlogCenter.Blazor\BlogCenter.Blazor.csproj", "{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.Blazor.Client", "BlogCenter.Blazor\BlogCenter.Blazor.Client\BlogCenter.Blazor.Client.csproj", "{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.Blazor.Client", "BlogCenter.Blazor\BlogCenter.Blazor.Client\BlogCenter.Blazor.Client.csproj", "{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.WebAPI", "BlogCenter.WebAPI\BlogCenter.WebAPI.csproj", "{1BCF1996-8685-419F-89C2-6829E293A387}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI", "BlogCenter.WebAPI\BlogCenter.WebAPI.csproj", "{1BCF1996-8685-419F-89C2-6829E293A387}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.WebAPI.Dtos", "BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj", "{6AAD744A-B53F-4BE0-9FC3-203270E96072}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Dtos", "BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj", "{6AAD744A-B53F-4BE0-9FC3-203270E96072}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.WebAPI.Models", "BlogCenter.WebAPI.Models\BlogCenter.WebAPI.Models.csproj", "{7BDEFC1D-67BD-4525-80A4-CE074779A107}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Models", "BlogCenter.WebAPI.Models\BlogCenter.WebAPI.Models.csproj", "{7BDEFC1D-67BD-4525-80A4-CE074779A107}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.WebAPI.Repositories", "BlogCenter.WebAPI.Repositories\BlogCenter.WebAPI.Repositories.csproj", "{DC004816-E4C3-4C4E-9D64-798C828377C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Repositories", "BlogCenter.WebAPI.Repositories\BlogCenter.WebAPI.Repositories.csproj", "{DC004816-E4C3-4C4E-9D64-798C828377C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.WebAPI.Services", "BlogCenter.WebAPI.Services\BlogCenter.WebAPI.Services.csproj", "{24020268-7ADA-4560-BE41-39F333F0CFDA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Services", "BlogCenter.WebAPI.Services\BlogCenter.WebAPI.Services.csproj", "{24020268-7ADA-4560-BE41-39F333F0CFDA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,0 +1,15 @@
+﻿@page "/"
+@rendermode InteractiveAuto
+@inject NavigationManager _navigationManager
+
+<p>Blog Management System</p>
+<button class="btn btn-success" @onclick="NavigateToLoginPage">Login</button>
+
+@code {
+
+    public void NavigateToLoginPage()
+    {
+        _navigationManager.NavigateTo("/login");
+    }
+
+}

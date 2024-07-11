@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -10,16 +10,16 @@
     <ProjectReference Include="..\..\BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj" />
     <ProjectReference Include="..\BlogCenter.Blazor.Client\BlogCenter.Blazor.Client.csproj" />
     <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="8.0.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Components" Version="8.0.7" />
     <PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="8.0.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.7" />
+    <PackageReference Include="Microsoft.Extensions.Configuration" Version="8.0.0" />
+    <PackageReference Include="Microsoft.JSInterop" Version="8.0.7" />
     <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="7.6.3" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="App\" />
-    <Folder Include="Components\Components\" />
-    <Folder Include="Components\Pages\Admin\" />
-    <Folder Include="Components\Pages\Author\" />
-    <Folder Include="Components\Pages\Authentication\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,10 @@
+﻿
+<button @onclick="LogoutUser" class="btn btn-danger">Logout</button>
+
+@code {
+
+    public void LogoutUser()
+    {
+        JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
+    }
+}

@@ -1,5 +1,6 @@
 ﻿using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories.Auth;
+using BMS.Client.Dtos;
 using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -112,11 +113,16 @@ namespace BlogCenter.WebAPI.Services.Auth
             var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
             var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
             var user = new ClaimsPrincipal(identity);
+            List<string> Roles = [];
+            foreach (var claim in user.Claims)
+            {
+                Roles.Add($"Type: {claim.Type}, Value: {claim.Value}");
+            }
             return apiResponse = new()
             {
                 IsSuccess = true,
                 StatusCode = System.Net.HttpStatusCode.Accepted,
-                Result = claimsPrincipal
+                Result = Roles
             };
         }
 

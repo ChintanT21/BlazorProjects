@@ -15,7 +15,7 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddScoped(sp => new HttpClient
 {
-    BaseAddress = new Uri(builder.Configuration["FrontendUrl"] ?? "https://localhost:7009")
+    BaseAddress = new Uri(builder.Configuration["Backend:Url"] ?? "https://localhost:7009")
 });
 
 builder.Services.AddAuthentication(options =>
@@ -28,13 +28,13 @@ builder.Services.AddAuthentication(options =>
     {
         options.TokenValidationParameters = new TokenValidationParameters
         {
-            ValidateIssuer = true, // Validate the server that created the token
-            ValidateAudience = true, // Validate the recipient of the token is authorized to receive it
-            ValidateLifetime = true, // Check that the token is not expired
-            ValidateIssuerSigningKey = true, // Validate the security key used to sign the token
-            ValidIssuer = builder.Configuration["JwtSettings:Issuer"], // Set the server's token issuer
-            ValidAudience = builder.Configuration["JwtSettings:Audience"], // Set the audience intended to receive the token
-            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!)) // Set the key used to sign the token
+            ValidateIssuer = true, 
+            ValidateAudience = true, 
+            ValidateLifetime = true, 
+            ValidateIssuerSigningKey = true, 
+            ValidIssuer = builder.Configuration["JwtSettings:Issuer"], 
+            ValidAudience = builder.Configuration["JwtSettings:Audience"], 
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(builder.Configuration["JwtSettings:SecretKey"]!)) 
         };
     });
 builder.Services.AddScoped<CustomAuthenticationStateProvider>();
@@ -48,7 +48,7 @@ builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 
 var app = builder.Build();
-builder.Services.AddScoped<IClientService, ClientService>();
+//builder.Services.AddScoped<IClientService, ClientService>();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -58,7 +58,6 @@ if (app.Environment.IsDevelopment())
 else
 {
     app.UseExceptionHandler("/Error", createScopeForErrors: true);
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 

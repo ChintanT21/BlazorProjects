@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Components.Authorization;
+﻿using Microsoft.AspNetCore.Components;
+using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -6,9 +7,10 @@ using System.Text;
 
 namespace BMS.Client.Authentication
 {
-    public class CustomAuthenticationStateProvider(IHttpContextAccessor httpContextAccessor) : AuthenticationStateProvider
+    public class CustomAuthenticationStateProvider(IHttpContextAccessor httpContextAccessor,NavigationManager navigationManager) : AuthenticationStateProvider
     {
         private readonly IHttpContextAccessor _httpContextAccessor = httpContextAccessor;
+        private readonly NavigationManager _navigationManager = navigationManager;
 
         public override async Task<AuthenticationState> GetAuthenticationStateAsync()
         {
@@ -42,11 +44,29 @@ namespace BMS.Client.Authentication
                 var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
                 var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
                 var user = new ClaimsPrincipal(identity);
+                //Task.Run(() => NavigateBasedOnRole(user));
                 return new AuthenticationState(user);
             }
             catch
             {
+               
                 return new AuthenticationState(new ClaimsPrincipal(new ClaimsIdentity()));
+            }
+        }
+
+        private void NavigateBasedOnRole(ClaimsPrincipal user)
+        {
+            if (user.IsInRole("admin"))
+            {
+                _navigationManager.NavigateTo("/adminDashboard");
+            }
+            else if (user.IsInRole("user"))
+            {
+                _navigationManager.NavigateTo("/userDashboard");
+            }
+            else
+            {
+                _navigationManager.NavigateTo("/");
             }
         }
 

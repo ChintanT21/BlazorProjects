@@ -129,3 +129,9 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Micro
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Scrutor.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Swashbuckle.AspNetCore.Filters.Abstractions.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.JSInterop.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Authorization.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Components.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
