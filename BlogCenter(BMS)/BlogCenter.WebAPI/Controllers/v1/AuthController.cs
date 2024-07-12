@@ -1,5 +1,4 @@
-﻿using BlogCenter.WebAPI.Repositories.Auth;
-using BlogCenter.WebAPI.Services.Auth;
+﻿using BlogCenter.WebAPI.Services.Auth;
 using BMS.Client.Dtos;
 using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;

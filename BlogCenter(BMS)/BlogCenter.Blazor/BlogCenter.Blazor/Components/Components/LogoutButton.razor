@@ -1,10 +1,15 @@
-﻿
-<button @onclick="LogoutUser" class="btn btn-danger">Logout</button>
+﻿@rendermode InteractiveAuto
+@inject IJSRuntime JSRuntime
+@inject NavigationManager navigationManager
+
+<div class="position-absolute top-0 end-0 btn btn-success ">
+<button @onclick="DeleteAuthToken" >Logout</button>
+</div>
 
 @code {
-
-    public void LogoutUser()
+    private async Task DeleteAuthToken()
     {
-        JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
+        await JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
+        navigationManager.NavigateTo("/");
     }
 }

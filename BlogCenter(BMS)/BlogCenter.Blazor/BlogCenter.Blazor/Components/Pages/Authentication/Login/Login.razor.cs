@@ -2,7 +2,6 @@
 using BMS.Client.Dtos;
 using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Components;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.JSInterop;
 using System.IdentityModel.Tokens.Jwt;
@@ -42,15 +41,15 @@ namespace BlogCenter.Blazor.Components.Pages.Authentication.Login
             string token = loginResponse.token;
             if (token != null)
             {
-                 SetCookie(token,59);
+                SetCookie(token, 59);
             }
             HttpResponseMessage userclaims = await _httpClient.PostAsJsonAsync("/api/Auth/tokenvalidator?token=" + token, token);
             ApiResponse apiResponse = await userclaims.Content.ReadFromJsonAsync<ApiResponse>();
             await TokenClaimRedirection(token, tokenHandler, validationParameters, apiResponse);
         }
-        private  void SetCookie(string token,int? expireTime)
+        private void SetCookie(string token, int? expireTime)
         {
-             JSRuntime.InvokeVoidAsync("setCookie", "authToken", token);
+            JSRuntime.InvokeVoidAsync("setCookie", "authToken", token);
             //var option = new CookieOptions();
 
             //if (expireTime.HasValue)
@@ -72,9 +71,7 @@ namespace BlogCenter.Blazor.Components.Pages.Authentication.Login
         {
             try
             {
-                //var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
-                //var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
-                //var user = new ClaimsPrincipal(identity);
+
                 string jsonResponse = apiResponse.Result.ToString();
                 var claims = JsonSerializer.Deserialize<List<string>>(jsonResponse)
                      .Select(c =>

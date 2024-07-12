@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "d7HGtCFswsxd7wvRQC+PlCQfTcNWE5dKk05zjgDFefflAIdQG9HjlKCTwZAaXEq21QbIPN/Ipshz4mjYmnzyNA==",
+  "dgSpecHash": "JvOfFEkVp8+YVDscqCcfUJ+dZvWaiHiyibby4zOMfnWlqRs43BHtjjIgBHwYKabvy7UxJUjEMPN1cV/CKfUFag==",
   "success": true,
   "projectFilePath": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\BlogCenter.WebAPI.Services.csproj",
   "expectedPackageFiles": [
@@ -58,6 +58,7 @@
     "C:\\Users\\pca66\\.nuget\\packages\\system.diagnostics.tools\\4.3.0\\system.diagnostics.tools.4.3.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\system.identitymodel.tokens.jwt\\7.6.3\\system.identitymodel.tokens.jwt.7.6.3.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\system.io.pipelines\\6.0.3\\system.io.pipelines.6.0.3.nupkg.sha512",
+    "C:\\Users\\pca66\\.nuget\\packages\\system.linq.dynamic.core\\1.4.3\\system.linq.dynamic.core.1.4.3.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\system.reflection.metadata\\6.0.1\\system.reflection.metadata.6.0.1.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\system.runtime\\4.3.0\\system.runtime.4.3.0.nupkg.sha512",
     "C:\\Users\\pca66\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",

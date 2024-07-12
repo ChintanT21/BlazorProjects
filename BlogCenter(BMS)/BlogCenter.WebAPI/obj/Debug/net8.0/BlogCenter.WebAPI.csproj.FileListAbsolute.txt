@@ -135,3 +135,4 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Micro
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.AspNetCore.Metadata.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\System.Linq.Dynamic.Core.dll

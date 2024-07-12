@@ -2,13 +2,13 @@
 @rendermode InteractiveAuto
 @using BlogCenter.Blazor.Components.Components
 @using BlogCenter.Blazor.Components.Layout
+@using Microsoft.AspNetCore.Authorization
 @inject IJSRuntime JSRuntime
 
-<NavMenu/>
 
 <h3>adminDashboard</h3>
+<div>
+    <LogoutButton/>
+</div>
 
 
-@code{
-
-}

@@ -28,13 +28,13 @@ public partial class Blog
     public DateTime CreatedDate { get; set; }
 
     [Column("updated_date", TypeName = "timestamp without time zone")]
-    public DateTime UpdatedDate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
     [Column("created_by")]
     public long CreatedBy { get; set; }
 
     [Column("updated_by")]
-    public long UpdatedBy { get; set; }
+    public long? UpdatedBy { get; set; }
 
     [Column("status")]
     public short Status { get; set; }
@@ -48,5 +48,5 @@ public partial class Blog
 
     [ForeignKey("UpdatedBy")]
     [InverseProperty("BlogUpdatedByNavigations")]
-    public virtual User UpdatedByNavigation { get; set; } = null!;
+    public virtual User? UpdatedByNavigation { get; set; }
 }

@@ -1,9 +1,16 @@
 ﻿@page "/"
+@using BlogCenter.Blazor.Services.Role
 @rendermode InteractiveAuto
+@inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager _navigationManager
 
-<p>Blog Management System</p>
-<button class="btn btn-success" @onclick="NavigateToLoginPage">Login</button>
+
+<div class="d-flex justify-content-center align-items-center vh-100 w-100">
+    
+<h1 class="">Blog Management System</h1>
+
+<button class="btn btn-success d-block " @onclick="NavigateToLoginPage">Login</button>
+</div>
 
 @code {
 
@@ -11,5 +18,21 @@
     {
         _navigationManager.NavigateTo("/login");
     }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
+        {
+            _navigationManager.NavigateTo("/adminDashboard");
+        }
+        else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
+        {
+            _navigationManager.NavigateTo("/userDashboard");
+        }
+    }
+}
+
 
 }

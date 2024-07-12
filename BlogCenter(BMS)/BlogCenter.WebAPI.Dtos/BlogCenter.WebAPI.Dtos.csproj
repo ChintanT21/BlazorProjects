@@ -8,8 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Constant\" />
-    <Folder Include="Request\" />
-    <Folder Include="Responce\" />
   </ItemGroup>
 
   <ItemGroup>
