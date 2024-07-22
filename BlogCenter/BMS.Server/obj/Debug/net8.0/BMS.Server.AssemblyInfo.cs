@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BMS.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e472029a47b94d571c95817d56b3b2bc35c445ee")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e48e0f8cc908a09b2ed3f09f061956466069ab45")]
 [assembly: System.Reflection.AssemblyProductAttribute("BMS.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BMS.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

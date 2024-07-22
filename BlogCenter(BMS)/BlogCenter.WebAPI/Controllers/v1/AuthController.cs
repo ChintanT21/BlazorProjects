@@ -7,11 +7,12 @@ using Microsoft.AspNetCore.Mvc;
 namespace BlogCenter.WebAPI.Controllers
 {
     [ApiController]
+    [AllowAnonymous]
     [Route("api/[controller]")]
     public class AuthController(IAuthService _authService) : ControllerBase
     {
-
-        [Authorize(Roles = "Admin")]
+        [AllowAnonymous]
+        [Authorize(Roles = "admin")]
         [HttpPost("register")]
         public async Task<IActionResult> Register(UserDto UserDto)
         {
@@ -19,6 +20,7 @@ namespace BlogCenter.WebAPI.Controllers
             return Ok(response);
         }
 
+        [AllowAnonymous]
         [HttpPost("login")]
         public async Task<IActionResult> Login(LoginDto loginDto)
         {
@@ -31,6 +33,7 @@ namespace BlogCenter.WebAPI.Controllers
             return Ok(response);
         }
 
+        [AllowAnonymous]
         [HttpPost("tokenvalidator")]
         public async Task<IActionResult> ValidateToken(string token)
         {

@@ -4,13 +4,14 @@ using BMS.Server.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
 using System.Net;
+using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace BlogCenter.WebAPI.Repositories.Generic
 {
     public class BaseRepository<T>(ApplicationDbContext dbContext) : IBaseRepository<T> where T : class
     {
         protected DbSet<T> _dbset = dbContext.Set<T>();
-        protected readonly ApplicationDbContext dbContext = dbContext;
+        protected readonly ApplicationDbContext _dbContext = dbContext;
 
         public async Task<T> AddAsync(T entity)
         {
@@ -29,39 +30,59 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                 return null;
             }
         }
-        public async Task<ApiResponse> GetAllAsync()
+        public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
         {
-            ApiResponse apiResponse = new();
             try
             {
-                return apiResponse = new()
+                IQueryable<T> query = _dbset;
+
+                if (where != null)
                 {
-                    StatusCode = HttpStatusCode.OK,
-                    IsSuccess = true,
-                    Result = await _dbset.ToListAsync(),
-                };
+                    query = query.Where(where);
+                }
+
+                foreach (var include in including)
+                {
+                    query = query.Include(include);
+                }
+
+                if (orderBy != null)
+                {
+                    query = orderBy(query);
+                }
+                return await query.ToListAsync();
 
             }
             catch (Exception ex)
             {
-                return apiResponse = new()
-                {
-                    StatusCode = HttpStatusCode.InternalServerError,
-                    IsSuccess = true,
-                    ErrorMessages = new List<string>() { ex.ToString() }
-                };
+                return null;
             }
         }
-        public async Task<PagedItemResult<T>> GetAllWithPaginationAsync(int page, int pageSize, Expression<Func<T, bool>>? whereCondition = null)
+        public async Task<PagedItemResult<T>> GetAllWithPaginationAsync(int page,
+            int pageSize,
+            Expression<Func<T, bool>>? whereCondition,
+            Expression<Func<T, object>>[]? including,
+            Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy)
         {
             IQueryable<T> items = _dbset;
-            // Apply the where condition if it exists
             if (whereCondition != null)
             {
                 items = items.Where(whereCondition);
             }
+
+            if (including != null)
+            {
+                foreach (var include in including)
+                {
+                    items = items.Include(include);
+                }
+            }
+            if (orderBy != null)
+            {
+                items = orderBy(items);
+            }
             // Apply pagination
-            var totalCount = await _dbset.CountAsync();
+            var totalCount = await items.CountAsync();
             var totalItems = (int)Math.Ceiling(totalCount / (double)pageSize);
             var pagedItems = await items.Skip((page - 1) * pageSize).Take(pageSize).ToListAsync();
 
@@ -73,8 +94,6 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             };
 
             return pagedBookData;
-
-
         }
         public async void DeleteAsync(T entity)
         {
@@ -92,30 +111,49 @@ namespace BlogCenter.WebAPI.Repositories.Generic
         }
         public async Task<T> UpdateAsync(T entity)
         {
-            ApiResponse apiResponse = new();
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+
             try
             {
-                if (entity != null)
-                {
-                    _dbset.Attach(entity);
-                    dbContext.Entry(entity).State = EntityState.Modified;
-                    await dbContext.SaveChangesAsync();
-                    return entity;
-                }
-                return null;
-
+                _dbset.Attach(entity);
+                dbContext.Entry(entity).State = EntityState.Modified;
+                await dbContext.SaveChangesAsync();
+                return entity;
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                Console.WriteLine($"Concurrency exception: {ex.Message}");
+                throw;
+            }
+            catch (DbUpdateException ex)
+            {
+                Console.WriteLine($"Database update exception: {ex.Message}");
+                throw;
             }
             catch (Exception ex)
             {
-                return null;
+                Console.WriteLine($"An error occurred: {ex.Message}");
+                throw;
             }
         }
-        public async Task<T> GetByIdAsync(long id)
-        {
-            ApiResponse apiResponse = new();
 
+        public async Task<T> GetByIdAsync(long id, Expression<Func<T, bool>>? where = null, params Expression<Func<T, object>>[] including)
+        {
             try
             {
+                IQueryable<T> query = _dbset;
+                if (where != null)
+                {
+                    query = query.Where(where);
+                }
+
+                foreach (var include in including)
+                {
+                    query = query.Include(include);
+                }
                 var Blog = await _dbset.FindAsync(id);
                 if (Blog != null)
                 {
@@ -129,6 +167,20 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                 return null;
             }
         }
-
+        public async Task AddRangeAsync(List<T> entities)
+        {
+            try
+            {
+                if (entities != null)
+                {
+                    await _dbset.AddRangeAsync(entities);
+                    await dbContext.SaveChangesAsync();
+                }
+            }
+            catch (Exception ex)
+            {
+            }
+            
+        }
     }
 }

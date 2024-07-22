@@ -26,10 +26,10 @@ namespace BMS.Client.Components.Pages.Login
         TokenValidationParameters validationParameters;
         string token;
 
-        protected override async Task OnInitializedAsync()
-        {
-            _configuration = Configuration;
-        }
+        //protected override async Task OnInitializedAsync()
+        //{
+        //    _configuration = Configuration;
+        //}
         public async Task AuthenticateUser()
         {
             if (loginDto is null)

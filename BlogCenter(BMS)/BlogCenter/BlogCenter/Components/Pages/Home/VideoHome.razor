@@ -1,0 +1,45 @@
+﻿@page "/"
+@rendermode InteractiveServer
+@layout AuthLayout
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager navigationManager
+<div class="">
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="/assets/8733059-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-overlay">
+            <h1>Blog Center</h1>
+            <p>(Blog Management System)</p>
+            <p><button class="btn btn-success" @onclick="NavigateToLogin">login</button></p>
+        </div>
+    </div>
+</div>
+
+@code {
+    protected async void DeleteAuthToken()
+    {
+        await JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
+        navigationManager.NavigateTo("/");
+    }
+    protected async void NavigateToLogin()
+    {
+          navigationManager.NavigateTo("/login");
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
+        {
+            navigationManager.NavigateTo("/adminDashboard");
+        }
+        else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
+        {
+            navigationManager.NavigateTo("/userDashboard");
+        }
+    }
+
+}

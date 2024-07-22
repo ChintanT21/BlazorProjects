@@ -1,4 +1,5 @@
-﻿using BlogCenter.WebAPI.Models.Models;
+﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
+using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories.Auth;
 using BMS.Client.Dtos;
 using BMS.Server.ViewModels;
@@ -8,12 +9,13 @@ using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using static BMS.Server.ViewModels.ServiceResponses;
 
 namespace BlogCenter.WebAPI.Services.Auth
 {
     public class AuthService(
-        IAuthRepository _authRepository, 
+        IAuthRepository _authRepository,
         UserManager<ApplicationUser> _userManager,
         RoleManager<IdentityRole> _roleManager,
         IConfiguration _configuration
@@ -30,7 +32,7 @@ namespace BlogCenter.WebAPI.Services.Auth
                 UserName = userDto.Email
             };
             var user = _authRepository.GetUserByEmail(userDto.Email);
-           
+
             if (user is not null) return new GeneralResponse(false, "User registered already");
 
             var createUser = await _userManager.CreateAsync(newUser!, userDto.Password);
@@ -53,6 +55,48 @@ namespace BlogCenter.WebAPI.Services.Auth
                 await _userManager.AddToRoleAsync(newUser, "User");
                 return new GeneralResponse(true, "Account Created");
             }
+        }
+
+        public TokenDto GetUserDetailsByToken(string token)
+        {
+            TokenDto tokenDto = new TokenDto();
+            JwtSecurityTokenHandler tokenHandler = new JwtSecurityTokenHandler();
+            var key = _configuration["JwtSettings:SecretKey"];
+            var keyBytes = System.Text.Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"]);
+            var validationParameters = new TokenValidationParameters
+            {
+                ValidateIssuer = true,
+                ValidateAudience = true,
+                ValidateLifetime = true,
+                ValidateIssuerSigningKey = true,
+                ValidIssuer = _configuration["JwtSettings:Issuer"],
+                ValidAudience = _configuration["JwtSettings:Audience"],
+                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JwtSettings:SecretKey"])),
+            };
+            try
+            {
+                var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
+                var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
+                var user = new ClaimsPrincipal(identity);
+
+                var ClaimTypeEmail = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress";
+                var ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+                var ClaimTypeName = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name";
+                var ClaimTypeRole = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role";
+                var ClaimTypeExpiry = "exp";
+                if (user.Claims != null)
+                {
+                    tokenDto.IsAuthenticated = user.Identity.IsAuthenticated;
+                    tokenDto.Email = user.Claims.FirstOrDefault(c => c.Type == ClaimTypeEmail).Value;
+                    tokenDto.Id = long.Parse(user.Claims.FirstOrDefault(c => c.Type == ClaimTypeId).Value);
+                    tokenDto.Name = user.Claims.FirstOrDefault(c => c.Type == ClaimTypeName).Value;
+                    tokenDto.Role = user.Claims.FirstOrDefault(c => c.Type == ClaimTypeRole).Value;
+                    long exp = long.Parse(user.Claims.FirstOrDefault(c => c.Type == ClaimTypeExpiry).Value);
+                    tokenDto.ExpiryDate = DateTimeOffset.FromUnixTimeSeconds(exp).UtcDateTime;
+                }
+                return tokenDto;
+            }
+            catch { return tokenDto = new(); }
         }
 
         public async Task<bool> isTokenValidate(string token)

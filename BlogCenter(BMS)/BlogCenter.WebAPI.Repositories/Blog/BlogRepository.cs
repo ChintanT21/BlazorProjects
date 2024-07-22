@@ -1,13 +1,15 @@
-﻿using BlogCenter.WebAPI.Dtos.RequestDto;
+﻿using BlogCenter.WebAPI.Dtos.Mapper;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories.Generic;
-using BMS.Server.ViewModels;
-using System.Reflection;
-using System.Text;
-using System.Linq.Dynamic.Core;
+using BlogCenter.WebAPI.Repositories.Utils;
 using BMS.Client.Dtos;
+using BMS.Server.ViewModels;
+using Microsoft.EntityFrameworkCore;
+using System.Linq.Dynamic.Core;
+using System.Linq.Expressions;
 using System.Net;
-using BlogCenter.WebAPI.Dtos.ResponceDto;
+
 
 namespace BlogCenter.WebAPI.Repositories.Blog
 {
@@ -15,17 +17,14 @@ namespace BlogCenter.WebAPI.Repositories.Blog
     {
         ApiResponse apiResponse = new();
 
-        public async Task<ApiResponse> AddBlogAsync(BlogDto blogDto)
+        public async Task<ApiResponse> AddBlogAsync(BlogDto blogDto, long? userId)
         {
-            Models.Models.Blog blog = await _baseRepository.AddAsync(blogDto);
-        }
-
-        public async Task<ApiResponse> DeleteBlogById(long id)
-        {
-            Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
-            if (blog != null)
+            if (blogDto != null)
             {
-                _baseRepository.DeleteAsync(blog);
+                Models.Models.Blog blog = await _baseRepository.AddAsync(blogDto.ToBlog());
+
+                blog.CreatedBy = userId ?? 1;
+                _dbContext.SaveChanges();
                 return apiResponse = new()
                 {
                     IsSuccess = true,
@@ -36,117 +35,179 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             return apiResponse = new()
             {
                 IsSuccess = false,
-                StatusCode = HttpStatusCode.NoContent,
+                StatusCode = HttpStatusCode.NotFound,
+                ErrorMessages = ["Server Error"]
             };
 
         }
-        public async Task<ApiResponse> GetBlogById(long id=1)
+
+        public async Task<ApiResponse> DeleteBlogById(long id, long? userId)
         {
             Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
             if (blog != null)
             {
-                return apiResponse = new()
+                //_baseRepository.DeleteAsync(blog);
+                blog.Status = 5;
+                blog.UpdatedBy = userId;
+                blog.UpdatedDate = DateTime.Now;
+                _dbContext.SaveChanges();
+                List<BlogsCategory> blogsCategory = GetBlogsCategoriesByBlogId(id);
+                if (blogsCategory != null)
                 {
-                    IsSuccess = true,
-                    StatusCode = HttpStatusCode.OK,
-                    Result = blog
-                };
-            }
-            return apiResponse = new()
-            {
-                IsSuccess = false,
-                StatusCode = HttpStatusCode.NoContent,
-            };
-        }
-        public async Task<ApiPaginationResponse> GetBlogsWithPaginationFilteringAndSortingAsync(string? searchString, string? sortString, int page, int pageSize)
-        {
-            PagedItemResult<Models.Models.Blog> pagedBlogData = await _baseRepository.GetAllWithPaginationAsync(page, pageSize);
-            List<Models.Models.Blog> blogs = pagedBlogData.Items.ToList();
-            if (pagedBlogData is PagedItemResult<Models.Models.Blog> pagedBlogResult)
-            {
-                List<Models.Models.Blog> blogList = pagedBlogResult.Items;
-
-                // (arrange order title ascending and year descending
-                if (!string.IsNullOrWhiteSpace(searchString))
-                {
-                    if (string.IsNullOrWhiteSpace(searchString))
-                        blogs = blogList;
-                    else
+                    foreach (var blogCategory in blogsCategory)
                     {
-                        searchString = searchString.Trim().ToLower();
-                        // filtering records with author or title
-                        blogs = _dbContext
-                            .Blogs
-                            .Where(b => b.Title.ToLower().Contains(searchString)
-                            || b.Content.ToLower().Contains(searchString)
-                            ).ToList();
+                        blogCategory.IsDeleted = true;
                     }
                 }
-                if (!string.IsNullOrWhiteSpace(sortString))
+                return apiResponse = new()
                 {
-                    // sorting
-                    // sort=title,-ye
-                    var sortFields = sortString.Split(','); // ['title','-year']
-                    StringBuilder orderQueryBuilder = new StringBuilder();
-                    // using reflection to get properties of book
-                    // propertyInfo= [Id,Title,Year,Author,Language] 
-                    PropertyInfo[] propertyInfo = typeof(Models.Models.Blog).GetProperties();
+                    IsSuccess = true,
+                    StatusCode = HttpStatusCode.OK,
+                    Result = blog
+                };
+            }
+            return apiResponse = new()
+            {
+                IsSuccess = false,
+                StatusCode = HttpStatusCode.NoContent,
+            };
 
+        }
+        public async Task<Models.Models.Blog> GetBlogById(long id = 1)
+        {
+            Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
+            return blog;
+        }
+        public async Task<ApiPaginationResponse> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
+        {
+            Expression<Func<Models.Models.Blog, bool>> where = b => true;
+            if (userId != 0)
+            {
+                where = where.And(b => b.CreatedBy == userId);
+            }
 
+            Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
+            // Apply search string filter to the where expression
+            if (!string.IsNullOrWhiteSpace(searchString))
+            {
+                if (!string.IsNullOrWhiteSpace(searchTable))
+                {
+                    switch (searchTable.ToLower())
+                    {
+                        case "title":
+                            where = where.And(b => b.Title.ToLower().Contains(searchString));
+                            break;
+                        case "content":
+                            where = where.And(b => b.Content.ToLower().Contains(searchString));
+                            break;
+                        // Add more cases for other searchable columns as needed
+                        default:
+                            // Handle unknown searchTable value or do nothing
+                            break;
+                    }
+                }
+                searchString = searchString.Trim().ToLower();
+                where = where.And(b => b.Title.ToLower().Contains(searchString) || b.Content.ToLower().Contains(searchString));
+            }
+
+            // Apply sorting
+            Func<IQueryable<Models.Models.Blog>, IOrderedQueryable<Models.Models.Blog>>? orderBy = null;
+
+            if (!string.IsNullOrWhiteSpace(sortString))
+            {
+                var sortFields = sortString.Split(',');
+                orderBy = query =>
+                {
+                    IOrderedQueryable<Models.Models.Blog> orderedQuery = null!;
                     foreach (var field in sortFields)
                     {
-                        // iteration 1, field=title
-                        // iteration 2, field=-year
                         string sortOrder = "ascending";
-                        // iteration 1, sortField= title
-                        // iteration 2, sortField=-year
                         var sortField = field.Trim();
                         if (sortField.StartsWith("-"))
                         {
                             sortField = sortField.TrimStart('-');
                             sortOrder = "descending";
                         }
-                        // property = 'Title'
-                        // property = 'Year'
-                        var property = propertyInfo.FirstOrDefault(a => a.Name.Equals(sortField, StringComparison.OrdinalIgnoreCase));
-                        if (property == null)
-                            continue;
-                        // orderQueryBuilder= "Title ascending,Year descending, "
-                        // it have trailing , and whitespace
-                        orderQueryBuilder.Append($"{property.Name.ToString()} {sortOrder}, ");
+
+                        var parameter = Expression.Parameter(typeof(Models.Models.Blog), "b");
+                        var property = Expression.Property(parameter, sortField);
+                        var lambda = Expression.Lambda(property, parameter);
+
+                        if (orderedQuery == null)
+                        {
+                            orderedQuery = sortOrder == "ascending"
+                                ? Queryable.OrderBy(query, (dynamic)lambda)
+                                : Queryable.OrderByDescending(query, (dynamic)lambda);
+                        }
+                        else
+                        {
+                            orderedQuery = sortOrder == "ascending"
+                                ? Queryable.ThenBy(orderedQuery, (dynamic)lambda)
+                                : Queryable.ThenByDescending(orderedQuery, (dynamic)lambda);
+                        }
                     }
-                    // remove trailing , and whitespace here
-                    // orderQuery = ""Title ascending,Year descending"
-                    string orderQuery = orderQueryBuilder.ToString().TrimEnd(',', ' ');
-                    if (!string.IsNullOrWhiteSpace(orderQuery))
-                        // use System.Linq.Dynamic.Core namespace for this
-                        blogs = blogs.AsQueryable().OrderBy(orderQuery).ToList();
-                    else
-                        blogs = blogs.AsQueryable().OrderBy(orderQuery).ToList();
-                }
-                ApiPaginationResponse apiPaginationResponse = new()
+                    return orderedQuery ?? query.OrderBy(x => 0);
+                };
+            }
+
+
+            PagedItemResult<Models.Models.Blog> pagedBlogData = await _baseRepository.GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory }, orderBy);
+
+
+            ApiPaginationResponse apiPaginationResponse = new()
+            {
+                IsSuccess = true,
+                StatusCode = HttpStatusCode.OK,
+                Result = pagedBlogData.Items,
+                TotalPages = pagedBlogData.TotalPages,
+                TotalCount = pagedBlogData.TotalCount,
+            };
+            return apiPaginationResponse;
+        }
+
+
+
+        public List<BlogsCategory> GetBlogsCategoriesByBlogId(long id)
+        {
+            List<BlogsCategory> blogsCategory = [.. _dbContext.BlogsCategories.Where(x => x.BlogId == id)];
+
+            return blogsCategory;
+        }
+        public async Task<ApiResponse> AddBlogCategoryById(BlogDto blogDto, long? userId)
+        {
+
+            if (blogDto != null)
+            {
+                Models.Models.Blog blog = await _baseRepository.AddAsync(blogDto.ToBlog());
+
+                blog.CreatedBy = userId ?? 1;
+                _dbContext.SaveChanges();
+                return apiResponse = new()
                 {
                     IsSuccess = true,
                     StatusCode = HttpStatusCode.OK,
-                    Result = blogs,
-                    TotalPages = pagedBlogData.TotalPages,
-                    TotalCount = pagedBlogData.TotalCount,
+                    Result = blog
                 };
-                return apiPaginationResponse;
             }
-            else
+            return apiResponse = new()
             {
-                ApiPaginationResponse apiPaginationResponse = new()
-                {
-                    IsSuccess = false,
-                    StatusCode = HttpStatusCode.NoContent,
+                IsSuccess = false,
+                StatusCode = HttpStatusCode.NotFound,
+                ErrorMessages = ["Server Error"]
+            };
+        }
 
-                };
-                return apiPaginationResponse;
-                // Handle the error or the case when the cast fails
-                throw new InvalidCastException("ApiResponse.Result is not of type PagedItemResult<Models.Models.Blog>");
-            }
+        public void UpdateBlog(Models.Models.Blog blog)
+        {
+            _baseRepository.UpdateAsync(blog);
+        }
 
+        public async Task<List<Models.Models.Blog>> GetBlogsByUserId(string? searchString, string? sortString, long userId)
+        {
+            Expression<Func<Models.Models.Blog, bool>> byUserId = b => b.CreatedBy == userId;
+            Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
+            List<Models.Models.Blog> blogs = await _baseRepository.GetAllAsync(byUserId, null, includeCategory);
+            return blogs;
         }
     }
 }

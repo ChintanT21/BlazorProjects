@@ -1,0 +1,48 @@
+﻿@using System.Security.Claims
+@using System.Text.Json
+@using BMS.Client.Authentication
+@inject AuthenticationStateProvider AuthenticationStateProvider
+@inject NavigationManager navigationManager
+@rendermode InteractiveServer
+
+
+
+<div class="d-flex align-items-center justify-content-end pb-2 border border-secondary">
+    <div class="me-3">
+        <button class="bg-transparent btn" style="border: none;"> Welcome <strong> @userName</strong> </button>
+    </div>
+    <div class="me-3">
+        <button class="bg-transparent btn" style="border: none;" @onclick="@(()=>DeleteAuthToken())"> <strong>Logout</strong></button>
+    </div>
+</div>
+
+
+@code {
+    string ClaimTypeEmail = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress";
+    string ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+    string ClaimTypeName = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name";
+    string ClaimTypeRole = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role";
+
+    string userEmail = string.Empty;
+    string userId = string.Empty;
+    string userName = string.Empty;
+    string userRole = string.Empty;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await AuthenticationStateProvider.GetAuthenticationStateAsync();
+        var userClaims = authState.User.Claims;
+
+        userEmail = userClaims.FirstOrDefault(c => c.Type == ClaimTypeEmail)?.Value ?? "Email not found";
+        userId = userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value ?? "ID not found";
+        userName = userClaims.FirstOrDefault(c => c.Type == ClaimTypeName)?.Value ?? "Name not found";
+        userRole = userClaims.FirstOrDefault(c => c.Type == ClaimTypeRole)?.Value ?? "Role not found";
+    }
+    protected async void DeleteAuthToken()
+    {
+        await JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
+        var authStateProvider = (CustomAuthenticationStateProvider)AuthenticationStateProvider;
+        authStateProvider.NotifyUserLogout();
+        navigationManager.NavigateTo("/");
+    }
+}

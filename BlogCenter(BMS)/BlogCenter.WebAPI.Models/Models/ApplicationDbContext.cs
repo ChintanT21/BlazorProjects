@@ -60,9 +60,7 @@ public partial class ApplicationDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_created_by");
 
-            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.BlogsCategoryUpdatedByNavigations)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_updated_by");
+            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.BlogsCategoryUpdatedByNavigations).HasConstraintName("fk_updated_by");
         });
 
         modelBuilder.Entity<Category>(entity =>
@@ -75,9 +73,7 @@ public partial class ApplicationDbContext : DbContext
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("fk_created_by");
 
-            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.CategoryUpdatedByNavigations)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("fk_updated_by");
+            entity.HasOne(d => d.UpdatedByNavigation).WithMany(p => p.CategoryUpdatedByNavigations).HasConstraintName("fk_updated_by");
         });
 
         modelBuilder.Entity<Role>(entity =>

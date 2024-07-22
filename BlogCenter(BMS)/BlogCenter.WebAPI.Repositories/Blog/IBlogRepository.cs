@@ -11,9 +11,11 @@ namespace BlogCenter.WebAPI.Repositories.Blog
 {
     public interface IBlogRepository
     {
-        Task<ApiResponse> AddBlogAsync(BlogDto blogDto);
-        Task<ApiResponse> DeleteBlogById(long id);
-        Task<ApiResponse> GetBlogById(long id);
-        Task<ApiPaginationResponse> GetBlogsWithPaginationFilteringAndSortingAsync(string? searchString, string? sortString,int page, int pageSize);
+        Task<ApiResponse> AddBlogAsync(BlogDto blogDto, long? userId);
+        Task<ApiResponse> DeleteBlogById(long id,long? userId);
+        Task<Models.Models.Blog> GetBlogById(long id);
+        Task<List<Models.Models.Blog>> GetBlogsByUserId(string? searchString, string? sortString, long userId);
+        Task<ApiPaginationResponse> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId);
+        void UpdateBlog(Models.Models.Blog blog);
     }
 }

@@ -23,13 +23,13 @@ public partial class BlogsCategory
     public DateTime CreatedDate { get; set; }
 
     [Column("updated_date", TypeName = "timestamp without time zone")]
-    public DateTime UpdatedDate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
     [Column("created_by")]
     public long CreatedBy { get; set; }
 
     [Column("updated_by")]
-    public long UpdatedBy { get; set; }
+    public long? UpdatedBy { get; set; }
 
     [Column("is_deleted")]
     public bool IsDeleted { get; set; }
@@ -48,5 +48,5 @@ public partial class BlogsCategory
 
     [ForeignKey("UpdatedBy")]
     [InverseProperty("BlogsCategoryUpdatedByNavigations")]
-    public virtual User UpdatedByNavigation { get; set; } = null!;
+    public virtual User? UpdatedByNavigation { get; set; }
 }

@@ -1,0 +1,61 @@
+﻿@page "/adminDashboard"
+@rendermode InteractiveServer
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using Microsoft.AspNetCore.Authorization
+@using BlogCenter.WebAPI.Dtos.Enums
+@inject IJSRuntime JSRuntime
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.DataManipulationDto;
+
+
+@* <div class="row">
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+        <input type="text" class="form-control" placeholder="title" disabled />
+    </div>
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+        <InputText @bind-Value=searchText type="text" class="form-control" placeholder="Search" />
+    </div>
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2 ">
+        <InputSelect @bind-Value=selectedStatus  class="form-control" >
+            <option hidden >choose Status</option>
+                @foreach (var status in Enum.GetValues(typeof(BlogCenter.WebAPI.Dtos.Enums.Enums.BlogStatus)))
+            {
+                <option value="@((int)status)">@status.</option>
+            }
+        </InputSelect>
+    </div>
+</div> *@
+<div class="row">
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+        <input type="text" class="form-control" placeholder="title" disabled />
+    </div>
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+        <InputText @bind-Value=searchText @onchange="OnSearchChanged" type="text" class="form-control" placeholder="Search" />
+    </div>
+    <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2 ">
+        <InputSelect @bind-Value=selectedStatus class="form-control">
+            <option hidden>choose Status</option>
+            @foreach (var status in Enum.GetValues(typeof(BlogCenter.WebAPI.Dtos.Enums.Enums.BlogStatus)))
+            {
+                <option value="@((int)status)">@status.</option>
+            }
+        </InputSelect>
+    </div>
+</div>
+
+<div>
+
+        <BlogTable />
+</div>
+
+@code {
+    protected string searchText = string.Empty;
+    protected int selectedStatus;
+
+    public DataManipulationDto manipulationDto = new DataManipulationDto();
+    
+
+
+
+}
+
+

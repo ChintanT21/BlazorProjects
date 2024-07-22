@@ -3,10 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.Blazor", "BlogCenter.Blazor\BlogCenter.Blazor\BlogCenter.Blazor.csproj", "{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.Blazor.Client", "BlogCenter.Blazor\BlogCenter.Blazor.Client\BlogCenter.Blazor.Client.csproj", "{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI", "BlogCenter.WebAPI\BlogCenter.WebAPI.csproj", "{1BCF1996-8685-419F-89C2-6829E293A387}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Dtos", "BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj", "{6AAD744A-B53F-4BE0-9FC3-203270E96072}"
@@ -17,20 +13,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Services", "BlogCenter.WebAPI.Services\BlogCenter.WebAPI.Services.csproj", "{24020268-7ADA-4560-BE41-39F333F0CFDA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter", "BlogCenter\BlogCenter\BlogCenter.csproj", "{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.Client", "BlogCenter\BlogCenter.Client\BlogCenter.Client.csproj", "{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{AF6BB658-C7F8-4231-BC09-FD5EC61AF61B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{176A0B2E-81BB-432C-8579-7FE7ABAF0DD1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{1BCF1996-8685-419F-89C2-6829E293A387}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{1BCF1996-8685-419F-89C2-6829E293A387}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1BCF1996-8685-419F-89C2-6829E293A387}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -51,6 +43,14 @@ Global
 		{24020268-7ADA-4560-BE41-39F333F0CFDA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24020268-7ADA-4560-BE41-39F333F0CFDA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{24020268-7ADA-4560-BE41-39F333F0CFDA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,4 +1,5 @@
 using BlogCenter.WebAPI.Auth;
+using BlogCenter.WebAPI.Filters;
 using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories;
 using BlogCenter.WebAPI.Repositories.Auth;
@@ -16,6 +17,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>();
 
 builder.Services.AddSingleton<IConfiguration>(builder.Configuration);
+builder.Services.AddSingleton(sp => new HttpClient
+{
+    BaseAddress = new Uri(builder.Configuration["Backend:Url"] ?? "https://localhost:7009")
+});
 
 builder.Services.AddDbContext<AuthDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection") ??
@@ -26,8 +31,15 @@ builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
      .AddSignInManager()
     .AddRoles<IdentityRole>();
 
-builder.Services.AddSwaggerGen();
+builder.Services.AddControllers()
+    .AddJsonOptions(options =>
+    {
+        options.JsonSerializerOptions.ReferenceHandler = System.Text.Json.Serialization.ReferenceHandler.Preserve;
+        options.JsonSerializerOptions.WriteIndented = true;
+    });
 
+builder.Services.AddSwaggerGen();
+builder.Services.AddHttpContextAccessor();
 builder.Services.AddSwaggerGen(option =>
 {
     option.AddSecurityDefinition("oauth2", new Microsoft.OpenApi.Models.OpenApiSecurityScheme
@@ -59,9 +71,15 @@ builder.Services.AddAuthentication(options =>
         };
     });
 
+builder.Services.AddControllers(opt =>
+{
+    opt.Filters.Add<TokenIdentifierFilter>();
+});
+
 builder.Services.AddControllers();
 builder.Services.AddRepository();
 builder.Services.AddService();
+builder.Services.AddMapper();
 builder.Services.AddAuthorization();
 
 builder.Services.AddEndpointsApiExplorer();

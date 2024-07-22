@@ -1,0 +1,35 @@
+﻿@page "/jjhjjhj"
+@using BlogCenter.Blazor.Services.Role
+@rendermode InteractiveServer   
+@layout AuthLayout
+@inject AuthenticationStateProvider authenticationStateProvider
+@inject NavigationManager _navigationManager
+
+
+<div class="">
+    <h1 class="header-overlay">Blog Management System</h1>
+    <p class="btn btn-success d-block " @onclick="NavigateToLoginPage">Login</p>
+</div>
+
+@code {
+
+    public void NavigateToLoginPage()
+    {
+        _navigationManager.NavigateTo("/login");
+    }
+    protected override async Task OnInitializedAsync()
+        {
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
+        {
+            _navigationManager.NavigateTo("/adminDashboard");
+        }
+        else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
+        {
+            _navigationManager.NavigateTo("/userDashboard");
+        }
+    }
+}
+

@@ -1,0 +1,55 @@
+﻿@* @using Microsoft.AspNetCore.Components.Authorization
+
+<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid d-flex justify-content-center">
+        <a class="navbar-brand h1" href="">BlogCenter  </a>
+    </div>
+</div>
+
+<div class="sidebar ">
+    <div class="nav-scrollable h5 mt-5 " onclick="document.querySelector('.navbar-toggler').click()">
+        <nav class="flex-column">
+            <div class="nav-item d-flex justify-content-center ">
+                <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                    <span class="button " aria-hidden="true"></span> Dashboard
+                </NavLink>
+            </div>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <div class="nav-item d-flex justify-content-center">
+                        <NavLink class="nav-link" href="users">
+                            <span class="button" aria-hidden="true"></span> Users
+                        </NavLink>
+                    </div>
+                </Authorized>
+            </AuthorizeView>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <div class="nav-item d-flex justify-content-center">
+                        <NavLink class="nav-link" href="category">
+                            <span class="button" aria-hidden="true"></span> Category
+                        </NavLink>
+                    </div>
+                </Authorized>
+            </AuthorizeView>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <div class="nav-item d-flex justify-content-center">
+                        <NavLink class="nav-link" href="blogs">
+                            <span class="button" aria-hidden="true"></span> Blogs
+                        </NavLink>
+                    </div>
+                </Authorized>
+            </AuthorizeView>
+        </nav>
+    </div>
+</div>
+
+ *@
+<nav>
+    <ul class="list-unstyled">
+        <li><NavLink href="" Match="NavLinkMatch.All">Home</NavLink></li>
+        <li><NavLink href="page1">Page 1</NavLink></li>
+        <li><NavLink href="page2">Page 2</NavLink></li>
+    </ul>
+</nav>

@@ -1,4 +1,5 @@
-﻿using BMS.Client.Dtos;
+﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
+using BMS.Client.Dtos;
 using BMS.Server.ViewModels;
 using static BMS.Server.ViewModels.ServiceResponses;
 
@@ -10,6 +11,6 @@ namespace BlogCenter.WebAPI.Services.Auth
         Task<LoginResponse> LoginAccount(LoginDto loginDTO);
         Task<bool> isTokenValidate(string token);
         Task<ApiResponse> TokenValidator(string token);
-
+        TokenDto GetUserDetailsByToken(string token);
     }
 }

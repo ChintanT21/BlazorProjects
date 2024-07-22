@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\BlogCenter.Blazor.bundle.scp.css",
+      "PackagePath": "staticwebassets\\BlogCenter.Blazor.bundle.scp.css"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\assets\\5994360-hd_1550_1080_30fps.mp4",
+      "PackagePath": "staticwebassets\\assets\\5994360-hd_1550_1080_30fps.mp4"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\assets\\8733059-hd_1920_1080_30fps.mp4",
+      "PackagePath": "staticwebassets\\assets\\8733059-hd_1920_1080_30fps.mp4"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\assets\\favicon.png",
+      "PackagePath": "staticwebassets\\assets\\favicon.png"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "d:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Blazor\\BlogCenter.Blazor\\wwwroot\\js\\app.js",
+      "PackagePath": "staticwebassets\\js\\app.js"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.BlogCenter.Blazor.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.BlogCenter.Blazor.props",
+      "PackagePath": "build\\BlogCenter.Blazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.BlogCenter.Blazor.props",
+      "PackagePath": "buildMultiTargeting\\BlogCenter.Blazor.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.BlogCenter.Blazor.props",
+      "PackagePath": "buildTransitive\\BlogCenter.Blazor.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

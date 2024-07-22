@@ -1,0 +1,136 @@
+﻿@using Microsoft.AspNetCore.Components.QuickGrid;
+@using System.Data.Common;
+@using BlogCenter.Blazor.Services;
+@using Microsoft.AspNetCore.Components;
+@using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
+@using BlogCenter.WebAPI.Dtos.ResponceDto;
+
+@if (blogs == null || blogsQueryable == null)
+{
+    <div class="spinner-border center-of-page text-success " role="status">
+    </div>
+}
+else
+{
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">CreatedBy</th>
+                    <th scope="col">UpdatedBy</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Approve/Reject</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var blog in blogs ?? new())
+                {
+
+                    <tr>
+                        <td>@blog.Title</td>
+                        <td>@blog.CreatedBy</td>
+                        <td>@blog.UpdatedBy</td>
+                        <td>@blog.StatusName</td>
+                        <td>Approve | Reject </td>
+                        <td>Edit | View</td>
+                    </tr>
+                };
+
+            </tbody>
+        </table>
+        <div class="d-flex justify-content-between">
+            <div>
+                Page @dto.PageNumber of @((totalRecords + dto.PageSize - 1) / dto.PageSize)
+            </div>
+            <div>
+                <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber > 1 ? dto.PageNumber - 1 : 1)">Previous</button>
+                <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber < (totalRecords + dto.PageSize - 1) / dto.PageSize ? dto.PageNumber + 1 : dto.PageNumber)">Next</button>
+            </div>
+        </div>
+    </div>
+    <div class="grid container">
+        <QuickGrid Items="@FilteredBlogs" Pagination="@pagination">
+            <PropertyColumn Property="@(c => c.Title)" Sortable="true" Class="country-name">
+                <ColumnOptions>
+                    <div class="search-box">
+                        <input type="search" autofocus @bind="nameFilter" @bind:event="oninput" placeholder="Blog title..." />
+                    </div>
+                </ColumnOptions>
+            </PropertyColumn>
+            <PropertyColumn Property="@(c => c.CreatedBy)" Sortable="true" Align="Align.Right" />
+            <PropertyColumn Property="@(c => c.UpdatedBy)" Sortable="true" Align="Align.Right" />
+            <PropertyColumn Property="@(c => c.StatusName)" Sortable="true" Align="Align.Right" />
+            <TemplateColumn>
+                <ColumnTemplate Context="@FilteredBlogs">
+                    <button class="btn btn-success">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-info">View</button>
+                </ColumnTemplate>
+            </TemplateColumn>
+        </QuickGrid>
+    </div>
+    <Paginator State="@pagination" />
+}
+
+@code {
+    [Parameter]
+    private string searchString = string.Empty;
+    [Inject]
+    private IClientService _clientService { get; set; }
+
+    private List<GetBlog>? blogs;
+    private IQueryable<GetBlog>? blogsQueryable;
+    private PaginationState pagination = new PaginationState { ItemsPerPage = 15 };
+    private string nameFilter = string.Empty;
+    private int totalRecords = 0;
+    private DataManipulationDto dto = new();
+    private GridSort<GetBlog> rankSort = GridSort<GetBlog>
+        .ByDescending(x => x.Title)
+        .ThenDescending(x => x.Content)
+        .ThenDescending(x => x.StatusName);
+
+    private IQueryable<GetBlog>? FilteredBlogs => blogsQueryable?
+        .Where(x => x.Title.Contains(nameFilter, StringComparison.CurrentCultureIgnoreCase));
+
+    protected async override Task OnParametersSetAsync()
+    {
+        blogs = await _clientService.GetBlogData(dto);
+        blogsQueryable = blogs.AsQueryable();
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+    private async Task LoadData()
+    {
+        blogs = await _clientService.GetBlogData(dto);
+        blogs = blogs;
+        totalRecords = 100;
+    }
+    private async Task OnSearchChanged(ChangeEventArgs e)
+    {
+        dto.SearchString = e.Value.ToString();
+        await LoadData();
+    }
+
+    private async Task OnSortChanged(string columnName)
+    {
+        dto.SortString = columnName;
+        await LoadData();
+    }
+
+    private async Task OnPageChanged(int pageNumber)
+    {
+        dto.PageNumber = pageNumber;
+        await LoadData();
+    }
+
+    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    {
+        dto.PageSize = int.Parse(e.Value.ToString());
+        await LoadData();
+    }
+
+}

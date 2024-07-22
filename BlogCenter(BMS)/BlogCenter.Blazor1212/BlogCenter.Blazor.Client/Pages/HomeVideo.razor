@@ -1,0 +1,24 @@
+﻿@page "/videoCLient"
+@rendermode InteractiveAuto
+@inject NavigationManager navigationManager
+<div class="">
+    <div class="background-video">
+        <video autoplay muted loop>
+            <source src="/assets/8733059-hd_1920_1080_30fps.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="header-overlay">
+            <h1>Blog Center</h1>
+            <p>(Blog Management System)</p>
+            <p><button class="btn btn-success" @onclick="NavigateToLogin">login</button></p>
+        </div>
+    </div>
+</div>
+
+@code {
+
+    protected async void NavigateToLogin()
+    {
+          navigationManager.NavigateTo("/login");
+    }
+}

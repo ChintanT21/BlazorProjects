@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Components.QuickGrid;
+@using System.Data.Common;
+
+@if (blogs == null || blogsQueryable == null)
+{
+    <div class="spinner-border text-success" role="status">
+    </div>
+}
+else
+{
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Title</th>
+                    <th scope="col">CreatedBy</th>
+                    <th scope="col">UpdatedBy</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Approve/Reject</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var blog in blogs ?? new())
+                {
+
+                    <tr>
+                        <td>@blog.Title</td>
+                        <td>@blog.CreatedBy</td>
+                        <td>@blog.UpdatedBy</td>
+                        <td>@blog.StatusName</td>
+                        <td>Approve | Reject </td>
+                        <td>Edit | View</td>
+                    </tr>
+                };
+
+            </tbody>
+        </table>
+    </div>
+    <div class="grid container">
+        <QuickGrid Items="@FilteredBlogs" Pagination="@pagination">
+            <PropertyColumn Property="@(c => c.Title)" Sortable="true" Class="country-name">
+                <ColumnOptions>
+                    <div class="search-box">
+                        <input type="search" autofocus @bind="nameFilter" @bind:event="oninput" placeholder="Blog title..." />
+                    </div>
+                </ColumnOptions>
+            </PropertyColumn>
+            <PropertyColumn Property="@(c => c.CreatedBy)" Sortable="true" Align="Align.Right" />
+            <PropertyColumn Property="@(c => c.UpdatedBy)" Sortable="true" Align="Align.Right" />
+            <PropertyColumn Property="@(c => c.StatusName)" Sortable="true" Align="Align.Right" />
+            <TemplateColumn>
+                <ColumnTemplate Context="@FilteredBlogs">
+                    <button class="btn btn-success">Edit</button>
+                    <button class="btn btn-danger">Delete</button>
+                    <button class="btn btn-info">View</button>
+                </ColumnTemplate>
+            </TemplateColumn>
+        </QuickGrid>
+    </div>
+    <Paginator State="@pagination" />
+}
