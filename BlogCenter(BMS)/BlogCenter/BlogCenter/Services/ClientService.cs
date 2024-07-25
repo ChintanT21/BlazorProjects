@@ -111,6 +111,29 @@ namespace BlogCenter.Blazor.Services
             return responce.ResultList;
         }
 
+        public async Task<GetBlog> GetOneBlog(long blogId)
+        {
+            _url = $"/api/Blogs/{blogId}";
+            Response<GetBlog>? response = await _httpClient.GetFromJsonAsync<Response<GetBlog>>(_url);
+            return response.ResultOne;
+        }
 
+        public async Task<bool> UpdateBlog(BlogDto blog)
+        {
+            _url = "/api/Blogs";
+
+            var response = await _httpClient.PutAsJsonAsync(_url, blog);
+
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error creating blog: {response.StatusCode}, {errorContent}");
+                return false;
+            }
+        }
     }
 }

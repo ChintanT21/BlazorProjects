@@ -14,7 +14,46 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
 {
     public static class BlogMapper
     {
-
+        public static GetBlog ToGetBlogFromBlogDto(this BlogDto updateBlogDto)//not nececcery
+        {
+            return new GetBlog
+            {
+                Id = updateBlogDto.BlogId,
+                Title = updateBlogDto.Title ?? string.Empty,
+                Content = updateBlogDto.Content ?? string.Empty,
+                AdminComment = updateBlogDto.AdminComment,
+                CreatedDate = updateBlogDto.CreatedDate ?? DateTime.Now,
+                UpdatedDate = updateBlogDto.UpdatedDate,
+                CreatedBy = updateBlogDto.CreatedBy ?? 0,
+                UpdatedBy = updateBlogDto.UpdatedBy,
+                Status = updateBlogDto.Status ?? 0,
+                BlogsCategories = updateBlogDto.Categories?
+                    .Select(categoryId => new GetBlogsCategory
+                    {
+                        CategoryId = categoryId,
+                        BlogId = updateBlogDto.BlogId,
+                        CreatedDate = DateTime.Now,
+                        CreatedBy = updateBlogDto.CreatedBy ?? 0,
+                        IsDeleted = false
+                    }).ToList() ?? new List<GetBlogsCategory>()
+            };
+        }
+        public static BlogDto ToBlogDto(this GetBlog getBlog)
+        {
+            return new BlogDto
+            {
+                BlogId = getBlog.Id,
+                Title = getBlog.Title,
+                Content = getBlog.Content,
+                AdminComment = getBlog.AdminComment,
+                CreatedDate = getBlog.CreatedDate,
+                UpdatedDate = getBlog.UpdatedDate,
+                CreatedBy = getBlog.CreatedBy,
+                UpdatedBy = getBlog.UpdatedBy,
+                Status = getBlog.Status,
+                Categories = getBlog.BlogsCategories.Select(c => c.CategoryId).ToList()
+            };
+        }
         public static List<GetBlog> ToGetBlogList(this List<Blog> blogs)
         {
             List<GetBlog> getblog = new List<GetBlog>();
@@ -23,6 +62,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
             {
                 GetBlog blog = new GetBlog
                 {
+                    Id=blogDto.Id,
                     Title = blogDto.Title,
                     Content = blogDto.Content,
                     AdminComment = blogDto.AdminComment,
@@ -32,7 +72,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                     UpdatedDate = blogDto.UpdatedDate,
                     Status = blogDto.Status,
                     StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
-                    //BlogsCategories = ToGetBlogsCategories(blogDto.BlogsCategories)
+                    BlogsCategories = ToGetBlogsCategories(blogDto.BlogsCategories)
                 };
 
                 getblog.Add(blog);

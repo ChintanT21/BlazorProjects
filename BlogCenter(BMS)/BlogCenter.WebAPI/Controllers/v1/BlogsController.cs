@@ -30,8 +30,12 @@ namespace BlogCenter.WebAPI.Controllers.v1
         }
 
         [HttpGet("{blogId:long}")]
-        public async Task<IActionResult> GetBlogById(long blogId = 1)
+        public async Task<IActionResult> GetBlogById(long blogId = 0)
         {
+            if (blogId==0)
+            {
+                return NotFound();
+            }
             try
             {
                 ApiResponse apiResponse = await _blogService.GetBlogById(blogId);
@@ -46,8 +50,12 @@ namespace BlogCenter.WebAPI.Controllers.v1
         }
 
         [HttpDelete("{id:long}")]
-        public async Task<IActionResult> DeleteBlogById(long id)
+        public async Task<IActionResult> DeleteBlogById(long id=0)
         {
+            if(id == 0)
+            {
+                return NotFound();
+            }
             try
             {
                 if (HttpContext.Items.TryGetValue("TokenDto", out var tokenDtoObj) && tokenDtoObj is TokenDto tokenDto)
@@ -65,6 +73,10 @@ namespace BlogCenter.WebAPI.Controllers.v1
         [HttpPost]
         public async Task<IActionResult> AddBlog(AddBlogDto blogDto)//userid whom add blog
         {
+            if (blogDto is null)
+            {
+                return NoContent();
+            }
             try
             {
                 if (HttpContext.Items.TryGetValue("TokenDto", out var tokenDtoObj) && tokenDtoObj is TokenDto tokenDto)

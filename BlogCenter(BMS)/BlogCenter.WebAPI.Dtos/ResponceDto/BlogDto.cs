@@ -5,8 +5,9 @@ namespace BlogCenter.WebAPI.Dtos.ResponceDto
 {
     public class BlogDto
     {
-        public string Title { get; set; } = null!;
-        public string Content { get; set; } = null!;
+        public long BlogId { get; set; }
+        public string? Title { get; set; }
+        public string? Content { get; set; } 
         public string? AdminComment { get; set; }
         public DateTime? CreatedDate { get; set; } = DateTime.Now;
         public DateTime? UpdatedDate { get; set; }= DateTime.Now;

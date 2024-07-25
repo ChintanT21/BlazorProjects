@@ -4,6 +4,9 @@
 @using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 @using BlogCenter.WebAPI.Dtos.ResponceDto;
 @using BlogCenter.WebAPI.Dtos.Enums
+@inject IClientService _clientService
+@inject NavigationManager _navigationManager
+
 
 @if (blogs == null)
 {
@@ -11,7 +14,6 @@
 }
 else
 {
-    <ViewModal @ref="modal" />
     <table class="table table-responsive">
         <thead>
             <tr>
@@ -41,7 +43,7 @@ else
                     <td>@blog.StatusName</td>
                     <td><button class="btn btn-success" @onclick="() => Approve(blog.Id)">Approve</button> |  <button class="btn btn-danger" @onclick="() => Reject(blog.Id)">Reject</button></td>
                     <td>
-                        Edit | <button class="btn btn-primary" @onclick="OpenModal">View</button>
+                        <button class="btn btn-primary" @onclick="() => NavigateToEditPage(blog.Id)">Edit</button> | <button class="btn btn-secondary" @onclick="() => Open(blog.Id)">View</button>
                     </td>
                 </tr>
             }
@@ -67,46 +69,13 @@ else
         </div>
     </div>
 
-    @*     <div class="grid container">
-        <QuickGrid Items="@(FilteredBlogs)" Pagination="@pagination">
-            <PropertyColumn Property="@(c => c.Title)" Sortable="true" Class="country-name">
-                <ColumnOptions>
-                    <div class="search-box">
-                        <input type="search" autofocus @bind="nameFilter" @bind:event="oninput" placeholder="Blog title..." />
-                    </div>
-                </ColumnOptions>
-            </PropertyColumn>
-            <PropertyColumn Property="@(c => c.CreatedBy)" Sortable="true" Align="Align.Right" />
-            <PropertyColumn Property="@(c => c.UpdatedBy)" Sortable="true" Align="Align.Right" />
-            <PropertyColumn Property="@(c => c.StatusName)" Sortable="true" Align="Align.Right" />
-            <TemplateColumn>
-                <ColumnTemplate Context="blog">
-                    <button class="btn btn-success">Edit</button>
-                    <button class="btn btn-danger">Delete</button>
-                    <button class="btn btn-info">View</button>
-                </ColumnTemplate>
-            </TemplateColumn>
-        </QuickGrid>
-    </div>
-    <Paginator State="@pagination" /> *@
 }
 
 @code {
 
     [Parameter]
     public string SearchString { get; set; } = string.Empty;
-    [Inject] protected IClientService _clientService { get; set; }
-    [Inject] IJSRuntime JSRuntime1 { get; set; }
 
-    private ViewModal modal { get; set; }
-
-    protected override void OnAfterRender(bool firstRender)
-    {
-        if (firstRender)
-        {
-            modal = new ViewModal();
-        }
-    }
     private string sortIcon = "fa fa-sort-asc";
     protected BlogTableDto tableDto;
     protected List<GetBlog>? blogs = new();
@@ -190,18 +159,11 @@ else
         await LoadData();
     }
 
-    private async  void OpenModal()
+    protected async Task NavigateToEditPage(long blogId)
     {
-        if (modal != null)
-        {
-            modal.Open();
-        }
-        else
-        {
-            Console.WriteLine("Modal is not initialized.");
-        }
+        selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
+        _navigationManager.NavigateTo($"/edit-blog?blogid={blogId}");
     }
-
     private void Approve(long blogId)
     {
         // Add logic to approve the blog
@@ -210,5 +172,78 @@ else
     private void Reject(long blogId)
     {
         // Add logic to reject the blog
+    }
+}
+
+<div class="modal @modalClass" tabindex="-1" role="dialog" style="display:@modalDisplay; overflow-y: auto;" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="exampleModalLongTitle">Blog Detail</h5>
+                <button type="button " class="close btn btn-secondary" aria-label="Close" @onclick="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-3">Title</dt>
+                    <dd class="col-sm-9">@selectedBlog?.Title</dd>
+
+                    <dt class="col-sm-3">Content</dt>
+                    <dd class="col-sm-9">@selectedBlog?.Content</dd>
+
+                    <dt class="col-sm-3">Created by</dt>
+                    <dd class="col-sm-9">@selectedBlog?.CreatedBy</dd>
+
+                    <dt class="col-sm-3">Created date</dt>
+                    <dd class="col-sm-9">@selectedBlog?.CreatedDate</dd>
+
+                    @if (selectedBlog?.UpdatedBy != null)
+                    {
+                        <dt class="col-sm-3">Updated by</dt>
+                        <dd class="col-sm-9">@selectedBlog?.UpdatedBy</dd>
+
+                        <dt class="col-sm-3">Updated date</dt>
+                        <dd class="col-sm-9">@selectedBlog?.UpdatedDate</dd>
+
+                    }
+                        <dt class="col-sm-3">Status</dt>
+                        <dd class="col-sm-9">@selectedBlog?.StatusName</dd>
+
+                </dl>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+@if (showBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private GetBlog? selectedBlog;
+    private string modalDisplay = "none";
+    private string modalClass = "";
+    private bool showBackdrop = false;
+
+    public void Open(long blogId)
+    {
+        selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
+        modalDisplay = "block";
+        modalClass = "show";
+        showBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        modalDisplay = "none";
+        modalClass = "";
+        showBackdrop = false;
+        StateHasChanged();
     }
 }

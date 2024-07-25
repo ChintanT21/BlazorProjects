@@ -74,6 +74,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRob3JcVXNlckRhc2hib2FyZC5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/EditBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0QmxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Error.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 

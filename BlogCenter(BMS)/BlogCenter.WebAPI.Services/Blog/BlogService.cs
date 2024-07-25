@@ -83,11 +83,11 @@ namespace BlogCenter.WebAPI.Services.Blog
             blog.Title = blogDto.Title ?? blog.Title;
             blog.UpdatedBy = id;
             blog.UpdatedDate = blogDto.UpdatedDate;
+            blog.Status=blogDto.Status?? blog.Status;
             _blogRepository.UpdateBlog(blog);
             if (blogDto.Categories != null)
             {
                 _blogCategoryRepository.UpdateBlogCategory(blogId, blogDto.Categories, id);
-
             }
             if (blog != null)
             {
