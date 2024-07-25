@@ -1,13 +1,13 @@
 ﻿using System.Net;
 
-namespace BMS.Server.ViewModels
+namespace BlogCenter.WebAPI.Dtos
 {
-    public class ApiPaginationResponse
+    public class ApiPaginationResponse<T>
     {
         public HttpStatusCode StatusCode { get; set; }
         public bool IsSuccess { get; set; } = true;
         public List<string> ErrorMessages { get; set; }
-        public object Result { get; set; }
+        public List<T> Result { get; set; }
         public int TotalCount { get; set; }
         public int TotalPages { get; set; }
     }

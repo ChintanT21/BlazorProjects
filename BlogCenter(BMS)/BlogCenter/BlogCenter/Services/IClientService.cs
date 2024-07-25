@@ -1,15 +1,15 @@
-﻿using BlogCenter.WebAPI.Dtos.RequestDto;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.RequestDto;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
-using BlogCenter.WebAPI.Models.Models;
-using BMS.Client.Dtos;
-using BMS.Server.ViewModels;
-using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.Blazor.Services
 {
     public interface IClientService
     {
-        Task<List<GetBlog>> GetBlogData(DataManipulationDto dto);
+        Task<BlogTableDto> GetBlogData(DataManipulationDto dto);
         Task<object> ValidateCredential(LoginDto loginDto);
+        Task<bool> CreateBlog(AddBlogDto blog);
+        Task<List<GetCategoryDto>?> GetAllCategories();
+
     }
 }

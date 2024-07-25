@@ -1,16 +1,13 @@
-﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
-using BlogCenter.WebAPI.Models.Models;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Repositories.Auth;
-using BMS.Client.Dtos;
-using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
-using System.Text.Json;
-using static BMS.Server.ViewModels.ServiceResponses;
+using static BlogCenter.WebAPI.Dtos.ServiceResponses;
 
 namespace BlogCenter.WebAPI.Services.Auth
 {

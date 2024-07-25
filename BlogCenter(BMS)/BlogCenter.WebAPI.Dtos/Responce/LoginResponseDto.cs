@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BMS.Client.Dtos
+namespace BlogCenter.WebAPI.Dtos
 {
     public class LoginResponseDto
     {

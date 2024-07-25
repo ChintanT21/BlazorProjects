@@ -1,14 +1,8 @@
-﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories.Generic;
-using BMS.Server.ViewModels;
 using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BlogCenter.WebAPI.Repositories.BlogCategory
 {
@@ -40,6 +34,12 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
         public Task<ApiResponse> DeleteBlogId(long id, long? userId)
         {
             throw new NotImplementedException();
+        }
+
+        public async Task<List<BlogsCategory>> GetAllCategory()
+        {
+            List<BlogsCategory> blogsCategory=await _baseRepository.GetAllAsync();
+            return blogsCategory;
         }
 
         public async Task<List<BlogsCategory>> GetByBlogId(long blogId)

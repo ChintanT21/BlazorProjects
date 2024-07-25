@@ -1,38 +1,47 @@
-﻿using BlogCenter.WebAPI.Dtos.RequestDto;
+﻿using BlogCenter.WebAPI.Dtos;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
-using BlogCenter.WebAPI.Models.Models;
+using BlogCenter.WebAPI.Dtos.Mapper;
 using BlogCenter.WebAPI.Repositories.Blog;
 using BlogCenter.WebAPI.Repositories.BlogCategory;
 using BlogCenter.WebAPI.Services.Auth;
-using BMS.Server.ViewModels;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging.Abstractions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+using BlogCenter.WebAPI.Models.Models;
+using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Services.Blog
 {
     public class BlogService(IBlogRepository _blogRepository, IAuthService _authService, IBlogCategoryRepository _blogCategoryRepository) : IBlogService
     {
-        public async Task<ApiResponse> AddBlogAsync(BlogDto blogDto, long? userId)
+        public async Task<ApiResponse> AddBlogAsync(AddBlogDto blogDto, long userId)
         {
-            long blogId = 0;
-            ApiResponse apiResponse = await _blogRepository.AddBlogAsync(blogDto, userId);
-            object resultObject = apiResponse.Result;
-            if (resultObject is Models.Models.Blog blog)
-            {
-                blogId = blog.Id;
-            }
+            ApiResponse apiResponse = new();
+            Models.Models.Blog addedblog = await _blogRepository.AddBlogAsync(blogDto.AddDtoToBlog(), userId);
+            //object resultObject = apiResponse.Result;
+            //if (resultObject is Models.Models.Blog blog)
+            //{
+            //    blogId = blog.Id;
+            //}
+            long blogId = addedblog.Id;
             if (blogId != 0)
             {
                 var obj = _blogCategoryRepository.AddBlogCategoryAsync(blogId, blogDto.Categories, userId);
 
             }
-            return apiResponse;
+            else
+            {
+                return apiResponse = new()
+                {
+                    IsSuccess = false,
+                    StatusCode = HttpStatusCode.NotFound,
+                    ErrorMessages = ["Server Error"]
+                };
+            }
+            return apiResponse = new()
+            {
+                IsSuccess = true,
+                StatusCode = HttpStatusCode.OK,
+                Result = addedblog
+            };
         }
 
         public async Task<ApiResponse> DeleteBlogById(long id, long? userId)
@@ -60,10 +69,10 @@ namespace BlogCenter.WebAPI.Services.Blog
             };
         }
 
-        public async  Task<ApiPaginationResponse> GetBlogsPageWise(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
+        public async Task<ApiPaginationResponse<GetBlog>> GetBlogsPageWise(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
         {
-            ApiPaginationResponse apiPaginationResponse =  await _blogRepository.GetBlogsWithPaginationFilteringAndSortingAsync(searchString, searchTable, sortString, page, pageSize, userId);
-            return  apiPaginationResponse;
+            ApiPaginationResponse<GetBlog> apiPaginationResponse = await _blogRepository.GetBlogsWithPaginationFilteringAndSortingAsync(searchString, searchTable, sortString, page, pageSize, userId);
+            return apiPaginationResponse;
         }
 
         public async Task<ApiResponse> UpdateBlog(int blogId, BlogDto blogDto, long? id)
@@ -100,7 +109,8 @@ namespace BlogCenter.WebAPI.Services.Blog
         {
             ApiResponse apiResponse = new();
             List<Models.Models.Blog> blogList = await _blogRepository.GetBlogsByUserId(searchString, sortString, userId);
-            if (blogList.Count == 0) {
+            if (blogList.Count == 0)
+            {
                 return apiResponse = new()
                 {
                     IsSuccess = false,

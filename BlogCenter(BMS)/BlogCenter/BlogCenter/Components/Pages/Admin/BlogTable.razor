@@ -1,57 +1,74 @@
 ﻿@using Microsoft.AspNetCore.Components.QuickGrid;
-@using System.Data.Common;
 @using BlogCenter.Blazor.Services;
 @using Microsoft.AspNetCore.Components;
 @using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 @using BlogCenter.WebAPI.Dtos.ResponceDto;
+@using BlogCenter.WebAPI.Dtos.Enums
 
-@if (blogs == null || blogsQueryable == null)
+@if (blogs == null)
 {
-    <div class="spinner-border center-of-page text-success " role="status">
-    </div>
+    <div class="spinner-border position-relative top-50 start-50 text-success" role="status"></div>
 }
 else
 {
-    <div class="container">
-        <table class="table table-striped">
-            <thead>
-                <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">CreatedBy</th>
-                    <th scope="col">UpdatedBy</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Approve/Reject</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var blog in blogs ?? new())
+    <ViewModal @ref="modal" />
+    <table class="table table-responsive">
+        <thead>
+            <tr>
+                <th scope="col" @onclick="() => OnSortChanged((int)Enums.BlogTableColumn.title)">Title</th>
+                @if (dto.SortString == Enums.BlogTableColumn.title.ToString())
                 {
-
-                    <tr>
-                        <td>@blog.Title</td>
-                        <td>@blog.CreatedBy</td>
-                        <td>@blog.UpdatedBy</td>
-                        <td>@blog.StatusName</td>
-                        <td>Approve | Reject </td>
-                        <td>Edit | View</td>
-                    </tr>
-                };
-
-            </tbody>
-        </table>
-        <div class="d-flex justify-content-between">
-            <div>
-                Page @dto.PageNumber of @((totalRecords + dto.PageSize - 1) / dto.PageSize)
-            </div>
-            <div>
-                <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber > 1 ? dto.PageNumber - 1 : 1)">Previous</button>
-                <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber < (totalRecords + dto.PageSize - 1) / dto.PageSize ? dto.PageNumber + 1 : dto.PageNumber)">Next</button>
-            </div>
+                    <i class="fas fa-sort-up"></i>
+                }
+                else if (dto.SortString == "-" + Enums.BlogTableColumn.title.ToString())
+                {
+                    <i class="fas fa-sort-down"></i>
+                }
+                <th scope="col" @onclick="() => OnSortChanged(2)">CreatedBy</th>
+                <th scope="col" @onclick="() => OnSortChanged(3)">UpdatedBy</th>
+                <th scope="col" @onclick="() => OnSortChanged(4)">Status</th>
+                <th scope="col">Approve/Reject</th>
+                <th scope="col">Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var blog in blogs ?? new List<GetBlog>())
+            {
+                <tr>
+                    <td>@blog.Title</td>
+                    <td>@blog.CreatedBy</td>
+                    <td>@blog.UpdatedBy</td>
+                    <td>@blog.StatusName</td>
+                    <td><button class="btn btn-success" @onclick="() => Approve(blog.Id)">Approve</button> |  <button class="btn btn-danger" @onclick="() => Reject(blog.Id)">Reject</button></td>
+                    <td>
+                        Edit | <button class="btn btn-primary" @onclick="OpenModal">View</button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <div class="d-flex justify-content-between">
+        <div>
+            Page @dto.PageNumber of @((totalRecords + dto.PageSize - 1) / dto.PageSize) (Total Records @totalRecords)
+        </div>
+        <div>
+            Show
+            <select class="" @onchange=OnPageSizeChanged>
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+            </select>
+            Records In Page
+        </div>
+        <div>
+            <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber > 1 ? dto.PageNumber - 1 : 1)">Previous</button>
+            <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber < (totalRecords + dto.PageSize - 1) / dto.PageSize ? dto.PageNumber + 1 : dto.PageNumber)">Next</button>
         </div>
     </div>
-    <div class="grid container">
-        <QuickGrid Items="@FilteredBlogs" Pagination="@pagination">
+
+    @*     <div class="grid container">
+        <QuickGrid Items="@(FilteredBlogs)" Pagination="@pagination">
             <PropertyColumn Property="@(c => c.Title)" Sortable="true" Class="country-name">
                 <ColumnOptions>
                     <div class="search-box">
@@ -63,7 +80,7 @@ else
             <PropertyColumn Property="@(c => c.UpdatedBy)" Sortable="true" Align="Align.Right" />
             <PropertyColumn Property="@(c => c.StatusName)" Sortable="true" Align="Align.Right" />
             <TemplateColumn>
-                <ColumnTemplate Context="@FilteredBlogs">
+                <ColumnTemplate Context="blog">
                     <button class="btn btn-success">Edit</button>
                     <button class="btn btn-danger">Delete</button>
                     <button class="btn btn-info">View</button>
@@ -71,66 +88,127 @@ else
             </TemplateColumn>
         </QuickGrid>
     </div>
-    <Paginator State="@pagination" />
+    <Paginator State="@pagination" /> *@
 }
 
 @code {
-    [Parameter]
-    private string searchString = string.Empty;
-    [Inject]
-    private IClientService _clientService { get; set; }
 
-    private List<GetBlog>? blogs;
-    private IQueryable<GetBlog>? blogsQueryable;
-    private PaginationState pagination = new PaginationState { ItemsPerPage = 15 };
-    private string nameFilter = string.Empty;
-    private int totalRecords = 0;
-    private DataManipulationDto dto = new();
-    private GridSort<GetBlog> rankSort = GridSort<GetBlog>
+    [Parameter]
+    public string SearchString { get; set; } = string.Empty;
+    [Inject] protected IClientService _clientService { get; set; }
+    [Inject] IJSRuntime JSRuntime1 { get; set; }
+
+    private ViewModal modal { get; set; }
+
+    protected override void OnAfterRender(bool firstRender)
+    {
+        if (firstRender)
+        {
+            modal = new ViewModal();
+        }
+    }
+    private string sortIcon = "fa fa-sort-asc";
+    protected BlogTableDto tableDto;
+    protected List<GetBlog>? blogs = new();
+    protected PaginationState pagination = new PaginationState { ItemsPerPage = 15 };
+    protected string nameFilter = string.Empty;
+    protected int totalRecords = 0;
+    protected DataManipulationDto dto = new();
+    protected GridSort<GetBlog> rankSort = GridSort<GetBlog>
         .ByDescending(x => x.Title)
         .ThenDescending(x => x.Content)
         .ThenDescending(x => x.StatusName);
 
-    private IQueryable<GetBlog>? FilteredBlogs => blogsQueryable?
-        .Where(x => x.Title.Contains(nameFilter, StringComparison.CurrentCultureIgnoreCase));
-
-    protected async override Task OnParametersSetAsync()
-    {
-        blogs = await _clientService.GetBlogData(dto);
-        blogsQueryable = blogs.AsQueryable();
-    }
     protected override async Task OnInitializedAsync()
     {
         await LoadData();
     }
-    private async Task LoadData()
+    protected async Task OnSortChanged(int column)
     {
-        blogs = await _clientService.GetBlogData(dto);
-        blogs = blogs;
-        totalRecords = 100;
-    }
-    private async Task OnSearchChanged(ChangeEventArgs e)
-    {
-        dto.SearchString = e.Value.ToString();
+        Enums.BlogTableColumn ColumnName = (Enums.BlogTableColumn)column;
+
+        // Toggle sort order
+        if (dto.SortString == ColumnName.ToString())
+        {
+            dto.SortString = "-" + ColumnName.ToString();
+        }
+        else if (dto.SortString == "-" + ColumnName.ToString())
+        {
+            dto.SortString = ColumnName.ToString();
+        }
+        else
+        {
+            dto.SortString = ColumnName.ToString();
+        }
+
         await LoadData();
     }
 
-    private async Task OnSortChanged(string columnName)
+    private string GetSortIconClass(Enums.BlogTableColumn column)
     {
-        dto.SortString = columnName;
+        if (dto.SortString == column.ToString())
+        {
+            return "fas fa-sort-up";
+        }
+        else if (dto.SortString == "-" + column.ToString())
+        {
+            return "fas fa-sort-down";
+        }
+        return string.Empty;
+    }
+
+    protected async Task LoadData()
+    {
+        tableDto = await _clientService.GetBlogData(dto);
+        blogs = tableDto.Blogs;
+        totalRecords = tableDto.TotalCount;
+        StateHasChanged();
+    }
+
+    public async Task OnSearchChanged(ChangeEventArgs e)
+    {
+        dto.SearchString = e.Value.ToString() ?? "";
         await LoadData();
     }
 
-    private async Task OnPageChanged(int pageNumber)
+    public async Task OnSearchStatus(string searchString)
+    {
+        dto.SearchTable = "status";
+        dto.SearchString = searchString;
+        await LoadData();
+    }
+
+    protected async Task OnPageChanged(int pageNumber)
     {
         dto.PageNumber = pageNumber;
         await LoadData();
     }
 
-    private async Task OnPageSizeChanged(ChangeEventArgs e)
+    protected async Task OnPageSizeChanged(ChangeEventArgs e)
     {
         dto.PageSize = int.Parse(e.Value.ToString());
         await LoadData();
     }
 
+    private async  void OpenModal()
+    {
+        if (modal != null)
+        {
+            modal.Open();
+        }
+        else
+        {
+            Console.WriteLine("Modal is not initialized.");
+        }
+    }
+
+    private void Approve(long blogId)
+    {
+        // Add logic to approve the blog
+    }
+
+    private void Reject(long blogId)
+    {
+        // Add logic to reject the blog
+    }
 }

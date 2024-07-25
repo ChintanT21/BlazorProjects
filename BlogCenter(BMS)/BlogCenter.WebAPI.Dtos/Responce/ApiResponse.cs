@@ -1,6 +1,6 @@
 ﻿using System.Net;
 
-namespace BMS.Server.ViewModels
+namespace BlogCenter.WebAPI.Dtos
 {
     public class ApiResponse
     {

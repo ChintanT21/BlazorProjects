@@ -1,15 +1,15 @@
-﻿using BlogCenter.WebAPI.Dtos.Mapper;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.Mapper;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Repositories.Generic;
 using BlogCenter.WebAPI.Repositories.Utils;
-using BMS.Client.Dtos;
-using BMS.Server.ViewModels;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Dynamic.Core;
 using System.Linq.Expressions;
 using System.Net;
-
+using static BlogCenter.WebAPI.Dtos.Enums.Enums;
+using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Repositories.Blog
 {
@@ -17,27 +17,18 @@ namespace BlogCenter.WebAPI.Repositories.Blog
     {
         ApiResponse apiResponse = new();
 
-        public async Task<ApiResponse> AddBlogAsync(BlogDto blogDto, long? userId)
+        public async Task<Models.Models.Blog> AddBlogAsync(Models.Models.Blog addblog, long userId)
         {
-            if (blogDto != null)
+            if (addblog != null)
             {
-                Models.Models.Blog blog = await _baseRepository.AddAsync(blogDto.ToBlog());
+                Models.Models.Blog blog = await _baseRepository.AddAsync(addblog);
+                blog.CreatedBy = userId;
+                blog.Status = 1;
 
-                blog.CreatedBy = userId ?? 1;
                 _dbContext.SaveChanges();
-                return apiResponse = new()
-                {
-                    IsSuccess = true,
-                    StatusCode = HttpStatusCode.OK,
-                    Result = blog
-                };
+                return addblog;
             }
-            return apiResponse = new()
-            {
-                IsSuccess = false,
-                StatusCode = HttpStatusCode.NotFound,
-                ErrorMessages = ["Server Error"]
-            };
+            return new Models.Models.Blog();
 
         }
 
@@ -78,7 +69,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
             return blog;
         }
-        public async Task<ApiPaginationResponse> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
+        public async Task<ApiPaginationResponse<GetBlog>> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
         {
             Expression<Func<Models.Models.Blog, bool>> where = b => true;
             if (userId != 0)
@@ -100,7 +91,12 @@ namespace BlogCenter.WebAPI.Repositories.Blog
                         case "content":
                             where = where.And(b => b.Content.ToLower().Contains(searchString));
                             break;
-                        // Add more cases for other searchable columns as needed
+                        case "status":
+                            if (short.TryParse(searchString, out short statusValue))
+                            {
+                                where = where.And(b => b.Status.Equals(statusValue));
+                            }
+                            break;
                         default:
                             // Handle unknown searchTable value or do nothing
                             break;
@@ -152,13 +148,11 @@ namespace BlogCenter.WebAPI.Repositories.Blog
 
 
             PagedItemResult<Models.Models.Blog> pagedBlogData = await _baseRepository.GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory }, orderBy);
-
-
-            ApiPaginationResponse apiPaginationResponse = new()
+            ApiPaginationResponse<GetBlog> apiPaginationResponse = new()
             {
                 IsSuccess = true,
                 StatusCode = HttpStatusCode.OK,
-                Result = pagedBlogData.Items,
+                Result = pagedBlogData.Items.ToGetBlogList(),
                 TotalPages = pagedBlogData.TotalPages,
                 TotalCount = pagedBlogData.TotalCount,
             };

@@ -1,6 +1,6 @@
 ﻿@using System.Security.Claims
 @using System.Text.Json
-@using BMS.Client.Authentication
+@using BlogCenter.Components.Pages.Authentication
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject NavigationManager navigationManager
 @rendermode InteractiveServer
@@ -43,6 +43,6 @@
         await JSRuntime.InvokeVoidAsync("deleteCookie", "authToken");
         var authStateProvider = (CustomAuthenticationStateProvider)AuthenticationStateProvider;
         authStateProvider.NotifyUserLogout();
-        navigationManager.NavigateTo("/");
+        navigationManager.NavigateTo("/login");
     }
 }

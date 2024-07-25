@@ -1,8 +1,8 @@
 ﻿@page "/login"
-@using BMS.Client.Authentication
-@using BMS.Client.Dtos
-@using BMS.Server.ViewModels
+@rendermode InteractiveServer
+@using BlogCenter.Components.Pages.Authentication
 @using BlogCenter.Blazor.Services
+@using BlogCenter.WebAPI.Dtos
 @using Microsoft.AspNetCore.Components.Authorization
 @using System.IdentityModel.Tokens.Jwt
 @using Microsoft.IdentityModel.Tokens
@@ -10,7 +10,6 @@
 @using System.Security.Claims
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @layout AuthLayout
-@rendermode InteractiveServer
 @inject IConfiguration Configuration
 @inject IJSRuntime JSRuntime
 @inject AuthenticationStateProvider AuthStateProvider
@@ -74,6 +73,7 @@
         var authStateProvider = (CustomAuthenticationStateProvider)AuthenticationStateProvider;
         authStateProvider.NotifyUserLogout();
     }
+
     protected override async Task OnAfterRenderAsync(bool firstRender)
     {
         if (firstRender)
@@ -82,7 +82,6 @@
         }
     }
 
-
     public async Task AuthenticateUser()
     {
         showLoding = true;
@@ -90,6 +89,7 @@
         {
             throw new ArgumentNullException(nameof(loginDto));
         }
+
         var responce = await _clientService.ValidateCredential(loginDto);
         var response = await _httpClient.PostAsJsonAsync("/api/Auth/login", loginDto);
         var loginResponse = await response.Content.ReadFromJsonAsync<LoginResponseDto>();
@@ -108,6 +108,7 @@
         }
 
     }
+
     private void SetCookie(string token, int? expireTime)
     {
         JSRuntime.InvokeVoidAsync("setCookie", "authToken", token);
@@ -135,7 +136,7 @@
 
             string jsonResponse = apiResponse.Result.ToString();
             var jsonDocument = JsonDocument.Parse(jsonResponse);
-            var claims = jsonDocument.RootElement.GetProperty("$values")
+            var claims = jsonDocument.RootElement
                 .EnumerateArray()
                 .Select(c =>
                 {
@@ -173,11 +174,11 @@
             authProvider.NotifyUserAuthentication(user);
             if (user.IsInRole("admin"))
             {
-                NavigationManager.NavigateTo("/adminDashboard");
+                NavigationManager.NavigateTo("/admin-dashboard");
             }
             else if (user.IsInRole("user"))
             {
-                NavigationManager.NavigateTo("/userDashboard");
+                NavigationManager.NavigateTo("/user-dashboard");
             }
             showLoding = false;
 

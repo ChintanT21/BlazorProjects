@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlogCenter.Client",
   "resources": {
-    "hash": "sha256-7BSZdZSNAqifsqCxYO7eVg2jURcbI0hEQNjy6dn+RUQ=",
+    "hash": "sha256-IFyld9xtu9ptW58RHqkx4Xu6ZNqkAy31YmZuJR5TuBU=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.37dkch2d2y.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -208,10 +208,10 @@
       "mscorlib.wasm": "sha256-fLbZiSHBNdpHoh4EgRqMaNP5NQyIK5TEj6AXFLqo8m8=",
       "netstandard.wasm": "sha256-d4xbAE8qrKq5euUoZHPO+jkYPjlCYBzUew45MKsYKic=",
       "System.Private.CoreLib.wasm": "sha256-8yi6NcX1lkNQgV4WKjnMBYIZyKh4P+OXnXVQmgxGZD4=",
-      "BlogCenter.Client.wasm": "sha256-H5nzoASMfWq2QVmuw3J++6xbdFepw+frs3cZFly0Q0w="
+      "BlogCenter.Client.wasm": "sha256-b38EHvrZWmQOAmLs56xBj6UNiRICQpbdmgVB6E/hyaE="
     },
     "pdb": {
-      "BlogCenter.Client.pdb": "sha256-yWw8Og06bUNw3+PtBBeZBZkwK9aPA4D3AfVsO07iPY0="
+      "BlogCenter.Client.pdb": "sha256-93Ayrz2Ppi0+jqLs8OxVFWvCimqKUqKS8UYlA8Gflvk="
     }
   },
   "cacheBootResources": true,

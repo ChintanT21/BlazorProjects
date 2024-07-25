@@ -1,4 +1,5 @@
-﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
+﻿using BlogCenter.WebAPI.Dtos.RequestDto;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Models.Models;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,73 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
 {
     public static class BlogMapper
     {
-        public static Models.Models.Blog ToBlog(this BlogDto blogDto)
+
+        public static List<GetBlog> ToGetBlogList(this List<Blog> blogs)
+        {
+            List<GetBlog> getblog = new List<GetBlog>();
+
+            foreach (var blogDto in blogs)
+            {
+                GetBlog blog = new GetBlog
+                {
+                    Title = blogDto.Title,
+                    Content = blogDto.Content,
+                    AdminComment = blogDto.AdminComment,
+                    CreatedBy = blogDto.CreatedBy,
+                    UpdatedBy = blogDto.UpdatedBy,
+                    CreatedDate = blogDto.CreatedDate,
+                    UpdatedDate = blogDto.UpdatedDate,
+                    Status = blogDto.Status,
+                    StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
+                    //BlogsCategories = ToGetBlogsCategories(blogDto.BlogsCategories)
+                };
+
+                getblog.Add(blog);
+            }
+            return getblog;
+        }
+
+        private static List<GetBlogsCategory> ToGetBlogsCategories(ICollection<BlogsCategory> blogsCategories)
+        {
+            List<GetBlogsCategory> getBlogsCategories = new List<GetBlogsCategory>();
+            foreach (var blogDto in blogsCategories)
+            {
+                GetBlogsCategory blog = new GetBlogsCategory
+                {
+                    CategoryId = blogDto.CategoryId,
+                };
+                getBlogsCategories.Add(blog);
+
+            }
+            return getBlogsCategories;
+        }
+
+        public static GetBlog ToGetBlogDto(this Blog blogDto)
+        {
+            return new GetBlog
+            {
+                Title = blogDto.Title,
+                Content = blogDto.Content,
+                AdminComment = blogDto.AdminComment,
+                CreatedBy = blogDto.CreatedBy,
+                UpdatedBy = blogDto.UpdatedBy == 0 ? null : blogDto.UpdatedBy,
+                CreatedDate = DateTime.Now,
+                UpdatedDate = blogDto.UpdatedBy == 0 ? null : DateTime.Now,
+                Status = blogDto.Status,
+                StatusName = Enum.IsDefined(typeof(BlogStatus), blogDto.Status) ? (BlogStatus)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
+            };
+        }
+        public static Blog AddDtoToBlog(this AddBlogDto addBlogDto)
+        {
+            return new Blog
+            {
+                Title = addBlogDto.Title,
+                Content = addBlogDto.Content,
+                CreatedBy = addBlogDto.CreatedBy,
+                CreatedDate = DateTime.Now,
+            };
+        }
+        public static Blog ToBlog(this BlogDto blogDto)
         {
             return new Blog
             {

@@ -1,10 +1,7 @@
-﻿using BlogCenter.WebAPI.Models.Models;
-using BMS.Client.Dtos;
-using BMS.Server.ViewModels;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Models.Models;
 using Microsoft.EntityFrameworkCore;
 using System.Linq.Expressions;
-using System.Net;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory;
 
 namespace BlogCenter.WebAPI.Repositories.Generic
 {
@@ -41,15 +38,20 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                     query = query.Where(where);
                 }
 
-                foreach (var include in including)
+                if (including != null && including.Length != 0)
                 {
-                    query = query.Include(include);
+                    foreach (var include in including)
+                    {
+                        query = query.Include(include);
+                    }
                 }
+                
 
                 if (orderBy != null)
                 {
                     query = orderBy(query);
                 }
+
                 return await query.ToListAsync();
 
             }
@@ -95,7 +97,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
 
             return pagedBookData;
         }
-        public async void DeleteAsync(T entity)
+        public async Task DeleteAsync(T entity)
         {
             try
             {
@@ -104,6 +106,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                     _dbset.Remove(entity);
                     await dbContext.SaveChangesAsync();
                 }
+            
             }
             catch (Exception ex)
             {
@@ -180,7 +183,30 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             catch (Exception ex)
             {
             }
-            
+
+        }
+
+        public async Task<IQueryable<T>> GetByIdAllAsync(long id, Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
+        {
+            IQueryable<T> items = _dbset;
+            if (where != null)
+            {
+                items = items.Where(where);
+            }
+
+            if (including != null)
+            {
+                foreach (var include in including)
+                {
+                    items = items.Include(include);
+                }
+            }
+            if (orderBy != null)
+            {
+                items = orderBy(items);
+            }
+            var itemsList = await items.ToListAsync();
+            return itemsList.AsQueryable();
         }
     }
 }

@@ -17,12 +17,14 @@ namespace BlogCenter.WebAPI.Dtos.RequestDto
             public short Status { get; set; }
             public BlogStatus StatusName { get; set; }
             public List<GetBlogsCategory> BlogsCategories { get; set; } = new();
+            public int TotalCount { get; set; }
+            public int TotalPages { get; set; }
         }
 
         public class GetBlogsCategory
         {
             public long Id { get; set; }
-            public long BlogId { get; set; }
+            public long? BlogId { get; set; }
             public int CategoryId { get; set; }
             public DateTime CreatedDate { get; set; }
             public DateTime? UpdatedDate { get; set; }

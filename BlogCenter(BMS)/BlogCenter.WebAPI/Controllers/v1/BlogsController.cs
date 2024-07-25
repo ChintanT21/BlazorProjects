@@ -1,29 +1,29 @@
-﻿using BlogCenter.WebAPI.Dtos.RequestDto;
+﻿using BlogCenter.WebAPI.Dtos;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Filters;
+using BlogCenter.WebAPI.Models.Models;
 using BlogCenter.WebAPI.Services.Blog;
-using BMS.Server.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Net;
+using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Controllers.v1
 {
     [ApiController]
     [TypeFilter(typeof(TokenIdentifierFilter))]
     [Route("api/[controller]")]
-    public class BlogController(IBlogService _blogService) : ControllerBase
+    public class BlogsController(IBlogService _blogService) : ControllerBase
     {
         [AllowAnonymous]
         [HttpGet]
-        public async Task<IActionResult> GetBlogs(int page = 1, int pageSize = 5,string searchString = "", string sortString = "",string searchTable="", string sortTable="",long userId=0)
+        public async Task<ActionResult<ApiPaginationResponse<GetBlog>>> GetBlogs(int page = 1, int pageSize = 5, string searchString = "", string sortString = "", string searchTable = "", string sortTable = "", long userId = 0)
         {
-            ApiPaginationResponse apiPaginationResponse = await _blogService.GetBlogsPageWise(searchString, searchTable, sortString, page, pageSize, userId);
+            ApiPaginationResponse<GetBlog> apiPaginationResponse = await _blogService.GetBlogsPageWise(searchString, searchTable, sortString, page, pageSize, userId);
             return Ok(apiPaginationResponse);
         }
 
         [HttpGet("userid/{userId:long}")]
-        public async Task<IActionResult> GetBlogByUserId(long userId,string? searchString = "", string? sortString = "")
+        public async Task<IActionResult> GetBlogByUserId(long userId, string? searchString = "", string? sortString = "")
         {
             ApiResponse apiResponse = await _blogService.GetBlogs(searchString, sortString, userId);
             return Ok(apiResponse);
@@ -63,7 +63,7 @@ namespace BlogCenter.WebAPI.Controllers.v1
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddBlog(BlogDto blogDto)//userid whom add blog
+        public async Task<IActionResult> AddBlog(AddBlogDto blogDto)//userid whom add blog
         {
             try
             {
@@ -82,19 +82,19 @@ namespace BlogCenter.WebAPI.Controllers.v1
         {
             if (blogDto is null)
             {
-               return NoContent();
+                return NoContent();
             }
 
             try
             {
                 if (HttpContext.Items.TryGetValue("TokenDto", out var tokenDtoObj) && tokenDtoObj is TokenDto tokenDto)
                 {
-                    ApiResponse apiResponse = await _blogService.UpdateBlog(blogId,blogDto, tokenDto.Id);
+                    ApiResponse apiResponse = await _blogService.UpdateBlog(blogId, blogDto, tokenDto.Id);
                     return Ok(apiResponse);
                 }
                 return Unauthorized();
             }
-            catch (Exception ex) { return BadRequest();}
+            catch (Exception ex) { return BadRequest(); }
         }
     }
 }

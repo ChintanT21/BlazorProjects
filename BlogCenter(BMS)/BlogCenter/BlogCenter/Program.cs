@@ -1,6 +1,6 @@
 using BlogCenter.Blazor.Services;
 using BlogCenter.Components;
-using BMS.Client.Authentication;
+using BlogCenter.Components.Pages.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.IdentityModel.Tokens;
@@ -53,7 +53,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
-
+builder.Services.AddServerSideBlazor().AddCircuitOptions(options => { options.DetailedErrors = true; });
 
 var app = builder.Build();
 

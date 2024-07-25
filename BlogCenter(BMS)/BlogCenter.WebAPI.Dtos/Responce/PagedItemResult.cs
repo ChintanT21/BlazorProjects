@@ -1,4 +1,4 @@
-﻿namespace BMS.Client.Dtos
+﻿namespace BlogCenter.WebAPI.Dtos
 {
     public class PagedItemResult<T> where T : class
     {

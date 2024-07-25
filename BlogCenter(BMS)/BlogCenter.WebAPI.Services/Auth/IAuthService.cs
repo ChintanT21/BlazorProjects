@@ -1,7 +1,6 @@
-﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
-using BMS.Client.Dtos;
-using BMS.Server.ViewModels;
-using static BMS.Server.ViewModels.ServiceResponses;
+﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
+using static BlogCenter.WebAPI.Dtos.ServiceResponses;
 
 namespace BlogCenter.WebAPI.Services.Auth
 {

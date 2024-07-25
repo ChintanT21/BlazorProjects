@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
-namespace BMS.Server.ViewModels
+namespace BlogCenter.WebAPI.Dtos
 {
     public class UserDto
     {

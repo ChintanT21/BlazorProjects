@@ -1,11 +1,9 @@
 ﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Services.Auth;
 using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Controllers;
 using Microsoft.AspNetCore.Mvc.Filters;
-using System.Linq.Dynamic.Core.Tokenizer;
 
 namespace BlogCenter.WebAPI.Filters
 {
@@ -31,7 +29,7 @@ namespace BlogCenter.WebAPI.Filters
                 // Now 'token' contains your authorization token.
             }
             string token = context.HttpContext.Request.Headers.Authorization.ToString().Replace("Bearer ", "");
-            TokenDto tokenDto =authService.GetUserDetailsByToken(token);
+            TokenDto tokenDto = authService.GetUserDetailsByToken(token);
             if (tokenDto == null || !tokenDto.IsAuthenticated || tokenDto.ExpiryDate < DateTime.UtcNow)
             {
                 context.Result = new UnauthorizedResult();

@@ -10,9 +10,9 @@ namespace BlogCenter.WebAPI.Dtos.ResponceDto
     {
         public string SearchString { get; set; } = ""; 
         public string SortString { get; set; } = ""; 
-        public string SearchTable { get; set; } = "Title"; 
-        public long? UserId { get; set; } 
-        public int PageSize { get; set; } = 10; 
+        public string SearchTable { get; set; } = "Title";
+        public long UserId { get; set; } = 0;
+        public int PageSize { get; set; } = 5; 
         public int PageNumber { get; set; } = 1; 
     }
 }

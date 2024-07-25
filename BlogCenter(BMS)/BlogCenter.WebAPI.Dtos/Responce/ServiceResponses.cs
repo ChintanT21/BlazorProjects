@@ -1,4 +1,4 @@
-﻿namespace BMS.Server.ViewModels
+﻿namespace BlogCenter.WebAPI.Dtos
 {
     public class ServiceResponses
     {

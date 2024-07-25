@@ -13,9 +13,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Repositor
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.WebAPI.Services", "BlogCenter.WebAPI.Services\BlogCenter.WebAPI.Services.csproj", "{24020268-7ADA-4560-BE41-39F333F0CFDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter", "BlogCenter\BlogCenter\BlogCenter.csproj", "{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter", "BlogCenter\BlogCenter\BlogCenter.csproj", "{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlogCenter.Client", "BlogCenter\BlogCenter.Client\BlogCenter.Client.csproj", "{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlogCenter.Client", "BlogCenter\BlogCenter.Client\BlogCenter.Client.csproj", "{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

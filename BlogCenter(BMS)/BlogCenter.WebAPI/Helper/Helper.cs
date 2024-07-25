@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using BlogCenter.WebAPI.Dtos.ResponceDto;
 using System.Text.Json;
-using System.Threading.Tasks;
 using static BlogCenter.WebAPI.Dtos.Enums.Enums;
 
 namespace BlogCenter.WebAPI.Dtos.Helper
 {
     public class Helper
-    {
+    {   
         public BlogStatus ConvertToBlogStatus(int statusValue)
         {
             return Enum.IsDefined(typeof(BlogStatus), statusValue)

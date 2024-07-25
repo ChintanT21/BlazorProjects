@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace BlogCenter.WebAPI.Dtos.Enums
+﻿namespace BlogCenter.WebAPI.Dtos.Enums
 {
     public class Enums
     {
@@ -15,6 +9,13 @@ namespace BlogCenter.WebAPI.Dtos.Enums
             Approved = 3,
             Rejected = 4,
             Deleted = 5
+        }
+
+        public enum BlogTableColumn
+        {
+            title = 1,
+            content = 2,
+            status = 3
         }
 
     }

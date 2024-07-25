@@ -34,11 +34,11 @@
 
         if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
         {
-            navigationManager.NavigateTo("/adminDashboard");
+            navigationManager.NavigateTo("/admin-dashboard");
         }
         else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
         {
-            navigationManager.NavigateTo("/userDashboard");
+            navigationManager.NavigateTo("/user-dashboard");
         }
     }
 

@@ -9,6 +9,7 @@ namespace BlogCenter.WebAPI.Services.BlogCategory
 {
     public interface IBlogCategoryService
     {
+        Task<List<BlogsCategory>> GetAllCategory();
         Task<List<BlogsCategory>> GetByBlogId(long id);
     }
 }

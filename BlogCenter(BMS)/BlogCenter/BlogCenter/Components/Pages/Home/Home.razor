@@ -24,11 +24,11 @@
 
         if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
         {
-            _navigationManager.NavigateTo("/adminDashboard");
+            _navigationManager.NavigateTo("/admin-dashboard");
         }
         else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
         {
-            _navigationManager.NavigateTo("/userDashboard");
+            _navigationManager.NavigateTo("/user-dashboard");
         }
     }
 }

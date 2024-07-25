@@ -1,13 +1,12 @@
-﻿using BlogCenter.WebAPI.Models.Models;
-using BMS.Server.ViewModels;
+﻿using BlogCenter.WebAPI.Dtos;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Headers;
-using System.Net.Http;
+using System.Net.Http.Json;
 using System.Security.Claims;
 using System.Text.Json;
 
 
-namespace BMS.Client.Authentication
+namespace BlogCenter.Components.Pages.Authentication
 {
     public class CustomAuthenticationStateProvider(IHttpContextAccessor httpContextAccessor, HttpClient httpClient) : AuthenticationStateProvider
     {
@@ -29,45 +28,55 @@ namespace BMS.Client.Authentication
             }
             try
             {
+                var options = new JsonSerializerOptions
+                {
+                    PropertyNameCaseInsensitive = true
+                };
                 HttpResponseMessage userclaims = await httpClient.PostAsJsonAsync("/api/Auth/tokenvalidator?token=" + token, token);
                 ApiResponse apiResponse = await userclaims.Content.ReadFromJsonAsync<ApiResponse>();
-                string jsonResponse = apiResponse.Result.ToString();
-                var claims = JsonSerializer.Deserialize<List<string>>(jsonResponse)
-                     .Select(c =>
-                     {
-                         var parts = c.Split(", ");
-                         return new CustomClaim
-                         {
-                             Type = parts[0].Substring("Type: ".Length),
-                             Value = parts[1].Substring("Value: ".Length)
-                         };
-                     }).ToList();
+                var apiResponse12 = await userclaims.Content.ReadFromJsonAsync<ApiResponse>();
 
-                var ClaimTypeEmail = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress";
-                var ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
-                var ClaimTypeName = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name";
-                var ClaimTypeRole = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role";
-
-                string userEmail = claims.FirstOrDefault(c => c.Type == ClaimTypeEmail)?.Value ?? "Email not found";
-                string userId = claims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value ?? "ID not found";
-                string userName = claims.FirstOrDefault(c => c.Type == ClaimTypeName)?.Value ?? "Name not found";
-                string userRole = claims.FirstOrDefault(c => c.Type == ClaimTypeRole)?.Value ?? "Role not found";
-                if (userId!= "ID not found" && userRole!= "Role not found")
+                if (apiResponse.Result != null)
                 {
-                    httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-                }
-                var identity = new ClaimsIdentity(new[]
-                       {
+                    string jsonResponse = apiResponse.Result.ToString();
+                    var claims = JsonSerializer.Deserialize<List<string>>(jsonResponse)
+                        .Select(c =>
+                        {
+                            var parts = c.Split(", ");
+                            return new CustomClaim
+                            {
+                                Type = parts[0].Substring("Type: ".Length),
+                                Value = parts[1].Substring("Value: ".Length)
+                            };
+                        }).ToList();
+
+                    var ClaimTypeEmail = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress";
+                    var ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+                    var ClaimTypeName = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name";
+                    var ClaimTypeRole = "http://schemas.microsoft.com/ws/2008/06/identity/claims/role";
+
+                    string userEmail = claims.FirstOrDefault(c => c.Type == ClaimTypeEmail)?.Value ?? "Email not found";
+                    string userId = claims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value ?? "ID not found";
+                    string userName = claims.FirstOrDefault(c => c.Type == ClaimTypeName)?.Value ?? "Name not found";
+                    string userRole = claims.FirstOrDefault(c => c.Type == ClaimTypeRole)?.Value ?? "Role not found";
+                    if (userId != "ID not found" && userRole != "Role not found")
+                    {
+                        httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+                    }
+                    var identity = new ClaimsIdentity(new[]
+                           {
                             new Claim(ClaimTypes.Name, userName),
                             new Claim(ClaimTypes.Email,userEmail ),
                             new Claim(ClaimTypes.NameIdentifier,userEmail),
                             new Claim(ClaimTypes.Role,userRole)
 
                         });
+                    var user = new ClaimsPrincipal(identity);
+                    return new AuthenticationState(user);
+                }
+                return new AuthenticationState(new ClaimsPrincipal());
 
-                var user = new ClaimsPrincipal(identity);
                 //Task.Run(() => NavigateBasedOnRole(user));
-                return new AuthenticationState(user);
             }
             catch
             {

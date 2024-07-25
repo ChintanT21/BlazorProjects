@@ -7,5 +7,27 @@
 }
 
 function deleteCookie(name) {
-    document.cookie = name + "=;expires=Thu, 01 Jan 1970 00:00:00 GMT;path=/";
+    console.log("Deleting cookie:", name);
+    document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 GMT; path=/; secure; samesite=None";
 }
+
+function alertMessage() { // Renamed to avoid conflict with built-in alert function
+    console.log("pspasalslalps");
+}
+
+function showModal(modalId) {
+    console.log("Showing modal:", modalId);
+    $('#' + modalId).modal('show');
+}
+
+function hideModal(modalId) {
+    console.log("Hiding modal:", modalId);
+    $('#' + modalId).modal('hide');
+}
+
+// Ensure the functions are available globally
+window.setCookie = setCookie;
+window.deleteCookie = deleteCookie;
+window.alertMessage = alertMessage;
+window.showModal = showModal;
+window.hideModal = hideModal;
