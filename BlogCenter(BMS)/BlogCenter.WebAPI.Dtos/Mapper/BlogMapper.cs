@@ -107,7 +107,8 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 CreatedDate = DateTime.Now,
                 UpdatedDate = blogDto.UpdatedBy == 0 ? null : DateTime.Now,
                 Status = blogDto.Status,
-                StatusName = Enum.IsDefined(typeof(BlogStatus), blogDto.Status) ? (BlogStatus)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
+                StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
+                BlogsCategoriesIntList =blogDto.BlogsCategories.Select(x => x.CategoryId).ToList(),
             };
         }
         public static Blog AddDtoToBlog(this AddBlogDto addBlogDto)

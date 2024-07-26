@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BlogCenter.WebAPI.Repositories")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+53655511e62d764e79d1767546f1e61a1b1891b8")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+9b0c695906f812fa79e11a7f03538a49741ce42e")]
 [assembly: System.Reflection.AssemblyProductAttribute("BlogCenter.WebAPI.Repositories")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BlogCenter.WebAPI.Repositories")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

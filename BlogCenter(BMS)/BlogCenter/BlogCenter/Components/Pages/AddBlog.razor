@@ -75,6 +75,34 @@
 
 </div>
 
+<div class="multi-select">
+    <div class="form-control" @onclick="ToggleDropdown">
+        @foreach (var categoryId in selectedCategoryIds)
+        {
+            <span class="badge badge-pill badge-primary mr-1">
+                @GetCategoryName(categoryId)
+                <span class="ml-1" @onclick="(e) => RemoveCategory(e, categoryId)">×</span>
+            </span>
+        }
+        <input type="text" class="input-no-border" @oninput="OnSearch" placeholder="Select items..." />
+    </div>
+    @if (isOpen)
+    {
+        <ul>
+            @foreach (var category in filteredCategories)
+            {
+                <li>
+                    <input type="checkbox" id="@category.Id" @onchange="() => OnSelectionChanged1(category.Id)" checked="@selectedCategoryIds.Contains(category.Id)" />
+                    <label for="@category.Id">@category.Name</label>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+
+
+
 @code {
     [Inject]
     protected IClientService _clientService { get; set; }
@@ -105,6 +133,7 @@
         var userClaims = authState.User.Claims;
         userId = Int64.Parse(userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value);
         categories = await _clientService.GetAllCategories();
+        filteredCategories = categories;
     }
 
     protected async void AddNewBlog()
@@ -121,4 +150,45 @@
         _navigationManager.NavigateTo("/admin-dashboard");
     }
 
+}
+@code {
+    private List<int> selectedCategoryIds = new();
+    private List<GetCategoryDto> filteredCategories = new();
+    private bool isOpen = false;
+
+    private void ToggleDropdown()
+    {
+        isOpen = !isOpen;
+    }
+
+    private void OnSearch(ChangeEventArgs e)
+    {
+        var searchValue = e.Value.ToString().ToLower();
+        filteredCategories = categories.Where(category => category.Name.ToLower().Contains(searchValue)).ToList();
+        isOpen = true;
+    }
+
+    private void OnSelectionChanged1(int categoryId)
+    {
+        if (selectedCategoryIds.Contains(categoryId))
+        {
+            selectedCategoryIds.Remove(categoryId);
+        }
+        else
+        {
+            selectedCategoryIds.Add(categoryId);
+        }
+        blog.Categories = selectedCategoryIds;
+    }
+
+    private void RemoveCategory(MouseEventArgs e, int categoryId)
+    {
+        selectedCategoryIds.Remove(categoryId);
+    }
+
+    private string GetCategoryName(int categoryId)
+    {
+        var category = categories.FirstOrDefault(c => c.Id == categoryId);
+        return category?.Name ?? string.Empty;
+    }
 }

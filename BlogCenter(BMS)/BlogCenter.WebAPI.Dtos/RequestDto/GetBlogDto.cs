@@ -17,6 +17,7 @@ namespace BlogCenter.WebAPI.Dtos.RequestDto
             public short Status { get; set; }
             public BlogStatus StatusName { get; set; }
             public List<GetBlogsCategory> BlogsCategories { get; set; } = new();
+            public List<int> BlogsCategoriesIntList { get; set; } = new();
             public int TotalCount { get; set; }
             public int TotalPages { get; set; }
         }

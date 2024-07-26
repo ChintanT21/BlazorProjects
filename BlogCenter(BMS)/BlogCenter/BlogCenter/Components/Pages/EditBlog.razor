@@ -63,6 +63,21 @@
                         }
                     </ul>
                 </div>
+                <div class="multi-select">
+                    <input type="text" class="form-control" @onclick="ToggleDropdown" @oninput="OnSearch" placeholder="Search and select..." />
+                    @if (isOpen)
+                    {
+                        <ul>
+                            @foreach (var item in filteredItems)
+                            {
+                                <li>
+                                    <input type="checkbox" id="@item" @onchange="() => OnSelectionChanged(item)" checked="@selectedItems.Contains(item)" />
+                                    <label for="@item">@item</label>
+                                </li>
+                            }
+                        </ul>
+                    }
+                </div>  
 
                 <ValidationMessage For="@(() => blog.Categories)" />
             </div>
@@ -114,6 +129,7 @@
             // Fetch the blog details from the server or service
             baseblog = await _clientService.GetOneBlog(BlogId);
             blog = baseblog.ToBlogDto();
+            SelectedIds = baseblog.BlogsCategoriesIntList;
         }
         else
         {
@@ -138,6 +154,38 @@
     private void NavigateToAdminDashboard()
     {
         _navigationManager.NavigateTo("/admin-dashboard");
+    }
+    private List<string> items = new() { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+    private List<string> selectedItems = new();
+    private List<string> filteredItems = new();
+    private bool isOpen = false;
+
+    protected override void OnInitialized()
+    {
+        filteredItems = items;
+    }
+
+    private void ToggleDropdown()
+    {
+        isOpen = !isOpen;
+    }
+
+    private void OnSearch(ChangeEventArgs e)
+    {
+        var searchValue = e.Value.ToString().ToLower();
+        filteredItems = items.Where(item => item.ToLower().Contains(searchValue)).ToList();
+    }
+
+    private void OnSelectionChanged(string item)
+    {
+        if (selectedItems.Contains(item))
+        {
+            selectedItems.Remove(item);
+        }
+        else
+        {
+            selectedItems.Add(item);
+        }
     }
 
 }

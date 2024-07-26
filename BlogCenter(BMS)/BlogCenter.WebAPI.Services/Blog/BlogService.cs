@@ -49,24 +49,15 @@ namespace BlogCenter.WebAPI.Services.Blog
             return await _blogRepository.DeleteBlogById(id, userId);
         }
 
-        public async Task<ApiResponse> GetBlogById(long id)
+        public async Task<GetBlog> GetBlogById(long id)
         {
-            ApiResponse apiResponse = new ApiResponse();
+            GetBlog getBlog = new();
             Models.Models.Blog blog = await _blogRepository.GetBlogById(id);
             if (blog != null)
             {
-                return apiResponse = new()
-                {
-                    IsSuccess = true,
-                    StatusCode = HttpStatusCode.OK,
-                    Result = blog
-                };
+                return blog.ToGetBlogDto();
             }
-            return apiResponse = new()
-            {
-                IsSuccess = false,
-                StatusCode = HttpStatusCode.NoContent,
-            };
+            return getBlog;
         }
 
         public async Task<ApiPaginationResponse<GetBlog>> GetBlogsPageWise(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)

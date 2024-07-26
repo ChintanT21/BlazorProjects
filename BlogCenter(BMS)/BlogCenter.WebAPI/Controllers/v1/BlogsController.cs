@@ -32,19 +32,26 @@ namespace BlogCenter.WebAPI.Controllers.v1
         [HttpGet("{blogId:long}")]
         public async Task<IActionResult> GetBlogById(long blogId = 0)
         {
+            Response<GetBlog> responce = new();
             if (blogId==0)
             {
                 return NotFound();
             }
             try
             {
-                ApiResponse apiResponse = await _blogService.GetBlogById(blogId);
-                if (apiResponse == null)
+                GetBlog getBlog = await _blogService.GetBlogById(blogId);
+                if (getBlog == null)
                 {
                     return NotFound();
                 }
 
-                return Ok(apiResponse);
+                responce = new()
+                {
+                    IsSuccess = true,
+                    StatusCode = System.Net.HttpStatusCode.OK,
+                    ResultOne = getBlog
+                };
+                return Ok(responce);
             }
             catch (Exception ex) { return StatusCode(500, $"Internal server error: {ex.Message}"); }
         }

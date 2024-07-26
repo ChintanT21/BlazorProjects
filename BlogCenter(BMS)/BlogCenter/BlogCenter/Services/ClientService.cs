@@ -88,6 +88,7 @@ namespace BlogCenter.Blazor.Services
 
         public async Task<bool> CreateBlog(AddBlogDto blog)
         {
+            AddAuthorizationHeader();
             _url = "/api/Blogs";
 
             var response = await _httpClient.PostAsJsonAsync(_url, blog);
@@ -113,8 +114,13 @@ namespace BlogCenter.Blazor.Services
 
         public async Task<GetBlog> GetOneBlog(long blogId)
         {
+            AddAuthorizationHeader();
             _url = $"/api/Blogs/{blogId}";
             Response<GetBlog>? response = await _httpClient.GetFromJsonAsync<Response<GetBlog>>(_url);
+            if (response == null)
+            {
+                return response.ResultOne = new GetBlog();
+            }
             return response.ResultOne;
         }
 
