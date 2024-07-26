@@ -10,11 +10,11 @@
 @using BlogCenter.WebAPI.Dtos.Mapper
 
 <div class="container">
-    <div class="row mt-2 d-flex justify-content-around">
+    <div class="row mt-2 ">
         <div class="col ">
             <h4>Edit Blog</h4>
         </div>
-        <div class="col ">
+        <div class="col d-flex justify-content-end">
             <button class="btn btn-info" @onclick=NavigateToAdminDashboard>
                 <i class="fa-solid fa-chevron-left"></i>
                 Back
@@ -46,39 +46,30 @@
                 <label class=" fw-bolder" for="Title">Category:</label>
             </div>
             <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
-                <div>
-                    <select multiple @onchange="OnSelectionChanged" class="form-control">
-                        @foreach (var category in categories)
-                        {
-                            <option value="@category.Id" selected="@SelectedIds.Contains(category.Id)">@category.Name</option>
-                        }
-                    </select>
-                </div>
-                <div>
-                    <p>Selected Items:</p>
-                    <ul>
-                        @foreach (var item in SelectedItems)
-                        {
-                            <li>@item.Name</li>
-                        }
-                    </ul>
-                </div>
                 <div class="multi-select">
-                    <input type="text" class="form-control" @onclick="ToggleDropdown" @oninput="OnSearch" placeholder="Search and select..." />
+                    <div class="form-control" @onclick="ToggleDropdown">
+                        @foreach (var categoryId in selectedCategoryIds)
+                        {
+                            <span class="badge badge-pill badge-primary mr-1">
+                                @GetCategoryName(categoryId)
+                                <span class="ml-1" @onclick="(e) => RemoveCategory(e, categoryId)">×</span>
+                            </span>
+                        }
+                        <input type="text" class="input-no-border" @oninput="OnSearch" placeholder="Select items..." />
+                    </div>
                     @if (isOpen)
                     {
                         <ul>
-                            @foreach (var item in filteredItems)
+                            @foreach (var category in filteredCategories)
                             {
                                 <li>
-                                    <input type="checkbox" id="@item" @onchange="() => OnSelectionChanged(item)" checked="@selectedItems.Contains(item)" />
-                                    <label for="@item">@item</label>
+                                    <input type="checkbox" id="@category.Id" @onchange="() => OnSelectionChanged1(category.Id)" checked="@(selectedCategoryIds.Contains(category.Id) || filteredCategories1.Any(x => x.CategoryId == category.Id))"/>
+                                    <label for="@category.Id">@GetCategoryName(category.Id)</label>
                                 </li>
                             }
                         </ul>
                     }
-                </div>  
-
+                </div>
                 <ValidationMessage For="@(() => blog.Categories)" />
             </div>
         </div>
@@ -109,38 +100,39 @@
         public int Id { get; set; }
         public string Name { get; set; }
     }
-    private List<int> SelectedIds { get; set; } = new List<int>();
     private List<GetCategoryDto> SelectedItems { get; set; } = new List<GetCategoryDto>();
 
     private void OnSelectionChanged(ChangeEventArgs e)
     {
         var selectedValues = ((IEnumerable<string>)e.Value).Select(int.Parse).ToList();
-        SelectedIds = selectedValues;
-        SelectedItems = categories.Where(c => SelectedIds.Contains(c.Id)).ToList();
-        blog.Categories = selectedValues;
+        selectedCategoryIds = selectedValues;
+
+        blog.Categories = selectedCategoryIds;
     }
 
     string ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
     long userId;
     protected override async Task OnInitializedAsync()
     {
+   
+        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+        var userClaims = authState.User.Claims;
+        userId = Int64.Parse(userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value);
+        categories = await _clientService.GetAllCategories();
         if (long.TryParse(blogid, out var BlogId))
         {
             // Fetch the blog details from the server or service
             baseblog = await _clientService.GetOneBlog(BlogId);
             blog = baseblog.ToBlogDto();
-            SelectedIds = baseblog.BlogsCategoriesIntList;
+            filteredCategories = categories;
+            filteredCategories1 = baseblog.BlogsCategories;
+            selectedCategoryIds = baseblog.BlogsCategoriesIntList;
         }
         else
         {
             // Handle invalid blogId
             _navigationManager.NavigateTo("/blog-list");
         }
-   
-        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
-        var userClaims = authState.User.Claims;
-        userId = Int64.Parse(userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value);
-        categories = await _clientService.GetAllCategories();
     }
 
     protected async void EditThisBlog()
@@ -155,15 +147,7 @@
     {
         _navigationManager.NavigateTo("/admin-dashboard");
     }
-    private List<string> items = new() { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-    private List<string> selectedItems = new();
-    private List<string> filteredItems = new();
     private bool isOpen = false;
-
-    protected override void OnInitialized()
-    {
-        filteredItems = items;
-    }
 
     private void ToggleDropdown()
     {
@@ -173,19 +157,38 @@
     private void OnSearch(ChangeEventArgs e)
     {
         var searchValue = e.Value.ToString().ToLower();
-        filteredItems = items.Where(item => item.ToLower().Contains(searchValue)).ToList();
+        filteredCategories = categories.Where(category => category.Name.ToLower().Contains(searchValue)).ToList();
+        isOpen = true;
     }
 
-    private void OnSelectionChanged(string item)
+
+}
+@code {
+    private List<int> selectedCategoryIds = new();
+    private List<GetCategoryDto> filteredCategories = new();
+    private List<GetBlogDto.GetBlogsCategory> filteredCategories1 = new();
+
+    private void OnSelectionChanged1(int categoryId)
     {
-        if (selectedItems.Contains(item))
+        if (selectedCategoryIds.Contains(categoryId))
         {
-            selectedItems.Remove(item);
+            selectedCategoryIds.Remove(categoryId);
         }
         else
         {
-            selectedItems.Add(item);
+            selectedCategoryIds.Add(categoryId);
         }
+        blog.Categories = selectedCategoryIds;
     }
 
+    private void RemoveCategory(MouseEventArgs e, int categoryId)
+    {
+        selectedCategoryIds.Remove(categoryId);
+    }
+
+    private string GetCategoryName(int categoryId)
+    {
+        var category = categories.FirstOrDefault(c => c.Id == categoryId);
+        return category?.Name ?? string.Empty;
+    }
 }

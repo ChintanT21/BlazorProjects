@@ -13,7 +13,7 @@ using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Repositories.Blog
 {
-    public class BlogRepository(ApplicationDbContext _dbContext, IBaseRepository<Models.Models.Blog> _baseRepository) : IBlogRepository
+    public class BlogRepository(ApplicationDbContext _dbContext) : BaseRepository<Models.Models.Blog>(_dbContext), IBlogRepository
     {
         ApiResponse apiResponse = new();
 
@@ -21,7 +21,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
         {
             if (addblog != null)
             {
-                Models.Models.Blog blog = await _baseRepository.AddAsync(addblog);
+                Models.Models.Blog blog = await AddAsync(addblog);
                 blog.CreatedBy = userId;
                 blog.Status = 1;
 
@@ -34,7 +34,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
 
         public async Task<ApiResponse> DeleteBlogById(long id, long? userId)
         {
-            Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
+            Models.Models.Blog blog = await GetByIdAsync(id);
             if (blog != null)
             {
                 //_baseRepository.DeleteAsync(blog);
@@ -66,7 +66,8 @@ namespace BlogCenter.WebAPI.Repositories.Blog
         }
         public async Task<Models.Models.Blog> GetBlogById(long id = 1)
         {
-            Models.Models.Blog blog = await _baseRepository.GetByIdAsync(id);
+            Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
+            Models.Models.Blog blog = await GetByIdAsync(id,null,includeCategory);
             return blog;
         }
         public async Task<ApiPaginationResponse<GetBlog>> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
@@ -147,7 +148,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             }
 
 
-            PagedItemResult<Models.Models.Blog> pagedBlogData = await _baseRepository.GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory }, orderBy);
+            PagedItemResult<Models.Models.Blog> pagedBlogData = await GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory }, orderBy);
             ApiPaginationResponse<GetBlog> apiPaginationResponse = new()
             {
                 IsSuccess = true,
@@ -172,7 +173,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
 
             if (blogDto != null)
             {
-                Models.Models.Blog blog = await _baseRepository.AddAsync(blogDto.ToBlog());
+                Models.Models.Blog blog = await AddAsync(blogDto.ToBlog());
 
                 blog.CreatedBy = userId ?? 1;
                 _dbContext.SaveChanges();
@@ -193,14 +194,14 @@ namespace BlogCenter.WebAPI.Repositories.Blog
 
         public void UpdateBlog(Models.Models.Blog blog)
         {
-            _baseRepository.UpdateAsync(blog);
+            UpdateAsync(blog);
         }
 
         public async Task<List<Models.Models.Blog>> GetBlogsByUserId(string? searchString, string? sortString, long userId)
         {
             Expression<Func<Models.Models.Blog, bool>> byUserId = b => b.CreatedBy == userId;
             Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
-            List<Models.Models.Blog> blogs = await _baseRepository.GetAllAsync(byUserId, null, includeCategory);
+            List<Models.Models.Blog> blogs = await GetAllAsync(byUserId, null, includeCategory);
             return blogs;
         }
     }

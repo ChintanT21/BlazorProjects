@@ -99,6 +99,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
         {
             return new GetBlog
             {
+                Id = blogDto.Id,
                 Title = blogDto.Title,
                 Content = blogDto.Content,
                 AdminComment = blogDto.AdminComment,
@@ -108,6 +109,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 UpdatedDate = blogDto.UpdatedBy == 0 ? null : DateTime.Now,
                 Status = blogDto.Status,
                 StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
+                BlogsCategories= ToGetBlogsCategories(blogDto.BlogsCategories),
                 BlogsCategoriesIntList =blogDto.BlogsCategories.Select(x => x.CategoryId).ToList(),
             };
         }

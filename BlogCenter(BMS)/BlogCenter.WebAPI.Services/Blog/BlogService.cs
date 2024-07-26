@@ -10,8 +10,9 @@ using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Services.Blog
 {
-    public class BlogService(IBlogRepository _blogRepository, IAuthService _authService, IBlogCategoryRepository _blogCategoryRepository) : IBlogService
+    public class BlogService(IBlogRepository _blogRepository, IAuthService _authService, IBlogCategoryRepository blogCategoryRepository) : IBlogService
     {
+        private readonly IBlogCategoryRepository _blogCategoryRepository = blogCategoryRepository;
         public async Task<ApiResponse> AddBlogAsync(AddBlogDto blogDto, long userId)
         {
             ApiResponse apiResponse = new();
@@ -53,6 +54,7 @@ namespace BlogCenter.WebAPI.Services.Blog
         {
             GetBlog getBlog = new();
             Models.Models.Blog blog = await _blogRepository.GetBlogById(id);
+            blog.BlogsCategories = await _blogCategoryRepository.GetByBlogId(id);
             if (blog != null)
             {
                 return blog.ToGetBlogDto();
@@ -78,7 +80,7 @@ namespace BlogCenter.WebAPI.Services.Blog
             _blogRepository.UpdateBlog(blog);
             if (blogDto.Categories != null)
             {
-                _blogCategoryRepository.UpdateBlogCategory(blogId, blogDto.Categories, id);
+                await _blogCategoryRepository.UpdateBlogCategory(blogId, blogDto.Categories, id);
             }
             if (blog != null)
             {

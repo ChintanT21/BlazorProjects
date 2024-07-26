@@ -41,24 +41,30 @@
                 <label class=" fw-bolder" for="Title">Category:</label>
             </div>
             <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
-                <div>
-                    <select multiple @onchange="OnSelectionChanged" class="form-control">
-                        @foreach (var category in categories)
+                <div class="multi-select">
+                    <div class="form-control" @onclick="ToggleDropdown">
+                        @foreach (var categoryId in selectedCategoryIds)
                         {
-                            <option value="@category.Id" selected="@SelectedIds.Contains(category.Id)">@category.Name</option>
+                            <span class="badge badge-pill badge-primary mr-1">
+                                @GetCategoryName(categoryId)
+                                <span class="ml-1" @onclick="(e) => RemoveCategory(e, categoryId)">×</span>
+                            </span>
                         }
-                    </select>
+                        <input type="text" class="input-no-border" @oninput="OnSearch" placeholder="Select items..." />
+                    </div>
+                    @if (isOpen)
+                    {
+                        <ul>
+                            @foreach (var category in filteredCategories)
+                            {
+                                <li>
+                                    <input type="checkbox" id="@category.Id" @onchange="() => OnSelectionChanged1(category.Id)" checked="@selectedCategoryIds.Contains(category.Id)" />
+                                    <label for="@category.Id">@category.Name</label>
+                                </li>
+                            }
+                        </ul>
+                    }
                 </div>
-                <div>
-                    <p>Selected Items:</p>
-                    <ul>
-                        @foreach (var item in SelectedItems)
-                        {
-                            <li>@item.Name</li>
-                        }
-                    </ul>
-                </div>
-
                 <ValidationMessage For="@(() => blog.Categories)" />
             </div>
         </div>
@@ -75,30 +81,7 @@
 
 </div>
 
-<div class="multi-select">
-    <div class="form-control" @onclick="ToggleDropdown">
-        @foreach (var categoryId in selectedCategoryIds)
-        {
-            <span class="badge badge-pill badge-primary mr-1">
-                @GetCategoryName(categoryId)
-                <span class="ml-1" @onclick="(e) => RemoveCategory(e, categoryId)">×</span>
-            </span>
-        }
-        <input type="text" class="input-no-border" @oninput="OnSearch" placeholder="Select items..." />
-    </div>
-    @if (isOpen)
-    {
-        <ul>
-            @foreach (var category in filteredCategories)
-            {
-                <li>
-                    <input type="checkbox" id="@category.Id" @onchange="() => OnSelectionChanged1(category.Id)" checked="@selectedCategoryIds.Contains(category.Id)" />
-                    <label for="@category.Id">@category.Name</label>
-                </li>
-            }
-        </ul>
-    }
-</div>
+
 
 
 

@@ -1,10 +1,10 @@
 ﻿@using Microsoft.AspNetCore.Components.Authorization
 
-<div class="top-row ps-3 navbar navbar-dark">
+@* <div class="top-row ps-3 navbar navbar-dark">
     <div class="container-fluid d-flex justify-content-center">
         <a class="navbar-brand h1" href="">BlogCenter</a>
     </div>
-</div>
+</div> *@
 
 @* <div class="sidebar">
     <div class="nav-scrollable h5 mt-5 " onclick="document.querySelector('.navbar-toggler').click()">
@@ -44,7 +44,7 @@
         </nav>
     </div>
 </div> *@
-
+@* 
  
 <nav>
     <ul class="list-unstyled">
@@ -53,4 +53,14 @@
         <li><NavLink href="page2">Categories</NavLink></li>
         <li><NavLink href="page2">Blogs</NavLink></li>
     </ul>
-</nav>
+</nav> *@
+
+<MudNavMenu>
+    <MudNavLink Href="/" Match="NavLinkMatch.All">Dashboard</MudNavLink>
+    <MudNavLink Href="/servers" Match="NavLinkMatch.Prefix">Servers</MudNavLink>
+    <MudNavGroup Title="Settings" Expanded="true">
+        <MudNavLink Href="/users" Match="NavLinkMatch.Prefix">Users</MudNavLink>
+        <MudNavLink Href="/security" Match="NavLinkMatch.Prefix">Security</MudNavLink>
+    </MudNavGroup>
+    <MudNavLink Href="/about" Match="NavLinkMatch.Prefix">About</MudNavLink>
+</MudNavMenu>

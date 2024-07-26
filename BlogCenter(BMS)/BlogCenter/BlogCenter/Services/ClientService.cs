@@ -126,7 +126,7 @@ namespace BlogCenter.Blazor.Services
 
         public async Task<bool> UpdateBlog(BlogDto blog)
         {
-            _url = "/api/Blogs";
+            _url = $"/api/Blogs?blogId={blog.BlogId}";
 
             var response = await _httpClient.PutAsJsonAsync(_url, blog);
 

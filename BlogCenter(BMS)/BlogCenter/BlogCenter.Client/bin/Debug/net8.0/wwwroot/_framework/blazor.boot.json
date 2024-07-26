@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlogCenter.Client",
   "resources": {
-    "hash": "sha256-QpUR07WO5baU0JZfaV0U3v2OLgerg0Vn9Se5KasiPKs=",
+    "hash": "sha256-cB2XizOC3tDPKFF4ynuewHXBdQ6zMzKEkyWq1S0CIt4=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.37dkch2d2y.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -33,12 +33,15 @@
       "Microsoft.Extensions.FileProviders.Abstractions.wasm": "sha256-IUopixuV8E09mP+TIgRp/lXEbeacXbUTW7cu0v5B9Tc=",
       "Microsoft.Extensions.FileProviders.Physical.wasm": "sha256-MS+zB0xkKhKk/QdE32ZwKtdlrLMLI/y2NAKPUWhcBVg=",
       "Microsoft.Extensions.FileSystemGlobbing.wasm": "sha256-AnWUKd0qJ8ZNKkRC0AFK2cjjszB7reXiP+bXdIi8bic=",
+      "Microsoft.Extensions.Localization.wasm": "sha256-kMLgnUXyCK3PjWaFVpQGP59lzJkRYIrR9nxlovntXE0=",
+      "Microsoft.Extensions.Localization.Abstractions.wasm": "sha256-RWXCVmZKCYgNeXmPf/7V0IHNsTKNdb/31UpoQtdxcNc=",
       "Microsoft.Extensions.Logging.wasm": "sha256-Rx+UwnmyfTtMmlYd3HWJOvYVnSSwShUKrbPvqkfxmZk=",
       "Microsoft.Extensions.Logging.Abstractions.wasm": "sha256-AL42sVLgQf/nX/uHvd/OHfIFwLq3fRt9qn4/jnfJ2CM=",
       "Microsoft.Extensions.Options.wasm": "sha256-5/m+yVFGRuY+N4jQnD+QETKH0AfhAsnVze5dJ5ogIVM=",
       "Microsoft.Extensions.Primitives.wasm": "sha256-pVrYOTfjb2ITls3LKIByW1t8jwOAWFhmkIVDewtJ1GE=",
       "Microsoft.JSInterop.wasm": "sha256-ujAR3ldYmTi++VGM1Np5SMOEC+mP4m6Uva9Sgj54ZVs=",
       "Microsoft.JSInterop.WebAssembly.wasm": "sha256-gxsImbLQUP0+xBtL1HjJHY4TK2kv0b55tv61C2OHsUU=",
+      "MudBlazor.wasm": "sha256-SXIoRZoseZmeAiW7b/e8jQIzpzMw8TzYXd0Un/yk17Y=",
       "System.IO.Pipelines.wasm": "sha256-JqVBy6SV+3qk+IK3VJiyIDt9CsVk6b1/ytTXmrI4mTM=",
       "Microsoft.CSharp.wasm": "sha256-vCw0CqN4rcydAU24ZGZXUBVaczRh4WYncFAUMHp2p5E=",
       "Microsoft.VisualBasic.Core.wasm": "sha256-UInDqxTqt933Jzd6mPpf48KtlIyJR71xZS4CGFI4TNY=",
@@ -208,10 +211,10 @@
       "mscorlib.wasm": "sha256-fLbZiSHBNdpHoh4EgRqMaNP5NQyIK5TEj6AXFLqo8m8=",
       "netstandard.wasm": "sha256-d4xbAE8qrKq5euUoZHPO+jkYPjlCYBzUew45MKsYKic=",
       "System.Private.CoreLib.wasm": "sha256-8yi6NcX1lkNQgV4WKjnMBYIZyKh4P+OXnXVQmgxGZD4=",
-      "BlogCenter.Client.wasm": "sha256-5YPusa50vLUT8jJg6cieE+AXbD3n3AbRtQgReEZ8dTQ="
+      "BlogCenter.Client.wasm": "sha256-gF61s5APfMaWGP9mTbKAc2IOzy+f3OI/vzfNeCeq8+k="
     },
     "pdb": {
-      "BlogCenter.Client.pdb": "sha256-J5vpwKuk7kAZEANAASqTsp5d7NK2ue3fbIYhAIXuF+Y="
+      "BlogCenter.Client.pdb": "sha256-pdkX8gAApQdzXXpZ/ScNtbd/L7OouFOPY6tyQ2eEgg0="
     }
   },
   "cacheBootResources": true,

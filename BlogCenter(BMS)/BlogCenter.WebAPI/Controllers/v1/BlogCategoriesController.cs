@@ -42,7 +42,8 @@ namespace BlogCenter.WebAPI.Controllers.v1
             ApiResponse apiResponse = new();
             try
             {
-                List<BlogsCategory> blogCategories = await _blogCategoryService.GetByBlogId(id);
+                ICollection<BlogsCategory> IblogsCategories = await _blogCategoryService.GetByBlogId(id);
+                List<BlogsCategory> blogCategories = IblogsCategories.ToList();
                 apiResponse = new()
                 {
                     Result = blogCategories,

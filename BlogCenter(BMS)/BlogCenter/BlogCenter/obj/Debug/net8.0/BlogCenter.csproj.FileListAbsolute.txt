@@ -1,3 +1,10 @@
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.csproj.AssemblyReference.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.AssemblyInfoInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.AssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.csproj.CoreCompileInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.sourcelink.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.deps.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.runtimeconfig.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.exe
@@ -41,6 +48,8 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\M
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.DependencyModel.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Localization.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Localization.Abstractions.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.Extensions.Options.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.IdentityModel.Abstractions.dll
@@ -52,6 +61,7 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\M
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Microsoft.OpenApi.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\MudBlazor.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Npgsql.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\Scrutor.dll
@@ -74,14 +84,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\B
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.Models.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\bin\Debug\net8.0\BlogCenter.WebAPI.Services.pdb
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.csproj.AssemblyReference.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.AssemblyInfoInputs.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.AssemblyInfo.cs
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.csproj.CoreCompileInputs.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.MvcApplicationPartsAssemblyInfo.cs
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.MvcApplicationPartsAssemblyInfo.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.sourcelink.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\staticwebassets.build.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\staticwebassets.development.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\staticwebassets\msbuild.BlogCenter.Microsoft.AspNetCore.StaticWebAssets.props

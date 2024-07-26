@@ -4,10 +4,11 @@ using BlogCenter.Components.Pages.Authentication;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Components.Authorization;
 using Microsoft.IdentityModel.Tokens;
+using MudBlazor.Services;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
-
+builder.Services.AddMudServices();
 
 builder.Services.AddSingleton(sp => new HttpClient
 {

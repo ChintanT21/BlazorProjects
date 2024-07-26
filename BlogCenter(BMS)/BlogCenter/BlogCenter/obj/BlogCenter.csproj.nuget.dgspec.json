@@ -638,6 +638,10 @@
               "target": "Package",
               "version": "[8.0.7, )",
               "autoReferenced": true
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[7.4.0, )"
             }
           },
           "imports": [
@@ -739,6 +743,10 @@
             "Microsoft.JSInterop": {
               "target": "Package",
               "version": "[8.0.7, )"
+            },
+            "MudBlazor": {
+              "target": "Package",
+              "version": "[7.4.0, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

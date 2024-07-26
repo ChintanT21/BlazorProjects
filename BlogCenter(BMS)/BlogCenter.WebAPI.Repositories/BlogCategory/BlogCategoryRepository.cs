@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BlogCenter.WebAPI.Repositories.BlogCategory
 {
-    public class BlogCategoryRepository(ApplicationDbContext _dbContext, IBaseRepository<BlogsCategory> _baseRepository) : IBlogCategoryRepository
+    public class BlogCategoryRepository(ApplicationDbContext _dbContext) : BaseRepository<Models.Models.BlogsCategory>(_dbContext), IBlogCategoryRepository
     {
         public Task<ApiResponse> AddAsync(BlogDto blogDto, long? userId)
         {
@@ -27,7 +27,7 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
                 };
                 BlogCategories.Add(blogsCategory);
             }
-            _baseRepository.AddRangeAsync(BlogCategories);
+            base.AddRangeAsync(BlogCategories);
             return BlogCategories;
         }
 
@@ -38,29 +38,30 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
 
         public async Task<List<BlogsCategory>> GetAllCategory()
         {
-            List<BlogsCategory> blogsCategory=await _baseRepository.GetAllAsync();
+            List<BlogsCategory> blogsCategory=await GetAllAsync();
             return blogsCategory;
         }
 
-        public async Task<List<BlogsCategory>> GetByBlogId(long blogId)
+        public async Task<ICollection<BlogsCategory>> GetByBlogId(long blogId)
         {
             List<BlogsCategory> blogsCategory = await _dbContext.BlogsCategories.Where(b => b.IsDeleted == false && b.BlogId == blogId).ToListAsync();
 
             return blogsCategory;
         }
 
-        public async void UpdateBlogCategory(int blogId, List<int> categories, long? id)
+        public async Task UpdateBlogCategory(int blogId, List<int> categories, long? id)
         {
             if (id != null)
             {
-                List<BlogsCategory> blogCategories = await GetByBlogId(blogId);
+                ICollection<BlogsCategory> IblogsCategories = _dbContext.BlogsCategories.Where(b => b.IsDeleted == false && b.BlogId == blogId).ToList();
+                List<BlogsCategory> blogCategories = IblogsCategories.ToList();
 
-                foreach (var category in blogCategories)
+                foreach (BlogsCategory category in blogCategories)
                 {
                     if (!categories.Contains(category.CategoryId))
                     {
                         category.IsDeleted = true;
-                        await _baseRepository.UpdateAsync(category);
+                        await UpdateAsync(category);
                     }
                 }
 
@@ -69,7 +70,7 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
                 foreach (var categoryId in categories)
                 {
 
-                    var existingCategory = blogCategories.FirstOrDefault(ec => ec.CategoryId == categoryId);
+                    BlogsCategory? existingCategory = blogCategories.FirstOrDefault(ec => ec.CategoryId == categoryId);
                     if (existingCategory == null)
                     {
                         BlogsCategory newCategory = new()
@@ -80,7 +81,7 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
                             CreatedBy = (long)id,
                         };
                         newCategories.Add(newCategory);
-                        await _baseRepository.AddAsync(newCategory);
+                        await AddAsync(newCategory);
                     }
                     else
                     {
@@ -88,7 +89,7 @@ namespace BlogCenter.WebAPI.Repositories.BlogCategory
                         if (existingCategory.IsDeleted)
                         {
                             existingCategory.IsDeleted = false;
-                            await _baseRepository.UpdateAsync(existingCategory);
+                            await UpdateAsync(existingCategory);
                         }
                     }
                 }

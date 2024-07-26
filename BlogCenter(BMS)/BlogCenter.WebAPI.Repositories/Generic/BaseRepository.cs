@@ -12,21 +12,24 @@ namespace BlogCenter.WebAPI.Repositories.Generic
 
         public async Task<T> AddAsync(T entity)
         {
+            if (entity == null)
+            {
+                throw new ArgumentNullException(nameof(entity));
+            }
+
             try
             {
-                if (entity != null)
-                {
-                    await _dbset.AddAsync(entity);
-                    await dbContext.SaveChangesAsync();
-                    return entity;
-                }
-                return null;
+                await _dbset.AddAsync(entity);
+                await _dbContext.SaveChangesAsync();
+                return entity;
             }
             catch (Exception ex)
             {
-                return null;
+                // Log the exception (not implemented here for brevity)
+                throw;
             }
         }
+
         public async Task<List<T>> GetAllAsync(Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
         {
             try

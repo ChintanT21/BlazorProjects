@@ -6,7 +6,7 @@ namespace BlogCenter.WebAPI.Services.BlogCategory
 {
     public class BlogCategoryService(IBlogCategoryRepository _blogCategoryRepository,IBaseService<BlogsCategory> _baseService) : IBlogCategoryService
     {
-         public Task<List<BlogsCategory>> GetByBlogId(long id)
+         public Task<ICollection<BlogsCategory>> GetByBlogId(long id)
         {
            return _blogCategoryRepository.GetByBlogId(id);
         }
