@@ -153,10 +153,16 @@ namespace BlogCenter.WebAPI.Services.User
 
         public async Task<GetUserDto> UpdateUser(long currentUserId, UpdateUserDto updateUserDto)
         {
-            Expression<Func<Models.Models.User, bool>> where = b => b.Id == updateUserDto.UserId;
+            long userId = updateUserDto.UserId;
+            Expression<Func<Models.Models.User, bool>> where = b => b.Id == userId;
             user = await GetOneAsync(where, null, null);
+            if (user == null)
+            {
+                return new GetUserDto();
+            }
             MapToUser(user, updateUserDto);
             user.UpdatedBy = currentUserId;
+            user.UpdatedDate = DateTime.Now;
             user = await UpdateAsync(user);
             return user.MapToGetUserDto();
         }

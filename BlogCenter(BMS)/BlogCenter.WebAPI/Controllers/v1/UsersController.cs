@@ -133,7 +133,7 @@ namespace BlogCenter.WebAPI.Controllers.v1
             bool IsUserExits = false;
             string? currentUserId = HttpContext.Items["UserId"] as string;
             Response<GetUserDto> response = new();
-            if (currentUserId != null)
+            if (currentUserId != null && updateUserDto.UserId!=0)
             {
                 IsUserExits = await _userService.IsUserExits(updateUserDto.Email);
                 if (!IsUserExits)
@@ -171,7 +171,6 @@ namespace BlogCenter.WebAPI.Controllers.v1
             bool IsDeleted = false;
             GetUserDto user = new();
             string? currentUserId = HttpContext.Items["UserId"] as string;
-            string? userRole = HttpContext.Items["UserRole"] as string;
             Response<GetUserDto> response = new();
             user = await _userService.GetUserByUserId(userId);
             if (user.Id != 0)

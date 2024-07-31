@@ -12,7 +12,7 @@ namespace BlogCenter.WebAPI.Repositories.Auth
 
         public async Task<Models.Models.User> GetUserByEmail(string email)
         {
-            var user = await _dbContext.Users.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
+            var user =  _dbContext.Users.FirstOrDefault(x => x.Email.ToLower() == email.ToLower());
             return user;
         }
 

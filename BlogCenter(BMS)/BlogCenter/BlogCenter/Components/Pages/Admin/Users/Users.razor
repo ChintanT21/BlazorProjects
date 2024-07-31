@@ -1,0 +1,184 @@
+﻿@page "/admin/users"
+@rendermode InteractiveServer
+@using BlogCenter.Blazor.Services
+@using BlogCenter.Services.User
+@using BlogCenter.Services.User
+@using BlogCenter.WebAPI.Dtos
+@using BlogCenter.WebAPI.Dtos.Constant
+@using BlogCenter.WebAPI.Dtos.RequestDto
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using MudBlazor
+@inject ISnackbar Snackbar
+@using System.Net.Http.Json
+@using static BlogCenter.WebAPI.Dtos.Enums.Enums
+@inject IUserClientService _clientService
+@inject NavigationManager _navigationManager
+
+
+<div class="container">
+
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Users</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Add" Color="Color.Primary" OnClick=NavigateToAddUser>Add User</MudButton>
+    </div>
+    <MudTable Items="@Elements" Hover="true" Loading="@_loading" LoadingProgressColor="Color.Primary">
+        <HeaderContent>
+            <MudTh>Email</MudTh>
+            <MudTh>Full Name</MudTh>
+            <MudTh>Status</MudTh>
+            <MudTh>Action</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Email">@context.Email</MudTd>
+            <MudTd DataLabel="Name">@context.FirstName @context.LastName</MudTd>
+            <MudTd DataLabel="Status">
+                @if (context.Status==(short)UserStatus.Active)
+                {
+                    <span class="text-success">Active</span>
+                }
+                else if (context.Status == (short)UserStatus.Deactive)
+                {
+                    <span class="text-info">Not Active</span>
+                }
+                else
+                {
+                    <span class="text-danger">Deleted</span>
+                }
+            </MudTd>
+            <MudTd DataLabel="Action">
+                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditUser(context.Id)">Edit</MudButton>
+                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.RemoveRedEye" Color="Color.Primary">View</MudButton>
+                @if (context.Status != (short)UserStatus.Deleted)
+                {
+                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="()=>DeleteUser(context.Id)">Delete</MudButton>
+                }
+            </MudTd>
+
+        </RowTemplate>
+    </MudTable>
+
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <MudPagination BoundaryCount="2"
+                       MiddleCount="3"
+                       ShowFirstButton="true"
+                       ShowLastButton="true"
+                       Rectangular="true"
+                       Selected="@selectedPage"
+                       Count="@totalPages"
+                       Variant="Variant.Filled"
+                       SelectedChanged="OnPageChanged"/>
+
+        @if ((!Top && totalItems >= 5) || Top)
+        {
+            <div class="d-flex align-items-center ml-auto">
+                <MudText Class="mr-2">Records Per Page:</MudText>
+                <MudSelect Style="width: 100px;" Margin="Margin.Dense" Dense T="int" @bind-Value="rpp" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" SelectedValuesChanged="OnPageSizeChanged">
+                    <MudSelectItem T="int" Value="5">5</MudSelectItem>
+                    <MudSelectItem T="int" Value="10">10</MudSelectItem>
+                    <MudSelectItem T="int" Value="20">20</MudSelectItem>
+                    <MudSelectItem T="int" Value="50">50</MudSelectItem>
+                </MudSelect>
+            </div>
+        }
+    </div>
+</div>
+
+@code {
+    private DataManipulationDto manipulationDto = new();
+
+    [Parameter] public bool Top { get; set; } = true;
+    [Parameter] public int rpp { get; set; } = 5;
+    [Parameter] public EventCallback<int> rppChanged { get; set; }
+    [Parameter] public EventCallback<int> currentPageChanged { get; set; }
+    [Parameter] public EventCallback<int> selectedPageChanged { get; set; }
+    [Parameter] public int currentPage { get; set; } = 0;
+    [Parameter] public int totalItems { get; set; } = 0;
+    [Parameter] public int totalPages { get; set; } = 0;
+    [Parameter] public int selectedPage { get; set; } = 1;
+    private bool _loading;
+    private HorizontalAlignment horizontalAlignment = HorizontalAlignment.Right;
+    private string rowsPerPageString = "Rows per page:";
+    private string infoFormat = "{first_item}-{last_item} of {all_items}";
+    private string allItemsText = "All";
+
+    private IEnumerable<GetUserDto> Elements = new List<GetUserDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadData();
+    }
+    protected async Task LoadData()
+    {
+        _loading = true;
+        ApiPaginationResponse<GetUserDto>? apiResponse = await _clientService.GetUsersData(manipulationDto);
+        Elements = apiResponse.Result;
+        totalPages = apiResponse.TotalPages;
+        totalItems = apiResponse.TotalCount;
+        // await Task.Delay(200);
+        _loading = false;
+        StateHasChanged();
+    }
+
+    public async Task OnSearchChanged(ChangeEventArgs e)
+    {
+        manipulationDto.SearchString = e.Value.ToString() ?? "";
+        await LoadData();
+    }
+
+    public async Task OnSearchStatus(string searchString)
+    {
+        manipulationDto.SearchTable = "status";
+        manipulationDto.SearchString = searchString;
+        await LoadData();
+    }
+
+    public async Task OnPageChanged(int pageNumber)
+    {
+
+        if (pageNumber != selectedPage)
+        {
+            currentPage = pageNumber - 1;
+            selectedPage = pageNumber;
+            StateHasChanged();
+            //currentPageChanged.InvokeAsync(i - 1);
+            selectedPageChanged.InvokeAsync(pageNumber);
+        }
+
+        manipulationDto.PageNumber = pageNumber;
+        await LoadData();
+    }
+
+    public async void OnPageSizeChanged()
+    {
+        manipulationDto.PageSize = rpp;
+        await LoadData();
+    }
+    public async void DeleteUser(long userId)
+    {
+        _loading = true;
+        Dictionary<bool, string> isDeleted = await _clientService.DeleteUser(userId);
+        if (isDeleted.FirstOrDefault().Key)
+        {
+            Snackbar.Add(isDeleted.FirstOrDefault().Value, Severity.Success, c => c.SnackbarVariant = Variant.Filled);
+        }
+        else if (isDeleted.FirstOrDefault().Value == Constants.USER_EXISTS_ERROR)
+        {
+            Snackbar.Add(isDeleted.FirstOrDefault().Value, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+        }
+        else
+        {
+            Snackbar.Add(isDeleted.FirstOrDefault().Value, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+        }
+        await LoadData();
+        _loading = false;
+    }
+    public void NavigateToEditUser(long blogId)
+    {
+        _navigationManager.NavigateTo($"/admin/users/edit?userId={blogId}");
+    }
+    public void NavigateToAddUser()
+    {
+        _navigationManager.NavigateTo("/admin/users/add");
+    }
+
+}

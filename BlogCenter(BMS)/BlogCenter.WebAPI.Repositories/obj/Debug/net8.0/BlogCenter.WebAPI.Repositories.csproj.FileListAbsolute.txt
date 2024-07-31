@@ -4,3 +4,17 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.AssemblyInfo.cs
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.csproj.CoreCompileInputs.cache
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.sourcelink.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.deps.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.runtimeconfig.json
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Dtos.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Models.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Dtos.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\bin\Debug\net8.0\BlogCenter.WebAPI.Models.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCent.5E73C11B.Up2Date
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\refint\BlogCenter.WebAPI.Repositories.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\BlogCenter.WebAPI.Repositories.genruntimeconfig.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI.Repositories\obj\Debug\net8.0\ref\BlogCenter.WebAPI.Repositories.dll

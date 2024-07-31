@@ -122,7 +122,7 @@ namespace BlogCenter.WebAPI.Services.Auth
         }
         public async Task<LoginResponse> LoginAccount(LoginDto loginDTO)
         {
-            var getUser = _authRepository.GetUserByEmail(loginDTO.Email);
+            var getUser = await _authRepository.GetUserByEmail(loginDTO.Email);
             if (getUser is null)
                 return new LoginResponse(false, null!, "User not found");
 

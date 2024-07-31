@@ -17,6 +17,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
         {
             return new User
             {
+                RoleId=dto.RoleId,
                 FirstName = dto.FirstName,
                 LastName = dto.LastName,
                 Email = dto.Email,
