@@ -34,7 +34,7 @@
 
         if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
         {
-            navigationManager.NavigateTo("/admin-dashboard");
+            navigationManager.NavigateTo("/admin/blogs");
         }
         else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
         {

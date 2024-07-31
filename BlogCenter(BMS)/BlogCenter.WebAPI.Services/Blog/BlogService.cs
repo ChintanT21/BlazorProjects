@@ -10,9 +10,8 @@ using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
 namespace BlogCenter.WebAPI.Services.Blog
 {
-    public class BlogService(IBlogRepository _blogRepository, IAuthService _authService, IBlogCategoryRepository blogCategoryRepository) : IBlogService
+    public class BlogService(IBlogRepository _blogRepository, IAuthService _authService, IBlogCategoryRepository _blogCategoryRepository) : IBlogService
     {
-        private readonly IBlogCategoryRepository _blogCategoryRepository = blogCategoryRepository;
         public async Task<ApiResponse> AddBlogAsync(AddBlogDto blogDto, long userId)
         {
             ApiResponse apiResponse = new();
@@ -76,7 +75,7 @@ namespace BlogCenter.WebAPI.Services.Blog
             blog.Title = blogDto.Title ?? blog.Title;
             blog.UpdatedBy = id;
             blog.UpdatedDate = blogDto.UpdatedDate;
-            blog.Status=blogDto.Status?? blog.Status;
+            blog.Status = blogDto.Status ?? blog.Status;
             _blogRepository.UpdateBlog(blog);
             if (blogDto.Categories != null)
             {
@@ -116,6 +115,31 @@ namespace BlogCenter.WebAPI.Services.Blog
                 StatusCode = HttpStatusCode.OK,
                 Result = blogList
             };
+        }
+
+        public async Task<Response<Models.Models.Blog>> ChangeStatus(long blogId, int statusId, long id)
+        {
+            Response<Models.Models.Blog> apiResponse = new();
+            Models.Models.Blog blog = await _blogRepository.GetBlogById(blogId);
+            blog.Status = (short)statusId;
+            blog.UpdatedBy = id;
+            blog.UpdatedDate = DateTime.Now;
+            await  _blogRepository.UpdateBlog(blog);
+            if (blog != null)
+            {
+                return apiResponse = new()
+                {
+                    IsSuccess = true,
+                    StatusCode = HttpStatusCode.OK,
+                    ResultOne = blog
+                };
+            }
+            return apiResponse = new()
+            {
+                IsSuccess = false,
+                StatusCode = HttpStatusCode.NoContent,
+            };
+
         }
     }
 }

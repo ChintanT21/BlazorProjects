@@ -64,12 +64,14 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             };
 
         }
+        
         public async Task<Models.Models.Blog> GetBlogById(long id = 1)
         {
             Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
             Models.Models.Blog blog = await GetByIdAsync(id,null,includeCategory);
             return blog;
         }
+        
         public async Task<ApiPaginationResponse<GetBlog>> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId)
         {
             Expression<Func<Models.Models.Blog, bool>> where = b => true;
@@ -95,7 +97,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
                         case "status":
                             if (short.TryParse(searchString, out short statusValue))
                             {
-                                where = where.And(b => b.Status.Equals(statusValue));
+                                where = where.And(b => b.Status==(statusValue));
                             }
                             break;
                         default:
@@ -110,6 +112,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             // Apply sorting
             Func<IQueryable<Models.Models.Blog>, IOrderedQueryable<Models.Models.Blog>>? orderBy = null;
 
+            sortString = "CreatedDate,UpdatedDate";
             if (!string.IsNullOrWhiteSpace(sortString))
             {
                 var sortFields = sortString.Split(',');
@@ -159,15 +162,14 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             };
             return apiPaginationResponse;
         }
-
-
-
+       
         public List<BlogsCategory> GetBlogsCategoriesByBlogId(long id)
         {
             List<BlogsCategory> blogsCategory = [.. _dbContext.BlogsCategories.Where(x => x.BlogId == id)];
 
             return blogsCategory;
         }
+
         public async Task<ApiResponse> AddBlogCategoryById(BlogDto blogDto, long? userId)
         {
 
@@ -192,9 +194,9 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             };
         }
 
-        public void UpdateBlog(Models.Models.Blog blog)
+        public async Task UpdateBlog(Models.Models.Blog blog)
         {
-            UpdateAsync(blog);
+            await UpdateAsync(blog);
         }
 
         public async Task<List<Models.Models.Blog>> GetBlogsByUserId(string? searchString, string? sortString, long userId)

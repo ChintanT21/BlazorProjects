@@ -1,0 +1,171 @@
+﻿@page "/admin/view-blog"
+@rendermode InteractiveServer
+@inject AuthenticationStateProvider _authenticationStateProvider
+@inject NavigationManager _navigationManager
+@inject IJSRuntime _jsRuntime
+@using BlogCenter.Blazor.Services
+@using BlogCenter.WebAPI.Dtos.RequestDto
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using BlogCenter.WebAPI.Dtos
+@using BlogCenter.WebAPI.Dtos.Mapper
+
+<div class="container">
+    <div class="row mt-2 ">
+        <div class="col ">
+            <h4>View Blog</h4>
+        </div>
+        <div class="col d-flex justify-content-end">
+            <button class="btn btn-info" @onclick=NavigateToBlogs>
+                <i class="fa-solid fa-chevron-left"></i>
+                Back
+            </button>
+        </div>
+    </div>
+
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
+                <label class=" fw-bolder" for="Title">Title:</label>
+            </div>
+            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
+            <InputText id="Title" @bind-Value="blog.Title" class="form-control" readonly />
+
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
+                <label class=" fw-bolder" for="Title">Content:</label>
+            </div>
+            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
+            <input @bind=blog.Content class="form-control" readonly>Welcome</input>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
+                <label class=" fw-bolder" for="Title">Category:</label>
+            </div>
+            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
+                <div class="multi-select">
+                    <div class="form-control" @onclick="ToggleDropdown">
+                        @foreach (var categoryId in selectedCategoryIds)
+                        {
+                            <span class="badge badge-pill badge-primary mr-1">
+                                @GetCategoryName(categoryId)
+                               
+                            </span>
+                        }
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="m-2 d-flex justify-content-end">
+        <button class="btn btn-success" @onclick="() => NavigateToEditPage(blogid)">
+                Edit
+            </button>
+        </div>
+
+
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "blogid")]
+    public long blogid { get; set; }
+    [Inject] protected IClientService? _clientService { get; set; }
+    protected bool showLoding = false;
+    protected BlogDto blog = new();
+    protected GetBlogDto.GetBlog baseblog = new();
+    protected List<GetCategoryDto> categories = new();
+    public class SelectItem
+    {
+        public int Id { get; set; }
+        public string Name { get; set; }
+    }
+    private List<GetCategoryDto> SelectedItems { get; set; } = new List<GetCategoryDto>();
+
+    private void OnSelectionChanged(ChangeEventArgs e)
+    {
+        var selectedValues = ((IEnumerable<string>)e.Value).Select(int.Parse).ToList();
+        selectedCategoryIds = selectedValues;
+        blog.Categories = selectedCategoryIds;
+    }
+
+    string ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+    long userId;
+    protected override async Task OnInitializedAsync()
+    {
+
+        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
+        var userClaims = authState.User.Claims;
+        userId = Int64.Parse(userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value);
+        categories = await _clientService.GetAllCategories();
+
+        // Fetch the blog details from the server or service
+        baseblog = await _clientService.GetOneBlog(blogid);
+        blog = baseblog.ToBlogDto();
+        filteredCategories = categories;
+        filteredCategories1 = baseblog.BlogsCategories;
+        selectedCategoryIds = baseblog.BlogsCategoriesIntList;
+    }
+
+    protected async void EditThisBlog()
+    {
+        bool isUpdated = await _clientService.UpdateBlog(blog);
+        if (isUpdated)
+        {
+            NavigateToBlogs();
+        }
+    }
+    private void NavigateToBlogs()
+    {
+        _navigationManager.NavigateTo("/admin/blogs");
+    }
+    protected void NavigateToEditPage(long? blogId)
+    {
+        _navigationManager.NavigateTo($"/admin/edit-blog?blogid={blogid}");
+    }
+    private bool isOpen = false;
+
+    private void ToggleDropdown()
+    {
+        isOpen = !isOpen;
+    }
+
+    private void OnSearch(ChangeEventArgs e)
+    {
+        var searchValue = e.Value.ToString().ToLower();
+        filteredCategories = categories.Where(category => category.Name.ToLower().Contains(searchValue)).ToList();
+        isOpen = true;
+    }
+
+
+}
+@code {
+    private List<int> selectedCategoryIds = new();
+    private List<GetCategoryDto> filteredCategories = new();
+    private List<GetBlogDto.GetBlogsCategory> filteredCategories1 = new();
+
+    private void OnSelectionChanged1(int categoryId)
+    {
+        if (selectedCategoryIds.Contains(categoryId))
+        {
+            selectedCategoryIds.Remove(categoryId);
+        }
+        else
+        {
+            selectedCategoryIds.Add(categoryId);
+        }
+        blog.Categories = selectedCategoryIds;
+    }
+
+    private void RemoveCategory(MouseEventArgs e, int categoryId)
+    {
+        selectedCategoryIds.Remove(categoryId);
+    }
+
+    private string GetCategoryName(int categoryId)
+    {
+        var category = categories.FirstOrDefault(c => c.Id == categoryId);
+        return category?.Name ?? string.Empty;
+    }
+}

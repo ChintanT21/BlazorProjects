@@ -6,7 +6,7 @@ namespace BlogCenter.WebAPI.Services.Auth
 {
     public interface IAuthService
     {
-        Task<GeneralResponse> CreateAccount(UserDto UserDto);
+        Task<GeneralResponse> CreateAccount(Dtos.UserDto UserDto);
         Task<LoginResponse> LoginAccount(LoginDto loginDTO);
         Task<bool> isTokenValidate(string token);
         Task<ApiResponse> TokenValidator(string token);

@@ -17,6 +17,13 @@
             content = 2,
             status = 3
         }
+        public enum UserStatus
+        {
+            Active = 1,
+            Deactive = 2,
+            Deleted = 3
+        }
+
 
     }
 }

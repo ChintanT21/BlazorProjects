@@ -1,4 +1,4 @@
-﻿@page "/add-blog"
+﻿@page "/admin/add-blog"
 @rendermode InteractiveServer
 @inject AuthenticationStateProvider _authenticationStateProvider
 @inject NavigationManager _navigationManager
@@ -11,7 +11,7 @@
 
 <div class="container">
     <div class="mt-2 d-flex justify-content-end">
-        <button class="btn btn-info" @onclick=NavigateToAdminDashboard>
+        <button class="btn btn-info" @onclick=NavigateToAdminBlogs>
             <i class="fa-solid fa-chevron-left"></i>
             Back
         </button>
@@ -78,20 +78,13 @@
             </button>
         </div>
     </EditForm>
-
 </div>
-
-
-
-
-
-
 @code {
     [Inject]
-    protected IClientService _clientService { get; set; }
+    protected IClientService? _clientService { get; set; }
     protected bool showLoding = false;
     protected AddBlogDto blog = new();
-    protected List<GetCategoryDto> categories = new();
+    protected List<GetCategoryDto>? categories = new();
     public class SelectItem
     {
         public int Id { get; set; }
@@ -125,12 +118,12 @@
         bool isAdded = await _clientService.CreateBlog(blog);
         if (isAdded)
         {
-            NavigateToAdminDashboard();
+            NavigateToAdminBlogs();
         }
     }
-    private void NavigateToAdminDashboard()
+    private void NavigateToAdminBlogs()
     {
-        _navigationManager.NavigateTo("/admin-dashboard");
+        _navigationManager.NavigateTo("/admin/blogs");
     }
 
 }

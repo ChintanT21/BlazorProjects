@@ -96,6 +96,25 @@ namespace BlogCenter.WebAPI.Controllers.v1
             catch (Exception ex) { return BadRequest(); };
         }
 
+        [HttpPost("statusId/{statusId:int}")]
+        public async Task<IActionResult> ChangeStatus(long blogId=0, int statusId = 0)
+        {
+            if (blogId==0 || statusId == 0)
+            {
+                return NoContent();
+            }
+            try
+            {
+                if (HttpContext.Items.TryGetValue("TokenDto", out var tokenDtoObj) && tokenDtoObj is TokenDto tokenDto)
+                {
+                    Response<Blog> apiResponse = await _blogService.ChangeStatus(blogId, statusId, tokenDto.Id);
+                    return Ok(apiResponse);
+                }
+                return Unauthorized();
+            }
+            catch (Exception ex) { return BadRequest(); };
+        }
+
         [HttpPut]
         public async Task<IActionResult> UpdateBlog(int blogId, BlogDto blogDto)
         {

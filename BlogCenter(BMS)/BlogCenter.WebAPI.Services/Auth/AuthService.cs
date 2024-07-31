@@ -18,7 +18,7 @@ namespace BlogCenter.WebAPI.Services.Auth
         IConfiguration _configuration
         ) : IAuthService
     {
-        public async Task<GeneralResponse> CreateAccount(UserDto userDto)
+        public async Task<GeneralResponse> CreateAccount(Dtos.UserDto userDto)
         {
             if (userDto is null) return new GeneralResponse(false, "Model is empty");
             var newUser = new ApplicationUser()
@@ -75,6 +75,7 @@ namespace BlogCenter.WebAPI.Services.Auth
                 var claimsPrincipal = tokenHandler.ValidateToken(token, validationParameters, out var validatedToken);
                 var identity = new ClaimsIdentity(claimsPrincipal.Claims, "jwt");
                 var user = new ClaimsPrincipal(identity);
+                Thread.CurrentPrincipal = user;
 
                 var ClaimTypeEmail = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress";
                 var ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";

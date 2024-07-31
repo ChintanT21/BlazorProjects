@@ -39,20 +39,14 @@ builder.Services.AddAuthentication(options =>
         };
     });
 builder.Services.AddScoped<CustomAuthenticationStateProvider>();
-builder.Services.AddAuthorization(options =>
-{
-    options.AddPolicy("RequireAdminRole", policy =>
-        policy.RequireRole("admin"));
 
-    // Add more policies as needed
-});
 builder.Services.AddHttpClient();
+builder.Services.AddClientService();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddOptions();
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddHttpContextAccessor();
-builder.Services.AddScoped<IClientService, ClientService>();
 builder.Services.AddScoped<AuthenticationStateProvider, CustomAuthenticationStateProvider>();
 builder.Services.AddServerSideBlazor().AddCircuitOptions(options => { options.DetailedErrors = true; });
 

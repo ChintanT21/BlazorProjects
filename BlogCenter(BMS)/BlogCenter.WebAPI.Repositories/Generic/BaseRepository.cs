@@ -5,10 +5,16 @@ using System.Linq.Expressions;
 
 namespace BlogCenter.WebAPI.Repositories.Generic
 {
-    public class BaseRepository<T>(ApplicationDbContext dbContext) : IBaseRepository<T> where T : class
+    public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
-        protected DbSet<T> _dbset = dbContext.Set<T>();
-        protected readonly ApplicationDbContext _dbContext = dbContext;
+        protected readonly ApplicationDbContext _dbContext;
+        protected readonly DbSet<T> _dbset;
+
+        public BaseRepository(ApplicationDbContext dbContext)
+        {
+            _dbContext = dbContext;
+            _dbset = _dbContext.Set<T>();
+        }
 
         public async Task<T> AddAsync(T entity)
         {
@@ -74,7 +80,6 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             {
                 items = items.Where(whereCondition);
             }
-
             if (including != null)
             {
                 foreach (var include in including)
@@ -107,7 +112,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                 if (entity != null)
                 {
                     _dbset.Remove(entity);
-                    await dbContext.SaveChangesAsync();
+                    await _dbContext.SaveChangesAsync();
                 }
             
             }
@@ -125,8 +130,8 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             try
             {
                 _dbset.Attach(entity);
-                dbContext.Entry(entity).State = EntityState.Modified;
-                await dbContext.SaveChangesAsync();
+                _dbContext.Entry(entity).State = EntityState.Modified;
+                await _dbContext.SaveChangesAsync();
                 return entity;
             }
             catch (DbUpdateConcurrencyException ex)
@@ -180,7 +185,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                 if (entities != null)
                 {
                     await _dbset.AddRangeAsync(entities);
-                    await dbContext.SaveChangesAsync();
+                    await _dbContext.SaveChangesAsync();
                 }
             }
             catch (Exception ex)
@@ -189,7 +194,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
 
         }
 
-        public async Task<IQueryable<T>> GetByIdAllAsync(long id, Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
+        public async Task<List<T>> GetListAsync(Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
         {
             IQueryable<T> items = _dbset;
             if (where != null)
@@ -208,8 +213,33 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             {
                 items = orderBy(items);
             }
-            var itemsList = await items.ToListAsync();
-            return itemsList.AsQueryable();
+            return await items.ToListAsync();
         }
+
+        public async Task<T> GetOneAsync(Expression<Func<T, bool>>? where = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, params Expression<Func<T, object>>[] including)
+        {
+            IQueryable<T> items = _dbset;
+
+            if (where != null)
+            {
+                items = items.Where(where);
+            }
+
+            if (including != null)
+            {
+                foreach (var include in including)
+                {
+                    items = items.Include(include);
+                }
+            }
+
+            if (orderBy != null)
+            {
+                items = orderBy(items);
+            }
+
+            return await items.FirstOrDefaultAsync();
+        }
+
     }
 }

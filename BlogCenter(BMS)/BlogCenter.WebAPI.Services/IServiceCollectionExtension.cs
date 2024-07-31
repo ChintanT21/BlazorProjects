@@ -6,6 +6,7 @@ using BlogCenter.WebAPI.Services.Auth;
 using BlogCenter.WebAPI.Services.Blog;
 using BlogCenter.WebAPI.Services.BlogCategory;
 using BlogCenter.WebAPI.Services.Category;
+using BlogCenter.WebAPI.Services.User;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BlogCenter.WebAPI.Repositories
@@ -18,6 +19,7 @@ namespace BlogCenter.WebAPI.Repositories
             services.AddScoped<IBlogService, BlogService>();
             services.AddScoped<IBlogCategoryService, BlogCategoryService>();
             services.AddScoped<ICategoryService, CategoryService>();
+            services.AddScoped<IUserService, UserService>();
             services.AddScoped(typeof(IBaseService<>), typeof(BaseService<>));
             return services;
         }

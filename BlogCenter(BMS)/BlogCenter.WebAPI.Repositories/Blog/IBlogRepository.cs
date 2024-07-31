@@ -13,6 +13,6 @@ namespace BlogCenter.WebAPI.Repositories.Blog
         Task<Models.Models.Blog> GetBlogById(long id);
         Task<List<Models.Models.Blog>> GetBlogsByUserId(string? searchString, string? sortString, long userId);
         Task<ApiPaginationResponse<GetBlog>> GetBlogsWithPaginationFilteringAndSortingAsync(string searchString, string searchTable, string sortString, int page, int pageSize, long userId);
-        void UpdateBlog(Models.Models.Blog blog);
+        Task UpdateBlog(Models.Models.Blog blog);
     }
 }

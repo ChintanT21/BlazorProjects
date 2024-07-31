@@ -13,6 +13,6 @@ namespace BlogCenter.Blazor.Services
         Task<object> ValidateCredential(LoginDto loginDto);
         Task<bool> CreateBlog(AddBlogDto blog);
         Task<List<GetCategoryDto>?> GetAllCategories();
-
+        Task<bool> ChangeStatus(long blogId, int? statusId);
     }
 }

@@ -35,6 +35,8 @@ namespace BlogCenter.WebAPI.Filters
                 context.Result = new UnauthorizedResult();
             }
             context.HttpContext.Items["TokenDto"] = tokenDto;
+            context.HttpContext.Items["UserId"] = tokenDto.Id.ToString();
+            context.HttpContext.Items["UserRole"] = tokenDto.Role;
             await next();
         }
 

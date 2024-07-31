@@ -1,0 +1,6 @@
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.csproj.AssemblyReference.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.AssemblyInfoInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.AssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.csproj.CoreCompileInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.Shared\obj\Debug\net8.0\BlogCenter.Shared.sourcelink.json

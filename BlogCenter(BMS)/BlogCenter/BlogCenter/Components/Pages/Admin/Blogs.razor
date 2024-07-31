@@ -1,0 +1,62 @@
+﻿@page "/admin/blogs"
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@using BlogCenter.WebAPI.Dtos.Enums
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.DataManipulationDto
+@rendermode InteractiveServer
+
+
+<div class="container mt-5 mb-5">
+  
+    <div class="row d-flex justify-content-between  ">
+        <div class ="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">   
+            <h4>Blogs</h4>
+        </div>
+        <div  class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2 d-flex justify-content-end  ">
+            <button class="btn btn-info" @onclick=AddNewBlog>Add New</button>
+        </div>
+    </div>
+    <div class="row  ">
+        <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+            <input type="text" class="form-control" placeholder="title" disabled />
+        </div>
+        <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+            <input @onchange="OnSearchTextChanged" type="text" class="form-control" placeholder="Search" />
+        </div>
+        <div class="col-md-4 col-xl-4 col-xxl-4 col-sm-12 col mb-2">
+            <select @onchange="OnStatusChanged" class="form-control">
+                <option hidden>Choose Status</option>
+                <option value="0">All</option>
+                @foreach (var status in Enum.GetValues(typeof(Enums.BlogStatus)))
+                {
+                    <option value="@((int)status)">@status</option>
+                }
+            </select>
+        </div>
+
+    </div>
+
+    <div>
+        <BlogTable @ref=blogTableRef SearchString="@searchText" />
+    </div>
+</div>
+@code {
+    protected string searchText = string.Empty;
+    protected int selectedStatus;
+    protected BlogTable blogTableRef { get; set; }
+
+    protected async void OnSearchTextChanged(ChangeEventArgs e)
+    {
+        await blogTableRef.OnSearchChanged(e);
+    }
+    protected async void OnStatusChanged(ChangeEventArgs e)
+    {
+        await blogTableRef.OnSearchStatus(e.Value.ToString());
+    }
+    private void AddNewBlog(MouseEventArgs e)
+    {
+        NavigationManager.NavigateTo("/admin/add-blog");
+    }
+  
+}

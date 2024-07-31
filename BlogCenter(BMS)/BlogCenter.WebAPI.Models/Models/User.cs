@@ -41,7 +41,7 @@ public partial class User
     public DateTime CreatedDate { get; set; }
 
     [Column("updated_date", TypeName = "timestamp without time zone")]
-    public DateTime UpdatedDate { get; set; }
+    public DateTime? UpdatedDate { get; set; }
 
     [Column("created_by")]
     public long? CreatedBy { get; set; }

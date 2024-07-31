@@ -8,6 +8,7 @@ using Microsoft.Extensions.Options;
 using System;
 using System.Net;
 using System.Net.Http.Headers;
+using System.Reflection.Metadata;
 using System.Text.Json;
 using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
 
@@ -18,7 +19,7 @@ namespace BlogCenter.Blazor.Services
         private readonly HttpClient _httpClient;
         private readonly IHttpContextAccessor _httpContextAccessor;
         private readonly string _token;
-        private string _url;
+        private string? _url;
 
         public ClientService(IHttpContextAccessor httpContextAccessor, HttpClient httpClient)
         {
@@ -48,18 +49,6 @@ namespace BlogCenter.Blazor.Services
                     PropertyNameCaseInsensitive = true
                 };
                 ApiPaginationResponse<GetBlog>? apiResponse = await _httpClient.GetFromJsonAsync<ApiPaginationResponse<GetBlog>>(_url, options);
-
-                //if (apiResponse?.Result != null)
-                //{
-                //    // Serialize the result to JSON and map it to the list of blogs
-                //    string jsonResult = JsonSerializer.Serialize(apiResponse.Result);
-                //    List<GetBlog> blogs = BlogMapper.MapJsonToBlogs(jsonResult);
-                //    BlogTableDto tableDto = new BlogTableDto();
-                //    tableDto.Blogs = blogs;
-                //    tableDto.TotalPages = apiResponse.TotalPages;
-                //    tableDto.TotalCount = apiResponse.TotalCount;
-                //    return tableDto;
-                //}
                 if (apiResponse?.Result != null)
                 {
                     BlogTableDto tableDto = new BlogTableDto();
@@ -79,7 +68,7 @@ namespace BlogCenter.Blazor.Services
 
         }
 
-        async Task<object> IClientService.ValidateCredential(LoginDto loginDto)
+        public async Task<object> ValidateCredential(LoginDto loginDto)
         {
             _url = "/api/Auth/login";
             var response = await _httpClient.PostAsJsonAsync(_url, loginDto);
@@ -126,10 +115,25 @@ namespace BlogCenter.Blazor.Services
 
         public async Task<bool> UpdateBlog(BlogDto blog)
         {
+            AddAuthorizationHeader();
             _url = $"/api/Blogs?blogId={blog.BlogId}";
-
             var response = await _httpClient.PutAsJsonAsync(_url, blog);
+            if (response.IsSuccessStatusCode)
+            {
+                return true;
+            }
+            else
+            {
+                var errorContent = await response.Content.ReadAsStringAsync();
+                Console.WriteLine($"Error creating blog: {response.StatusCode}, {errorContent}");
+                return false;
+            }
+        }
 
+        public async Task<bool> ChangeStatus(long blogId, int? statusId)
+        {
+            _url = $"/api/Blogs/statusId/{statusId}?blogId={blogId}";
+            var response = await _httpClient.PostAsJsonAsync(_url,blogId);
             if (response.IsSuccessStatusCode)
             {
                 return true;

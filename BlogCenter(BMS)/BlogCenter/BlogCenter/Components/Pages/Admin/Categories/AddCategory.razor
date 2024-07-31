@@ -1,0 +1,59 @@
+﻿@page "/admin/categories/add"
+@rendermode InteractiveServer
+@using BlogCenter.Services.Category
+@using BlogCenter.WebAPI.Dtos.Constant
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.CategoryDto
+@inject ISnackbar Snackbar
+@inject ICategoryClientService _clientService
+@inject NavigationManager _navigationManager
+
+<div class=" container">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Add Category</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToCategoryList>Back</MudButton>
+    </div>
+    <EditForm Model="@addCategoryDto" OnValidSubmit="CreateCategory">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="7">
+                <MudCard>
+                    <MudCardContent>
+                        <MudTextField Label="Category name" HelperText="Max. 50 characters"
+                                      @bind-Value="addCategoryDto.Name" For="@(() => addCategoryDto.Name)" />
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Add</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    </EditForm>
+</div>
+@code {
+    protected AddCategoryDto addCategoryDto = new();
+
+    public void NavigateToCategoryList()
+    {
+        _navigationManager.NavigateTo(Constants.NAVIGATE_TO_CATEGORYLIST_URL);
+    }
+
+    public async Task CreateCategory()
+    {
+        Dictionary<bool,string> isAdded = await _clientService.AddCategory(addCategoryDto);
+
+        if (isAdded.FirstOrDefault().Key)
+        {
+            Snackbar.Add(isAdded.FirstOrDefault().Value, Severity.Success, c => c.SnackbarVariant = Variant.Filled);
+            _navigationManager.NavigateTo(Constants.NAVIGATE_TO_CATEGORYLIST_URL);
+        }
+        else if (isAdded.FirstOrDefault().Value==Constants.CATEGORY_EXISTS_ERROR)
+        {
+            Snackbar.Add(isAdded.FirstOrDefault().Value, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+        }
+        else
+        {
+            Snackbar.Add(isAdded.FirstOrDefault().Value, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+        }
+    }
+}

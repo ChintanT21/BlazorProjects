@@ -174,7 +174,7 @@
             authProvider.NotifyUserAuthentication(user);
             if (user.IsInRole("admin"))
             {
-                NavigationManager.NavigateTo("/admin-dashboard");
+                NavigationManager.NavigateTo("/admin/blogs");
             }
             else if (user.IsInRole("user"))
             {

@@ -1,3 +1,6 @@
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\MudBlazor.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\System.Private.CoreLib.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\d6wb1yp5x6.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.boot.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\wwwroot\_framework\blazor.webassembly.js
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\wwwroot\_framework\BlogCenter.Client.pdb
@@ -439,7 +442,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\n
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\Microsoft.Extensions.Primitives.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\Microsoft.JSInterop.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\Microsoft.JSInterop.WebAssembly.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\MudBlazor.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\System.IO.Pipelines.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\Microsoft.CSharp.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\Microsoft.VisualBasic.Core.dll
@@ -608,7 +610,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\n
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\WindowsBase.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\mscorlib.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\netstandard.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\System.Private.CoreLib.dll
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\dotnet.js
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\dotnet.js.map
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\bin\Debug\net8.0\dotnet.native.js
@@ -883,7 +884,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\n
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\atx0ewcb52.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\qkatp4q6n7.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\xdmlhdqyf3.gz
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\d6wb1yp5x6.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\5x60lei72l.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\4ucg3qskg0.gz
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client\obj\Debug\net8.0\compressed\opwsz862j5.gz

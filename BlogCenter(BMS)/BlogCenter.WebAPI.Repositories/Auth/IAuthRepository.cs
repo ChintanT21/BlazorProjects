@@ -4,7 +4,7 @@ namespace BlogCenter.WebAPI.Repositories.Auth
 {
     public interface IAuthRepository
     {
-        User GetUserByEmail(string email);
+        Task<Models.Models.User> GetUserByEmail(string email);
         Task<bool> CheckCredentialsByEmailAndPassword(string email, string password);
         Task<String> GetUserRoleByEmail(string email);
     }

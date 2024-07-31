@@ -1,4 +1,4 @@
-﻿@page "/edit-blog"
+﻿@page "/admin/edit-blog"
 @rendermode InteractiveServer
 @inject AuthenticationStateProvider _authenticationStateProvider
 @inject NavigationManager _navigationManager
@@ -15,13 +15,13 @@
             <h4>Edit Blog</h4>
         </div>
         <div class="col d-flex justify-content-end">
-            <button class="btn btn-info" @onclick=NavigateToAdminDashboard>
+            <button class="btn btn-info" @onclick=NavigateToAdminBlogs>
                 <i class="fa-solid fa-chevron-left"></i>
                 Back
             </button>
         </div>
     </div>
-    <EditForm FormName="AddBlogForm" Model="@blog" class="form-floating" OnValidSubmit="EditThisBlog">
+    <EditForm FormName="EditBlogForm" Model="@blog" class="form-floating" OnValidSubmit="EditThisBlog">
         <DataAnnotationsValidator />
         <div class="row">
             <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
@@ -131,7 +131,7 @@
         else
         {
             // Handle invalid blogId
-            _navigationManager.NavigateTo("/blog-list");
+            _navigationManager.NavigateTo("/admin/blogs");
         }
     }
 
@@ -140,12 +140,12 @@
         bool isUpdated = await _clientService.UpdateBlog(blog);
         if (isUpdated)
         {
-            NavigateToAdminDashboard();
+            NavigateToAdminBlogs(); 
         }
     }
-    private void NavigateToAdminDashboard()
+    private void NavigateToAdminBlogs()
     {
-        _navigationManager.NavigateTo("/admin-dashboard");
+        _navigationManager.NavigateTo("/admin/blogs");
     }
     private bool isOpen = false;
 
@@ -160,7 +160,6 @@
         filteredCategories = categories.Where(category => category.Name.ToLower().Contains(searchValue)).ToList();
         isOpen = true;
     }
-
 
 }
 @code {
