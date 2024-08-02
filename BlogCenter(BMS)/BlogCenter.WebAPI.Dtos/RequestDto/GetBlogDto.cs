@@ -13,7 +13,9 @@ namespace BlogCenter.WebAPI.Dtos.RequestDto
             public DateTime CreatedDate { get; set; }
             public DateTime? UpdatedDate { get; set; }
             public long CreatedBy { get; set; }
+            public string? CreatedByName { get; set; }
             public long? UpdatedBy { get; set; }
+            public string? UpdatedByName { get; set; }
             public short Status { get; set; }
             public BlogStatus StatusName { get; set; }
             public List<GetBlogsCategory> BlogsCategories { get; set; } = new();

@@ -1,4 +1,5 @@
-﻿using BlogCenter.WebAPI.Dtos;
+﻿using BlogCenter.Components.Pages.Admin;
+using BlogCenter.WebAPI.Dtos;
 using BlogCenter.WebAPI.Dtos.Mapper;
 using BlogCenter.WebAPI.Dtos.RequestDto;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
@@ -144,6 +145,18 @@ namespace BlogCenter.Blazor.Services
                 Console.WriteLine($"Error creating blog: {response.StatusCode}, {errorContent}");
                 return false;
             }
+        }
+
+        public async Task<List<GetUserDto>> GetAllUsers()
+        {
+            AddAuthorizationHeader();
+            _url = $"/api/Users";
+            Response<GetUserDto>? response = await _httpClient.GetFromJsonAsync<Response<GetUserDto>>(_url);
+            if (response == null)
+            {
+                return response.ResultList = new List<GetUserDto>();
+            }
+            return response.ResultList;
         }
     }
 }

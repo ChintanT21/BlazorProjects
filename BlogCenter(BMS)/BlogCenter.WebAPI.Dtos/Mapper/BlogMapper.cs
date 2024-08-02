@@ -67,9 +67,11 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                     Content = blogDto.Content,
                     AdminComment = blogDto.AdminComment,
                     CreatedBy = blogDto.CreatedBy,
+                    CreatedByName=blogDto.CreatedByNavigation.FirstName+" "+blogDto.CreatedByNavigation.LastName,
                     UpdatedBy = blogDto.UpdatedBy,
                     CreatedDate = blogDto.CreatedDate,
                     UpdatedDate = blogDto.UpdatedDate,
+                    UpdatedByName=blogDto.UpdatedBy==null?"Not updated yet": blogDto.UpdatedByNavigation.FirstName + " " + blogDto.UpdatedByNavigation.LastName,
                     Status = blogDto.Status,
                     StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
                     BlogsCategories = ToGetBlogsCategories(blogDto.BlogsCategories)

@@ -101,4 +101,4 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\r
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\ref\BlogCenter.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\BlogCenter.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\Components\Pages\Error.razor.rz.scp.css

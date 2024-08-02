@@ -26,7 +26,7 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 CreatedBy = dto.CreatedBy,
                 Status = dto.Status,
                 CreatedDate = DateTime.Now, // Assuming you set the creation date
-                UpdatedDate = null // Not applicable for AddUserDto
+
             };
         }
         public static void MapToUser(User user, UpdateUserDto dto)
@@ -57,13 +57,15 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 FirstName = user.FirstName,
                 LastName = user.LastName,
                 Email = user.Email,
+                Password = user.Password,
+                RoleName=user.Role.Name,
                 ProfileName = user.ProfileName,
                 CreatedDate = user.CreatedDate,
                 UpdatedDate = user.UpdatedDate,
                 CreatedBy = user.CreatedBy,
                 UpdatedBy = user.UpdatedBy,
                 Status = user.Status,
-                StatusName = Enum.IsDefined(typeof(UserStatus), (int)user.Status) ? (UserStatus)(int)user.Status : throw new ArgumentOutOfRangeException(nameof(user.Status), "Invalid status value"),
+                StatusName = Enum.IsDefined(typeof(UserStatus), user.Status) ? (UserStatus)user.Status : throw new ArgumentOutOfRangeException(nameof(user.Status), "Invalid status value"),
             };
         }
         public static List<GetUserDto> MapToGetUserDtoList(this IEnumerable<User> users)
@@ -73,6 +75,20 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 throw new ArgumentNullException(nameof(users));
             }
             return users.Select(user => user.MapToGetUserDto()).ToList();
+        }
+        public static UpdateUserDto ToUpdateUserDto(this GetUserDto getUserDto)
+        {
+            return new UpdateUserDto
+            {
+                UserId = getUserDto.Id,
+                RoleId = getUserDto.RoleId,
+                FirstName = getUserDto.FirstName,
+                LastName = getUserDto.LastName,
+                Email = getUserDto.Email,
+                ProfileName = getUserDto.ProfileName,
+                Password = getUserDto.Password,
+                Status = getUserDto.Status
+            };
         }
 
     }

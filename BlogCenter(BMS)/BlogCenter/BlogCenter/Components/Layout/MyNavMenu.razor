@@ -1,5 +1,6 @@
-﻿<MudAppBar>
-   
+﻿
+<MudAppBar>
+    <BlogCenter.Components.Components.LogoutButton></BlogCenter.Components.Components.LogoutButton>
 </MudAppBar>
 <MudDrawer @bind-Open="@_drawerOpen">
     <MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2">
@@ -13,6 +14,4 @@
 
 @code {
     bool _drawerOpen = true;
-
-
 }

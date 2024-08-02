@@ -1,4 +1,5 @@
-﻿@using Microsoft.AspNetCore.Components.QuickGrid;
+﻿@using BlogCenter.WebAPI.Dtos.RequestDto
+@using Microsoft.AspNetCore.Components.QuickGrid;
 @using BlogCenter.Blazor.Services;
 @using Microsoft.AspNetCore.Components;
 @using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
@@ -9,85 +10,120 @@
 @inject NavigationManager _navigationManager
 
 
-@if (blogs == null)
-{
-    <div class="spinner-border position-relative top-50 start-50 text-success" role="status"></div>
-}
-else
-{
-    <table class="table table-responsive">
-        <thead>
-            <tr>
-                <th scope="col" @onclick="() => OnSortChanged((int)Enums.BlogTableColumn.title)">Title</th>
-                @if (dto.SortString == Enums.BlogTableColumn.title.ToString())
-                {
-                    <i class="fas fa-sort-up"></i>
-                }
-                else if (dto.SortString == "-" + Enums.BlogTableColumn.title.ToString())
-                {
-                    <i class="fas fa-sort-down"></i>
-                }
-                <th scope="col" @onclick="() => OnSortChanged(2)">CreatedBy</th>
-                <th scope="col" @onclick="() => OnSortChanged(3)">UpdatedBy</th>
-                <th scope="col" @onclick="() => OnSortChanged(4)">Status</th>
-                <th scope="col">Approve/Reject</th>
-                <th scope="col">Action</th>
-            </tr>
-        </thead>
-        <tbody class=" align-content-center">
-            @foreach (var blog in blogs ?? new List<GetBlog>())
-            {
-                <tr>
-                    <td>@blog.Title</td>
-                    <td>@blog.CreatedBy</td>
-                    <td>@blog.UpdatedBy</td>
-                    <td>@blog.StatusName</td>
-                    <td>
-                        @if (blog.Status != (short)BlogStatus.Approved && blog.Status != (short)BlogStatus.Rejected)
-                        {
-                        <button class=" m-2 btn btn-success" @onclick="() => Approve(blog.Id)">Approve</button>   <button class="m-2 btn btn-danger" @onclick="() => Reject(blog.Id)">Reject</button>
-                        }
-                    </td>
-                    <td>
-                        <button class=" m-2 btn btn-primary" @onclick="() => NavigateToEditPage(blog.Id)">Edit</button>  <button class=" m-2 btn btn-primary" @onclick="() => NavigateToViewPage(blog.Id)">View</button>
-                    </td>
-                </tr>
-            }
-        </tbody>
-    </table>
-    <div class="d-flex justify-content-between">
-        <div>
-            Page @dto.PageNumber of @((totalRecords + dto.PageSize - 1) / dto.PageSize) (Total Records @totalRecords)
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Blogs</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Add" Color="Color.Primary" OnClick=AddNewBlog>Add Blog</MudButton>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-12">
+            <MudCardContent>
+                <MudSelect Label="Select a user" Placeholder="Select user" T="long" @bind-Value="selectedUser" Variant="Variant.Outlined" AdornmentIcon="@Icons.Material.Filled.Person" SelectedValuesChanged="OnSearchUser" AdornmentColor="Color.Primary">
+                    <MudSelectItem Value="(long)0" Selected="true">All</MudSelectItem>
+                    @foreach (var user in users)
+                    {
+                        <MudSelectItem Value="user.Id">
+                            @user.FirstName @user.LastName
+                        </MudSelectItem>
+                    }
+                </MudSelect>
+            </MudCardContent>
         </div>
-        <div>
-            Show
-            <select class="" @onchange=OnPageSizeChanged>
-                <option value="5">5</option>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
-            </select>
-            Records In Page
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-12">
+            <MudCardContent>
+                <MudSelect Label="Select an status" Placeholder="Select status" T="int" @bind-Value="selectedStatus" Variant="Variant.Outlined" AdornmentIcon="@Icons.Material.Filled.LowPriority" SelectedValuesChanged="OnSearchStatus" AdornmentColor="Color.Primary">
+                    <MudSelectItem Value="(int)0" Selected="true">All</MudSelectItem>
+                    @foreach (var status in Enum.GetValues(typeof(BlogStatus)).Cast<BlogStatus>())
+                    {
+                        <MudSelectItem Value="(int)status">
+                            @status.ToString()
+                        </MudSelectItem>
+                    }
+                </MudSelect>
+            </MudCardContent>
         </div>
-        <div>
-            <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber > 1 ? dto.PageNumber - 1 : 1)">Previous</button>
-            <button class="btn btn-secondary" @onclick="() => OnPageChanged(dto.PageNumber < (totalRecords + dto.PageSize - 1) / dto.PageSize ? dto.PageNumber + 1 : dto.PageNumber)">Next</button>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-12">
+            <MudCardContent>
+                <MudTextField @bind-Value="searchString" Label="Search" Variant="Variant.Outlined" OnBlur="OnSearchChanged" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary" />
+            </MudCardContent>
         </div>
     </div>
 
-}
+    <MudTable Items="@blogs" Hover="true" Loading="@_loading" LoadingProgressColor="Color.Primary">
+        <HeaderContent>
+            <MudTh>Title</MudTh>
+            <MudTh>Created By</MudTh>
+            <MudTh>Updated By</MudTh>
+            <MudTh>Status</MudTh>
+            <MudTh>Approv | Reject</MudTh>
+            <MudTh>Action</MudTh>
+        </HeaderContent>
+        <RowTemplate>
+            <MudTd DataLabel="Email">@context.Title</MudTd>
+            <MudTd DataLabel="Name">@context.CreatedByName</MudTd>
+            <MudTd DataLabel="Status">@context.UpdatedByName</MudTd>
+            <MudTd DataLabel="Status">@context.StatusName</MudTd>
+            <MudTd DataLabel="Approve||Reject">
+                @if (context.Status != (short)BlogStatus.Approved && context.Status != (short)BlogStatus.Rejected)
+                {
+                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Approval" Color="Color.Primary" OnClick="()=>Approve(context.Id)">Approve</MudButton>
+                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Crop" Color="Color.Primary" OnClick="()=>Reject(context.Id)">Reject</MudButton>
+                }
+            </MudTd>
+            <MudTd DataLabel="Action">
 
+                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditPage(context.Id)">Edit</MudButton>
+                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.PanoramaFishEye" Color="Color.Primary" OnClick="()=>NavigateToViewPage(context.Id)">View</MudButton>
+
+            </MudTd>
+
+        </RowTemplate>
+    </MudTable>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <MudPagination BoundaryCount="2"
+                       MiddleCount="3"
+                       ShowFirstButton="true"
+                       ShowLastButton="true"
+                       Rectangular="true"
+                       Selected="@selectedPage"
+                       Count="@totalPages"
+                       Variant="Variant.Filled"
+                       SelectedChanged="OnPageChanged" />
+
+        @if ((!Top && totalItems >= 5) || Top)
+        {
+            <div class="d-flex align-items-center ml-auto">
+                <MudText Class="mr-2">Records Per Page:</MudText>
+                <MudSelect Style="width: 100px;" Margin="Margin.Dense" Dense T="int" @bind-Value="rpp" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" SelectedValuesChanged="OnPageSizeChanged">
+                    <MudSelectItem T="int" Value="5">5</MudSelectItem>
+                    <MudSelectItem T="int" Value="10">10</MudSelectItem>
+                    <MudSelectItem T="int" Value="20">20</MudSelectItem>
+                    <MudSelectItem T="int" Value="50">50</MudSelectItem>
+                </MudSelect>
+            </div>
+        }
+    </div>
+
+
+</div>
 @code {
-
-    [Parameter]
-    public string SearchString { get; set; } = string.Empty;
-
+    [Parameter] public bool Top { get; set; } = true;
+    [Parameter] public int rpp { get; set; } = 5;
+    [Parameter] public int currentPage { get; set; } = 0;
+    [Parameter] public int totalItems { get; set; } = 0;
+    [Parameter] public int totalPages { get; set; } = 0;
+    [Parameter] public int selectedPage { get; set; } = 1;
+    [Parameter] public EventCallback<int> selectedPageChanged { get; set; }
+    public string searchString { get; set; } = string.Empty;
+    protected int selectedStatus;
+    protected long selectedUser;
     private string sortIcon = "fa fa-sort-asc";
+    private bool _loading;
     protected BlogTableDto tableDto;
     protected List<GetBlog>? blogs = new();
+    protected List<GetUserDto>? users = new();
     protected PaginationState pagination = new PaginationState { ItemsPerPage = 15 };
     protected string nameFilter = string.Empty;
-    protected int totalRecords = 0;
     protected DataManipulationDto dto = new();
     protected GridSort<GetBlog> rankSort = GridSort<GetBlog>
         .ByDescending(x => x.Title)
@@ -135,34 +171,51 @@ else
 
     protected async Task LoadData()
     {
+        users = await _clientService.GetAllUsers();
         tableDto = await _clientService.GetBlogData(dto);
         blogs = tableDto.Blogs;
-        totalRecords = tableDto.TotalCount;
+        totalItems = tableDto.TotalCount;
+        totalPages = tableDto.TotalPages;
         StateHasChanged();
     }
 
-    public async Task OnSearchChanged(ChangeEventArgs e)
+    public async Task OnSearchChanged()
     {
-        dto.SearchString = e.Value.ToString() ?? "";
+        dto.SearchString = searchString;
         await LoadData();
     }
 
-    public async Task OnSearchStatus(string searchString)
+    public async Task OnSearchStatus()
     {
         dto.SearchTable = "status";
-        dto.SearchString = searchString;
+        dto.SearchString = selectedStatus.ToString();
+        await LoadData();
+    }
+    public async Task OnSearchUser()
+    {
+        dto.SearchTable = "user";
+        dto.SearchString = selectedUser.ToString();
         await LoadData();
     }
 
     protected async Task OnPageChanged(int pageNumber)
     {
+        if (pageNumber != selectedPage)
+        {
+            currentPage = pageNumber - 1;
+            selectedPage = pageNumber;
+            StateHasChanged();
+            //currentPageChanged.InvokeAsync(i - 1);
+            selectedPageChanged.InvokeAsync(pageNumber);
+        }
+
         dto.PageNumber = pageNumber;
-        await LoadData();
+        await LoadData(); ;
     }
 
-    protected async Task OnPageSizeChanged(ChangeEventArgs e)
+    protected async Task OnPageSizeChanged()
     {
-        dto.PageSize = int.Parse(e.Value.ToString());
+        dto.PageSize = rpp;
         await LoadData();
     }
 
@@ -171,11 +224,16 @@ else
         selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
         _navigationManager.NavigateTo($"/admin/edit-blog?blogid={blogId}");
     }
+    private void AddNewBlog()
+    {
+        _navigationManager.NavigateTo("/admin/add-blog");
+    }
     protected async Task NavigateToViewPage(long blogId)
     {
         selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
         _navigationManager.NavigateTo($"/admin/view-blog?blogid={blogId}");
     }
+
     private async Task Approve(long blogId)
     {
         int? statusId = (int)BlogStatus.Approved;

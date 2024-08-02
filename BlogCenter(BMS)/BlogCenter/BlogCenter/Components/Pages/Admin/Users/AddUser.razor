@@ -1,29 +1,98 @@
 ﻿@page "/admin/users/add"
 @rendermode InteractiveServer
-@using BlogCenter.Services.Category
+@using BlogCenter.Services.User
 @using BlogCenter.WebAPI.Dtos.Constant
 @using BlogCenter.WebAPI.Dtos.ResponceDto
-@using static BlogCenter.WebAPI.Dtos.ResponceDto.CategoryDto
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.UserDto
+@using static BlogCenter.WebAPI.Dtos.Enums.Enums
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.UserDto.AddUserDto
 @inject ISnackbar Snackbar
-@inject ICategoryClientService _clientService
+@inject IUserClientService _clientService
 @inject NavigationManager _navigationManager
 
 <div class=" container">
     <div class="d-flex justify-content-between align-items-center my-4">
-        <MudText Typo="Typo.h5" Class="fw-bold">Add Category</MudText>
-        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToCategoryList>Back</MudButton>
+        <MudText Typo="Typo.h5" Class="fw-bold">Add User</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToUserList>Back</MudButton>
     </div>
-    <EditForm Model="@addCategoryDto" OnValidSubmit="CreateCategory">
+    <EditForm Model="@addUserDto" OnValidSubmit="CreateUser">
         <DataAnnotationsValidator />
         <MudGrid>
-            <MudItem xs="12" sm="7">
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12">
                 <MudCard>
-                    <MudCardContent>
-                        <MudTextField Label="Category name" HelperText="Max. 50 characters"
-                                      @bind-Value="addCategoryDto.Name" For="@(() => addCategoryDto.Name)" />
-                    </MudCardContent>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="First name" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="addUserDto.FirstName" For="@(() => addUserDto.FirstName)" />
+                            </MudCardContent>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Last name" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="addUserDto.LastName" For="@(() => addUserDto.LastName)" />
+                            </MudCardContent>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Profile Name" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="addUserDto.ProfileName" For="@(() => addUserDto.ProfileName)" />
+                            </MudCardContent>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Email" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="addUserDto.Email" For="@(() => addUserDto.Email)" />
+                            </MudCardContent>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Password " HelperText="Max. 50 characters" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password"
+                                              @bind-Value="addUserDto.Password" For="@(() => addUserDto.Password)" />
+                            </MudCardContent>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Confirm Password " HelperText="Max. 50 characters" Variant="Variant.Outlined" InputType="InputType.Password"
+                                              @bind-Value="addUserDto.ConfirmPassword" For="@(() => addUserDto.ConfirmPassword)" />
+                            </MudCardContent>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>    
+                                <MudSelect Label="Select an status" @bind-Value="addUserDto.Status" Variant="Variant.Outlined">
+                                    @foreach (var status in Enum.GetValues(typeof(UserStatus)).Cast<UserStatus>())
+                                    {
+                                        @if ((short)status != (short)UserStatus.Deleted)
+                                        {                                        
+                                        <MudSelectItem Value="(short)status" Selected="status == addUserDto.Status" Disabled="addUserDto.Status==(short)status">
+                                            @status.ToString()
+                                        </MudSelectItem>
+                                        }
+                                    }
+                                </MudSelect>
+                            </MudCardContent>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 col-12">
+                            <MudCardContent>
+                                <MudSelect Label="Select an role" @bind-Value="addUserDto.RoleId" Variant="Variant.Outlined">
+                                    @foreach (var role in Enum.GetValues(typeof(RolesList)).Cast<RolesList>())
+                                    {
+                                        <MudSelectItem Value="(int)role" Selected="role == addUserDto.RoleId" Disabled="addUserDto.RoleId==(int)role">
+                                            @role.ToString()
+                                        </MudSelectItem>
+                                    }
+                                </MudSelect>
+                            </MudCardContent>
+                        </div>
+                    </div>
                     <MudCardActions>
-                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Add</MudButton>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
                     </MudCardActions>
                 </MudCard>
             </MudItem>
@@ -31,23 +100,40 @@
     </EditForm>
 </div>
 @code {
-    protected AddCategoryDto addCategoryDto = new();
-
-    public void NavigateToCategoryList()
+    protected AddUserDto addUserDto = new();
+    bool isShow;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+    void ButtonTestclick()
     {
-        _navigationManager.NavigateTo(Constants.NAVIGATE_TO_CATEGORYLIST_URL);
+        @if (isShow)
+        {
+            isShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
+    public void NavigateToUserList()
+    {
+        _navigationManager.NavigateTo(Constants.NAVIGATE_TO_USERLIST_URL);
     }
 
-    public async Task CreateCategory()
+    public async Task CreateUser()
     {
-        Dictionary<bool,string> isAdded = await _clientService.AddCategory(addCategoryDto);
+        Dictionary<bool,string> isAdded = await _clientService.AddUser(addUserDto);
 
         if (isAdded.FirstOrDefault().Key)
         {
             Snackbar.Add(isAdded.FirstOrDefault().Value, Severity.Success, c => c.SnackbarVariant = Variant.Filled);
-            _navigationManager.NavigateTo(Constants.NAVIGATE_TO_CATEGORYLIST_URL);
+            _navigationManager.NavigateTo(Constants.NAVIGATE_TO_USERLIST_URL);
         }
-        else if (isAdded.FirstOrDefault().Value==Constants.CATEGORY_EXISTS_ERROR)
+        else if (isAdded.FirstOrDefault().Value==Constants.USER_EXISTS_ERROR)
         {
             Snackbar.Add(isAdded.FirstOrDefault().Value, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
         }

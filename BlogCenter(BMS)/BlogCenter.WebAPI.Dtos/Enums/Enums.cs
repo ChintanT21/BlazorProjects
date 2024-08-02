@@ -17,12 +17,26 @@
             content = 2,
             status = 3
         }
-        public enum UserStatus
+        public enum UserStatus : short
         {
             Active = 1,
             Deactive = 2,
             Deleted = 3
         }
+
+        public enum RolesList
+        {
+            Admin = 1,
+            User = 2,
+            Author = 3
+        }
+        public enum CategoryStatus
+        {
+            All = 3,
+            Active = 1,
+            Deleted = 2,
+        }
+
 
 
     }

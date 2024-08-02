@@ -7,6 +7,7 @@ namespace BlogCenter.Blazor.Services
 {
     public interface IClientService
     {
+        Task<List<GetUserDto>> GetAllUsers();
         Task<BlogTableDto> GetBlogData(DataManipulationDto dto);
         Task<bool> UpdateBlog(BlogDto blog);
         Task<GetBlog> GetOneBlog(long blogId);

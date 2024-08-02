@@ -22,8 +22,7 @@ namespace BlogCenter.WebAPI.Services.User
             user = addUserDto.MapToUser();
             user.CreatedBy = currentUserId;
             user = await AddAsync(user);
-            getUserDto = user.MapToGetUserDto();
-            return getUserDto;
+            return await GetUserByUserId(user.Id); ;
         }
 
         public async Task<bool> DeleteUser(long currentUserId, long userId)
@@ -44,14 +43,16 @@ namespace BlogCenter.WebAPI.Services.User
         public async Task<List<Models.Models.User>> GetAll()
         {
             Expression<Func<Models.Models.User, bool>> where = b => b.Status != (short)UserStatus.Deleted;
-            List<Models.Models.User> result = await GetAllAsync(where);
+            Expression<Func<Models.Models.User, object>> includeRole = b => b.Role;
+            List<Models.Models.User> result = await GetAllAsync(where,null, includeRole);
             return result;
         }
 
         public async Task<GetUserDto> GetUserByUserId(long userId)
         {
             Expression<Func<Models.Models.User, bool>> where = b => b.Id == userId;
-            user = await GetOneAsync(where, null, null);
+            Expression<Func<Models.Models.User, object>> includeRole = b => b.Role;
+            user = await GetOneAsync(where, null, includeRole);
             return user.MapToGetUserDto();
         }
 
@@ -62,7 +63,7 @@ namespace BlogCenter.WebAPI.Services.User
             {
                 where = where.And(b => b.CreatedBy == userId);
             }
-
+            Expression<Func<Models.Models.User, object>> includeRole = b => b.Role;
             // Apply search string filter to the where expression
             if (!string.IsNullOrWhiteSpace(searchString))
             {
@@ -71,20 +72,26 @@ namespace BlogCenter.WebAPI.Services.User
                     switch (searchTable.ToLower())
                     {
                         case "role":
-                            where = where.And(b => b.Role.Equals(Int32.Parse(searchString)));
+                            if (Int32.TryParse(searchString, out int roleId) && roleId != 0)
+                            {
+                                where = where.And(b => b.RoleId == roleId);
+                            }
                             break;
                         case "name":
                             where = where.And(b => b.FirstName.ToLower().Contains(searchString.ToLower().Trim()) || b.LastName.ToLower().Contains(searchString.ToLower().Trim()));
                             break;
                         case "status":
-                            where = where.And(b => b.Status == Int32.Parse(searchString));
+                            if (Int16.TryParse(searchString, out short statusId) && statusId != 0)
+                            {
+                                where = where.And(b => b.Status == statusId);
+                            }
                             break;
                         default:
                             where = where.And(b => b.FirstName.ToLower().Contains(searchString.ToLower().Trim()) || b.LastName.ToLower().Contains(searchString.ToLower().Trim()));
                             break;
                     }
                 }
-                where = where.And(b => b.FirstName.ToLower().Contains(searchString.ToLower().Trim()) || b.LastName.ToLower().Contains(searchString.ToLower().Trim()));
+               
             }
 
             // Apply sorting
@@ -128,7 +135,7 @@ namespace BlogCenter.WebAPI.Services.User
                 };
             }
 
-            PagedItemResult<Models.Models.User> pagedBlogData = await GetAllWithPaginationAsync(page, pageSize, where, null, orderBy);
+            PagedItemResult<Models.Models.User> pagedBlogData = await GetAllWithPaginationAsync(page, pageSize, where, new[] { includeRole }, orderBy);
             ApiPaginationResponse<GetUserDto> apiPaginationResponse = new()
             {
                 IsSuccess = true,
@@ -143,7 +150,8 @@ namespace BlogCenter.WebAPI.Services.User
         public async Task<bool> IsUserExits(string email)
         {
             Expression<Func<Models.Models.User, bool>> where = b => b.Email.ToLower().Trim() == email.ToLower().Trim();
-            user = await GetOneAsync(where, null, null);
+            Expression<Func<Models.Models.User, object>> includeRole = b => b.Role;
+            user = await GetOneAsync(where, null, includeRole);
             if (user != null)
             {
                 return true;
@@ -155,7 +163,8 @@ namespace BlogCenter.WebAPI.Services.User
         {
             long userId = updateUserDto.UserId;
             Expression<Func<Models.Models.User, bool>> where = b => b.Id == userId;
-            user = await GetOneAsync(where, null, null);
+            Expression<Func<Models.Models.User, object>> includeRole = b => b.Role;
+            user = await GetOneAsync(where, null, includeRole);
             if (user == null)
             {
                 return new GetUserDto();
@@ -164,7 +173,7 @@ namespace BlogCenter.WebAPI.Services.User
             user.UpdatedBy = currentUserId;
             user.UpdatedDate = DateTime.Now;
             user = await UpdateAsync(user);
-            return user.MapToGetUserDto();
+            return await GetUserByUserId(user.Id);
         }
     }
 }

@@ -18,6 +18,8 @@ namespace BlogCenter.WebAPI.Dtos.Constant
         public const string USER_NOTADD_ERROR = "User not added";
         public const string USER_NOTFOUND_ERROR = "User not available";
         public const string USER_NOTDELETE_ERROR = "User not deleted";
+        public const string NAVIGATE_TO_USERLIST_URL = "/admin/users";
+
 
 
     }

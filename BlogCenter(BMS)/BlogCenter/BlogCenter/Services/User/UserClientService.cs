@@ -1,7 +1,7 @@
 ﻿using BlogCenter.WebAPI.Dtos.RequestDto;
 using BlogCenter.WebAPI.Dtos.ResponceDto;
 using BlogCenter.WebAPI.Dtos;
-using static BlogCenter.WebAPI.Dtos.ResponceDto.CategoryDto;
+using static BlogCenter.WebAPI.Dtos.ResponceDto.UserDto;
 using static BlogCenter.WebAPI.Dtos.ResponceDto.UserDto;
 using System.Net.Http.Headers;
 using System.Text.Json;
@@ -48,12 +48,26 @@ namespace BlogCenter.Services.User
 
         public async Task<Dictionary<bool, string>> DeleteUser(long userId)
         {
-            throw new NotImplementedException();
+            AddAuthorizationHeader();
+            _url = $"/api/Users/{userId}";
+            Response<GetUserDto>? response = await _httpClient.DeleteFromJsonAsync<Response<GetUserDto>>(_url);
+            if (response != null && response.IsSuccess)
+            {
+                return new Dictionary<bool, string> { { true, "User deleted successfully." } };
+            }
+            else return new Dictionary<bool, string> { { false, response.ErrorMessages.FirstOrDefault().ToString() } }; ;
         }
 
         public async Task<GetUserDto> GetUserById(long userId)
         {
-            throw new NotImplementedException();
+            AddAuthorizationHeader();
+            _url = $"/api/Users/{userId}";
+            Response<GetUserDto>? response = await _httpClient.GetFromJsonAsync<Response<GetUserDto>>(_url);
+            if (response.IsSuccess)
+            {
+                return response.ResultOne;
+            }
+            return new GetUserDto();
         }
 
         public async Task<ApiPaginationResponse<GetUserDto>> GetUsersData(DataManipulationDto dto)
@@ -84,7 +98,20 @@ namespace BlogCenter.Services.User
 
         public async Task<Dictionary<bool, string>> UpdateUser(UpdateUserDto dto)
         {
-            throw new NotImplementedException();
+            AddAuthorizationHeader();
+            _url = $"/api/Users";
+            HttpResponseMessage response = await _httpClient.PutAsJsonAsync(_url, dto);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var responseData = await response.Content.ReadFromJsonAsync<Response<GetUserDto>>();
+                if (responseData != null && responseData.IsSuccess)
+                {
+                    return new Dictionary<bool, string> { { true, "User updated successfully." } };
+                }
+                else return new Dictionary<bool, string> { { false, responseData.ErrorMessages.FirstOrDefault().ToString() } };
+            }
+            return new Dictionary<bool, string> { { false, "error" } }; ;
         }
     }
 }

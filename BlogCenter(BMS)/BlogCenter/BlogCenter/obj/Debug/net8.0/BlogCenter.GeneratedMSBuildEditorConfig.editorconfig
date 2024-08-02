@@ -53,6 +53,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZGRCbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Admin/AdminDashboard/AdminDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblxBZG1pbkRhc2hib2FyZFxBZG1pbkRhc2hib2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Admin/Blogs.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblxCbG9ncy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
@@ -89,8 +93,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pblxWaWV3TW9kYWwucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Authentication/Login/Login.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoZW50aWNhdGlvblxMb2dpblxMb2dpbi5yYXpvcg==
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Authentication/Login/LoginPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoZW50aWNhdGlvblxMb2dpblxMb2dpblBhZ2UucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Authentication/Login/RegisterPage.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBdXRoZW50aWNhdGlvblxMb2dpblxSZWdpc3RlclBhZ2UucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Author/UserDashboard.razor]
@@ -99,10 +107,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/EditBlog.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFZGl0QmxvZy5yYXpvcg==
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Error.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Home/Home.razor]
@@ -136,3 +140,7 @@ build_metadata.AdditionalFiles.CssScope = b-qznfrpkqrd
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Layout/NavMenu.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = b-f3cpmzjfxy
+
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-7eo6bi61yl

@@ -11,13 +11,14 @@ namespace BlogCenter.WebAPI.Dtos.ResponceDto
     {
         public class AddCategoryDto
         {
-            [Required(ErrorMessage ="Category Name is Required")]
+            [Required(ErrorMessage = "Category Name is Required")]
             public string Name { get; set; } = string.Empty;
         }
         public class UpdateCategoryDto
         {
             public int Id { get; set; }
-            public string? Name { get; set; } 
+            [Required(ErrorMessage = "Category Name is Required")]
+            public string? Name { get; set; }
             public bool? IsDeleted { get; set; } = false;
         }
     }

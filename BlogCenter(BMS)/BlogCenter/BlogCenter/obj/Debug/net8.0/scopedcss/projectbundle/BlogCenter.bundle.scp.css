@@ -1,93 +1,4 @@
 /* _content/BlogCenter/Components/Layout/MainLayout.razor.rz.scp.css */
-.page[b-qznfrpkqrd] {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-}
-
-main[b-qznfrpkqrd] {
-    flex: 1;
-}
-
-
-
-.top-row[b-qznfrpkqrd] {
-    background-color: #f7f7f7;
-    border-bottom: 1px solid #d6d5d5;
-    justify-content: flex-end;
-    height: 3.5rem;
-    display: flex;
-    align-items: center;
-}
-
-    .top-row[b-qznfrpkqrd]  a, .top-row[b-qznfrpkqrd]  .btn-link {
-        white-space: nowrap;
-        margin-left: 1.5rem;
-        text-decoration: none;
-    }
-
-        .top-row[b-qznfrpkqrd]  a:hover, .top-row[b-qznfrpkqrd]  .btn-link:hover {
-            text-decoration: underline;
-        }
-
-        .top-row[b-qznfrpkqrd]  a:first-child {
-            overflow: hidden;
-            text-overflow: ellipsis;
-        }
-
-@media (max-width: 640.98px) {
-    .top-row[b-qznfrpkqrd] {
-        justify-content: space-between;
-    }
-
-        .top-row[b-qznfrpkqrd]  a, .top-row[b-qznfrpkqrd]  .btn-link {
-            margin-left: 0;
-        }
-}
-
-@media (min-width: 641px) {
-    .page[b-qznfrpkqrd] {
-        flex-direction: row;
-    }
-
-
-
-    .top-row[b-qznfrpkqrd] {
-        position: sticky;
-        top: 0;
-        z-index: 1;
-    }
-
-        .top-row.auth[b-qznfrpkqrd]  a:first-child {
-            flex: 1;
-            text-align: right;
-            width: 0;
-        }
-
-    .top-row[b-qznfrpkqrd], article[b-qznfrpkqrd] {
-        padding-left: 2rem !important;
-        padding-right: 1.5rem !important;
-    }
-}
-
-#blazor-error-ui[b-qznfrpkqrd] {
-    background: lightyellow;
-    bottom: 0;
-    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
-    display: none;
-    left: 0;
-    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
-    position: fixed;
-    width: 100%;
-    z-index: 1000;
-}
-
-    #blazor-error-ui .dismiss[b-qznfrpkqrd] {
-        cursor: pointer;
-        position: absolute;
-        right: 0.75rem;
-        top: 0.5rem;
-    }
 /* _content/BlogCenter/Components/Layout/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-f3cpmzjfxy] {
     appearance: none;
@@ -193,4 +104,106 @@ main[b-qznfrpkqrd] {
         height: calc(100vh - 3.5rem);
         overflow-y: auto;
     }
+}
+/* _content/BlogCenter/Components/Pages/Error.razor.rz.scp.css */
+.animation-demo[b-7eo6bi61yl] {
+    text-align: center;
+    background: linear-gradient(141deg, #ccc 25%, #eee 40%, #ddd 55%);
+    color: #555;
+    font-family: 'Roboto';
+    font-weight: 300;
+    font-size: 32px;
+    padding-top: 40vh;
+    height: 100vh;
+    overflow: hidden;
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    -webkit-transform: translate3d(0,0,0);
+}
+
+    .animation-demo .text-1[b-7eo6bi61yl] {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        animation: showup-b-7eo6bi61yl 7s infinite;
+    }
+
+    .animation-demo .text-2[b-7eo6bi61yl] {
+        display: inline-block;
+        overflow: hidden;
+        white-space: nowrap;
+        width: 0px;
+        animation: reveal-b-7eo6bi61yl 7s infinite;
+    }
+
+        .animation-demo .text-2 span[b-7eo6bi61yl] {
+            margin-left: -355px;
+            animation: slidein-b-7eo6bi61yl 7s infinite;
+        }
+
+@keyframes showup-b-7eo6bi61yl {
+    0% {
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes slidein-b-7eo6bi61yl {
+    0% {
+        margin-left: -800px;
+    }
+
+    20% {
+        margin-left: -800px;
+    }
+
+    35% {
+        margin-left: 0px;
+    }
+
+    100% {
+        margin-left: 0px;
+    }
+}
+
+@keyframes reveal-b-7eo6bi61yl {
+    0% {
+        opacity: 0;
+        width: 0px;
+    }
+
+    20% {
+        opacity: 1;
+        width: 0px;
+    }
+
+    30% {
+        width: 355px;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 355px;
+    }
+}
+
+.animation-demo p[b-7eo6bi61yl] {
+    font-size: 12px;
+    color: #999;
+    margin-top: 200px;
 }

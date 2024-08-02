@@ -33,7 +33,6 @@ namespace BlogCenter.WebAPI.Repositories.Base
             List<T> list = await _repository.GetAllAsync(where, orderBy, including);
             return list;
         }
-
         public Task<PagedItemResult<T>> GetAllWithPaginationAsync(int page, int pageSize, Expression<Func<T, bool>>? whereCondition = null, Expression<Func<T, object>>[]? including = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null)
         {
             return _repository.GetAllWithPaginationAsync(page, pageSize, whereCondition, including, orderBy);

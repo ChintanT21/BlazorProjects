@@ -1,15 +1,24 @@
-﻿@page "/jjhjjhj"
+﻿@page "/"
 @using BlogCenter.Blazor.Services.Role
-@rendermode InteractiveServer   
-@layout AuthLayout
+@rendermode InteractiveServer
 @inject AuthenticationStateProvider authenticationStateProvider
 @inject NavigationManager _navigationManager
 
 
-<div class="">
-    <h1 class="header-overlay">Blog Management System</h1>
-    <p class="btn btn-success d-block " @onclick="NavigateToLoginPage">Login</p>
+<div class=" vh-100">
+    <div class="text-center">
+        <MudGrid>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12" Class="">
+                <MudText Typo="Typo.h5" Color="Color.Primary"><span class="fw-bold">BlogCenter</span>(Blog Management System)</MudText>
+                <MudButton OnClick="NavigateToLoginPage" Variant="Variant.Filled" Color="Color.Primary" Class="my-1">Login</MudButton>
+                <MudButton OnClick="NavigateToLoginPage" Variant="Variant.Filled" Color="Color.Primary" Class="my-1">Register</MudButton>
+            </MudItem>
+        </MudGrid>
+    </div>
+
 </div>
+
+
 
 @code {
 
@@ -18,17 +27,17 @@
         _navigationManager.NavigateTo("/login");
     }
     protected override async Task OnInitializedAsync()
-        {
+    {
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
         if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
         {
-            _navigationManager.NavigateTo("/admin/blogs");
+            _navigationManager.NavigateTo("/admin/dashboard");
         }
         else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
         {
-            _navigationManager.NavigateTo("/user-dashboard");
+            _navigationManager.NavigateTo("/user/dashboard");
         }
     }
 }

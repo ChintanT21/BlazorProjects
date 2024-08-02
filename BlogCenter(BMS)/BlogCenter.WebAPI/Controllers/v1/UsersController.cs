@@ -136,10 +136,8 @@ namespace BlogCenter.WebAPI.Controllers.v1
             if (currentUserId != null && updateUserDto.UserId!=0)
             {
                 IsUserExits = await _userService.IsUserExits(updateUserDto.Email);
-                if (!IsUserExits)
-                {
                     user = await _userService.UpdateUser(Int64.Parse(currentUserId), updateUserDto);
-                }
+               
             }
             if (user != null)
             {
@@ -195,5 +193,6 @@ namespace BlogCenter.WebAPI.Controllers.v1
             };
             return Ok(response);
         }
+
     }
 }

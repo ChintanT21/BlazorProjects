@@ -78,15 +78,18 @@ namespace BlogCenter.WebAPI.Services.Category
                     switch (searchTable.ToLower())
                     {
                         case "name":
+                            searchString = searchString.Trim().ToLower();
                             where = where.And(b => b.Name.ToLower().Contains(searchString));
                             break;
                         case "status":
                             switch (searchString)
                             {
-                                case "isDeleted":
+                                case "All":
+                                    break;
+                                case "Deleted":
                                     where = where.And(b => b.IsDeleted == true);
                                     break;
-                                case "isNotDeleted":
+                                case "Active":
                                     where = where.And(b => b.IsDeleted == false);
                                     break;
                             }
@@ -96,8 +99,6 @@ namespace BlogCenter.WebAPI.Services.Category
                             break;
                     }
                 }
-                searchString = searchString.Trim().ToLower();
-                where = where.And(b => b.Name.ToLower().Contains(searchString));
             }
 
             // Apply sorting

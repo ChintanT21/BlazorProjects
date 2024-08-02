@@ -80,7 +80,9 @@ namespace BlogCenter.WebAPI.Repositories.Blog
                 where = where.And(b => b.CreatedBy == userId);
             }
 
-            Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
+                Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
+                Expression<Func<Models.Models.Blog, object>> includeCreatedByUser = b => b.CreatedByNavigation;
+                Expression<Func<Models.Models.Blog, object>> includeUpdatedByUser = b => b.UpdatedByNavigation;
             // Apply search string filter to the where expression
             if (!string.IsNullOrWhiteSpace(searchString))
             {
@@ -95,18 +97,24 @@ namespace BlogCenter.WebAPI.Repositories.Blog
                             where = where.And(b => b.Content.ToLower().Contains(searchString));
                             break;
                         case "status":
-                            if (short.TryParse(searchString, out short statusValue))
+                            if (short.TryParse(searchString, out short statusValue) && statusValue!= 0)
                             {
                                 where = where.And(b => b.Status==(statusValue));
                             }
                             break;
+                        case "user":
+                            if (long.TryParse(searchString, out long statusUserId) && statusUserId != 0)
+                            {
+                                where = where.And(b => b.CreatedBy == (statusUserId));
+                            }
+                            break;
                         default:
-                            // Handle unknown searchTable value or do nothing
+                            searchString = searchString.Trim().ToLower();
+                            where = where.And(b => b.Title.ToLower().Contains(searchString) || b.Content.ToLower().Contains(searchString));
                             break;
                     }
                 }
-                searchString = searchString.Trim().ToLower();
-                where = where.And(b => b.Title.ToLower().Contains(searchString) || b.Content.ToLower().Contains(searchString));
+               
             }
 
             // Apply sorting
@@ -151,7 +159,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             }
 
 
-            PagedItemResult<Models.Models.Blog> pagedBlogData = await GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory }, orderBy);
+            PagedItemResult<Models.Models.Blog> pagedBlogData = await GetAllWithPaginationAsync(page, pageSize, where, new[] { includeCategory, includeCreatedByUser, includeUpdatedByUser }, orderBy);
             ApiPaginationResponse<GetBlog> apiPaginationResponse = new()
             {
                 IsSuccess = true,
