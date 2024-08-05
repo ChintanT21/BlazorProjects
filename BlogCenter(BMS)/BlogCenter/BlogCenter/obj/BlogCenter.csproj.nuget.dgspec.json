@@ -642,6 +642,10 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[7.4.0, )"
+            },
+            "MudExRichTextEditor": {
+              "target": "Package",
+              "version": "[1.0.9, )"
             }
           },
           "imports": [
@@ -747,6 +751,10 @@
             "MudBlazor": {
               "target": "Package",
               "version": "[7.4.0, )"
+            },
+            "MudExRichTextEditor": {
+              "target": "Package",
+              "version": "[1.0.9, )"
             },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",

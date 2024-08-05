@@ -8,15 +8,15 @@
 @rendermode InteractiveServer
 
 
-
+<MudScrollToTop>
+    <MudFab Color="Color.Tertiary" StartIcon="@Icons.Material.Filled.ArrowCircleUp" />
+</MudScrollToTop>
 <BlogTable />
 
 @code {
     protected string searchString = string.Empty;
     protected int selectedStatus;
     protected int selectedRole;
-    protected BlogTable blogTableRef { get; set; }
-
     private void AddNewBlog(MouseEventArgs e)
     {
         NavigationManager.NavigateTo("/admin/add-blog");

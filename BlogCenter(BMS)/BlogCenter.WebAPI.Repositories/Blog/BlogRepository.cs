@@ -23,7 +23,7 @@ namespace BlogCenter.WebAPI.Repositories.Blog
             {
                 Models.Models.Blog blog = await AddAsync(addblog);
                 blog.CreatedBy = userId;
-                blog.Status = 1;
+                blog.Status = 2;
 
                 _dbContext.SaveChanges();
                 return addblog;
@@ -67,8 +67,12 @@ namespace BlogCenter.WebAPI.Repositories.Blog
         
         public async Task<Models.Models.Blog> GetBlogById(long id = 1)
         {
+            Expression<Func<Models.Models.Blog, bool>> where = b => true;
+            where = where.And(b => b.Id == id);
             Expression<Func<Models.Models.Blog, object>> includeCategory = b => b.BlogsCategories;
-            Models.Models.Blog blog = await GetByIdAsync(id,null,includeCategory);
+            Expression<Func<Models.Models.Blog, object>> includeCreatedByUser = b => b.CreatedByNavigation;
+            Expression<Func<Models.Models.Blog, object>> includeUpdatedByUser = b => b.UpdatedByNavigation;
+            Models.Models.Blog blog = await GetOneAsync(where,null, new[] { includeCategory, includeCreatedByUser, includeUpdatedByUser });
             return blog;
         }
         

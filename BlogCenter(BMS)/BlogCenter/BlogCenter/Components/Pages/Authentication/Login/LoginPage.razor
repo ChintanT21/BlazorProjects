@@ -33,7 +33,7 @@
                         </div>
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
                             <MudCardContent>
-                                <MudTextField Label="Password" Variant="Variant.Outlined"
+                                <MudTextField Label="Password" Variant="Variant.Outlined" InputType="@PasswordInput" Adornment="Adornment.End" AdornmentIcon="@PasswordInputIcon" OnAdornmentClick="ButtonTestclick" AdornmentAriaLabel="Show Password"
                                               @bind-Value="loginDto.Password" For="@(() => loginDto.Password)" />
                             </MudCardContent>
                         </div>
@@ -60,7 +60,24 @@
     TokenValidationParameters? validationParameters;
     string token = string.Empty;
     bool showLoding = false;
-
+    bool isPasswordShow = false;
+    InputType PasswordInput = InputType.Password;
+    string PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+    void ButtonTestclick()
+    {
+        @if (isPasswordShow)
+        {
+            isPasswordShow = false;
+            PasswordInputIcon = Icons.Material.Filled.VisibilityOff;
+            PasswordInput = InputType.Password;
+        }
+        else
+        {
+            isPasswordShow = true;
+            PasswordInputIcon = Icons.Material.Filled.Visibility;
+            PasswordInput = InputType.Text;
+        }
+    }
     protected override async Task OnInitializedAsync()
     {
         _configuration = Configuration;

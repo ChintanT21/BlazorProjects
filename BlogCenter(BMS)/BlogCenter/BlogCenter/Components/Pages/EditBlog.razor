@@ -1,88 +1,68 @@
 ﻿@page "/admin/edit-blog"
 @rendermode InteractiveServer
-@inject AuthenticationStateProvider _authenticationStateProvider
 @inject NavigationManager _navigationManager
 @inject IJSRuntime _jsRuntime
+@inject IClientService? _clientService
 @using BlogCenter.Blazor.Services
+@using BlogCenter.WebAPI.Dtos.Constant
 @using BlogCenter.WebAPI.Dtos.RequestDto
 @using BlogCenter.WebAPI.Dtos.ResponceDto
 @using BlogCenter.WebAPI.Dtos
 @using BlogCenter.WebAPI.Dtos.Mapper
+@using MudExRichTextEditor
 
 <div class="container">
-    <div class="row mt-2 ">
-        <div class="col ">
-            <h4>Edit Blog</h4>
-        </div>
-        <div class="col d-flex justify-content-end">
-            <button class="btn btn-info" @onclick=NavigateToAdminBlogs>
-                <i class="fa-solid fa-chevron-left"></i>
-                Back
-            </button>
-        </div>
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Add Blog</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToAdminBlogs>Back</MudButton>
     </div>
-    <EditForm FormName="EditBlogForm" Model="@blog" class="form-floating" OnValidSubmit="EditThisBlog">
+    <EditForm Model="@blog" OnValidSubmit="EditThisBlog">
         <DataAnnotationsValidator />
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
-                <label class=" fw-bolder" for="Title">Title:</label>
-            </div>
-            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
-                <InputText id="Title" @bind-Value="blog.Title" class="form-control" />
-                <ValidationMessage For="@(()=>blog.Title)" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
-                <label class=" fw-bolder" for="Title">Content:</label>
-            </div>
-            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
-                <input @bind=blog.Content class="form-control">Welcome</input>
-                <ValidationMessage For="@(()=>blog.Content)" />
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm-12 col-md-4 col-xl-4 col-xxl-6 col mt-2">
-                <label class=" fw-bolder" for="Title">Category:</label>
-            </div>
-            <div class="col-sm-12 col-ms-8 col-xl-8 col-xxl-6 col mt-2">
-                <div class="multi-select">
-                    <div class="form-control" @onclick="ToggleDropdown">
-                        @foreach (var categoryId in selectedCategoryIds)
-                        {
-                            <span class="badge badge-pill badge-primary mr-1">
-                                @GetCategoryName(categoryId)
-                                <span class="ml-1" @onclick="(e) => RemoveCategory(e, categoryId)">×</span>
-                            </span>
-                        }
-                        <input type="text" class="input-no-border" @oninput="OnSearch" placeholder="Select items..." />
+        <MudGrid>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12">
+                <MudCard>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Title" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="blog.Title" For="@(() => blog.Title)" />
+                            </MudCardContent>
+                        </div>
                     </div>
-                    @if (isOpen)
-                    {
-                        <ul>
-                            @foreach (var category in filteredCategories)
-                            {
-                                <li>
-                                    <input type="checkbox" id="@category.Id" @onchange="() => OnSelectionChanged1(category.Id)" checked="@(selectedCategoryIds.Contains(category.Id) || filteredCategories1.Any(x => x.CategoryId == category.Id))"/>
-                                    <label for="@category.Id">@GetCategoryName(category.Id)</label>
-                                </li>
-                            }
-                        </ul>
-                    }
-                </div>
-                <ValidationMessage For="@(() => blog.Categories)" />
-            </div>
-        </div>
-        <div class="mt-2 d-flex justify-content-end">
-            <button class="btn btn-success" type="submit">
-                @if (showLoding == true)
-                {
-                    <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-                }
-                Submit
-            </button>
-        </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudSelect Variant="Variant.Outlined" MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="SelectedCategoryIds" T="int" Label="Categories" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+                                    @foreach (var category in categories)
+                                    {
+                                        <MudSelectItem T="int" Value="@category.Id">@category.Name</MudSelectItem>
+                                    }
+                                </MudSelect>
+                            </MudCardContent>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudExRichTextEdit @ref="@Editor"
+                                                   @bind-Value=blog.Content
+                                                   ReadOnly="@_readOnly"
+                                                   Height="444"
+                                                   Class="m-2"
+                                                   Placeholder="Edit html" />
+                            </MudCardContent>
+                        </div>
+
+                    </div>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
     </EditForm>
+
 
 </div>
 
@@ -90,48 +70,38 @@
     [Parameter]
     [SupplyParameterFromQuery(Name = "blogid")]
     public string? blogid { get; set; }
-    [Inject]protected IClientService? _clientService { get; set; }
     protected bool showLoding = false;
     protected BlogDto blog = new();
     protected GetBlogDto.GetBlog baseblog = new();
     protected List<GetCategoryDto> categories = new();
-    public class SelectItem
+    bool _readOnly = false;
+    private IEnumerable<int> SelectedCategoryIds { get; set; } = new List<int>();
+    MudExRichTextEdit Editor;
+    private int value { get; set; }
+
+    private string GetMultiSelectionText(List<string> selectedValues)
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
+        var selectedCategoryNames = GetCategoryNames(selectedValues.Select(int.Parse).ToList());
+        // var selectedCategoryNames = selectedValues.Select(id => categories.Any(c=>c.Id) ? name : id).ToList();
+        return $"Selected Categor{(selectedValues.Count > 1 ? "ies" : "y")}: {string.Join(", ", selectedCategoryNames)}";
+        // return $"{selectedValues.Count} categor{(selectedValues.Count > 1 ? "ies have" : "y has")} been selected";
     }
-    private List<GetCategoryDto> SelectedItems { get; set; } = new List<GetCategoryDto>();
-
-    private void OnSelectionChanged(ChangeEventArgs e)
-    {
-        var selectedValues = ((IEnumerable<string>)e.Value).Select(int.Parse).ToList();
-        selectedCategoryIds = selectedValues;
-
-        blog.Categories = selectedCategoryIds;
-    }
-
-    string ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
-    long userId;
     protected override async Task OnInitializedAsync()
     {
-   
-        var authState = await _authenticationStateProvider.GetAuthenticationStateAsync();
-        var userClaims = authState.User.Claims;
-        userId = Int64.Parse(userClaims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value);
+
         categories = await _clientService.GetAllCategories();
         if (long.TryParse(blogid, out var BlogId))
         {
             // Fetch the blog details from the server or service
             baseblog = await _clientService.GetOneBlog(BlogId);
             blog = baseblog.ToBlogDto();
-            filteredCategories = categories;
-            filteredCategories1 = baseblog.BlogsCategories;
-            selectedCategoryIds = baseblog.BlogsCategoriesIntList;
+            SelectedCategoryIds = baseblog.BlogsCategoriesIntList;
+
         }
         else
         {
             // Handle invalid blogId
-            _navigationManager.NavigateTo("/admin/blogs");
+            _navigationManager.NavigateTo(Constants.NAVIGATE_TO_BLOGLIST_URL);
         }
     }
 
@@ -140,49 +110,16 @@
         bool isUpdated = await _clientService.UpdateBlog(blog);
         if (isUpdated)
         {
-            NavigateToAdminBlogs(); 
+            NavigateToAdminBlogs();
         }
     }
     private void NavigateToAdminBlogs()
     {
-        _navigationManager.NavigateTo("/admin/blogs");
+        _navigationManager.NavigateTo(Constants.NAVIGATE_TO_BLOGLIST_URL);
     }
-    private bool isOpen = false;
-
-    private void ToggleDropdown()
+    private List<string> GetCategoryNames(List<int> categoryIds)
     {
-        isOpen = !isOpen;
-    }
-
-    private void OnSearch(ChangeEventArgs e)
-    {
-        var searchValue = e.Value.ToString().ToLower();
-        filteredCategories = categories.Where(category => category.Name.ToLower().Contains(searchValue)).ToList();
-        isOpen = true;
-    }
-
-}
-@code {
-    private List<int> selectedCategoryIds = new();
-    private List<GetCategoryDto> filteredCategories = new();
-    private List<GetBlogDto.GetBlogsCategory> filteredCategories1 = new();
-
-    private void OnSelectionChanged1(int categoryId)
-    {
-        if (selectedCategoryIds.Contains(categoryId))
-        {
-            selectedCategoryIds.Remove(categoryId);
-        }
-        else
-        {
-            selectedCategoryIds.Add(categoryId);
-        }
-        blog.Categories = selectedCategoryIds;
-    }
-
-    private void RemoveCategory(MouseEventArgs e, int categoryId)
-    {
-        selectedCategoryIds.Remove(categoryId);
+        return categoryIds.Select(id => GetCategoryName(id)).ToList();
     }
 
     private string GetCategoryName(int categoryId)

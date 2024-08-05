@@ -15,7 +15,7 @@ namespace BlogCenter.WebAPI.Services.Blog
         public async Task<ApiResponse> AddBlogAsync(AddBlogDto blogDto, long userId)
         {
             ApiResponse apiResponse = new();
-            Models.Models.Blog addedblog = await _blogRepository.AddBlogAsync(blogDto.AddDtoToBlog(), userId);
+            Models.Models.Blog addedblog = await _blogRepository.AddBlogAsync(blogDto.AddDtoToBlog(userId), userId);
             //object resultObject = apiResponse.Result;
             //if (resultObject is Models.Models.Blog blog)
             //{

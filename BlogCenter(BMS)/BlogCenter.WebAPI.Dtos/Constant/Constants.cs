@@ -20,6 +20,16 @@ namespace BlogCenter.WebAPI.Dtos.Constant
         public const string USER_NOTDELETE_ERROR = "User not deleted";
         public const string NAVIGATE_TO_USERLIST_URL = "/admin/users";
 
+        public const string NAVIGATE_TO_BLOGLIST_URL = "/admin/blogs";
+        public const string BLOG_NOCATEGORY_ERROR = "Select Atleast one category.";
+        public const string BLOG_NOCONTENT_ERROR = "Content can not be empty.";
+        public const string BLOG_EXISTS_ERROR = "Blog already exits";
+        public const string BLOG_NOTADD_ERROR = "Blog not added";
+        public const string BLOG_BLOG_LINKED_ERROR = "Blog linked with blogs so delete not possible";
+        public const string BLOG_NOTDELETE_ERROR = "Blog not deleted";
+
+
+
 
 
     }

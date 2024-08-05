@@ -117,16 +117,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lXFZpZGVvSG9tZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/ViewBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xWaWV3QmxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Pages/Weather.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xXZWF0aGVyLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/Routes.razor]
 build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
-build_metadata.AdditionalFiles.CssScope = 
-
-[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/ViewBlog.razor]
-build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xWaWV3QmxvZy5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter/Components/_Imports.razor]

@@ -69,6 +69,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
                 return null;
             }
         }
+
         public async Task<PagedItemResult<T>> GetAllWithPaginationAsync(int page,
             int pageSize,
             Expression<Func<T, bool>>? whereCondition,
@@ -120,6 +121,7 @@ namespace BlogCenter.WebAPI.Repositories.Generic
             {
             }
         }
+
         public async Task<T> UpdateAsync(T entity)
         {
             if (entity == null)

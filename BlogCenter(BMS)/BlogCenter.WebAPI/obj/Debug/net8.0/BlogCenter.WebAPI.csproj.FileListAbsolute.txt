@@ -134,3 +134,4 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\refin
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\ref\BlogCenter.WebAPI.dll
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.MvcApplicationPartsAssemblyInfo.cs

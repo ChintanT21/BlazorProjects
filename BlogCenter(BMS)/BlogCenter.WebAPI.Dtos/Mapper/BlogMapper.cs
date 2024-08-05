@@ -106,22 +106,24 @@ namespace BlogCenter.WebAPI.Dtos.Mapper
                 Content = blogDto.Content,
                 AdminComment = blogDto.AdminComment,
                 CreatedBy = blogDto.CreatedBy,
-                UpdatedBy = blogDto.UpdatedBy == 0 ? null : blogDto.UpdatedBy,
-                CreatedDate = DateTime.Now,
-                UpdatedDate = blogDto.UpdatedBy == 0 ? null : DateTime.Now,
+                UpdatedBy = blogDto.UpdatedBy,
+                CreatedDate = blogDto.CreatedDate,
+                CreatedByName = blogDto.CreatedByNavigation.FirstName + " " + blogDto.CreatedByNavigation.LastName,
+                UpdatedDate = blogDto.UpdatedDate,
+                UpdatedByName = blogDto.UpdatedBy == null ? "Not updated yet" : blogDto.UpdatedByNavigation.FirstName + " " + blogDto.UpdatedByNavigation.LastName,
                 Status = blogDto.Status,
                 StatusName = Enum.IsDefined(typeof(BlogStatus), (int)blogDto.Status) ? (BlogStatus)(int)blogDto.Status : throw new ArgumentOutOfRangeException(nameof(blogDto.Status), "Invalid status value"),
                 BlogsCategories= ToGetBlogsCategories(blogDto.BlogsCategories),
                 BlogsCategoriesIntList =blogDto.BlogsCategories.Select(x => x.CategoryId).ToList(),
             };
         }
-        public static Blog AddDtoToBlog(this AddBlogDto addBlogDto)
+        public static Blog AddDtoToBlog(this AddBlogDto addBlogDto,long userId)
         {
             return new Blog
             {
                 Title = addBlogDto.Title,
                 Content = addBlogDto.Content,
-                CreatedBy = addBlogDto.CreatedBy,
+                CreatedBy = userId,
                 CreatedDate = DateTime.Now,
             };
         }

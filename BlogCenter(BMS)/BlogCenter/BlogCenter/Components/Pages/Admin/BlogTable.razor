@@ -64,16 +64,16 @@
             <MudTd DataLabel="Status">@context.UpdatedByName</MudTd>
             <MudTd DataLabel="Status">@context.StatusName</MudTd>
             <MudTd DataLabel="Approve||Reject">
-                @if (context.Status != (short)BlogStatus.Approved && context.Status != (short)BlogStatus.Rejected)
+                @if (context.Status == (short)BlogStatus.SendForApproval)
                 {
-                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Approval" Color="Color.Primary" OnClick="()=>Approve(context.Id)">Approve</MudButton>
-                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Crop" Color="Color.Primary" OnClick="()=>Reject(context.Id)">Reject</MudButton>
+                    <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Approval" Color="Color.Primary" OnClick="()=>Approve(context.Id)"></MudButton>
+                    <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Crop" Color="Color.Primary" OnClick="()=>Reject(context.Id)"></MudButton>
                 }
             </MudTd>
             <MudTd DataLabel="Action">
 
-                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditPage(context.Id)">Edit</MudButton>
-                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.PanoramaFishEye" Color="Color.Primary" OnClick="()=>NavigateToViewPage(context.Id)">View</MudButton>
+                <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditPage(context.Id)"></MudButton>
+                <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Visibility" Color="Color.Primary" OnClick="()=>NavigateToViewPage(context.Id)"></MudButton>
 
             </MudTd>
 
