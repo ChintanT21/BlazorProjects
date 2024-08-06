@@ -61,11 +61,11 @@
                 }
             </MudTd>
             <MudTd DataLabel="Action">
-                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditCategory(context.Id)">Edit</MudButton>
-                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.RemoveRedEye" Color="Color.Primary">View</MudButton>
+                <MudIconButton Class="mx-1 " Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditCategory(context.Id)"></MudIconButton>
+                <MudIconButton Class="mx-1 " Variant="Variant.Filled" Icon="@Icons.Material.Filled.RemoveRedEye" Color="Color.Primary"></MudIconButton>
                 @if (!context.IsDeleted)
                 {
-                    <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="()=>DeleteCategory(context.Id)">Delete</MudButton>
+                    <MudIconButton Class="mx-1 " Variant="Variant.Filled" Icon="@Icons.Material.Filled.Delete" Color="Color.Error" OnClick="()=>DeleteCategory(context.Id)"></MudIconButton>
                 }
             </MudTd>
 

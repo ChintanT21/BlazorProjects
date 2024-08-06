@@ -55,7 +55,7 @@
             <MudTh>Created By</MudTh>
             <MudTh>Updated By</MudTh>
             <MudTh>Status</MudTh>
-            <MudTh>Approv | Reject</MudTh>
+            <MudTh>Approve | Reject</MudTh>
             <MudTh>Action</MudTh>
         </HeaderContent>
         <RowTemplate>
@@ -66,18 +66,25 @@
             <MudTd DataLabel="Approve||Reject">
                 @if (context.Status == (short)BlogStatus.SendForApproval)
                 {
-                    <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Approval" Color="Color.Primary" OnClick="()=>Approve(context.Id)"></MudButton>
-                    <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Crop" Color="Color.Primary" OnClick="()=>Reject(context.Id)"></MudButton>
+                    <MudIconButton Class="" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Check" Color="Color.Primary" OnClick="()=>Approve(context.Id)"></MudIconButton>
+                    <MudIconButton Class="" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Dangerous" Color="Color.Primary" OnClick="()=>Reject(context.Id)"></MudIconButton>
                 }
             </MudTd>
             <MudTd DataLabel="Action">
 
-                <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditPage(context.Id)"></MudButton>
-                <MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Visibility" Color="Color.Primary" OnClick="()=>NavigateToViewPage(context.Id)"></MudButton>
+                <MudIconButton Class="" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditPage(context.Id)"></MudIconButton>
+                <MudIconButton Class="" Variant="Variant.Filled" Icon="@Icons.Material.Filled.Visibility" Color="Color.Primary" OnClick="()=>NavigateToViewPage(context.Id)"></MudIconButton>
 
             </MudTd>
 
         </RowTemplate>
+        <NoRecordsContent>
+            <MudText>No matching records found</MudText>
+        </NoRecordsContent>
+        <LoadingContent>
+            <MudText>Loading...</MudText>
+        </LoadingContent>
+
     </MudTable>
     <div class="d-flex justify-content-between align-items-center mt-3">
         <MudPagination BoundaryCount="2"

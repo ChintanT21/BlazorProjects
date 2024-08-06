@@ -3,15 +3,16 @@
 <MudPopoverProvider @rendermode=InteractiveServer />
 <MudDialogProvider @rendermode=InteractiveServer />
 <MudSnackbarProvider @rendermode=InteractiveServer />
-
-<MudLayout>
-    <AuthorizeView>
-        <Authorized>
-            <MyNavMenu @rendermode=InteractiveServer />
-        </Authorized>
-    </AuthorizeView>
-    <MudMainContent>
-        @Body
-    </MudMainContent>
-</MudLayout>
+<CascadingAuthenticationState>
+    <MudLayout>
+        <AuthorizeView>
+            <Authorized>
+                <MyNavMenu @rendermode=InteractiveServer />
+            </Authorized>
+        </AuthorizeView>
+        <MudMainContent>
+            @Body
+        </MudMainContent>
+    </MudLayout>
+</CascadingAuthenticationState>
 

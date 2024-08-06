@@ -1,4 +1,5 @@
 ﻿using BlogCenter.WebAPI.Dtos;
+using BlogCenter.WebAPI.Dtos.ResponceDto;
 using Microsoft.AspNetCore.Components.Authorization;
 using System.Net.Http.Headers;
 using System.Net.Http.Json;
@@ -34,7 +35,6 @@ namespace BlogCenter.Components.Pages.Authentication
                 };
                 HttpResponseMessage userclaims = await httpClient.PostAsJsonAsync("/api/Auth/tokenvalidator?token=" + token, token);
                 ApiResponse apiResponse = await userclaims.Content.ReadFromJsonAsync<ApiResponse>();
-                var apiResponse12 = await userclaims.Content.ReadFromJsonAsync<ApiResponse>();
 
                 if (apiResponse.Result != null)
                 {
@@ -61,17 +61,26 @@ namespace BlogCenter.Components.Pages.Authentication
                     string userRole = claims.FirstOrDefault(c => c.Type == ClaimTypeRole)?.Value ?? "Role not found";
                     if (userId != "ID not found" && userRole != "Role not found")
                     {
+                        TokenDto tokenDto = new();
+                        tokenDto.IsAuthenticated= true;
+                        tokenDto.Email = userEmail;
+                        tokenDto.Id = Int64.Parse(userId);
+                        tokenDto.Role = userRole;
+                        StoreTokenDtoInHttpContext(tokenDto);
                         httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
                     }
+                  
                     var identity = new ClaimsIdentity(new[]
                            {
+                        
                             new Claim(ClaimTypes.Name, userName),
                             new Claim(ClaimTypes.Email,userEmail ),
-                            new Claim(ClaimTypes.NameIdentifier,userEmail),
+                            new Claim(ClaimTypes.NameIdentifier,userId),
                             new Claim(ClaimTypes.Role,userRole)
 
-                        });
+                        }, "CustomAuthentication");
                     var user = new ClaimsPrincipal(identity);
+                    NotifyUserAuthentication(user);
                     return new AuthenticationState(user);
                 }
                 return new AuthenticationState(new ClaimsPrincipal());
@@ -84,7 +93,14 @@ namespace BlogCenter.Components.Pages.Authentication
             }
         }
 
-
+        private void StoreTokenDtoInHttpContext(TokenDto tokenDto)
+        {
+            var httpContext = _httpContextAccessor.HttpContext;
+            if (httpContext != null)
+            {
+                httpContext.Items["TokenDto"] = tokenDto;
+            }
+        }
         private static IEnumerable<Claim> ParseClaimsFromJwt(string jwt)
         {
             var payload = jwt.Split('.')[1];

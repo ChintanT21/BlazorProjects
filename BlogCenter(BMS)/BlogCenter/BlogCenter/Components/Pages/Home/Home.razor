@@ -37,13 +37,22 @@
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
 
-        if (user.IsInRole("admin") && user.Identity.IsAuthenticated)
+        if (user.Identity.IsAuthenticated)
         {
-            _navigationManager.NavigateTo("/admin/dashboard");
-        }
-        else if (user.IsInRole("user") && user.Identity.IsAuthenticated)
-        {
-            _navigationManager.NavigateTo("/user/dashboard");
+            if (user.IsInRole("admin"))
+            {
+                _navigationManager.NavigateTo("/admin/dashboard");
+            }
+            else if (user.IsInRole("user"))
+            {
+                var ClaimTypeId = "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier";
+                string userId = user.Claims.FirstOrDefault(c => c.Type == ClaimTypeId)?.Value ?? "ID not found";
+
+                if (long.TryParse(userId, out long parsedUserId))
+                {
+                    _navigationManager.NavigateTo($"/user/dashboard?userId={parsedUserId}");
+                }
+            }
         }
     }
 }

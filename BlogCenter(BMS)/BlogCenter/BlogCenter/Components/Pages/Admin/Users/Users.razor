@@ -81,7 +81,7 @@
                 }
             </MudTd>
             <MudTd DataLabel="Action">
-                <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditUser(context.Id)">Edit</MudButton>
+                <MudIconButton Class="mx-1 " Variant="Variant.Filled" Icon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="()=>NavigateToEditUser(context.Id)">Edit</MudIconButton>
                 @*     <MudButton Class="mx-1 " Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.RemoveRedEye" Color="Color.Primary">View</MudButton>
                 @if (context.Status != (short)UserStatus.Deleted)
                 {

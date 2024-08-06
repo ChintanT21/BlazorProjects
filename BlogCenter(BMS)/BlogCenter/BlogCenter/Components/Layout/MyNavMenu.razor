@@ -1,17 +1,66 @@
-﻿
+﻿@using System.Security.Claims
+@inject AuthenticationStateProvider authenticationStateProvider
+
 <MudAppBar>
-    <BlogCenter.Components.Components.LogoutButton></BlogCenter.Components.Components.LogoutButton>
+    <div class="d-flex align-items-center ml-auto">
+        <MudAvatar Style="color:white;border:2px solid white;" Variant="Variant.Outlined">@GetFirstTwoLetters(loginUserName)</MudAvatar>
+        <MudText Class="mx-3 fw-bold">@loginUserName</MudText>
+        <BlogCenter.Components.Components.LogoutButton></BlogCenter.Components.Components.LogoutButton>
+    </div>
 </MudAppBar>
 <MudDrawer @bind-Open="@_drawerOpen">
     <MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2">
         <MudText Typo="Typo.h6" Class="px-4">BlogCenter</MudText>
-        <MudNavLink Href="/admin/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
-        <MudNavLink Match="NavLinkMatch.Prefix" Href="/admin/users" Icon="@Icons.Material.Filled.SupervisedUserCircle">Users</MudNavLink>
-        <MudNavLink Href="/admin/categories" Icon="@Icons.Material.Filled.Category">Categories</MudNavLink>
-        <MudNavLink Href="/admin/blogs" Icon="@Icons.Material.Filled.Article">Blogs</MudNavLink>
+        <CascadingAuthenticationState>
+            <AuthorizeView Roles="admin">
+                <Authorized>
+                    <MudNavLink Href="/admin/dashboard" Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
+                    <MudNavLink Match="NavLinkMatch.Prefix" Href="/admin/users" Icon="@Icons.Material.Filled.SupervisedUserCircle">Users</MudNavLink>
+                    <MudNavLink Href="/admin/categories" Icon="@Icons.Material.Filled.Category">Categories</MudNavLink>
+                    <MudNavLink Href="/admin/blogs" Icon="@Icons.Material.Filled.Article">Blogs</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
+            <AuthorizeView Roles="user">
+                <Authorized>
+                    <MudNavLink Href=@UserDashboardUrl Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
+                    <MudNavLink Href=@UserBlogsUrl Icon="@Icons.Material.Filled.Article">Blogs</MudNavLink>
+                </Authorized>
+            </AuthorizeView>
+        </CascadingAuthenticationState>
     </MudNavMenu>
 </MudDrawer>
 
 @code {
-    bool _drawerOpen = true;
+    private string loginUserName = string.Empty;
+    private string UserDashboardUrl = string.Empty;
+    private string UserBlogsUrl = string.Empty;
+    private string loginUserId;
+    private bool _drawerOpen = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
+        var user = authState.User;
+
+        if (user.Identity.IsAuthenticated)
+        {
+            loginUserName = user.FindFirst(c => c.Type == ClaimTypes.Name)?.Value ?? string.Empty;
+            var loginUserIdstring = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
+            if (long.TryParse(loginUserIdstring, out long parsedUserId))
+            {
+                UserDashboardUrl = $"/user/dashboard?userId={parsedUserId}";
+                UserBlogsUrl = $"/user/blogs?userId={parsedUserId}";
+            }
+
+        }
+    }
+
+    private string GetFirstTwoLetters(string input)
+    {
+        if (string.IsNullOrEmpty(input))
+        {
+            return string.Empty;
+        }
+        return input.Substring(0, 2).ToUpper();
+    }
 }

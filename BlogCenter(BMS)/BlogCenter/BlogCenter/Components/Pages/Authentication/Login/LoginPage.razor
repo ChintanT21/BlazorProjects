@@ -3,6 +3,7 @@
 @using BlogCenter.Components.Pages.Authentication
 @using BlogCenter.Blazor.Services
 @using BlogCenter.WebAPI.Dtos
+@using BlogCenter.WebAPI.Dtos.Constant
 @using Microsoft.AspNetCore.Components.Authorization
 @using System.IdentityModel.Tokens.Jwt
 @using Microsoft.IdentityModel.Tokens
@@ -39,6 +40,7 @@
                         </div>
                     </div>
                     <MudCardActions Class="ml-auto">
+                        <MudLink Color="Color.Primary" OnClick="NavigateToRegister">Not have account?</MudLink>
                         <MudButton OnClick="NavigateToHome" Variant="Variant.Filled" Color="Color.Primary" Class="ml-1">Cancel</MudButton>
                         <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-1">Submit</MudButton>
                     </MudCardActions>
@@ -183,18 +185,18 @@
             new Claim(ClaimTypes.NameIdentifier,userEmail),
             new Claim(ClaimTypes.Role,userRole)
 
-        });
+        },"CustomAuthentication");
 
             var user = new ClaimsPrincipal(identity);
             var authProvider = (CustomAuthenticationStateProvider)AuthStateProvider;
             authProvider.NotifyUserAuthentication(user);
             if (user.IsInRole("admin"))
             {
-                NavigationManager.NavigateTo("/admin/blogs");
+                NavigationManager.NavigateTo("/admin/dashboard");
             }
             else if (user.IsInRole("user"))
             {
-                NavigationManager.NavigateTo("/user-dashboard");
+                NavigationManager.NavigateTo($"/user/dashboard?userId={Int64.Parse(userId)}");
             }
             showLoding = false;
 
@@ -203,5 +205,9 @@
         {
             Console.WriteLine($"Token validation error: {ex.Message}");
         }
+    }
+    protected void NavigateToRegister()
+    {
+        NavigationManager.NavigateTo(Constants.NAVIGATE_TO_REGISTER_URL);
     }
 }

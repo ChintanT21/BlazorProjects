@@ -18,6 +18,11 @@
 
 	</ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\..\BlogCenter.Shared\BlogCenter.Shared.csproj" />
+	  <ProjectReference Include="..\..\BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj" />
+	</ItemGroup>
+
 </Project>
 
 

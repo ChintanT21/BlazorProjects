@@ -3,6 +3,222 @@
   "WorkspaceRootPath": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\pages\\author\\blogs\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\pages\\author\\blogs\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\viewblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\viewblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\error.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\users\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\users\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\pages\\author\\blogs\\cardcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\pages\\author\\blogs\\cardcomponent.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\editblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\editblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\addblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\addblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\home\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\home\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mynavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mynavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\login\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\login\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\login\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\login\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\pages\\author\\blogs\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\pages\\author\\blogs\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\routes.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\blogcenter.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\blogcenter.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responce\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\authlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\authlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\auth\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\auth\\authdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.shared\\clientservices\\blogs\\blogclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|solutionrelative:blogcenter.shared\\clientservices\\blogs\\blogclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\services\\imappercollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\services\\imappercollectionextension.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\blogcenter.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\blogcenter.client.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.shared\\blogcenter.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|solutionrelative:blogcenter.shared\\blogcenter.shared.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|solutionrelative:blogcenter.shared\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.shared\\clientservices\\blogs\\iblogclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{BA6CA9CC-55BB-4050-B997-D0EFD87480E1}|BlogCenter.Shared\\BlogCenter.Shared.csproj|solutionrelative:blogcenter.shared\\clientservices\\blogs\\iblogclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\blogcenter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\blogcenter.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\constant\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\constant\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\wwwroot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\wwwroot\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\users\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\users\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\controllers\\v1\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responce\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\filters\\tokenidentifierfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\filters\\tokenidentifierfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\author\\authordashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\author\\authordashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\components\\loadinganimation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\components\\loadinganimation.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\components\\loadinganimation.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\components\\loadinganimation.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\wwwroot\\app.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\categories\\category.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\categories\\category.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\admindashboard\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\admindashboard\\admindashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\components\\logoutbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\components\\logoutbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\viewmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\viewmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.repositories\\generic\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|solutionrelative:blogcenter.webapi.repositories\\generic\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\mapper\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\mapper\\blogmapper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -19,40 +235,12 @@
       "RelativeMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|solutionrelative:blogcenter.webapi.repositories\\blog\\blogrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\viewblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\viewblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.repositories\\generic\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|solutionrelative:blogcenter.webapi.repositories\\generic\\baserepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\controllers\\v1\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\controllers\\v1\\userscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\requestdto\\getblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\requestdto\\getblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\blogtable.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\customauthenticationstateprovider.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\home\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\home\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\login\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\login\\loginpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.repositories\\utils\\dynamicqueryableextensions.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -67,24 +255,12 @@
       "RelativeMoniker": "D:0:0:{DC004816-E4C3-4C4E-9D64-798C828377C9}|BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj|solutionrelative:blogcenter.webapi.repositories\\blogcenter.webapi.repositories.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\filters\\tokenidentifierfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\filters\\tokenidentifierfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\helper\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|solutionrelative:blogcenter.webapi\\helper\\helper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\enums\\enums.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responce\\addusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\addusermodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\constant\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\constant\\constants.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1BCF1996-8685-419F-89C2-6829E293A387}|BlogCenter.WebAPI\\BlogCenter.WebAPI.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi\\controllers\\v1\\categoriescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -111,36 +287,12 @@
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\response.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responce\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\apiresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\weather.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\editblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\editblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\addblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\addblog.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responcedto\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responcedto\\blogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\users\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\users\\adduser.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\services\\clientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\services\\iclientservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responcedto\\addblogdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -151,18 +303,6 @@
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\wwwroot\\js\\app.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\blogs.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\users\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\users\\users.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\app.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\header.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -171,15 +311,7 @@
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\footer.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\components\\logoutbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\components\\logoutbutton.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\pca66\\AppData\\Local\\Temp\\Temp1_CustomAutocomplete.zip\\CustomAutocomplete.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\wwwroot\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\users\\editusers.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -198,60 +330,12 @@
       "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\categories\\category.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\categories\\category.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\viewmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\viewmodal.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mynavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mynavmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mainlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\authlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\authlayout.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\navmenu.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\_imports.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\layout\\mainlayout.razor.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\categories\\addcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\categories\\addcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\authentication\\login\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\authentication\\login\\registerpage.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter.client\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{8EA4DB65-A61A-45F9-8873-B07DE6A7548E}|BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj|solutionrelative:blogcenter\\blogcenter.client\\pages\\author\\userdashboard.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter\\blogcenter\\components\\pages\\admin\\categories\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{D69702D0-BB79-4D02-9EB8-B4C715FE9E83}|BlogCenter\\BlogCenter\\BlogCenter.csproj|solutionrelative:blogcenter\\blogcenter\\components\\pages\\admin\\categories\\editcategory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|d:\\projects\\demo\\blazor\\blogcenter(bms)\\blogcenter.webapi.dtos\\responce\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6AAD744A-B53F-4BE0-9FC3-203270E96072}|BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj|solutionrelative:blogcenter.webapi.dtos\\responce\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -261,7 +345,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 510,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -293,236 +377,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ViewBlog.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACIAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T10:36:24.856Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "UserRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:06:13.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Program.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Program.cs",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Program.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Program.cs",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Program.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAADEAAAA2AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:25:05.812Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "BlogTable.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAAAOkAAAA4AAAA",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\BlogTable.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\BlogTable.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\BlogTable.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\BlogTable.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAC4AAAAoAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T06:29:46.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "GetBlogDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAAiAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T06:24:52.54Z",
+              "WhenOpened": "2024-08-06T08:30:32.269Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 6,
-              "Title": "UsersController.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAAKIAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T05:50:41.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "BlogsController.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAACkAAABAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T06:20:10.962Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BlogService.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDoAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:14:27.475Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "BlogRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
-              "ViewState": "AQIAADYAAAAAAAAAAAAqwEoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T06:20:29.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
-              "ViewState": "AQIAAKwAAAAAAAAAAAAAAKMAAAARAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:04:49.396Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "BlogMapper.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
-              "ViewState": "AQIAADcAAAAAAAAAAAAUwGwAAAAuAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T06:25:47.536Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "IUserRepository.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:06:15.424Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "AddUserModel.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:13:20.483Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Helper.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Helper\\Helper.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Helper\\Helper.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Helper\\Helper.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI\\Helper\\Helper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:14:01.969Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TokenIdentifierFilter.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:14:16.796Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "CustomAuthenticationStateProvider.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
-              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCMAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:24:36.953Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "BlogCenter.WebAPI.Repositories",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-08-05T11:14:35.507Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "DynamicQueryableExtensions.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:14:40.293Z",
+              "Title": "EditBlog.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAABIAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T04:26:36.385Z",
               "EditorCaption": ""
             },
             {
@@ -533,7 +409,7 @@
               "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\Login\\LoginPage.razor",
               "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\Login\\LoginPage.razor",
               "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\Login\\LoginPage.razor",
-              "ViewState": "AQIAAFsAAAAAAAAAAAAiwFwAAAAJAAAA",
+              "ViewState": "AQIAALMAAAAAAAAAAAAswMYAAAAPAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-07-23T09:08:02.94Z",
               "EditorCaption": ""
@@ -541,537 +417,32 @@
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "CustomAuthenticationStateProvider.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\CustomAuthenticationStateProvider.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:24:36.953Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Home.razor",
               "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Home\\Home.razor",
               "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Home\\Home.razor",
               "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Home\\Home.razor",
               "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Home\\Home.razor",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAACQAAAA5AAAA",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADUAAAARAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-02T04:53:08.956Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "PredicateBuilder.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:14:42.26Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\User\\UserService.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Services\\User\\UserService.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\User\\UserService.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Services\\User\\UserService.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAA5wIoAAAAhAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T09:36:49.858Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "CategoriesController.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAQwAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:46:33.892Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Enums.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAgwBMAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T08:39:20.713Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "Response.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA3AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:02:49.834Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "Constants.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAABGAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:07:11.056Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ApiResponse.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T11:02:57.352Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
-              "Title": "Weather.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T10:40:07.902Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "EditBlog.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\EditBlog.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T04:26:36.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "AddBlogDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T06:43:35.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "AddUser.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T03:57:00.698Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "UserMapper.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T10:07:31.184Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "ClientService.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\ClientService.cs",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Services\\ClientService.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\ClientService.cs",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Services\\ClientService.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAiwE4AAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T09:25:26.624Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "BlogDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAtAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-05T09:29:03.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "AddBlog.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T04:18:33.034Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 34,
-              "Title": "IClientService.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IClientService.cs",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Services\\IClientService.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IClientService.cs",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Services\\IClientService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T09:25:03.294Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "Header.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:05:21.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "Footer.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:05:26.824Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 37,
-              "Title": "Blogs.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAeAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T04:51:27.211Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 42,
-              "Title": "LogoutButton.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAsAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:34:59.791Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 45,
-              "Title": "EditUsers.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
-              "ViewState": "AQIAACoAAAAAAAAAAAAAAEMAAAA4AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T08:17:56.142Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 56,
-              "Title": "MainLayout.razor.css",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-02T05:04:29.111Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "app.js",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-08-05T05:26:14.828Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 38,
-              "Title": "Users.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T07:59:18.676Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 46,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCEAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T10:02:38.01Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "App.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\App.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\App.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\App.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\App.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T05:25:53.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 44,
-              "Title": "style.css",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
-              "ViewState": "AQIAAOcAAAAAAAAAAAAAAAwBAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2024-08-05T04:28:47.123Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 43,
-              "Title": "CustomAutocomplete.razor",
-              "DocumentMoniker": "C:\\Users\\pca66\\AppData\\Local\\Temp\\Temp1_CustomAutocomplete.zip\\CustomAutocomplete.razor",
-              "ToolTip": "C:\\Users\\pca66\\AppData\\Local\\Temp\\Temp1_CustomAutocomplete.zip\\CustomAutocomplete.razor [Read Only]",
-              "ViewState": "AQIAAHUAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-05T05:11:54.427Z",
-              "EditorCaption": " [Read Only]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 51,
-              "Title": "MyNavMenu.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAIAAAAyAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:04:55.899Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 48,
-              "Title": "UserDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T10:02:16.002Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 47,
-              "Title": "GetUserDto.cs",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
-              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
-              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBgAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-02T10:03:36.434Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 49,
-              "Title": "Category.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
-              "ViewState": "AQIAAFkAAAAAAAAAAAAiwGsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T04:47:36.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 54,
-              "Title": "NavMenu.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:05:46.495Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 50,
-              "Title": "ViewModal.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T08:28:29.973Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 55,
-              "Title": "_Imports.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\_Imports.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\_Imports.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\_Imports.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\_Imports.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:11:44.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 53,
-              "Title": "AuthLayout.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:04:21.776Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 52,
-              "Title": "MainLayout.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T05:04:17.625Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 58,
-              "Title": "UserDashboard.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Author\\UserDashboard.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Author\\UserDashboard.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Author\\UserDashboard.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Author\\UserDashboard.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T04:53:44.57Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 60,
-              "Title": "UserDashboard.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAAbAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T04:51:00.293Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 61,
-              "Title": "EditCategory.razor",
-              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
-              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
-              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
-              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
-              "ViewState": "AQIAAAYAAAAAAAAAAIBJwAsAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-08-02T04:47:37.385Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 13,
               "Title": "RegisterPage.razor",
               "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\Login\\RegisterPage.razor",
               "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Authentication\\Login\\RegisterPage.razor",
@@ -1084,26 +455,1011 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 9,
+              "Title": "MyNavMenu.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MyNavMenu.razor",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAACgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:04:55.899Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AddUser.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\AddUser.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T03:57:00.698Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Enums.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Enums\\Enums.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAAeAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T08:39:20.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Error.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Error.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Error.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Error.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Error.razor",
+              "ViewState": "AQIAAAwAAAAAAAAAAAAAABwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T04:13:27.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ViewBlog.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\ViewBlog.razor",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAAC0AAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T10:36:24.856Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "UserDashboard.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\UserDashboard.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:51:00.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CardComponent.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\CardComponent.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\CardComponent.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\CardComponent.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\CardComponent.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T12:03:54.446Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "MainLayout.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:04:17.625Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AddBlog.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\AddBlog.razor",
+              "ViewState": "AQIAAFEAAAAAAAAAAAAAAIAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T04:18:33.034Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Blogs.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\Blogs.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\Blogs.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\Blogs.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Pages\\Author\\Blogs\\Blogs.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T08:30:11.072Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Routes.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Routes.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Routes.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Routes.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Routes.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T06:01:36.648Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "App.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\App.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\App.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\App.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\App.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T05:25:53.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "_Imports.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\_Imports.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\_Imports.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\_Imports.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\_Imports.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:11:44.86Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "MainLayout.razor.css",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\MainLayout.razor.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-02T05:04:29.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "NavMenu.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\NavMenu.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:05:46.495Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Program.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Program.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Program.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Program.cs",
+              "ViewState": "AQIAAB4AAAAAAAAAAAAAADAAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:25:05.812Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "BlogCenter.Shared.csproj",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\BlogCenter.Shared.csproj",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\BlogCenter.Shared.csproj",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\BlogCenter.Shared.csproj",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\BlogCenter.Shared.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-06T10:30:47.575Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Program.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\Program.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\Program.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\Program.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:12:22.782Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "BlogClientService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\ClientServices\\Blogs\\BlogClientService.cs",
+              "RelativeDocumentMoniker": "BlogCenter.Shared\\ClientServices\\Blogs\\BlogClientService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\ClientServices\\Blogs\\BlogClientService.cs",
+              "RelativeToolTip": "BlogCenter.Shared\\ClientServices\\Blogs\\BlogClientService.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBQAAABHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:40:29.289Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "AuthDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Auth\\AuthDbContext.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Auth\\AuthDbContext.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Auth\\AuthDbContext.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Auth\\AuthDbContext.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T09:49:19.789Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "AuthLayout.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\AuthLayout.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:04:21.776Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
               "Title": "LoginDto.cs",
               "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\LoginDto.cs",
               "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\LoginDto.cs",
               "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\LoginDto.cs",
               "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\LoginDto.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAbAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-08-02T04:05:23.725Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "BlogCenter.Client",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\BlogCenter.Client.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-06T08:43:01.666Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "IMapperCollectionExtension.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IMapperCollectionExtension.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Services\\IMapperCollectionExtension.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IMapperCollectionExtension.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Services\\IMapperCollectionExtension.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:55:38.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "BlogCenter.Shared",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\BlogCenter.Shared.csproj",
+              "RelativeDocumentMoniker": "BlogCenter.Shared\\BlogCenter.Shared.csproj",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\BlogCenter.Shared.csproj",
+              "RelativeToolTip": "BlogCenter.Shared\\BlogCenter.Shared.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-06T08:47:55.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\Class1.cs",
+              "RelativeDocumentMoniker": "BlogCenter.Shared\\Class1.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\Class1.cs",
+              "RelativeToolTip": "BlogCenter.Shared\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:37:54.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IBlogClientService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\ClientServices\\Blogs\\IBlogClientService.cs",
+              "RelativeDocumentMoniker": "BlogCenter.Shared\\ClientServices\\Blogs\\IBlogClientService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\ClientServices\\Blogs\\IBlogClientService.cs",
+              "RelativeToolTip": "BlogCenter.Shared\\ClientServices\\Blogs\\IBlogClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABUAAAA8AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T08:40:01.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "ClientService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\ClientService.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Services\\ClientService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\ClientService.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Services\\ClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBEAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T09:25:26.624Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "IClientService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IClientService.cs",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Services\\IClientService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Services\\IClientService.cs",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Services\\IClientService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T09:25:03.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "ApiResponse.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\ApiResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAQAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:02:57.352Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "AuthorDashboard.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Author\\AuthorDashboard.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Author\\AuthorDashboard.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Author\\AuthorDashboard.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Author\\AuthorDashboard.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAKAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:53:44.57Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "Users.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\Users.razor",
+              "ViewState": "AQIAADAAAAAAAAAAAAAiwFMAAABGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T07:59:18.676Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Constants.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Constant\\Constants.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAoAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T09:07:11.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "BlogCenter",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\BlogCenter.csproj",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\BlogCenter.csproj",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\BlogCenter.csproj",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\BlogCenter.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-06T06:27:43.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Blogs.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Blogs.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAwwBwAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:51:27.211Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\wwwroot\\appsettings.json",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter.Client\\wwwroot\\appsettings.json",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter.Client\\wwwroot\\appsettings.json",
+              "RelativeToolTip": "BlogCenter\\BlogCenter.Client\\wwwroot\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-06T08:15:28.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 44,
+              "Title": "LoadingAnimation.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T04:18:03.488Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 45,
+              "Title": "LoadingAnimation.razor.css",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor.css",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor.css",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor.css",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Components\\LoadingAnimation.razor.css",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAIwI0AAAACAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-06T06:16:16.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\AuthController.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\AuthController.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\AuthController.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\AuthController.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwCgAAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-06T06:40:42.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "TokenIdentifierFilter.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Filters\\TokenIdentifierFilter.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:14:16.796Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 46,
+              "Title": "style.css",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\wwwroot\\css\\style.css",
+              "ViewState": "AQIAANsAAAAAAAAAAAAAAO4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-05T04:28:47.123Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 47,
+              "Title": "app.css",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\app.css",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\wwwroot\\app.css",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\app.css",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\wwwroot\\app.css",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-08-06T06:19:14.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 48,
+              "Title": "Category.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\Category.razor",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEcAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:47:36.555Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 52,
+              "Title": "ViewModal.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\ViewModal.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T08:28:29.973Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 49,
+              "Title": "AdminDashboard.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\AdminDashboard\\AdminDashboard.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\AdminDashboard\\AdminDashboard.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\AdminDashboard\\AdminDashboard.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\AdminDashboard\\AdminDashboard.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAEAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-06T05:27:52.925Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 50,
+              "Title": "LogoutButton.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Components\\LogoutButton.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAABWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:34:59.791Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 51,
+              "Title": "BlogTable.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\BlogTable.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAADgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T06:29:46.557Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 54,
+              "Title": "BlogMapper.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Mapper\\BlogMapper.cs",
+              "ViewState": "AQIAADcAAAAAAAAAAAAUwGwAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T06:25:47.536Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 53,
+              "Title": "BaseRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Generic\\BaseRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAKMAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:04:49.396Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 57,
+              "Title": "BlogRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Blog\\BlogRepository.cs",
+              "ViewState": "AQIAADYAAAAAAAAAAAAqwEoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T06:20:29.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 55,
+              "Title": "BlogService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Services\\Blog\\BlogService.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwDoAAAAoAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T09:14:27.475Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 56,
+              "Title": "BlogsController.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\BlogsController.cs",
+              "ViewState": "AQIAAAgAAAAAAAAAAEBVwCkAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T06:20:10.962Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 58,
+              "Title": "UsersController.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\UsersController.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAEBVwKIAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T05:50:41.582Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 59,
+              "Title": "GetBlogDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetBlogDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA8AAAAiAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T06:24:52.54Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 67,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\User\\UserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:06:13.111Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 68,
+              "Title": "IUserRepository.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\User\\IUserRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:06:15.424Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 64,
+              "Title": "AddUserModel.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\AddUserModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:13:20.483Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 63,
+              "Title": "Helper.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Helper\\Helper.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Helper\\Helper.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Helper\\Helper.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Helper\\Helper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:14:01.969Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 62,
+              "Title": "BlogCenter.WebAPI.Repositories.csproj",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\BlogCenter.WebAPI.Repositories.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-08-05T11:14:35.507Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 60,
+              "Title": "DynamicQueryableExtensions.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Utils\\DynamicQueryableExtensions.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:14:40.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 61,
+              "Title": "PredicateBuilder.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Repositories\\Utils\\PredicateBuilder.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:14:42.26Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 66,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\User\\UserService.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Services\\User\\UserService.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Services\\User\\UserService.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Services\\User\\UserService.cs",
+              "ViewState": "AQIAACkAAAAAAAAAAAAgwIoAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T09:36:49.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 65,
+              "Title": "CategoriesController.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI\\Controllers\\v1\\CategoriesController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T08:46:33.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 70,
+              "Title": "Response.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\Response.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAA3AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T11:02:49.834Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 71,
+              "Title": "Weather.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Weather.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T10:40:07.902Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 73,
+              "Title": "AddBlogDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\AddBlogDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T06:43:35.273Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 69,
+              "Title": "UserMapper.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Mapper\\UserMapper.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:07:31.184Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 72,
+              "Title": "BlogDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\BlogDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-05T09:29:03.427Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 75,
+              "Title": "Header.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\Header.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:05:21.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 76,
+              "Title": "Footer.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Layout\\Footer.razor",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T05:05:26.824Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 78,
+              "Title": "EditUsers.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Users\\EditUsers.razor",
+              "ViewState": "AQIAACcAAAAAAAAAAIBJwEMAAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T08:17:56.142Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 74,
+              "Title": "app.js",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\wwwroot\\js\\app.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-08-05T05:26:14.828Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 79,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\ResponceDto\\UserDto.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAgwCEAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:02:38.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 77,
+              "Title": "CustomAutocomplete.razor",
+              "DocumentMoniker": "C:\\Users\\pca66\\AppData\\Local\\Temp\\Temp1_CustomAutocomplete.zip\\CustomAutocomplete.razor",
+              "ToolTip": "C:\\Users\\pca66\\AppData\\Local\\Temp\\Temp1_CustomAutocomplete.zip\\CustomAutocomplete.razor [Read Only]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-05T05:11:54.427Z",
+              "EditorCaption": " [Read Only]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 81,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\Responce\\UserDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:02:16.002Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 80,
+              "Title": "GetUserDto.cs",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
+              "RelativeDocumentMoniker": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
+              "RelativeToolTip": "BlogCenter.WebAPI.Dtos\\RequestDto\\GetUserDto.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwBgAAAAzAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-02T10:03:36.434Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 83,
+              "Title": "EditCategory.razor",
+              "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
+              "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
+              "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
+              "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\EditCategory.razor",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBZwAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-08-02T04:47:37.385Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 82,
               "Title": "AddCategory.razor",
               "DocumentMoniker": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\AddCategory.razor",
               "RelativeDocumentMoniker": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\AddCategory.razor",
               "ToolTip": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\AddCategory.razor",
               "RelativeToolTip": "BlogCenter\\BlogCenter\\Components\\Pages\\Admin\\Categories\\AddCategory.razor",
-              "ViewState": "AQIAAAYAAAAAAAAAAIBJwBkAAAAXAAAA",
+              "ViewState": "AQIAAAMAAAAAAAAAAIBZwBkAAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-08-02T03:57:11.44Z",
               "EditorCaption": ""

@@ -1,4 +1,5 @@
 ﻿@page "/admin/blogs"
+@using BlogCenter.Components.Components
 @using BlogCenter.WebAPI.Dtos.ResponceDto
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
@@ -7,7 +8,10 @@
 @using static BlogCenter.WebAPI.Dtos.ResponceDto.DataManipulationDto
 @rendermode InteractiveServer
 
+@* <LoadingAnimation ShowAnimation="true" />
+<MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="ToggleAnimation"></MudButton>
 
+ *@
 <MudScrollToTop>
     <MudFab Color="Color.Tertiary" StartIcon="@Icons.Material.Filled.ArrowCircleUp" />
 </MudScrollToTop>
@@ -22,4 +26,10 @@
         NavigationManager.NavigateTo("/admin/add-blog");
     }
 
+    private bool showAnimation = true;
+
+    private void ToggleAnimation()
+    {
+        showAnimation = !showAnimation;
+    }
 }

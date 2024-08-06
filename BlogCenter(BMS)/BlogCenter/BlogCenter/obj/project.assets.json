@@ -1720,6 +1720,8 @@
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
+          "BlogCenter.Shared": "1.0.0",
+          "BlogCenter.WebAPI.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.7",
           "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "8.0.0",
           "MudBlazor": "7.4.0",
@@ -1730,6 +1732,19 @@
         },
         "runtime": {
           "bin/placeholder/BlogCenter.Client.dll": {}
+        }
+      },
+      "BlogCenter.Shared/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "BlogCenter.WebAPI.Dtos": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/BlogCenter.Shared.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/BlogCenter.Shared.dll": {}
         }
       },
       "BlogCenter.WebAPI/1.0.0": {
@@ -5338,6 +5353,11 @@
       "path": "../BlogCenter.Client/BlogCenter.Client.csproj",
       "msbuildProject": "../BlogCenter.Client/BlogCenter.Client.csproj"
     },
+    "BlogCenter.Shared/1.0.0": {
+      "type": "project",
+      "path": "../../BlogCenter.Shared/BlogCenter.Shared.csproj",
+      "msbuildProject": "../../BlogCenter.Shared/BlogCenter.Shared.csproj"
+    },
     "BlogCenter.WebAPI/1.0.0": {
       "type": "project",
       "path": "../../BlogCenter.WebAPI/BlogCenter.WebAPI.csproj",
@@ -5367,6 +5387,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "BlogCenter.Client >= 1.0.0",
+      "BlogCenter.Shared >= 1.0.0",
       "BlogCenter.WebAPI >= 1.0.0",
       "BlogCenter.WebAPI.Dtos >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.7",
@@ -5407,6 +5428,9 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
+            "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\BlogCenter.Shared.csproj": {
+              "projectPath": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.Shared\\BlogCenter.Shared.csproj"
+            },
             "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj": {
               "projectPath": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter.WebAPI.Dtos\\BlogCenter.WebAPI.Dtos.csproj"
             },

@@ -9,6 +9,7 @@
       "BlogCenter/1.0.0": {
         "dependencies": {
           "BlogCenter.Client": "1.0.0",
+          "BlogCenter.Shared": "1.0.0",
           "BlogCenter.WebAPI": "1.0.0",
           "BlogCenter.WebAPI.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.7",
@@ -925,6 +926,8 @@
       },
       "BlogCenter.Client/1.0.0": {
         "dependencies": {
+          "BlogCenter.Shared": "1.0.0",
+          "BlogCenter.WebAPI.Dtos": "1.0.0",
           "Microsoft.AspNetCore.Components.WebAssembly": "8.0.7",
           "Microsoft.AspNetCore.Components.WebAssembly.DevServer": "8.0.0",
           "MudBlazor": "7.4.0",
@@ -932,6 +935,14 @@
         },
         "runtime": {
           "BlogCenter.Client.dll": {}
+        }
+      },
+      "BlogCenter.Shared/1.0.0": {
+        "dependencies": {
+          "BlogCenter.WebAPI.Dtos": "1.0.0"
+        },
+        "runtime": {
+          "BlogCenter.Shared.dll": {}
         }
       },
       "BlogCenter.WebAPI/1.0.0": {
@@ -1771,6 +1782,11 @@
       "hashPath": "zstdsharp.port.0.7.6.nupkg.sha512"
     },
     "BlogCenter.Client/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "BlogCenter.Shared/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

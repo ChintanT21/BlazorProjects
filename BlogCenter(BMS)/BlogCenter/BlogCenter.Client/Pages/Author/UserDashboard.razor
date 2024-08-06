@@ -1,11 +1,23 @@
 ﻿@page "/user/dashboard"
 @rendermode InteractiveAuto
+@using BlogCenter.WebAPI.Dtos.Constant
+@using BlogCenter.WebAPI.Dtos.ResponceDto
 @using Microsoft.AspNetCore.Authorization
+@using Microsoft.AspNetCore.Http
+@inject IHttpContextAccessor HttpContextAccessor
+@inject NavigationManager _navigationManager
 
 <h3>user-dashboard</h3>
 
-<div>
-</div>
+@code{
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "userId")]
+    public long? userId { get; set; }
+    protected async Task NavigateToLogin()
+    {
+        _navigationManager.NavigateTo(Constants.NAVIGATE_TO_LOGIN_URL);
+    }
+}
 
 
 

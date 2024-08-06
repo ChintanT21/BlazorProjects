@@ -8,6 +8,9 @@ namespace BlogCenter.WebAPI.Dtos.Constant
 {
     public static class Constants
     {
+        public const string NAVIGATE_TO_LOGIN_URL = "/login";
+        public const string NAVIGATE_TO_REGISTER_URL = "/register";
+
         public const string NAVIGATE_TO_CATEGORYLIST_URL = "/admin/categories";
         public const string CATEGORY_EXISTS_ERROR = "Category already exits";
         public const string CATEGORY_NOTADD_ERROR = "Category not added";

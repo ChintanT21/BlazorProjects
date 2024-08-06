@@ -1,0 +1,33 @@
+﻿@page "/user/blogs"
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@inject IJSRuntime JSRuntime
+@inject NavigationManager NavigationManager
+@using BlogCenter.WebAPI.Dtos.Enums
+@using static BlogCenter.WebAPI.Dtos.Enums.Enums
+@using static BlogCenter.WebAPI.Dtos.ResponceDto.DataManipulationDto
+@rendermode InteractiveAuto
+
+@* <LoadingAnimation ShowAnimation="true" />
+<MudButton Class="" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Edit" Color="Color.Primary" OnClick="ToggleAnimation"></MudButton>
+
+ *@
+
+<BlogTable />
+
+@code {
+
+    protected string searchString = string.Empty;
+    protected int selectedStatus;
+    protected int selectedRole;
+    private void AddNewBlog(MouseEventArgs e)
+    {
+        NavigationManager.NavigateTo("/admin/add-blog");
+    }
+
+    private bool showAnimation = true;
+
+    private void ToggleAnimation()
+    {
+        showAnimation = !showAnimation;
+    }
+}

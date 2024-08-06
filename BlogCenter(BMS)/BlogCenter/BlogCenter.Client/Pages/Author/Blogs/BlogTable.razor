@@ -1,0 +1,362 @@
+﻿@using BlogCenter.WebAPI.Dtos.RequestDto
+@using Microsoft.AspNetCore.Components;
+@using static BlogCenter.WebAPI.Dtos.RequestDto.GetBlogDto;
+@using BlogCenter.WebAPI.Dtos.ResponceDto;
+@using BlogCenter.WebAPI.Dtos.Enums
+@using BlogCenter.Shared.ClientServices.Blogs
+@using static BlogCenter.WebAPI.Dtos.Enums.Enums
+@inject IBlogClientService _clientService
+@inject NavigationManager _navigationManager
+
+
+<div class="container">
+    <MudScrollToTop>
+        <MudFab Color="Color.Tertiary" StartIcon="@Icons.Material.Filled.ArrowCircleUp" />
+    </MudScrollToTop>
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Blogs</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" EndIcon="@Icons.Material.Filled.Add" Color="Color.Primary" OnClick=AddNewBlog>Add Blog</MudButton>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-12">
+            <MudCardContent>
+                <MudSelect Label="Select an status" Placeholder="Select status" T="int" @bind-Value="selectedStatus" Variant="Variant.Outlined" AdornmentIcon="@Icons.Material.Filled.LowPriority" SelectedValuesChanged="OnSearchStatus" AdornmentColor="Color.Primary">
+                    <MudSelectItem Value="(int)0" Selected="true">All</MudSelectItem>
+                    @foreach (var status in Enum.GetValues(typeof(BlogStatus)).Cast<BlogStatus>())
+                    {
+                        <MudSelectItem Value="(int)status">
+                            @status.ToString()
+                        </MudSelectItem>
+                    }
+                </MudSelect>
+            </MudCardContent>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 col-12">
+            <MudCardContent>
+                <MudTextField @bind-Value="searchString" Label="Search" Variant="Variant.Outlined" OnBlur="OnSearchChanged" Adornment="Adornment.End" AdornmentIcon="@Icons.Material.Filled.Search" AdornmentColor="Color.Primary" />
+            </MudCardContent>
+        </div>
+    </div>
+
+    <div>
+        <MudGrid>
+            @foreach (var blog in blogs)
+            {
+                <MudItem xs="12" sm="6" md="4" lg="4">
+                    <MudCard Style="@GetBorderColor(blog.Status)">
+                        <MudCardContent>
+                            <MudText Typo="Typo.h5" Class="my-3">@blog.Title</MudText>
+                            <MudText Typo="Typo.body2"> @(GetShortContent(@blog.Content))</MudText>
+                            <MudText Typo="Typo.subtitle1" Color="Color.Primary">On-@blog.CreatedDate </MudText>
+                        </MudCardContent>
+                        <MudCardActions>
+                            <MudButton Variant="Variant.Text" Color="Color.Primary">Read More</MudButton>
+                        </MudCardActions>
+                    </MudCard>
+                </MudItem>
+            }
+        </MudGrid>
+    </div>
+    <div class="d-flex justify-content-between align-items-center mt-3">
+        <MudPagination BoundaryCount="2"
+                       MiddleCount="3"
+                       ShowFirstButton="true"
+                       ShowLastButton="true"
+                       Rectangular="true"
+                       Selected="@selectedPage"
+                       Count="@totalPages"
+                       Variant="Variant.Filled"
+                       SelectedChanged="OnPageChanged" />
+
+        @if ((!Top && totalItems >= 5) || Top)
+        {
+            <div class="d-flex align-items-center ml-auto">
+                <MudText Class="mr-2">Records Per Page:</MudText>
+                <MudSelect Style="width: 100px;" Margin="Margin.Dense" Dense T="int" @bind-Value="rpp" Variant="Variant.Outlined" AnchorOrigin="Origin.BottomCenter" SelectedValuesChanged="OnPageSizeChanged">
+                    <MudSelectItem T="int" Value="5">5</MudSelectItem>
+                    <MudSelectItem T="int" Value="10">10</MudSelectItem>
+                    <MudSelectItem T="int" Value="20">20</MudSelectItem>
+                    <MudSelectItem T="int" Value="50">50</MudSelectItem>
+                </MudSelect>
+            </div>
+        }
+    </div>
+
+
+</div>
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "userId")]
+    public long? userId { get; set; }
+    [Parameter] public bool Top { get; set; } = true;
+    [Parameter] public int rpp { get; set; } = 5;
+    [Parameter] public int currentPage { get; set; } = 0;
+    [Parameter] public int totalItems { get; set; } = 0;
+    [Parameter] public int totalPages { get; set; } = 0;
+    [Parameter] public int selectedPage { get; set; } = 1;
+    [Parameter] public EventCallback<int> selectedPageChanged { get; set; }
+    public string searchString { get; set; } = string.Empty;
+    protected int selectedStatus;
+    protected long selectedUser;
+    private string sortIcon = "fa fa-sort-asc";
+    private bool _loading;
+    protected BlogTableDto tableDto;
+    protected List<GetBlog>? blogs = new();
+    protected List<GetUserDto>? users = new();
+    protected string nameFilter = string.Empty;
+    protected DataManipulationDto dto = new();
+    private MarkupString _htmlContent;
+    string cardBorderColor;
+
+    private string GetShortContent(string content)
+    {
+        if (string.IsNullOrWhiteSpace(content) || content.Length <= 100)
+        {
+            return content;
+        }
+
+        // Truncate the HTML content to avoid breaking tags
+        var truncated = content.Substring(0, 100);
+        int lastIndex = Math.Max(truncated.LastIndexOf('<'), truncated.LastIndexOf(' '));
+        return truncated.Substring(0, lastIndex) + "...";
+    }
+
+    private void NavigateToBlog(int blogId)
+    {
+        _navigationManager.NavigateTo($"/viewblog/{blogId}");
+    }
+
+    private string GetBorderColor(short status)
+    {
+        string cardBorderColor;
+
+        switch ((int)status)
+        {
+            case (int)BlogStatus.Approved:
+                cardBorderColor = "border: 2px solid green;";
+                break;
+            case (int)BlogStatus.Deleted:
+                cardBorderColor = "border: 2px solid red;";
+                break;
+            case (int)BlogStatus.SendForApproval:
+                cardBorderColor = "border: 2px solid blue;";
+                break;
+            case (int)BlogStatus.Draft:
+                cardBorderColor = "border: 2px solid black;";
+                break;
+            default:
+                cardBorderColor = "border: 2px solid gray;"; // Default border color
+                break;
+        }
+
+        return cardBorderColor;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        if (userId != null)
+        {
+            dto.UserId = (long)userId;
+        }
+        await LoadData();
+    }
+
+    protected async Task OnSortChanged(int column)
+    {
+        Enums.BlogTableColumn ColumnName = (Enums.BlogTableColumn)column;
+
+        // Toggle sort order
+        if (dto.SortString == ColumnName.ToString())
+        {
+            dto.SortString = "-" + ColumnName.ToString();
+        }
+        else if (dto.SortString == "-" + ColumnName.ToString())
+        {
+            dto.SortString = ColumnName.ToString();
+        }
+        else
+        {
+            dto.SortString = ColumnName.ToString();
+        }
+
+        await LoadData();
+    }
+
+    private string GetSortIconClass(Enums.BlogTableColumn column)
+    {
+        if (dto.SortString == column.ToString())
+        {
+            return "fas fa-sort-up";
+        }
+        else if (dto.SortString == "-" + column.ToString())
+        {
+            return "fas fa-sort-down";
+        }
+        return string.Empty;
+    }
+
+    protected async Task LoadData()
+    {
+        users = await _clientService.GetAllUsers();
+        tableDto = await _clientService.GetBlogData(dto);
+        blogs = tableDto.Blogs;
+        totalItems = tableDto.TotalCount;
+        totalPages = tableDto.TotalPages;
+        StateHasChanged();
+    }
+
+    public async Task OnSearchChanged()
+    {
+        dto.SearchString = searchString;
+        await LoadData();
+    }
+
+    public async Task OnSearchStatus()
+    {
+        dto.SearchTable = "status";
+        dto.SearchString = selectedStatus.ToString();
+        await LoadData();
+    }
+
+    public async Task OnSearchUser()
+    {
+        dto.SearchTable = "user";
+        dto.SearchString = selectedUser.ToString();
+        await LoadData();
+    }
+
+    protected async Task OnPageChanged(int pageNumber)
+    {
+        if (pageNumber != selectedPage)
+        {
+            currentPage = pageNumber - 1;
+            selectedPage = pageNumber;
+            StateHasChanged();
+            //currentPageChanged.InvokeAsync(i - 1);
+            selectedPageChanged.InvokeAsync(pageNumber);
+        }
+
+        dto.PageNumber = pageNumber;
+        await LoadData(); ;
+    }
+
+    protected async Task OnPageSizeChanged()
+    {
+        dto.PageSize = rpp;
+        await LoadData();
+    }
+
+    protected async Task NavigateToEditPage(long blogId)
+    {
+        selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
+        _navigationManager.NavigateTo($"/admin/edit-blog?blogid={blogId}");
+    }
+
+    private void AddNewBlog()
+    {
+        _navigationManager.NavigateTo("/admin/add-blog");
+    }
+
+    protected async Task NavigateToViewPage(long blogId)
+    {
+        selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
+        _navigationManager.NavigateTo($"/admin/view-blog?blogid={blogId}");
+    }
+
+    private async Task Approve(long blogId)
+    {
+        int? statusId = (int)BlogStatus.Approved;
+        bool IsApproved = false;
+        IsApproved = await _clientService.ChangeStatus(blogId, statusId);
+        if (IsApproved)
+        {
+            await LoadData();
+
+        }
+    }
+
+    private async Task Reject(long blogId)
+    {
+        int? statusId = (int)BlogStatus.Rejected;
+        bool IsRejected = false;
+        IsRejected = await _clientService.ChangeStatus(blogId, statusId);
+        if (IsRejected)
+        {
+            await LoadData();
+
+        }
+    }
+}
+
+<div class="modal @modalClass" tabindex="-1" role="dialog" style="display:@modalDisplay; overflow-y: auto;" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header d-flex justify-content-between">
+                <h5 class="modal-title" id="exampleModalLongTitle">Blog Detail</h5>
+                <button type="button " class="close btn btn-secondary" aria-label="Close" @onclick="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <dl class="row">
+                    <dt class="col-sm-3">Title</dt>
+                    <dd class="col-sm-9">@selectedBlog?.Title</dd>
+
+                    <dt class="col-sm-3">Content</dt>
+                    <dd class="col-sm-9">@selectedBlog?.Content</dd>
+
+                    <dt class="col-sm-3">Created by</dt>
+                    <dd class="col-sm-9">@selectedBlog?.CreatedBy</dd>
+
+                    <dt class="col-sm-3">Created date</dt>
+                    <dd class="col-sm-9">@selectedBlog?.CreatedDate</dd>
+
+                    @if (selectedBlog?.UpdatedBy != null)
+                    {
+                        <dt class="col-sm-3">Updated by</dt>
+                        <dd class="col-sm-9">@selectedBlog?.UpdatedBy</dd>
+
+                        <dt class="col-sm-3">Updated date</dt>
+                        <dd class="col-sm-9">@selectedBlog?.UpdatedDate</dd>
+
+                    }
+                    <dt class="col-sm-3">Status</dt>
+                    <dd class="col-sm-9">@selectedBlog?.StatusName</dd>
+
+                </dl>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" @onclick="Close">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (showBackdrop)
+{
+    <div class="modal-backdrop fade show"></div>
+}
+
+@code {
+    private GetBlog? selectedBlog;
+    private string modalDisplay = "none";
+    private string modalClass = "";
+    private bool showBackdrop = false;
+
+    public void Open(long blogId)
+    {
+        selectedBlog = blogs?.FirstOrDefault(blog => blog.Id == blogId);
+        modalDisplay = "block";
+        modalClass = "show";
+        showBackdrop = true;
+        StateHasChanged();
+    }
+
+    public void Close()
+    {
+        modalDisplay = "none";
+        modalClass = "";
+        showBackdrop = false;
+        StateHasChanged();
+    }
+}

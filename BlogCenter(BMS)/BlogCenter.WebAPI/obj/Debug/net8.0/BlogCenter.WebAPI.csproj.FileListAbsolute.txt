@@ -1,10 +1,3 @@
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.csproj.AssemblyReference.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.AssemblyInfoInputs.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.AssemblyInfo.cs
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.csproj.CoreCompileInputs.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.MvcApplicationPartsAssemblyInfo.cache
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.sourcelink.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\appsettings.Development.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\appsettings.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\BlogCenter.WebAPI.exe
@@ -120,6 +113,14 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\BlogC
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\BlogCenter.WebAPI.Services.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\BlogCenter.WebAPI.Models.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\bin\Debug\net8.0\BlogCenter.WebAPI.Repositories.pdb
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.csproj.AssemblyReference.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.AssemblyInfoInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.AssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.csproj.CoreCompileInputs.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.MvcApplicationPartsAssemblyInfo.cs
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.MvcApplicationPartsAssemblyInfo.cache
+D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.sourcelink.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\staticwebassets.build.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\staticwebassets.development.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\staticwebassets\msbuild.BlogCenter.WebAPI.Microsoft.AspNetCore.StaticWebAssets.props
@@ -134,4 +135,3 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\refin
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.pdb
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.genruntimeconfig.cache
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\ref\BlogCenter.WebAPI.dll
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter.WebAPI\obj\Debug\net8.0\BlogCenter.WebAPI.MvcApplicationPartsAssemblyInfo.cs

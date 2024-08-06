@@ -7,6 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Include="BlogCenter.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\BlogCenter.Shared\BlogCenter.Shared.csproj" />
     <ProjectReference Include="..\..\BlogCenter.WebAPI.Dtos\BlogCenter.WebAPI.Dtos.csproj" />
     <ProjectReference Include="..\..\BlogCenter.WebAPI\BlogCenter.WebAPI.csproj" />
     <ProjectReference Include="..\BlogCenter.Client\BlogCenter.Client.csproj" />
