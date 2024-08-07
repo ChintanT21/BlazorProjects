@@ -1,0 +1,141 @@
+﻿@page "/author/view-blog"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject IJSRuntime _jsRuntime
+@inject IBlogClientService _clientService
+@using BlogCenter.Shared.ClientServices.Blogs
+@using BlogCenter.WebAPI.Dtos.Constant
+@using BlogCenter.WebAPI.Dtos.RequestDto
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using BlogCenter.WebAPI.Dtos
+@using BlogCenter.WebAPI.Dtos.Mapper
+@using MudExRichTextEditor
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">@blog.Title</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToAuthorBlogs>Back</MudButton>
+    </div>
+
+    <MudGrid Class="mx-1">
+        <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12">
+            <MudCard>
+
+                <div class="row">
+                    <div style="display: flex; flex-wrap: wrap;">
+
+                        <div style="flex: 1; min-width: 300px;">
+                            <MudCardContent>
+                                @foreach (var category in selectedCategoryNames)
+                                {
+                                    <MudChip T="string" Color="Color.Secondary">@category</MudChip>
+                                }
+                            </MudCardContent>
+                        </div>
+
+                        <div style="flex: 1; min-width: 300px; text-align: right;">
+                            <MudText Typo="Typo.subtitle2" Class="mt-2">Created By - @baseblog.CreatedByName</MudText>
+                            <MudText Typo="Typo.subtitle2" Class="mt-2">On - @baseblog.CreatedDate.ToString("dd MMMM yyyy")</MudText>
+
+                            @if (blog.UpdatedBy != null)
+                            {
+                                <MudText Typo="Typo.subtitle2" Class="mt-2">Updated By - @baseblog.UpdatedByName</MudText>
+                                <MudText Typo="Typo.subtitle2" Class="mt-2">On - @(baseblog.UpdatedDate?.ToString("dd MMMM yyyy") ?? "Date not available")</MudText>
+                            }
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="row mx-2 shadow-sm p-3 mb-5 bg-white rounded ">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                        <MudCardContent>
+                            @(_htmlContent)
+                        </MudCardContent>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                        <MudIconButton Icon=@GetFavoriteIcon()
+                                       aria-label="favorite icon"
+                                       OnClick="() => isFavorite = !isFavorite"
+                                       Color="Color.Secondary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Share" aria-label="share"></MudIconButton>
+                        <MudIconButton Icon="@Icons.Material.Filled.Comment"
+                                       aria-label="toggle comment"
+                                       OnClick="() => isCommentShow = !isCommentShow"
+                                       Color="Color.Primary" />
+                        <MudIconButton Icon="@Icons.Material.Filled.Edit"
+                                       aria-label="Edit"
+                                       OnClick="()=>NavigateToEditBlog((long)blogId)"
+                                       Color="Color.Primary" />
+                        @if (isCommentShow)
+                        {
+                            <MudText Typo="Typo.subtitle2" Class="mt-2 d-inline">@blog.AdminComment</MudText>
+                        }
+                    </div>
+                </div>
+            </MudCard>
+        </MudItem>
+    </MudGrid>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "userId")]
+    public long? userId { get; set; }
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "blogId")]
+    public long? blogId { get; set; }
+    protected bool showLoding = false;
+    protected BlogDto blog = new();
+    protected GetBlogDto.GetBlog baseblog = new();
+    protected List<GetCategoryDto> categories = new();
+    protected List<string> selectedCategoryNames = new();
+    bool _readOnly = true;
+    bool isCommentShow = false;
+    bool isFavorite = false;
+    private IEnumerable<int> SelectedCategoryIds { get; set; } = new List<int>();
+    MudExRichTextEdit Editor;
+    private int value { get; set; }
+    private MarkupString _htmlContent;
+    private string GetFavoriteIcon()
+    {
+        return isFavorite ? Icons.Material.Filled.Favorite : Icons.Material.Outlined.FavoriteBorder;
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        if (blogId!=null)
+        {
+            categories = await _clientService.GetAllCategories();
+            baseblog = await _clientService.GetOneBlog((long)blogId);
+            blog = baseblog.ToBlogDto();
+            SelectedCategoryIds = baseblog.BlogsCategoriesIntList;
+            selectedCategoryNames = GetCategoryNames(SelectedCategoryIds.ToList());
+            _htmlContent = new MarkupString(blog.Content);
+        }
+        else
+        {
+            _navigationManager.NavigateTo($"/author/blog?userId={userId}");
+        }
+    }
+    private void NavigateToEditBlog(long blogId)
+    {
+        _navigationManager.NavigateTo($"/author/edit-blog?userId={userId}&blogId={blogId}");
+    }
+    private void NavigateToAuthorBlogs()
+    {
+        _navigationManager.NavigateTo($"/author/blogs?userId={userId}");
+    }
+
+    private List<string> GetCategoryNames(List<int> categoryIds)
+    {
+        return categoryIds.Select(id => GetCategoryName(id)).ToList();
+    }
+
+    private string GetCategoryName(int categoryId)
+    {
+        var category = categories.FirstOrDefault(c => c.Id == categoryId);
+        return category?.Name ?? string.Empty;
+    }
+}

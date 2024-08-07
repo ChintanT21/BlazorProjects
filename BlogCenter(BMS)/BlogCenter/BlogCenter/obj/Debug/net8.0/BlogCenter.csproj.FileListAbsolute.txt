@@ -114,8 +114,6 @@ D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\s
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.BlogCenter.props
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\staticwebassets.pack.json
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\Components\Components\LoadingAnimation.razor.rz.scp.css
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\Components\Layout\MainLayout.razor.rz.scp.css
-D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\Components\Layout\NavMenu.razor.rz.scp.css
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\bundle\BlogCenter.styles.css
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\scopedcss\projectbundle\BlogCenter.bundle.scp.css
 D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter\obj\Debug\net8.0\jsmodules\jsmodules.build.manifest.json

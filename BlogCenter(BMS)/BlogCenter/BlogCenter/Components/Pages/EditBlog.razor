@@ -107,6 +107,7 @@
 
     protected async void EditThisBlog()
     {
+        blog.Categories = SelectedCategoryIds.ToList();
         bool isUpdated = await _clientService.UpdateBlog(blog);
         if (isUpdated)
         {

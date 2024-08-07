@@ -1,0 +1,135 @@
+﻿@page "/author/add-blog"
+@rendermode InteractiveServer
+@inject NavigationManager _navigationManager
+@inject IJSRuntime _jsRuntime
+@inject IBlogClientService _clientService
+@using BlogCenter.Shared.ClientServices.Blogs
+@using BlogCenter.WebAPI.Dtos.Constant
+@using Microsoft.AspNetCore.Authorization
+@using MudExRichTextEditor
+@using BlogCenter.WebAPI.Dtos.RequestDto
+@using BlogCenter.WebAPI.Dtos.ResponceDto
+@using BlogCenter.WebAPI.Dtos
+@inject ISnackbar Snackbar
+
+
+<div class="container">
+    <div class="d-flex justify-content-between align-items-center my-4">
+        <MudText Typo="Typo.h5" Class="fw-bold">Add Blog</MudText>
+        <MudButton Class="mx-1" Variant="Variant.Filled" StartIcon="@Icons.Material.Filled.ArrowBack" Color="Color.Primary" OnClick=NavigateToAuthorBlogs>Back</MudButton>
+    </div>
+    <EditForm Model="@blog" OnValidSubmit="AddNewBlog">
+        <DataAnnotationsValidator />
+        <MudGrid>
+            <MudItem xs="12" sm="12" md="12" lg="12" xl="12" xxl="12">
+                <MudCard>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudTextField Label="Title" HelperText="Max. 50 characters" Variant="Variant.Outlined"
+                                              @bind-Value="blog.Title" For="@(() => blog.Title)" />
+                            </MudCardContent>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudSelect Variant="Variant.Outlined" MultiSelectionTextFunc="@(new Func<List<string>, string>(GetMultiSelectionText))" MultiSelection="true" @bind-Value="value" @bind-SelectedValues="SelectedCategoryIds" T="int" Label="Categories" AdornmentIcon="@Icons.Material.Filled.Search" AnchorOrigin="Origin.BottomCenter">
+                                    @foreach (var category in categories)
+                                    {
+                                        <MudSelectItem T="int" Value="@category.Id">@category.Name</MudSelectItem>
+                                    }
+                                </MudSelect>
+                            </MudCardContent>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
+                            <MudCardContent>
+                                <MudExRichTextEdit @ref="@Editor"
+                                                   ReadOnly="@_readOnly"
+                                                   Height="444"
+                                                   Class="m-2"
+                                                   Placeholder="Edit html" />
+                            </MudCardContent>
+                        </div>
+                    </div>
+                    <MudCardActions>
+                        <MudButton ButtonType="ButtonType.Submit" Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto">Submit</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter]
+    [SupplyParameterFromQuery(Name = "userId")]
+    public string? userId { get; set; }
+    protected bool showLoding = false;
+    protected AddBlogDto blog = new();
+    protected List<GetCategoryDto>? categories = new();
+    bool _readOnly = false;
+    private IEnumerable<int> SelectedCategoryIds { get; set; } = new List<int>();
+    MudExRichTextEdit Editor;
+    private int value { get; set; }
+    private List<int> selectedCategoryIds = new();
+    private List<GetCategoryDto> filteredCategories = new();
+    private List<GetCategoryDto> SelectedItems { get; set; } = new List<GetCategoryDto>();
+
+    private string GetMultiSelectionText(List<string> selectedValues)
+    {
+        var selectedCategoryNames = GetCategoryNames(selectedValues.Select(int.Parse).ToList());
+        // var selectedCategoryNames = selectedValues.Select(id => categories.Any(c=>c.Id) ? name : id).ToList();
+        return $"Selected Categor{(selectedValues.Count > 1 ? "ies" : "y")}: {string.Join(", ", selectedCategoryNames)}";
+        // return $"{selectedValues.Count} categor{(selectedValues.Count > 1 ? "ies have" : "y has")} been selected";
+    }
+    protected override async Task OnInitializedAsync()
+    {
+        categories = await _clientService.GetAllCategories();
+        filteredCategories = categories;
+    }
+    protected async void AddNewBlog()
+    {
+        if (SelectedCategoryIds.ToList().Count == 0)
+        {
+            Snackbar.Add(Constants.BLOG_NOCATEGORY_ERROR, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+            return;
+        }
+
+        var content = await Editor.GetHtml();
+        if (string.IsNullOrWhiteSpace(content))
+        {
+            Snackbar.Add(Constants.BLOG_NOCONTENT_ERROR, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+            return;
+        }
+        blog.Categories = SelectedCategoryIds.ToList();
+        blog.Content = await Editor.GetHtml();
+        bool isAdded = await _clientService.CreateBlog(blog);
+        if (isAdded)
+        {
+            Snackbar.Add(Constants.BLOG_ADDED_SUCCESS, Severity.Success, c => c.SnackbarVariant = Variant.Filled);
+            NavigateToAuthorBlogs();
+        }
+        else
+        {
+            Snackbar.Add(Constants.BLOG_NOTADD_ERROR, Severity.Error, c => c.SnackbarVariant = Variant.Filled);
+        }
+    }
+    private void NavigateToAuthorBlogs()
+    {
+        _navigationManager.NavigateTo($"/author/blogs?userId={userId}");
+    }
+    private List<string> GetCategoryNames(List<int> categoryIds)
+    {
+        return categoryIds.Select(id => GetCategoryName(id)).ToList();
+    }
+
+    private string GetCategoryName(int categoryId)
+    {
+        var category = categories.FirstOrDefault(c => c.Id == categoryId);
+        return category?.Name ?? string.Empty;
+    }
+}

@@ -1030,6 +1030,14 @@
         "runtime": {
           "BlogCenter.WebAPI.Services.dll": {}
         }
+      },
+      "Radzen.Blazor/5.0.7.0": {
+        "runtime": {
+          "Radzen.Blazor.dll": {
+            "assemblyVersion": "5.0.7.0",
+            "fileVersion": "5.0.7.0"
+          }
+        }
       }
     }
   },
@@ -1813,6 +1821,11 @@
     },
     "BlogCenter.WebAPI.Services/1.0.0": {
       "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Radzen.Blazor/5.0.7.0": {
+      "type": "reference",
       "serviceable": false,
       "sha512": ""
     }

@@ -1,7 +1,7 @@
 {
   "mainAssemblyName": "BlogCenter.Client",
   "resources": {
-    "hash": "sha256-29Upp3S798tdlqZoUFoT/zxgrONoxXgXJCDZZAhWzAQ=",
+    "hash": "sha256-XQckziNI2yOaPzDvSuVcZ40dWXlDqJAT/RWGGLXZGIc=",
     "jsModuleNative": {
       "dotnet.native.8.0.7.37dkch2d2y.js": "sha256-tFsxPBbhkdn6GKNBKvCRLzrfAHdyM86odYTe0MtrwMk="
     },
@@ -252,16 +252,16 @@
       "mscorlib.wasm": "sha256-fLbZiSHBNdpHoh4EgRqMaNP5NQyIK5TEj6AXFLqo8m8=",
       "netstandard.wasm": "sha256-d4xbAE8qrKq5euUoZHPO+jkYPjlCYBzUew45MKsYKic=",
       "System.Private.CoreLib.wasm": "sha256-8yi6NcX1lkNQgV4WKjnMBYIZyKh4P+OXnXVQmgxGZD4=",
-      "BlogCenter.Shared.wasm": "sha256-Ui8FgWXyeg3xlski7QENAbFGvnEmYF4lLJOnJJzoHiE=",
-      "BlogCenter.WebAPI.Dtos.wasm": "sha256-4qS0UC4aGioPBF+fKYirlGivSijYpxN7vYWmDckWCu8=",
+      "BlogCenter.Shared.wasm": "sha256-Pa8kSosOXFyTzcpq1uDtgmCW+tVjfr1JPmTJAi6IvRE=",
+      "BlogCenter.WebAPI.Dtos.wasm": "sha256-AwCfVG6Cw5J7besCbg8QL9wP1i7zK5D/YTd3bya5nOQ=",
       "BlogCenter.WebAPI.Models.wasm": "sha256-xVaEw2ho7GXlao4a7f/oJsZAwJgSBL90KiQEs3sfE1k=",
-      "BlogCenter.Client.wasm": "sha256-aYsax+p/DgN125mp4zLW5CmUVHroSTnFLuW5m7MqYsE="
+      "BlogCenter.Client.wasm": "sha256-BYnbPy1AAsvCZ3JYRCQKiQBSSgmlE6nivM9A7Kv+XFM="
     },
     "pdb": {
-      "BlogCenter.Shared.pdb": "sha256-JHlmzhcTQhQNZYTtIx0t8o5WV6/J74bQdjhRBcv/b0M=",
-      "BlogCenter.WebAPI.Dtos.pdb": "sha256-b0/FmrUSa7XP+tDehaD6FYNX4A6xOvzXJ2JwrySEBMM=",
+      "BlogCenter.Shared.pdb": "sha256-pwtLbQRC/8chIVFI6Qjk2TH0JCjLQs4rd7UGSS4NQTc=",
+      "BlogCenter.WebAPI.Dtos.pdb": "sha256-FWbvLUK4oJLSb0t5w/ZQcyXGmYbpjNwTcw7b42vhzhI=",
       "BlogCenter.WebAPI.Models.pdb": "sha256-h5ptHax0MEFjo2jxRcs/iW+YKfLfPx39OCyv1C8hknk=",
-      "BlogCenter.Client.pdb": "sha256-xj7izB7uuTqiZkeATRu0D1CpSwuOFOXtZwSac2Z6Tu4="
+      "BlogCenter.Client.pdb": "sha256-jFHyMLRYUM2ixyT7qJygsGTOXni9sU2eOYlVCehgQAQ="
     },
     "libraryInitializers": {
       "_content/BlazorJS/BlazorJS.lib.module.js": "sha256-pJ9th4xzJ1OMZjS4dv7BMz2u879ku+Hu3qkTZk+1LGw=",

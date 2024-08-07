@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "IYNuRWauwMrkTauY66GZcCdN3QXp3siPWCp0vMb27gc=",
+  "Hash": "g6qCffcCMtORVfOh57oZfLc22Yu/Ca1XHfFqMUlnV2k=",
   "Source": "BlogCenter",
   "BasePath": "_content/BlogCenter",
   "Mode": "Default",
@@ -17660,6 +17660,25 @@
       "OriginalItemSpec": "wwwroot\\assets\\8733059-hd_1920_1080_30fps.mp4"
     },
     {
+      "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\blazor2.png",
+      "SourceId": "BlogCenter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\",
+      "BasePath": "_content/BlogCenter",
+      "RelativePath": "assets/blazor2.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\blazor2.png"
+    },
+    {
       "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\favicon.png",
       "SourceId": "BlogCenter",
       "SourceType": "Discovered",
@@ -17677,6 +17696,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\assets\\favicon.png"
+    },
+    {
+      "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\microsoftblazor.png",
+      "SourceId": "BlogCenter",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\",
+      "BasePath": "_content/BlogCenter",
+      "RelativePath": "assets/microsoftblazor.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\assets\\microsoftblazor.png"
     },
     {
       "Identity": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\bootstrap\\bootstrap.min.css",

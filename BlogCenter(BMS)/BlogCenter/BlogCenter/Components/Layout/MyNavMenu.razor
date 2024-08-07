@@ -8,7 +8,7 @@
         <BlogCenter.Components.Components.LogoutButton></BlogCenter.Components.Components.LogoutButton>
     </div>
 </MudAppBar>
-<MudDrawer @bind-Open="@_drawerOpen">
+<MudDrawer @bind-Open="@_drawerOpen" Style="position: fixed; top: 0; left: 0; bottom: 0; z-index: 1050; overflow-y: auto;">
     <MudNavMenu Rounded="true" Margin="Margin.Dense" Color="Color.Primary" Class="pa-2">
         <MudText Typo="Typo.h6" Class="px-4">BlogCenter</MudText>
         <CascadingAuthenticationState>
@@ -23,7 +23,8 @@
             <AuthorizeView Roles="user">
                 <Authorized>
                     <MudNavLink Href=@UserDashboardUrl Icon="@Icons.Material.Filled.Dashboard">Dashboard</MudNavLink>
-                    <MudNavLink Href=@UserBlogsUrl Icon="@Icons.Material.Filled.Article">Blogs</MudNavLink>
+                    <MudNavLink Match="NavLinkMatch.Prefix" Href=@UserMyBlogsUrl Icon="@Icons.Material.Filled.FolderShared">My Blogs</MudNavLink>
+                    @* <MudNavLink Href=@UserBlogsUrl Icon="@Icons.Material.Filled.Article">Blogs</MudNavLink> *@
                 </Authorized>
             </AuthorizeView>
         </CascadingAuthenticationState>
@@ -33,8 +34,9 @@
 @code {
     private string loginUserName = string.Empty;
     private string UserDashboardUrl = string.Empty;
+    private string UserMyBlogsUrl = string.Empty;
     private string UserBlogsUrl = string.Empty;
-    private string loginUserId;
+    private string loginUserId = string.Empty;
     private bool _drawerOpen = true;
 
     protected override async Task OnInitializedAsync()
@@ -48,8 +50,9 @@
             var loginUserIdstring = user.FindFirst(c => c.Type == ClaimTypes.NameIdentifier)?.Value ?? string.Empty;
             if (long.TryParse(loginUserIdstring, out long parsedUserId))
             {
-                UserDashboardUrl = $"/user/dashboard?userId={parsedUserId}";
-                UserBlogsUrl = $"/user/blogs?userId={parsedUserId}";
+                UserDashboardUrl = $"/author/dashboard?userId={parsedUserId}";
+                UserMyBlogsUrl = $"/author/blogs?userId={parsedUserId}";
+                UserBlogsUrl = $"/author/blogs?myBlogs=true";
             }
 
         }

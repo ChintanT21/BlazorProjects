@@ -16,7 +16,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" rel="stylesheet" />
     <link href="_content/MudBlazor/MudBlazor.min.css" rel="stylesheet" />
     <script src="_content/MudBlazor/MudBlazor.min.js"></script>
-
+    <script src="https://cdn.tiny.cloud/1/v2mau018enqubfo08iwxsmzpnst6al2w2s4wc52p4utc3oul/tinymce/7/tinymce.min.js" referrerpolicy="origin"></script>
+    <script>
+        tinymce.init({
+            selector: 'textarea#tiny'
+        });
+    </script>
     <HeadOutlet />
 </head>
 
@@ -26,5 +31,9 @@
     </app>
     <script src="_framework/blazor.web.js"></script>
 </body>
-
+<script>
+    tinymce.init({
+        selector: 'textarea#tiny'
+    });
+</script>
 </html>

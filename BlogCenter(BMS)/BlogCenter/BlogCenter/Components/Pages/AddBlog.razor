@@ -4,6 +4,7 @@
 @inject NavigationManager _navigationManager
 @inject IJSRuntime _jsRuntime
 @using BlogCenter.WebAPI.Dtos.Constant
+@using Microsoft.AspNetCore.Authorization
 @using MudExRichTextEditor
 @using BlogCenter.Blazor.Services
 @using BlogCenter.Components.Components
@@ -47,6 +48,7 @@
                     <div class="row">
                         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-12">
                             <MudCardContent>
+
                                 <MudExRichTextEdit @ref="@Editor" 
                                                    ReadOnly="@_readOnly"
                                                    Height="444"

@@ -42,6 +42,7 @@ builder.Services.AddScoped<CustomAuthenticationStateProvider>();
 
 builder.Services.AddHttpClient();
 builder.Services.AddClientService();
+builder.Services.AddCascadingAuthenticationState();
 builder.Services.AddAuthorizationCore();
 builder.Services.AddOptions();
 builder.Services.AddRazorPages();

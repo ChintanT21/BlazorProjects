@@ -11,6 +11,7 @@
 @using System.Security.Claims
 @inject AuthenticationStateProvider AuthenticationStateProvider
 @inject IConfiguration Configuration
+@inject ISnackbar Snackbar
 @inject IJSRuntime JSRuntime
 @inject AuthenticationStateProvider AuthStateProvider
 @inject IHttpContextAccessor httpContextAccessor
@@ -116,7 +117,7 @@
         }
         else
         {
-            unauthorizedMessage = "Invalid Credentials!!";
+            Snackbar.Add("Invalid Credentials!!!", Severity.Error, c => c.SnackbarVariant = Variant.Filled);
             showLoding = false;
         }
 
@@ -196,8 +197,9 @@
             }
             else if (user.IsInRole("user"))
             {
-                NavigationManager.NavigateTo($"/user/dashboard?userId={Int64.Parse(userId)}");
+                NavigationManager.NavigateTo($"/author/dashboard?userId={Int64.Parse(userId)}");
             }
+            Snackbar.Add("login successfully!!!", Severity.Success, c => c.SnackbarVariant = Variant.Filled);
             showLoding = false;
 
         }

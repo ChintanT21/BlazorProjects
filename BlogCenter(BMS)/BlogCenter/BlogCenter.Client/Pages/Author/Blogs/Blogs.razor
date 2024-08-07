@@ -1,4 +1,5 @@
-﻿@page "/user/blogs"
+﻿@page "/author/blogs"
+
 @using BlogCenter.WebAPI.Dtos.ResponceDto
 @inject IJSRuntime JSRuntime
 @inject NavigationManager NavigationManager
@@ -19,10 +20,6 @@
     protected string searchString = string.Empty;
     protected int selectedStatus;
     protected int selectedRole;
-    private void AddNewBlog(MouseEventArgs e)
-    {
-        NavigationManager.NavigateTo("/admin/add-blog");
-    }
 
     private bool showAnimation = true;
 

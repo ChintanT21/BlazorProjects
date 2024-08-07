@@ -24,7 +24,9 @@
 
 </div>
 
-
+<div>
+    <textarea id="tiny"></textarea>
+</div>
 
 @code {
 
@@ -36,6 +38,7 @@
     {
         var authState = await authenticationStateProvider.GetAuthenticationStateAsync();
         var user = authState.User;
+   
 
         if (user.Identity.IsAuthenticated)
         {
@@ -50,7 +53,7 @@
 
                 if (long.TryParse(userId, out long parsedUserId))
                 {
-                    _navigationManager.NavigateTo($"/user/dashboard?userId={parsedUserId}");
+                    _navigationManager.NavigateTo($"/author/dashboard?userId={parsedUserId}");
                 }
             }
         }

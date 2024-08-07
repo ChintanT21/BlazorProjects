@@ -25,6 +25,14 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\Projects\demo\Blazor\BlogCenter(BMS)\BlogCenter\BlogCenter.Client
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/AuthorDashboard.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEF1dGhvckRhc2hib2FyZC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/Blogs/AddBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXEFkZEJsb2cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/Blogs/Blogs.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXEJsb2dzLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
@@ -33,12 +41,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXEJsb2dUYWJsZS5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/Blogs/CardComponent.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXENhcmRDb21wb25lbnQucmF6b3I=
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/Blogs/EditBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXEVkaXRCbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/UserDashboard.razor]
-build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXFVzZXJEYXNoYm9hcmQucmF6b3I=
+[D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Author/Blogs/ViewBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aG9yXEJsb2dzXFZpZXdCbG9nLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/Projects/demo/Blazor/BlogCenter(BMS)/BlogCenter/BlogCenter.Client/Pages/Counter.razor]

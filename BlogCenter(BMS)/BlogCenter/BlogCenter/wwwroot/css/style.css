@@ -181,59 +181,28 @@ html, body {
     display: flex;
     z-index: 1;
 }
-.multi-select {
-    position: relative;
+
+.blog-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
-    .multi-select .form-control {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        cursor: text;
-    }
+.card-content {
+    flex-grow: 1;
+}
 
-        .multi-select .form-control .search-input {
-            flex: 1;
-            border: none;
-            outline: none;
-            margin-left: 0.5rem;
-            min-width: 150px;
-        }
+.blog-card .mud-card-content {
+    height: 150px; /* Adjust as needed */
+    overflow: hidden;
+}
 
-    .multi-select ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        border: 1px solid #ccc;
-        max-height: 150px;
-        overflow-y: auto;
-        position: absolute;
-        width: 100%;
-        z-index: 1;
-        background-color: white;
-    }
+.blog-card .mud-card-actions {
+    justify-content: flex-end;
+}
 
-    .multi-select li {
-        padding: 5px 10px;
-    }
-
-        .multi-select li:hover {
-            background-color: #f1f1f1;
-            cursor: pointer;
-        }
-
-    .multi-select .form-control .badge {
-        display: flex;
-        align-items: center;
-        background-color:black;
-    }
-
-        .multi-select .form-control .badge span {
-            margin-left: 0.5rem;
-            cursor: pointer;
-        }
-
-    .multi-select ul.show {
-        display: block;
-    }
-
+.blog-card .mud-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

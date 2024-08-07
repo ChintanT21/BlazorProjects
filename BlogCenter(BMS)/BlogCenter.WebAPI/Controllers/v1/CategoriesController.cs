@@ -18,7 +18,7 @@ namespace BlogCenter.WebAPI.Controllers.v1
     {
 
         [HttpGet]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,user")]
         public async Task<IActionResult> GetAll()
         {
             Response<GetCategoryDto> response = new();
@@ -43,7 +43,7 @@ namespace BlogCenter.WebAPI.Controllers.v1
         }
 
         [HttpGet("{categoryId:int}")]
-        [Authorize(Roles = "admin")]
+        [Authorize(Roles = "admin,user")]
         public async Task<IActionResult> GetOne(int categoryId)
         {
             Response<GetCategoryDto> response = new();

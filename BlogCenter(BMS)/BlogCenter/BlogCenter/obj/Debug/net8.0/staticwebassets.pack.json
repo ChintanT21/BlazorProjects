@@ -17,8 +17,16 @@
       "PackagePath": "staticwebassets\\assets\\8733059-hd_1920_1080_30fps.mp4"
     },
     {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\blazor2.png",
+      "PackagePath": "staticwebassets\\assets\\blazor2.png"
+    },
+    {
       "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\favicon.png",
       "PackagePath": "staticwebassets\\assets\\favicon.png"
+    },
+    {
+      "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\assets\\microsoftblazor.png",
+      "PackagePath": "staticwebassets\\assets\\microsoftblazor.png"
     },
     {
       "Id": "D:\\Projects\\demo\\Blazor\\BlogCenter(BMS)\\BlogCenter\\BlogCenter\\wwwroot\\bootstrap\\bootstrap.min.css",
